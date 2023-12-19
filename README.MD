@@ -1,9 +1,9 @@
-# Integrantes y descripcion de los mismos #
+# Integrantes y descripcion de los mismos 
 Alejandro Salinas edad: 48 años ,localidad: San Miguel ,tarea: wiframe del  home.
 Alexi Peloso 19 años,localidad: Pirane ,tarea: wiframe de crear cuenta.
 Carlos Arando 40 años,localidad:CABA ,tarea: wiframe del carrito de compras.
 Gaston Vargas 24 años,localidad:Lanus, tarea: wiframe del detalle del producto.
-Rodrigo Toñanes 25 años,localidad:jose c paz, tarea:wiframe del login.
+Rodrigo Toñanes 25 años,localidad:jose c paz, tarea:wiframe del login. #
 
  # paginas de inspiracion: #
 babycottons: https://www.babycottons.com.ar/
