@@ -1,0 +1,15 @@
+{
+  "name": "tp_integrador_grupo3_simplemente_juguetes",
+  "version": "1.0.0",
+  "description": "Alejandro Salinas edad: 48 años ,localidad: San Miguel ,tarea: wiframe del  home.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
