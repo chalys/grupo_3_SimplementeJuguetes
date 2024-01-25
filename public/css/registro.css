@@ -1,25 +1,25 @@
-body{margin: 0px;}
+.bodyRegistro{margin: 0px;}
 main{}
 /* Fondo */
-main nav{
-top: 200px;
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
+main nav{top: 38vh;position: relative;display: flex;flex-direction: column;align-items: center;}
 main .fondo{
-    width: 100%;
+    width: 100vw;
     display: flex;
 }
-main .IMG1{position: absolute;
-    left: -280px;
-    top: -80px;
-    transform: scale(0.8);}
-main .IMG2{position: absolute;
-    left: -550px;
-    top: -100px;
-    transform: scale(0.8);}
+main .IMG1{
+    height: 110vh;
+    position: absolute;
+    left: -250px;
+    top: -40px;
+    transform: scale(1);
+    }
+main .IMG2{
+    height: 111vh;
+    position: absolute;
+    left: -60vh;
+    top: -9vh;
+    transform: scale(1);
+    }
 main .fondo .span1{
     position: absolute;
     width: 50%;
@@ -49,7 +49,7 @@ main div{
 }
 main div form{
     box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
-    width: 90%;
+    width: 31vh;
     padding: 3px 15px 0px;
     border-radius: 10px 10px 0px 0px;
     background-color: var(--blanco);
@@ -66,35 +66,36 @@ main div form label{
     font-size: 80%;
 }
 main div form input{
-    margin-bottom: 10%;
+    height: 24px;
+    margin-bottom: 7%;
     width: 100%;
     background-color: var(--gris);
     border: none;
     }
 main .perfilReg{
     gap: 2vw;
-    top: -58%;
+    top: -32vh;
     left: 20%;
     background-color: rgba(0,0,0,0);
     position: absolute;
 }
 main .perfilReg i{
     color: var(--grisObs);
-    font-size: 270%;
+    font-size: 10vh;
 }
 main .perfilReg div.fotodePerfil{
-    border: solid 5px var(--blanco);
+    border: solid 1vh var(--blanco);
     background-color: var(--gris);
     align-items: center;
     justify-content: center;
-    width: 95px;
-    height: 95px;
+    width: 16vh;
+    height: 16vh;
     border-radius: 100%;
 }
 main .perfilReg div{
     box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
     border-radius: 50px;
-    width: 90%;
+    width: 31vh;
     padding: 4% 5%;
     background-color: var(--blanco);
 }
@@ -118,7 +119,7 @@ main div h2{
     padding: 3% 0px 15% 0px;
     text-align: center;
     font-size: 60%;
-    width: 90%;
+    width: 31vh;
     background-color: var(--blanco);
     border-radius: 0px 0px 10px 10px;
     margin: 0;
@@ -129,8 +130,18 @@ main div h2 a{
 }
 
 /*acceder a google*/
-main .google{box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);border-radius: 50px;padding: 4%;width: 54%;align-items: center;justify-content: center;margin-top: 6%;flex-direction: row;background-color: var(--blanco);}
-main .google img{width: 16px;}
+main .google{
+    box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
+    border-radius: 50px;
+    padding: 3.5%;
+    width: 31vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.1vh;
+    flex-direction: row;
+    background-color: var(--blanco);
+    }
+main .google img{width: 17px;}
 main .google h2{box-shadow: 0px 0px 0px rgb(0 0 0 / 0%);padding: 0px;font-size: 70%;background-color: rgba(0,0,0,0);}
 main .google h2 a{
     color: black;
@@ -150,6 +161,59 @@ a{
     --grisObs: #8a8a8a;
     --azul: #5aa6d7;
 }
-/*
-#5aa6d7;
-*/
+
+@media(min-device-width:768px) {
+main .google{
+    padding: 3vh;
+}
+main .google img{
+    width: 3.2vh;
+}
+main .google h2{
+    font-size: 2vh;
+}
+main .google h2 a{}
+main div h2 a{}
+main div h2{
+    padding: 3% 0px 9% 0px;
+    font-size: 2vh;
+}
+main div form button{
+    font-size: 2.5vh;
+    height: 6vh;
+}
+main .perfilReg div input{
+    width: 100%;
+}
+main .perfilReg div{
+    padding: 3% 5%;
+}
+main .perfilReg div.fotodePerfil{
+}
+main .perfilReg i{}
+main .perfilReg{
+    top: -33vh;
+}
+main div form input{
+    margin-bottom: 4%;
+    height: 30px;
+}
+main div form label{
+    font-size: 100%;
+}
+main div form img{}
+main div form{
+}
+.pandaFormularioReg{
+    width: 5vh;
+    height: 5vh;
+}
+main div{}
+main .fondo .span2{}
+main .fondo .span1{}
+main .IMG2{}
+main .IMG1{}
+main .fondo{}
+main nav{}
+.bodyRegistro{}
+}
