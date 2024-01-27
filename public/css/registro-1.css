@@ -1,0 +1,52 @@
+main.mainRegistro-1{}
+main.mainRegistro-1 nav{top: 8vh;position: relative;display: flex;justify-content: center;flex-direction: row;}
+main.mainRegistro-1 form{
+    width: 80%;
+    gap: 8px;
+    border-radius: 20px;
+    padding: 4%;
+    background: var(--blanco);
+    display: flex;
+    flex-direction: column;
+}
+main.mainRegistro-1 form label{
+    margin-bottom: -7px;
+}
+main.mainRegistro-1 form input{
+    height: 20px;
+    border: none;
+    background: var(--gris);
+}
+main.mainRegistro-1 form div{}
+main.mainRegistro-1 form .queCallesRegis{
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+main.mainRegistro-1 form div button{}
+
+/*/////////TABLET//////////*/
+
+@media(min-device-width: 768px) {
+.mainRegistro-1{}
+main.mainRegistro-1 nav{}
+.mainRegistro-1 form{}
+.mainRegistro-1 form label{}
+.mainRegistro-1 form input{}
+.mainRegistro-1 form div{}
+main.mainRegistro-1 form .queCallesRegis{}
+.mainRegistro-1 form div button{}
+}
+
+/*/////////ESCRITORIO//////////*/
+
+@media(min-device-width: 1024px) {
+.mainRegistro-1{}
+main.mainRegistro-1 nav{}
+.mainRegistro-1 form{}
+.mainRegistro-1 form label{}
+.mainRegistro-1 form input{}
+.mainRegistro-1 form div{}
+main.mainRegistro-1 form .queCallesRegis{}
+.mainRegistro-1 form div button{}
+}
