@@ -26,7 +26,7 @@ main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction:
 .fondoRegis .span1{
     position: absolute;
     width: 50vw;
-    height: 110%;
+    height: 110vh;
     align-self: start;
     overflow: hidden;
 }
@@ -35,7 +35,7 @@ main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction:
     align-self: end;
     position: absolute;
     overflow: hidden;
-    height: 110%;
+    height: 110vh;
 }
 main.mainRegistro nav form div{
     width: 60%;
@@ -299,7 +299,7 @@ main.mainRegistro nav{top: 55vh;}
     .fondoRegis .IMG1{}
     .fondoRegis{}
     main.mainRegistro nav{
-    top: 46vh;
+    top: 40vh;
 }
     .bodyRegistro{}
 }
