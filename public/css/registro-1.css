@@ -1,9 +1,9 @@
 main.mainRegistro-1{}
-main.mainRegistro-1 nav{top: 8vh;position: relative;display: flex;justify-content: center;flex-direction: row;}
+main.mainRegistro-1 nav{top: 6vh;position: relative;display: flex;justify-content: center;flex-direction: row;}
 main.mainRegistro-1 form{
     width: 80%;
     gap: 8px;
-    border-radius: 20px;
+    border-radius: 7px;
     padding: 4%;
     background: var(--blanco);
     display: flex;
@@ -84,7 +84,9 @@ main.mainRegistro-1 form div.calleReg .callebloReg4{}
 @media(min-device-width: 768px) {
 .mainRegistro-1{}
 main.mainRegistro-1 nav{}
-.mainRegistro-1 form{}
+.mainRegistro-1 form{
+    transform: scale(0.8);
+}
 .mainRegistro-1 form label{}
 .mainRegistro-1 form input{
     width: 50%;
@@ -99,20 +101,20 @@ main.mainRegistro-1 form input.elCienReg{
 main.mainRegistro-1 form .queCallesRegis{}
 main.mainRegistro-1 form div.calleReg{margin: 0px;gap: 10px 0px;display: flex;flex-direction: row;flex-wrap: wrap;}
 main.mainRegistro-1 form div.calleReg .callebloReg1{
-    width: 50%;
+    width: 24%;
     order: 1;
 }
 main.mainRegistro-1 form div.calleReg .callebloReg2{
     width: 50%;
-    order: 4;
+    order: 3;
 }
 main.mainRegistro-1 form div.calleReg .callebloReg3{
-    width: 50%;
+    width: 49%;
     order: 2;
 }
 main.mainRegistro-1 form div.calleReg .callebloReg4{
-    width: 49%;
-    order: 3;
+    width: 48%;
+    order: 4;
 }
 .mainRegistro-1 form div button{}
 main.mainRegistro-1 form div button.botonVolverRegis{
@@ -145,49 +147,63 @@ main.mainRegistro-1 form div button p{
 /*/////////ESCRITORIO//////////*/
 
 @media(min-device-width: 1024px) {
-.mainRegistro-1{}
-main.mainRegistro-1 nav{}
-.mainRegistro-1 form{width: 900px !important;flex-wrap: wrap;flex-direction: row !important;}
-.mainRegistro-1 form label{
+.mainRegistro-1{
 }
+main.mainRegistro-1 nav{
+}
+.mainRegistro-1 form{transform: scale(0.6);height: 533px;width: 760px !important;flex-wrap: wrap;flex-direction: row !important;}
+.mainRegistro-1 form label{}
 .mainRegistro-1 form input{
     height: 30px !important;
     width: 100%;
 }
 main.mainRegistro-1 form input.elCienReg{
+    margin-right: 35%;
+    width: 66%;
+}
+main.mainRegistro-1 form label.elCienReg{
     width: 100%;
 }
 .mainRegistro-1 form div{
-    order: 7;
+    margin-top: 3%;
+    order: 8;
 }
 main.mainRegistro-1 form div.calleReg{
-    width: 63%;
+    display: flex;
+    gap: 15px 6%;
+    width: 66%;
     order: 5;
+    justify-content: center;
 }
 main.mainRegistro-1 form div.calleReg .callebloReg1{}
 main.mainRegistro-1 form div.calleReg .callebloReg2{}
 main.mainRegistro-1 form div.calleReg .callebloReg3{}
 main.mainRegistro-1 form div.calleReg .callebloReg4{}
 .mainRegistro-1 form div.blocReg1{
+    margin: 1.3% 4% 4% 0;
+    gap: 15px;
     order: 1;
     width: 30%;
 }
 .mainRegistro-1 form div.blocReg2{
+    margin: 1.3% 4% 4% 0;
+    gap: 15px;
     order: 2;
     width: 30%;
 }
 .mainRegistro-1 form div.blocReg3{
-    left: 60vw;
-    top: 113px;
-    position: absolute;
+    margin: -25% 0px 0.3% 5%;
+    gap: 15px;
     width: 27%;
-    order: 3;
-}
-.mainRegistro-1 form div.blocReg4{
     order: 6;
 }
+.mainRegistro-1 form div.blocReg4{
+    margin-top: 10px;
+    gap: 15px 0;
+    order: 7;
+}
 main.mainRegistro-1 form .queCallesRegis{
-    top: 45%;
+    top: 47%;
     position: absolute;
     margin: 0;
     width: 62%;
@@ -195,10 +211,17 @@ main.mainRegistro-1 form .queCallesRegis{
 }
 
 .mainRegistro-1 form div button{}
-main.mainRegistro-1 form div button.botonVolverRegis{}
-main.mainRegistro-1 form div button.botonOmitirRegis{}
-main.mainRegistro-1 form div button.botonContinuarRegis{}
-main.mainRegistro-1 form div button p{}
+main.mainRegistro-1 form div button.botonVolverRegis{font-size: 20px;}
+main.mainRegistro-1 form div button.botonOmitirRegis{
+    font-size: 20px;
+}
+main.mainRegistro-1 form div button.botonContinuarRegis{
+    font-size: 20px;
+}
+main.mainRegistro-1 form div button p{
+    width: 159px;
+    margin: 9px;
+}
 
 .mainRegistro-1 form div.blocReg1 .blocReg1-1{}
 .mainRegistro-1 form div.blocReg1 .blocReg1-2{
@@ -218,5 +241,19 @@ main.mainRegistro-1 form div button p{}
 .mainRegistro-1 form div.blocReg3 .blocReg3-5{}
 .mainRegistro-1 form div.blocReg3 .blocReg3-6{}
 
+main.mainRegistro-1 form div.calleReg .callebloReg1{
+ 
+width: 45%;
+}
+main.mainRegistro-1 form div.calleReg .callebloReg2{
+
+width: 46%;
+}
+main.mainRegistro-1 form div.calleReg .callebloReg3{
+}
+main.mainRegistro-1 form div.calleReg .callebloReg4{
+
+width: 46%;
+}
 
 }

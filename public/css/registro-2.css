@@ -1,0 +1,60 @@
+/* Fondo */
+div.fondoRegis-1{
+    flex-direction: column;
+    align-items: center;
+}
+main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction: column;align-items: center;}
+.fondoRegis-1{
+    width: 100vw;
+    display: flex;
+}
+.fondoRegis-1 .IMG1-1{
+    height: 120%;
+    position: absolute;
+    left: -250px;
+    top: -40px;
+    transform: scale(1);
+    }
+.fondoRegis-1 .IMG2-1{
+    height: 111vh;
+    position: absolute;
+    left: -60vh;
+    transform: scale(1);
+    }
+.fondoRegis-1 .span1-1{
+    position: absolute;
+    width: 50vw;
+    height: 110vh;
+    align-self: start;
+    overflow: hidden;
+}
+.fondoRegis-1 .span2-1{
+    width: 50vw;
+    align-self: end;
+    position: absolute;
+    overflow: hidden;
+    height: 110vh;
+}
+@media(min-device-width: 768px) {
+    .fondoRegis-1 .span2-1{
+        height: 140%;
+    }
+    .fondoRegis-1 .span1-1{height: 140%;}
+    .fondoRegis-1 .IMG2-1{
+        height: 100%;
+        left: -40vh;
+    }
+    .fondoRegis-1 .IMG1-1{}
+    .fondoRegis-1{}
+}
+@media(min-device-width: 1024px) {
+        .fondoRegis-1 .span2-1{
+    height: 150vh;
+}
+.fondoRegis-1 .span1-1{
+    height: 150vh;
+}
+.fondoRegis-1 .IMG2-1{}
+    .fondoRegis-1 .IMG1-1{}
+    .fondoRegis-1{}
+}
