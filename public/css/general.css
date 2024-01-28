@@ -1,1 +1,24 @@
+:root{
+    --green: #2d8f2c;
+    --white: #fff;
+}
+
 body{padding: 0;}
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: var(--white)
+    text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  ul {
+    padding: 0;
+  }
