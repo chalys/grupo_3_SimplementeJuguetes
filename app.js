@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const port = 3000;
+const port = 3030;
 
 app.use(express.static('public'))
 
@@ -13,6 +13,11 @@ app.get("/registro", (req, res) => {
 });
 app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/login.html"));
+});
+
+/** Configuración ruta carrito **/
+app.get("/carrito", (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/cart.html"));
 });
 
 app.listen(port,()=>{console.log(`http://localhost:${port}`)})
