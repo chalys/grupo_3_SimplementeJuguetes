@@ -171,13 +171,9 @@ main.mainRegistro .google{
     margin-top: 4%;
     width: 200px;
 }
-<<<<<<< HEAD
-a{
-    text-decoration: none;
-=======
+
 main.mainRegistro .google img{
     width: 3.2vh;
->>>>>>> d64723e1216b9ec490f991e4437066be5b0602cb
 }
 main.mainRegistro .google h2{
     width: 80%;

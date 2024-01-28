@@ -3,7 +3,7 @@ div.fondoRegis-1{
     flex-direction: column;
     align-items: center;
 }
-main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction: column;align-items: center;}
+main.mainRegistro-2 nav{top: 38vh;position: relative;display: flex;flex-direction: column;align-items: center;}
 .fondoRegis-1{
     width: 100vw;
     display: flex;
