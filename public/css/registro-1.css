@@ -1,3 +1,6 @@
+.bodyRegistro-1{
+    margin: 0;
+}
 main.mainRegistro-1{}
 main.mainRegistro-1 nav{top: 6vh;position: relative;display: flex;justify-content: center;flex-direction: row;}
 main.mainRegistro-1 form{
@@ -66,6 +69,13 @@ main.mainRegistro-1 form div.calleReg .callebloReg4{}
     flex-direction: column;
     gap: 6px 0px;
 }
+.mainRegistro-1 form div.blocReg1 select.blocReg1-2{
+    color: gray;
+    width: 100%;
+    height: 20px;
+    border: none;
+    background: var(--gris);
+}
 .mainRegistro-1 form div.blocReg2{
     flex-direction: column;
     gap: 6px 0px;
@@ -82,6 +92,9 @@ main.mainRegistro-1 form div.calleReg .callebloReg4{}
 /*/////////TABLET//////////*/
 
 @media(min-device-width: 768px) {
+.mainRegistro-1 form div.blocReg1 select.blocReg1-2{
+    width: 50%;
+}
 .mainRegistro-1{}
 main.mainRegistro-1 nav{}
 .mainRegistro-1 form{
@@ -148,6 +161,10 @@ main.mainRegistro-1 form div button p{
 
 @media(min-device-width: 1024px) {
 .mainRegistro-1{
+}
+.mainRegistro-1 form div.blocReg1 select.blocReg1-2{
+    width: 100%;
+    height: 30px;
 }
 main.mainRegistro-1 nav{
 }

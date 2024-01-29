@@ -1,14 +1,42 @@
+.bodyRegistro-2{margin: 0;}
+.mainRegistro-2 h2{
+    margin-bottom: 80px;
+}
+.mainRegistro-2 div.RegisExi{
+    box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
+    display: flex;
+    border-radius: 13px;
+    width: 200px;
+    height: 340px;
+    background: var(--blanco);
+    align-items: center;
+    justify-content: center;
+}
+.mainRegistro-2 div.RegisExi div{
+    border-radius: 100%;
+    height: 130px;
+    display: flex;
+    background: var(--gris);
+    width: 130px;
+    justify-content: center;
+    align-items: center;
+}
+.mainRegistro-2 div.RegisExi div i{
+    color: var(--grisObs);
+    font-size: 340%;
+}
 /* Fondo */
 div.fondoRegis-1{
     flex-direction: column;
     align-items: center;
 }
-main.mainRegistro-2 nav{top: 38vh;position: relative;display: flex;flex-direction: column;align-items: center;}
+main.mainRegistro-2 nav{flex-wrap: wrap;top: 12vh;position: relative;display: flex;flex-direction: column;align-items: center;}
 .fondoRegis-1{
     width: 100vw;
     display: flex;
 }
 .fondoRegis-1 .IMG1-1{
+    filter: blur(50px);
     height: 120%;
     position: absolute;
     left: -250px;
@@ -16,6 +44,7 @@ main.mainRegistro-2 nav{top: 38vh;position: relative;display: flex;flex-directio
     transform: scale(1);
     }
 .fondoRegis-1 .IMG2-1{
+    filter: blur(50px);
     height: 111vh;
     position: absolute;
     left: -60vh;
@@ -36,6 +65,9 @@ main.mainRegistro-2 nav{top: 38vh;position: relative;display: flex;flex-directio
     height: 110vh;
 }
 @media(min-device-width: 768px) {
+    main.mainRegistro-2 nav{
+    transform: scale(0.9);
+}
     .fondoRegis-1 .span2-1{
         height: 140%;
     }
@@ -48,6 +80,9 @@ main.mainRegistro-2 nav{top: 38vh;position: relative;display: flex;flex-directio
     .fondoRegis-1{}
 }
 @media(min-device-width: 1024px) {
+    main.mainRegistro-2 nav{
+    transform: scale(0.7);
+}
         .fondoRegis-1 .span2-1{
     height: 150vh;
 }
