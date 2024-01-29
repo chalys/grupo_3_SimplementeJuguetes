@@ -1,0 +1,83 @@
+
+footer.main-footer{
+    background-color: var(--green);
+    color: var(--white);
+    text-align: center;
+} 
+
+footer.main-footer div.container{
+
+padding: 20px 30px;
+}
+
+footer.main-footer div.container div.footer-row{
+
+}
+
+footer.main-footer div.container div.footer-row div.footer-links{
+border-bottom: 1px var(--white) solid;
+}
+
+footer.main-footer div.container div.footer-row div.footer-links figure{
+    
+}
+
+footer.main-footer div.container div.footer-row div.footer-links figure img{
+    
+width: 200px;
+}
+
+footer.main-footer div.container div.footer-row div.footer-links p{
+
+}
+
+footer.main-footer div.container div.footer-row div.footer-links h4.column-title{
+
+}
+
+footer.main-footer div.container div.footer-row div.footer-links ul.links-list{
+}
+
+footer.main-footer div.container div.footer-row div.footer-links ul.links-list li.list-element{
+    padding-bottom: 6px;
+}
+
+footer.main-footer div.container div.footer-row div.footer-links ul.links-list li.list-element a{
+    
+color: var(--white);
+}
+
+footer.main-footer div.container div.footer-row div.footer-links ul.links-redes{
+    
+display: flex;
+    
+justify-content: center;
+    
+gap: 20px;
+    
+font-size: 20px;
+}
+footer.main-footer div.container div.footer-row div.footer-links ul.links-redes li.list-element{
+
+}
+footer.main-footer div.container div.footer-row div.footer-links ul.links-redes li.list-element a{
+
+}
+
+footer.main-footer div.container nav.container-down {
+
+}
+footer.main-footer div.container nav.container-down  ul.down-list {
+
+}
+footer.main-footer div.container nav.container-down  ul.down-list li.down-list-element {
+
+}
+footer.main-footer div.container nav.container-down  ul.down-list li.down-list-element a {
+
+}
+footer.main-footer div.container div.container-cards {
+
+font-size: 40px;
+}
+

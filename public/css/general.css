@@ -1,6 +1,41 @@
 :root{
-    --green: #349c4f;
+    --green: #2d8f2c;
+    --white: #fff;
     --red: #E2001A;
     --orange: #FF9900;
-    --lightorange: #ECB86A;
+    --lightorange: #ECB86A; 
 }
+
+:root{
+  --blanco: white;
+  --gris: #d9d9d9;
+  --grisObs: #8a8a8a;
+  --azul: #5aa6d7;
+}
+
+body{padding: 0;}
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+    
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  ul {
+    padding: 0;
+  }
+
+a{
+
+
+}
+

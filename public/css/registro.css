@@ -1,0 +1,295 @@
+.bodyRegistro{margin: 0px;}
+main.mainRegistro{}
+/* Fondo */
+div.fondoRegis{
+    flex-direction: column;
+    align-items: center;
+}
+main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction: column;align-items: center;}
+.fondoRegis{
+    width: 100vw;
+    display: flex;
+}
+.fondoRegis .IMG1{
+    height: 120%;
+    position: absolute;
+    left: -250px;
+    top: -40px;
+    transform: scale(1);
+    }
+.fondoRegis .IMG2{
+    height: 111vh;
+    position: absolute;
+    left: -60vh;
+    transform: scale(1);
+    }
+.fondoRegis .span1{
+    position: absolute;
+    width: 50vw;
+    height: 110vh;
+    align-self: start;
+    overflow: hidden;
+}
+.fondoRegis .span2{
+    width: 50vw;
+    align-self: end;
+    position: absolute;
+    overflow: hidden;
+    height: 110vh;
+}
+main.mainRegistro nav form div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main.mainRegistro nav div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main.mainRegistro div.divFormReg{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*formulario*/
+.pandaFormularioReg{
+    margin-bottom: 3%;
+    width: 27px;
+    height: 27px;
+}
+main.mainRegistro div form{
+    box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
+    width: 31vh;
+    padding: 3px 15px 0px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+main.mainRegistro div form img{
+    width: 30px;
+    height: 30px;
+    align-self: center;
+}
+main.mainRegistro div form label{
+}
+main.mainRegistro div form input{
+    height: 24px;
+    margin-bottom: 7%;
+    width: 100%;
+    background-color: var(--gris);
+    border: none;
+    }
+main.mainRegistro .perfilReg{
+    gap: 2vw;
+    top: -32vh;
+    left: 20%;
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+}
+main.mainRegistro .perfilReg i{
+    color: var(--grisObs);
+    font-size: 60px;
+}
+main.mainRegistro .perfilReg div.fotodePerfil{
+    border: solid 1vh var(--blanco);
+    background-color: var(--gris);
+    align-items: center;
+    justify-content: center;
+    width: 16vh;
+    height: 16vh;
+    border-radius: 100%;
+}
+main.mainRegistro .perfilReg div{
+    box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
+    border-radius: 50px;
+    width: 31vh;
+    padding: 10px 10px;
+    background-color: var(--blanco);
+}
+main.mainRegistro .perfilReg div label{}
+main.mainRegistro .perfilReg div input{
+    margin: 0px;
+    width: 90%;
+}
+main.mainRegistro div form button{
+    margin-top: 10%;
+    height: 40px;
+    border: solid 1px;
+    background-color: var(--azul);
+    font-size: 17px;
+}
+main.mainRegistro div form button a{}
+
+/*redireccion al login*/
+main.mainRegistro div h2{
+    box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
+    padding: 3% 0px 50px 0px;
+    text-align: center;
+    font-size: 13px;
+    width: 31vh;
+    background-color: var(--blanco);
+    border-radius: 0px 0px 10px 10px;
+    margin: 0;
+}
+main.mainRegistro div h2 a{
+    text-decoration: underline;
+    color: #0085ff;
+}
+
+/*acceder a google*/
+main.mainRegistro div.google{
+    box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
+    border-radius: 50px;
+    padding: 15px;
+    width: 210px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.1vh;
+    flex-direction: row;
+    background-color: var(--blanco);
+    }
+main.mainRegistro div.google img{width: 17px;}
+main.mainRegistro div.google h2{box-shadow: 0px 0px 0px rgb(0 0 0 / 0%);padding: 0px;font-size: 15px;background-color: rgba(0,0,0,0);}
+main.mainRegistro div.google h2 a{
+    color: black;
+    text-decoration: none;
+}
+
+
+/*/////////TABLET//////////*/
+
+@media(min-device-width: 768px) {
+main.mainRegistro .google{
+    margin-top: 4%;
+    width: 200px;
+}
+
+main.mainRegistro .google img{
+    width: 3.2vh;
+}
+main.mainRegistro .google h2{
+    width: 80%;
+    font-size: 14px;
+}
+main.mainRegistro .google h2 a{}
+main.mainRegistro div h2 a{}
+main.mainRegistro div h2{
+    width: 47%;
+    padding: 3% 0px 9% 0px;
+    font-size: 14px;
+}
+main.mainRegistro div form button{
+    font-size: 90%;
+    height: 35px;
+}
+main.mainRegistro .perfilReg div input{
+    width: 100%;
+}
+main.mainRegistro .perfilReg div{
+    width: 47%;
+    padding: 2% 5%;
+}
+main.mainRegistro .perfilReg div.fotodePerfil{width: 110px;height: 110px;}
+main.mainRegistro .perfilReg i{}
+main.mainRegistro .perfilReg{
+    top: -55%;
+}
+main.mainRegistro div form input{
+    margin-bottom: 4%;
+    height: 26px;
+}
+main.mainRegistro div form label{
+    font-size: 100%;
+}
+main.mainRegistro div form img{}
+main.mainRegistro div form{width: 47%;}
+.pandaFormularioReg{
+    width: 7vh;
+    height: 7vh;
+}
+main.mainRegistro div{}
+.fondoRegis .span2{
+    height: 140%;
+}
+.fondoRegis .span1{height: 140%;}
+.fondoRegis .IMG2{
+    height: 100%;
+    left: -40vh;
+}
+.fondoRegis .IMG1{}
+.fondoRegis{}
+main.mainRegistro nav{top: 55vh;}
+.bodyRegistro{}
+}
+
+/*/////////ESCRITORIO//////////*/
+
+@media(min-device-width: 1024px) {
+    main.mainRegistro div form input{}
+    main.mainRegistro form .margenEspRegis{
+    margin-bottom: -170px;
+}
+    main.mainRegistro .google{padding: 10px;}
+    main.mainRegistro .google img{
+    width: 24px;
+}
+    main.mainRegistro .google h2{}
+    main.mainRegistro .google h2 a{}
+    main.mainRegistro div h2 a{}
+    main.mainRegistro div h2{
+    font-size: 13px;
+    padding: 1% 0 5% 0;
+    width: 200px;
+}
+    main.mainRegistro div form button{
+    width: 170px;
+}
+    main.mainRegistro .perfilReg div input{}
+    main.mainRegistro .perfilReg div{
+    padding: 7px 10px;
+    width: 200px;
+}
+    main.mainRegistro .perfilReg div.fotodePerfil{border: solid 6px var(--blanco);}
+    main.mainRegistro .perfilReg i{
+    font-size: 60px;
+}
+    main.mainRegistro .perfilReg{
+    position: relative;
+    left: 130%;
+    width: auto;
+}
+    main.mainRegistro div form input{}
+    main.mainRegistro div form label{}
+    main.mainRegistro div form img{}
+    main.mainRegistro div form{
+    width: 200px;
+}
+    .pandaFormularioReg{
+    width: 50px;
+    height: 50px;
+    margin-right: 23px;
+}
+    main.mainRegistro div{
+}
+    .fondoRegis .span2{
+    height: 150vh;
+}
+.fondoRegis .span1{
+    height: 150vh;
+}
+.fondoRegis .IMG2{}
+    .fondoRegis .IMG1{}
+    .fondoRegis{}
+    main.mainRegistro nav{
+    top: 40vh;
+}
+    .bodyRegistro{}
+}
