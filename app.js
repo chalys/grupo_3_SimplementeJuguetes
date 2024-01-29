@@ -23,4 +23,8 @@ app.get("/carrito", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/cart.html"));
 });
 
+app.get("/detail", (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/detail.html"));
+});
+
 app.listen(port,()=>{console.log(`http://localhost:${port}`)})

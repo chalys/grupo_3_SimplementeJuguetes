@@ -1,0 +1,113 @@
+main.main-product{}
+
+main .main-product img.main-photo{
+    width: 80vw;
+    border: 1px solid black;
+    display: block;
+    margin: 0 auto;
+}
+
+main .main-product h1{
+}
+
+main .main-product h2{
+    color: var(--green)
+}
+
+main.main-product.dues{}
+
+main .main-product .payment{
+    color: var(--red);
+}
+
+main .main-product img{
+    width: 15%;
+}
+
+main .characteristics .basics tr .attribute{
+    color: var(--red);
+}
+
+main .buy .amount{
+}
+
+main .buy .buttons a{
+    margin: 2vh 0;
+    padding: 20px 0;
+    margin: 2vh 8vw;
+    padding: 20px 0;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+}
+
+main .buy .add{
+    display: block;
+    color: var(--green);
+    border: var(--green) 1px solid;
+}
+
+main .buy .buy-now{
+    display: block;
+    color: white;
+    background-color: var(--green);
+}
+
+/*PRODUCTOS REALACIONADOS*/
+
+main .related-products{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+main .related-products article{
+    display: inline-block;
+}
+
+main .related-products article .product{
+}
+
+main .related-products a img{
+    width: 30vw;
+    border: var(--green) 1px solid;
+}
+
+/*CARACTERISTICAS DEL PRODUCTO*/
+main .all-features{
+}
+
+main .all-features .toy-information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--orange);
+    border-radius: 5px;
+    margin: 25px 0;
+}
+
+main .all-features .toy-information tr{
+
+}
+
+main .all-features .toy-information tr td{
+    padding: 20px;
+}
+
+main .all-features .low-opacity{
+}
+
+main .all-features .more-information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--orange);
+    border-radius: 5px;
+}
+
+main .all-features .more-information tr{
+
+}
+
+main .all-features .more-information tr td{
+    padding: 20px;
+}
