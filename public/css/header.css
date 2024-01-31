@@ -1,0 +1,132 @@
+.header{
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    background: var(--red);
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.header figure{
+    height: 40px;
+    margin: 0;
+    width: 40px;
+}
+.header figure.pandaHeader{
+    background: rgba(0,0,0,0.1);
+    width: 50px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 100%;
+    height: 50px;
+}
+.header figure img{
+    width: 100%;
+    height: 100%;
+}
+.header h1{
+    display: none;
+}
+.header div.selectoresHeader{
+    display: none;
+}
+.header div.selectoresHeader select{}
+.header div.selectoresHeader select option{}
+.header div.busquedaHeader{
+    border-radius: 10px;
+    display: flex;
+    width: 60px;
+    height: 25px;
+    background: var(--blanco);
+    justify-content: space-between;
+}
+.header div.busquedaHeader input{
+    background: rgba(0,0,0,0);
+    border: none;
+    width: 70%;
+    height: 100%;
+}
+.header div.busquedaHeader figure{
+    display: flex;
+    height: 100%;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+.header div.busquedaHeader figure i{
+}
+.header div.iconosHeader{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.header div.iconosHeader a{}
+.header div.iconosHeader a i{
+    color: var(--blanco);
+}
+.header div.ofertasYOutlet{
+    display: none;
+}
+.header div.ofertasYOutlet h3{}
+.header div.ofertasYOutlet h3.ofertasHeader{}
+.header div.ofertasYOutlet h3.outletHeader{}
+.header figure.barrasHeader{
+    width: 30px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header figure.barrasHeader i{
+    color: var(--blanco);
+}
+
+/*/////////TABLET//////////*/
+
+@media(min-device-width: 768px) {
+.header{}
+.header figure{}
+.header figure img{}
+.header h1{}
+.header div.selectoresHeader{}
+.header div.selectoresHeader select{}
+.header div.selectoresHeader select option{}
+.header div.busquedaHeader{}
+.header div.busquedaHeader input{}
+.header div.busquedaHeader figure{}
+.header div.busquedaHeader figure i{}
+.header div.iconosHeader{}
+.header div.iconosHeader a{}
+.header div.iconosHeader a i{}
+.header div.ofertasYOutlet{}
+.header div.ofertasYOutlet h3{}
+.header div.ofertasYOutlet h3.ofertasHeader{}
+.header div.ofertasYOutlet h3.outletHeader{}
+.header figure.barrasHeader{}
+.header figure.barrasHeader i{}
+}
+
+/*/////////ESCRITORIO//////////*/
+
+@media(min-device-width: 1024px) {
+.header{}
+.header figure{}
+.header figure img{}
+.header h1{}
+.header div.selectoresHeader{}
+.header div.selectoresHeader select{}
+.header div.selectoresHeader select option{}
+.header div.busquedaHeader{}
+.header div.busquedaHeader input{}
+.header div.busquedaHeader figure{}
+.header div.busquedaHeader figure i{}
+.header div.iconosHeader{}
+.header div.iconosHeader a{}
+.header div.iconosHeader a i{}
+.header div.ofertasYOutlet{}
+.header div.ofertasYOutlet h3{}
+.header div.ofertasYOutlet h3.ofertasHeader{}
+.header div.ofertasYOutlet h3.outletHeader{}
+.header figure.barrasHeader{}
+.header figure.barrasHeader i{}
+}
