@@ -1,0 +1,61 @@
+.mn-container{
+    width: 100%;
+}
+
+.mn-title{
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.mn-title-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mn-title-list-item-link{
+    color: var(--white);
+}
+
+.mn-box{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mn-box-shipping{
+    border: 1px dashed var(--grisObs);
+
+}
+.mn-box-shipping-text{
+    margin: 0px;
+}
+.mn-box-shipping-progress{}
+.progress-bar-custom{
+
+}
+
+.mn-box-coupon, .mn-box-totals {
+    border: 1px solid var(--grisObs);
+}
+
+.mn-box-custom{
+    border-radius: 10px;
+    padding: 20px;
+    margin:20px 0px
+
+}
+
+.mn-box-totals-form-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.btn-custom{
+    width: 100%;
+    background-color: var(--green) !important;
+    color: var(--white) !important;
+
+}
+
