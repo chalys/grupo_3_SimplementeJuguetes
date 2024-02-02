@@ -41,17 +41,43 @@
 .mn-box-custom{
     border-radius: 10px;
     padding: 20px;
-    margin:20px 0px
-
+    margin:20px 0px;
 }
 
 .mn-box-totals-form-item{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 10px 0px;
 }
 
+.container-subtotals, .container-shipping{
+    border-bottom: 1px solid var(--grisObs);
+}
 
+.subtotals{
+
+}
+
+.mn-box-totals-form-item-adress{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.lbl-free{
+    color: var(--green);
+}
+.lbl-city{
+    color: var(--grisObs);
+}
+.lbl-address{
+    color: var(--orange);
+}
+.lbl-totals{}
+.lbl-totals-price{
+    color: var(--orange);
+}
 .btn-custom{
     width: 100%;
     background-color: var(--green) !important;
