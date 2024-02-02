@@ -29,4 +29,7 @@ app.get("/detail", (req, res) => {
 app.get("/registro-paso-3", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/registro-2.html"));
 });
+app.get("/inicio", (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/home.html"));
+});
 app.listen(port,()=>{console.log(`http://localhost:${port}`)})
