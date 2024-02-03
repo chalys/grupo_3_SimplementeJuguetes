@@ -83,13 +83,13 @@
 
 /*/////////TABLET//////////*/
 
-@media(min-device-width: 768px) {
+@media(min-device-width: 426px) {
 .header{
     height: 90px;
 }
 .header figure{}
 .header figure img{}
-.header h1{display: flex !important;width: 30%;font-size: 18px;display: inline-block;}
+.header h1{margin-left: 20px;display: flex !important;width: 30%;font-size: 2.1vw;display: inline-block;}
 .header h1 p.tituloNegro{
 }
 .header h1 p.tituloBlanco{
@@ -107,7 +107,7 @@
 .header div.busquedaHeader figure i{}
 .header div.iconosHeader{
     font-size: 20px;
-    gap: 30px;
+    gap: 20px;
 }
 .header div.iconosHeader a{}
 .header div.iconosHeader a i{}
@@ -128,7 +128,7 @@
 
 /*/////////ESCRITORIO//////////*/
 
-@media(min-device-width: 1024px) {
+@media(min-device-width: 769px) {
 .header{
     position: relative;
     height: 110px;
@@ -202,8 +202,10 @@
 .header div.ofertasYOutlet h3.outletHeader a{
     color: var(--blanco);
     font-size: 12px;
+    text-decoration: none;
 }
 .header div.ofertasYOutlet h3.ofertasHeader a{
+    text-decoration: none;
     font-size: 12px;
     color: var(--blanco);
 }

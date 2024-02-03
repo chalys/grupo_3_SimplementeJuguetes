@@ -60,6 +60,10 @@ main.mainRegistro-1 form div button p{
     margin: 1px;
     width: 60px;
 }
+main.mainRegistro-1 form div button p a{
+    text-decoration: none;
+    color: black;
+}
 main.mainRegistro-1 form div.calleReg{}
 main.mainRegistro-1 form div.calleReg .callebloReg1{}
 main.mainRegistro-1 form div.calleReg .callebloReg2{}

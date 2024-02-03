@@ -126,7 +126,10 @@ main.mainRegistro div form button{
     background-color: var(--azul);
     font-size: 17px;
 }
-main.mainRegistro div form button a{}
+main.mainRegistro div form button a{
+    text-decoration: none;
+    color: black;
+}
 
 /*redireccion al login*/
 main.mainRegistro div h2{
@@ -168,8 +171,8 @@ main.mainRegistro div.google h2 a{
 
 @media(min-device-width: 768px) {
 main.mainRegistro .google{
-    margin-top: 4%;
-    width: 200px;
+    margin-top: 4% !important;
+    width: 200px !important;
 }
 
 main.mainRegistro .google img{
