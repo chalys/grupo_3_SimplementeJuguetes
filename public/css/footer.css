@@ -34,6 +34,7 @@ footer.ft-container div.ft-row div.ft-row-item h4.ft-title {
 }
 
 footer.ft-container div.ft-row div.ft-row-item ul.ft-links-list {
+    padding: 0px;
 }
 
 footer.ft-container
@@ -41,6 +42,7 @@ footer.ft-container
   div.ft-row-item
   ul.ft-links-list
   li.ft-links-list-item {
+  list-style: none;
   padding-bottom: 0.6rem;
 }
 
@@ -51,12 +53,13 @@ footer.ft-container
   li.ft-links-list-item
   a {
   color: var(--white);
+  text-decoration: none;
 }
 
 footer.ft-container div.ft-row div.ft-row-item ul.ft-social-list {
   display: flex;
   justify-content: center;
-  /* gap: 0.5rem; */
+  padding: 0px;
 }
 footer.ft-container
   div.ft-row
@@ -65,6 +68,7 @@ footer.ft-container
   li.ft-social-list-item {
   font-size: 1.25rem;
   margin: 0.6rem;
+  list-style: none;
 }
 footer.ft-container
   div.ft-row
@@ -78,14 +82,14 @@ footer.ft-container div.ft-down {
 }
 footer.ft-container div.ft-down div.ft-legal {
 }
-footer.ft-container div.ft-down div.ft-legal ul.ft-legal-list {
-}
+footer.ft-container div.ft-down div.ft-legal ul.ft-legal-list {padding: 0px;}
 footer.ft-container
   div.ft-down
   div.ft-legal
   ul.ft-legal-list
   li.ft-legal-list-item {
   padding-bottom: 0.6rem;
+  list-style: none;
 }
 footer.ft-container
   div.ft-down
@@ -94,6 +98,7 @@ footer.ft-container
   li.ft-legal-list-item
   a {
   color: var(--white);
+  text-decoration: none;
 }
 
 footer.ft-container div.ft-down div.ft-card {
