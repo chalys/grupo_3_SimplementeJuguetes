@@ -11,6 +11,41 @@
 <!--titulo de la pagina -->
 <title>Registro</title>
     </head>
+        <!--   HEADER    -->
+        <header class="header">
+            <figure class="pandaHeader"><img src="../imagen/panda-logo.png" alt="Simplemente Juguetes"></figure>
+            <h1><p class="tituloNegro">SIMPLEMENTE</p><p class="tituloBlanco">JUGUETES</p></h1>
+            <div class="selectoresHeader">
+                <select class="">
+                    <option value="" selected hidden>JUEGOS Y JUGUETES</option>
+                    <option value=""></option>
+                  </select>
+                  <select class="">
+                    <option value="" selected hidden>EDADES</option>
+                    <option value=""></option>
+                  </select>
+                  <select class="">
+                    <option value="" selected hidden>PERSONAJES</option>
+                    <option value=""></option>
+                  </select>
+            </div>
+            <!--busqueda-->
+            <div class="busquedaHeader">
+                <input type="text" placeholder="Buscar..."><figure><i class="fa-solid fa-magnifying-glass"></i></figure>
+            </div>
+            <!--iconos del header-->
+            <div class="iconosHeader">
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+            <a href="/login"><i class="fa-solid fa-user"></i></a>
+            <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <!--ofertas y outlet-->
+            <div class="ofertasYOutlet">
+            <h3 class="ofertasHeader"><a href="/"><i class="fa-solid fa-fire-flame-curved"></i>OFERTAS</a></h3>
+            <h3 class="outletHeader"><a href="">OUTLET</a></h3>
+            </div>
+        <figure class="barrasHeader"><i class="fa-solid fa-bars"></i></figure>
+               </header>
     <body class="bodyRegistro-1">
 <main class="mainRegistro-1">
 <div class="fondoRegis">
@@ -28,7 +63,7 @@
     <input type="text" class="elCienReg" placeholder="nombreEjemplo" name="" value="">
 <div class="blocReg1">
     <label for="provincia" class="blocReg1-1">Provincia</label>
-    <select class="blocReg1-2" placeholder="provinciaEjemplo" name="" value="">
+    <select class="blocReg1-2" name="" value="">
         <option value="" selected hidden>provinciaEjemplo</option>
         <option value="BA">Buenos Aires</option>
         <option value="CA">Catamarca</option>
@@ -83,8 +118,8 @@
     <input type="text" class="elCienReg" placeholder="textoEjemplo" name="" value="">
 </div>
 <div>
-        <button class="botonVolverRegis"><p>Volver</p></button>
-        <button class="botonOmitirRegis"><p>Omitir</p></button>
+        <button class="botonVolverRegis"><p><a href="/registro">Volver</a></p></button>
+        <button class="botonOmitirRegis"><p><a href="/registro-paso-3">Omitir</a></p></button>
         <button class="botonContinuarRegis"><p><a href="/registro-paso-3">Continuar</a></p></button>
 </div>
 </form>
