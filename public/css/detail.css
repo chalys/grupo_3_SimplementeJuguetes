@@ -1,7 +1,7 @@
 main.main-product{}
 
 main .main-product img.main-photo{
-    width: 80vw;
+    width: 300px;
     border: 1px solid black;
     display: block;
     margin: 0 auto;
@@ -11,17 +11,24 @@ main .main-product h1{
 }
 
 main .main-product h2{
-    color: var(--green)
+    color: var(--green);
+    margin: 2px 0;
 }
 
-main.main-product.dues{}
+main .main-product .dues{
+    margin: 2px 0;
+}
 
 main .main-product .payment{
     color: var(--red);
 }
 
 main .main-product img{
-    width: 15%;
+    width: 50px;
+}
+
+main .characteristics h2{
+    border-bottom: 2px solid var(--green);
 }
 
 main .characteristics .basics tr .attribute{
@@ -53,18 +60,24 @@ main .buy .buy-now{
     background-color: var(--green);
 }
 
-/*PRODUCTOS REALACIONADOS*/
+/*----------------------------------------------------------PRODUCTOS REALACIONADOS*/
 
 main .related-products{
     overflow-x: auto;
-    white-space: nowrap;
+    white-space: nowrap;    
+}
+
+main .related-products h2{ 
+    margin-top: 50px;
+    border-bottom: 2px solid var(--green); /* Ancho y color de la línea */    
 }
 
 main .related-products article{
     display: inline-block;
 }
 
-main .related-products article .product{
+main .related-products article.product{
+    margin: 0 20px;
 }
 
 main .related-products a img{
@@ -72,42 +85,408 @@ main .related-products a img{
     border: var(--green) 1px solid;
 }
 
-/*CARACTERISTICAS DEL PRODUCTO*/
+main .related-products p{
+    overflow-wrap: break-word;
+}
+
+/*-------------------------------------------------------CARACTERISTICAS DEL PRODUCTO*/
 main .all-features{
+}
+
+main .all-features h2{
+    margin-top: 50px;
+    border-bottom: 2px solid var(--green);
 }
 
 main .all-features .toy-information{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--orange);
     border-radius: 5px;
     margin: 25px 0;
+    color: var(--white);
+    border-collapse: collapse
 }
 
-main .all-features .toy-information tr{
+main .all-features .toy-information tr:nth-child(odd){
+    background-color: var(--orange); /* Color para las filas impares */
+}
 
+main .all-features .toy-information tr:nth-child(even){
+    background-color: var(--lightorange); /* Color para las filas pares */
 }
 
 main .all-features .toy-information tr td{
-    padding: 20px;
-}
-
-main .all-features .low-opacity{
+    padding: 30px 70px;
 }
 
 main .all-features .more-information{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--orange);
     border-radius: 5px;
+    color: var(--white);
+    border-collapse: collapse;
 }
 
-main .all-features .more-information tr{
+main .all-features .more-information tr:nth-child(odd){
+    background-color: var(--orange); /* Color para las filas impares */
+}
 
+main .all-features .more-information tr:nth-child(even){
+    background-color: var(--lightorange); /* Color para las filas pares */
 }
 
 main .all-features .more-information tr td{
-    padding: 20px;
+    padding: 30px 60px;
 }
+
+/*--------------------------------------------------------------------DESCRIPCION*/
+
+main .description h2{
+    margin-top: 50px;
+    border-bottom: 2px solid green;
+}
+
+main .description p{
+    margin: 0 0 40px 0;
+}
+
+
+/*----/////////////////////////////////---MEDIA QUERY----/////////////////////////////////-----*/
+
+@media (min-width: 460px){
+    /*TABLET*/
+    main.main-product{}
+
+    main .main-product img.main-photo{
+        width: 300px;
+        border: 1px solid black;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    main .main-product h1{
+    }
+    
+    main .main-product h2{
+        color: var(--green);
+        margin: 2px 0;
+    }
+    
+    main .main-product .dues{
+        margin: 2px 0;
+    }
+    
+    main .main-product .payment{
+        color: var(--red);
+    }
+    
+    main .main-product img{
+        width: 50px;
+    }
+    
+    main .characteristics h2{
+        border-bottom: 2px solid var(--green);
+    }
+    
+    main .characteristics .basics tr .attribute{
+        color: var(--red);
+    }
+    
+    main .buy .buttons {
+        display: flex;
+        justify-content: center; /* Centra los elementos horizontalmente */
+    }
+    
+    main .buy .buttons a {
+        margin: 2vh 4vw; /* Ajusta el margen horizontal según sea necesario */
+        padding: 20px 6vw;
+        border-radius: 50px;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block; /* Cambia de block a inline-block */
+    }
+    
+    main .buy .add {
+        color: var(--green);
+        border: var(--green) 1px solid;
+    }
+    
+    main .buy .buy-now {
+        color: white;
+        background-color: var(--green);
+    }
+    
+    
+    /*-----------------------------------------------------PRODUCTOS REALACIONADOS*/
+    
+    main .related-products{
+        overflow-x: auto;
+        white-space: nowrap;    
+    }
+    
+    main .related-products h2{ 
+        margin-top: 50px;
+        border-bottom: 2px solid var(--green); /* Ancho y color de la línea */    
+    }
+    
+    main .related-products article{
+        display: inline-block;
+    }
+    
+    main .related-products article.product{
+        margin: 0 20px;
+    }
+    
+    main .related-products a img{
+        width: 30vw;
+        border: var(--green) 1px solid;
+    }
+    
+    main .related-products p{
+        overflow-wrap: break-word;
+    }
+    
+    /*-----------------------------------------------------CARACTERISTICAS DEL PRODUCTO*/
+    main .all-features{
+    }
+    
+    main .all-features h2{
+        margin-top: 50px;
+        border-bottom: 2px solid var(--green);
+    }
+    
+    main .all-features .toy-information{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin: 25px 0;
+        color: var(--white);
+        border-collapse: collapse
+    }
+    
+    main .all-features .toy-information tr:nth-child(odd){
+        background-color: var(--orange); /* Color para las filas impares */
+    }
+    
+    main .all-features .toy-information tr:nth-child(even){
+        background-color: var(--lightorange); /* Color para las filas pares */
+    }
+    
+    main .all-features .toy-information tr td{
+        padding: 30px 70px;
+    }
+    
+    main .all-features .more-information{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        color: var(--white);
+        border-collapse: collapse;
+    }
+    
+    main .all-features .more-information tr:nth-child(odd){
+        background-color: var(--orange); /* Color para las filas impares */
+    }
+    
+    main .all-features .more-information tr:nth-child(even){
+        background-color: var(--lightorange); /* Color para las filas pares */
+    }
+    
+    main .all-features .more-information tr td{
+        padding: 30px 60px;
+    }
+    
+    /*--------------------------------------------------------------------DESCRIPCION*/
+    
+    main .description h2{
+        margin-top: 50px;
+        border-bottom: 2px solid green;
+    }
+    
+    main .description p{
+        margin: 0 0 40px 0;
+    }    
+}
+
+@media (min-width: 769px){
+    /*LAPTOP*/
+    main .main-product{
+        margin: 20px 0;
+        
+    }
+
+    main .container{
+        width: 55vw;
+        padding: 10px 10px;
+        overflow: auto;
+        border-left: 1.5px solid var(--green);
+    }
+
+    main .main-product img.main-photo{
+        width: 40vw;
+        border: 1px solid var(--green);
+        margin: 0 0;
+        float: left;
+        margin-right: 20px;
+    }
+    
+    main .main-product h1{
+        margin: 0 0;
+    }
+    
+    main .main-product h2{
+        color: var(--green);
+        margin: 2px 0;
+    }
+    
+    main .main-product .dues{
+        margin: 2px 0;
+    }
+    
+    main .main-product .payment{
+        color: var(--red);
+    }
+    
+    main .main-product img{
+        width: 50px;
+    }
+    
+    main .characteristics h2{
+        margin: 0 0;
+        border-bottom: 2px solid var(--green);
+    }
+    
+    main .characteristics .basics tr .attribute{
+        color: var(--red);
+    }
+    
+    main .buy .buttons {
+        display: flex;
+        justify-content: center; /* Centra los elementos horizontalmente */
+    }
+    
+    main .buy .buttons a {
+        margin: 2vh 1vw; /* Ajusta el margen horizontal según sea necesario */
+        padding: 20px 50px;
+        border-radius: 50px;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block; /* Cambia de block a inline-block */
+    }
+    
+    main .buy .add {
+        color: var(--green);
+        border: var(--green) 1px solid;
+    }
+    
+    main .buy .buy-now {
+        color: white;
+        background-color: var(--green);
+    }
+    
+    
+    /*-----------------------------------------------------PRODUCTOS REALACIONADOS*/
+    
+    main .related-products{
+        width: 100%;
+    }
+
+    main .products{
+        overflow-x: auto;
+        white-space: nowrap; 
+    }
+    
+    main .related-products h2{ 
+        margin-top: 50px;
+        border-bottom: 2px solid var(--green); /* Ancho y color de la línea */    
+    }
+    
+    main .related-products article{
+        display: inline-block;
+    }
+    
+    main .related-products article.product{
+        margin: 0 20px;
+    }
+    
+    main .related-products a img{
+        width: 25vw;
+        border: var(--green) 1px solid;
+    }
+    
+    main .related-products p{
+        overflow-wrap: break-word;
+    }
+    
+    /*-----------------------------------------------------CARACTERISTICAS DEL PRODUCTO*/
+    main .all-features{
+   
+    }
+
+    main .all-table{
+        text-align: center;
+    }
+
+    main .all-features h2{
+        margin-top: 50px;
+        border-bottom: 2px solid var(--green);
+    }
+    
+    main .all-features .toy-information{
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        margin: 25px 25px;
+        color: var(--white);
+        border-collapse: collapse
+    }
+    
+    main .all-features .toy-information tr:nth-child(odd){
+        background-color: var(--orange); /* Color para las filas impares */
+    }
+    
+    main .all-features .toy-information tr:nth-child(even){
+        background-color: var(--lightorange); /* Color para las filas pares */
+    }
+    
+    main .all-features .toy-information tr td{
+        padding: 30px 70px;
+    }
+    
+    main .all-features .more-information{
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin: 25px 25px;
+        color: var(--white);
+        border-collapse: collapse;
+    }
+    
+    main .all-features .more-information tr:nth-child(odd){
+        background-color: var(--orange); /* Color para las filas impares */
+    }
+    
+    main .all-features .more-information tr:nth-child(even){
+        background-color: var(--lightorange); /* Color para las filas pares */
+    }
+    
+    main .all-features .more-information tr td{
+        padding: 30px 60px;
+    }
+    /*--------------------------------------------------------------------DESCRIPCION*/
+    
+    main .description h2{
+        margin-top: 50px;
+        border-bottom: 2px solid green;
+    }
+    
+    main .description p{
+        margin: 0 0 40px 0;
+    }   
+}
+
