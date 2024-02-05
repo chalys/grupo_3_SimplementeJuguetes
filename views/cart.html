@@ -17,8 +17,43 @@
 
 <body>
     <!-- Header -->
-    <header>
-
+    <header class="header">
+        <figure class="pandaHeader"><img src="../imagen/panda-logo.png" alt="Simplemente Juguetes"></figure>
+        <h1>
+            <p class="tituloNegro">SIMPLEMENTE</p>
+            <p class="tituloBlanco">JUGUETES</p>
+        </h1>
+        <div class="selectoresHeader">
+            <select class="">
+                <option value="" selected hidden>JUEGOS Y JUGUETES</option>
+                <option value=""></option>
+            </select>
+            <select class="">
+                <option value="" selected hidden>EDADES</option>
+                <option value=""></option>
+            </select>
+            <select class="">
+                <option value="" selected hidden>PERSONAJES</option>
+                <option value=""></option>
+            </select>
+        </div>
+        <!--busqueda-->
+        <div class="busquedaHeader">
+            <input type="text" placeholder="Buscar...">
+            <figure><i class="fa-solid fa-magnifying-glass"></i></figure>
+        </div>
+        <!--iconos del header-->
+        <div class="iconosHeader">
+            <a href=""><i class="fa-solid fa-heart"></i></a>
+            <a href="/login"><i class="fa-solid fa-user"></i></a>
+            <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <!--ofertas y outlet-->
+        <div class="ofertasYOutlet">
+            <h3 class="ofertasHeader"><a href="/"><i class="fa-solid fa-fire-flame-curved"></i>OFERTAS</a></h3>
+            <h3 class="outletHeader"><a href="">OUTLET</a></h3>
+        </div>
+        <figure class="barrasHeader"><i class="fa-solid fa-bars"></i></figure>
     </header>
     <!-- Main -->
     <main class="mn-container">
@@ -46,41 +81,41 @@
                 </article>
                 <!-- Products -->
                 <article class="mn-box-product">
-                <div class="vt-desktop">
-                    <div></div>
-                    <div></div>
-                    <div>PRODUCTO</div>
-                    <div>PRECIO</div>
-                    <div>CANTIDAD</div>
-                    <div>SUBTOTAL</div>
-                </div>
-                <div class="vt-mobile-tableta">
-                    <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
-                    <figure class="product-fig">
-                        <img class="product-img" src="/imagen/pistolaAgua.jpg" alt="">
-                    </figure>
-                    <div class="prueba">
-                        <div class="product-details">                           
-                            <label for="">Pistola de agua - Sin Marca</label>
-                        </div>
-                        <div class="product-price">
-                            <label class="lbl-product" for="">PRECIO</label>
-                            <label for="">$64.890</label>
-                        </div>
-                        <div class="product-amount">
-                            <label class="lbl-product" for="">CANTIDAD</label>
-                            <div class="product-up-down">
-                                <span>-</span>
-                                <span>1</span>
-                                <span>+</span>
+                    <div class="vt-desktop">
+                        <div></div>
+                        <div></div>
+                        <div>PRODUCTO</div>
+                        <div>PRECIO</div>
+                        <div>CANTIDAD</div>
+                        <div>SUBTOTAL</div>
+                    </div>
+                    <div class="vt-mobile-tableta">
+                        <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                        <figure class="product-fig">
+                            <img class="product-img" src="/imagen/pistolaAgua.jpg" alt="">
+                        </figure>
+                        <div class="prueba">
+                            <div class="product-details">
+                                <label for="">Pistola de agua - Sin Marca</label>
+                            </div>
+                            <div class="product-price">
+                                <label class="lbl-product" for="">PRECIO</label>
+                                <label for="">$64.890</label>
+                            </div>
+                            <div class="product-amount">
+                                <label class="lbl-product" for="">CANTIDAD</label>
+                                <div class="product-up-down">
+                                    <span>-</span>
+                                    <span>1</span>
+                                    <span>+</span>
+                                </div>
+                            </div>
+                            <div class="product-subtotal">
+                                <label class="lbl-product" for="">SUBTOTAL</label>
+                                <label class="lbl-product-price" for="">$64.890</label>
                             </div>
                         </div>
-                        <div class="product-subtotal">
-                            <label class="lbl-product" for="">SUBTOTAL</label>
-                            <label class="lbl-product-price" for="">$64.890</label>
-                        </div>
                     </div>
-                </div>
                 </article>
                 <!-- Coupon -->
                 <article class="mn-box-coupon mn-box-custom">
