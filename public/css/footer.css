@@ -37,6 +37,9 @@ footer.ft-container div.ft-row div.ft-row-item ul.ft-links-list {
     padding: 0px;
 }
 
+.ft-row-line{
+}
+
 footer.ft-container
   div.ft-row
   div.ft-row-item
@@ -111,16 +114,19 @@ footer.ft-container div.ft-down div.ft-card i {
 /**Tablet**/
 @media (min-device-width: 426px) {
   footer.ft-container {
+  width: 100%;
   }
 
   footer.ft-container div.ft-row {
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 100%;
   }
 
   footer.ft-container div.ft-row div.ft-row-item {
+    border: 0px;
     text-align: left;
-    /* width: 20%; */
   }
 
   footer.ft-container div.ft-row div.ft-row-item figure {
@@ -128,8 +134,8 @@ footer.ft-container div.ft-down div.ft-card i {
   }
 
   footer.ft-container div.ft-row div.ft-row-item figure img {
-    width: 60%;
-    max-width: 70%;
+    width: 40%;
+    max-width: 50%;
   }
 
   footer.ft-container div.ft-row div.ft-row-item p {
@@ -274,6 +280,7 @@ footer.ft-container div.ft-down div.ft-card i {
   footer.ft-container div.ft-down {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   }
   footer.ft-container div.ft-down div.ft-legal {
 
