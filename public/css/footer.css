@@ -17,7 +17,7 @@ footer.ft-container div.ft-row {
 
 footer.ft-container div.ft-row div.ft-row-item {
   border-bottom: 1px var(--white) solid;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 footer.ft-container div.ft-row div.ft-row-item figure {
@@ -149,10 +149,11 @@ footer.ft-container div.ft-down div.ft-card i {
   }
 
   footer.ft-container div.ft-row div.ft-row-item h4.ft-title {
+  font-size: 0.8rem;
   }
 
   footer.ft-container div.ft-row div.ft-row-item ul.ft-links-list {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
 
   footer.ft-container
