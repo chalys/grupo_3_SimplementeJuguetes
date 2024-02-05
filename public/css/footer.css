@@ -109,7 +109,7 @@ footer.ft-container div.ft-down div.ft-card i {
 }
 
 /**Tablet**/
-@media (min-device-width: 768px) {
+@media (min-device-width: 426px) {
   footer.ft-container {
   }
 
@@ -120,7 +120,7 @@ footer.ft-container div.ft-down div.ft-card i {
 
   footer.ft-container div.ft-row div.ft-row-item {
     text-align: left;
-    /* width: 20%; */
+
   }
 
   footer.ft-container div.ft-row div.ft-row-item figure {
@@ -208,7 +208,7 @@ footer.ft-container div.ft-down div.ft-card i {
 }
 
 /**Desktop**/
-@media (min-device-width: 1024px) {
+@media (min-device-width: 769px) {
   footer.ft-container {
   }
 
@@ -279,8 +279,10 @@ footer.ft-container div.ft-down div.ft-card i {
 
   }
   footer.ft-container div.ft-down div.ft-legal ul.ft-legal-list {
-gap: 20px;
-}
+
+gap: 20px;
+
+}
   footer.ft-container
     div.ft-down
     div.ft-legal

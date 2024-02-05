@@ -11,10 +11,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0px;
+    font-size: 1.6rem;
 }
 
+.mn-title-list-item{
+    list-style: none;
+    display: none;
+}
+
+.item-cart{
+    display: block;
+}
 .mn-title-list-item-link{
     color: var(--white);
+    text-decoration: none;
 }
 
 .mn-box{
@@ -30,9 +41,8 @@
     margin: 0px;
 }
 .mn-box-shipping-progress{}
-.progress-bar-custom{
 
-}
+.progress-bar-custom{}
 
 .mn-box-coupon, .mn-box-totals {
     border: 1px solid var(--grisObs);
@@ -78,10 +88,119 @@
 .lbl-totals-price{
     color: var(--orange);
 }
+.input-coupon{
+    margin-bottom: 20px;
+}
 .btn-custom{
     width: 100%;
     background-color: var(--green) !important;
     color: var(--white) !important;
-
 }
 
+
+/* Section Product*/
+.mn-box-product{
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid var(--grisObs);
+}
+.product-fig{
+    margin: 0px;
+    width: 20%;
+}
+.product-img{
+    width: 100%;
+    flex-direction: column;
+}
+
+.prueba{
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.product-details{}
+.product-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.product-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-amount{
+    display: flex;
+    justify-content: space-between;
+}
+.product-subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.lbl-product-price{
+    color: var(--orange);
+}
+.product-price, .product-amount {
+    border-bottom: 1px solid var(--grisObs);
+}
+
+
+@media(min-device-width: 426px) {
+    .mn-title-list-item{
+        display: block;
+    }
+    
+    .mn-box-product{
+    }
+    .product-fig{
+    }
+    .product-img{
+    }
+    .prueba{
+    flex-direction: row;
+    justify-content: space-between;
+    }
+    .lbl-product{
+        display: none;
+    }
+    .product-details{}
+    .product-close{
+    display: contents;
+    }
+    .product-price{
+    display: flex;
+    flex-direction: column;
+    }
+    .product-amount{
+    display: flex;
+    flex-direction: column;
+    }
+    .product-subtotal{
+    display: flex;
+    flex-direction: column;
+    }
+    }
+
+@media(min-device-width: 769px) {
+
+.mn-box-product{
+}
+.product-fig{
+}
+.product-img{
+}
+.prueba{
+}
+.product-details{}
+.product-close{
+}
+.product-price{
+}
+.product-amount{
+}
+.product-subtotal{
+}
+}

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrito - SimplementeJuguetes</title>
     <link rel="stylesheet" href="/css/style.css">
-    <!-- FONTAWESOME -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,40 +22,58 @@
     </header>
     <!-- Main -->
     <main class="mn-container">
+        <!-- Shopping cart title  -->
         <div class="mn-title">
             <ul class="mn-title-list">
-                <li class="mn-title-list-item"><a class="mn-title-list-item-link" href="">CARRITO</a></li>
-                <li class="mn-title-list-item">-></li>
+                <li class="mn-title-list-item item-cart"><a class="mn-title-list-item-link" href="">CARRITO</a></li>
+                <li class="mn-title-list-item">➡️</li>
                 <li class="mn-title-list-item"><a class="mn-title-list-item-link" href="">FINALIZAR COMPRA</a></li>
-                <li class="mn-title-list-item">-></li>
+                <li class="mn-title-list-item">➡️</li>
                 <li class="mn-title-list-item"><a class="mn-title-list-item-link" href="">ORDEN COMPLETADA</a></li>
             </ul>
         </div>
-
+        
         <section class="mn-box">
+            <!-- Free Shipping -->
             <article class="mn-box-shipping mn-box-custom">
                 <p class="mn-box-shipping-text">Te faltan $24.000 para conseguir ¡envío gratis!</p>
                 <div class="progress mn-box-shipping-progress">
-                    <div class="progress-bar progress-bar-custom" role="progressbar" aria-label="Example with label" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    <div class="progress-bar progress-bar-custom" role="progressbar" aria-label="Example with label"
+                        style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                 </div>
             </article>
-            <article>
-
-
-                
-                <div><i class="fa-solid fa-rectangle-xmark"></i></div>
-                <figure><img src="" alt=""></figure>
-                <p>Pistola de agua - Sin Marca</p>
-                <p>$64.890</p>
-                <div></div>
-                <p>$64.890</p>
-
-
+            <!-- Products -->
+            <article class="mn-box-product">
+                <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                <figure class="product-fig">
+                    <img class="product-img" src="/imagen/pistolaAgua.jpg" alt="">
+                </figure>
+                <div class="prueba">
+                    <div class="product-details">
+                        <label for="">Pistola de agua - Sin Marca</label>
+                    </div>
+                    <div class="product-price">
+                        <label class="lbl-product" for="">PRECIO</label>
+                        <label for="">$64.890</label>
+                    </div>
+                    <div class="product-amount">
+                        <label class="lbl-product" for="">CANTIDAD</label>
+                        <div class="product-up-down">
+                            <span>-</span>
+                            <span>1</span>
+                            <span>+</span>
+                        </div>
+                    </div>
+                    <div class="product-subtotal">
+                        <label class="lbl-product" for="">SUBTOTAL</label>
+                        <label class="lbl-product-price" for="">$64.890</label>
+                    </div>
+                </div>
             </article>
 
             <article class="mn-box-coupon mn-box-custom">
                 <form action="">
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Código de Cupón">
+                    <input type="text" class="form-control input-coupon" id="formGroupExampleInput" placeholder="Código de Cupón">
                     <button type="button" class="btn btn-custom">APLICAR CÚPON</button>
                 </form>
             </article>
@@ -78,7 +96,7 @@
                         <label class="lbl-totals">Total</label>
                         <label class="lbl-totals-price">$64.890</label>
                     </div>
-                    <button type="submit" class="btn btn-custom">FINALIZAR COMPRA</button>                    
+                    <button type="submit" class="btn btn-custom">FINALIZAR COMPRA</button>
                 </form>
             </article>
         </section>
