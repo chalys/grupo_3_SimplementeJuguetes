@@ -32,51 +32,56 @@
                 <li class="mn-title-list-item"><a class="mn-title-list-item-link" href="">ORDEN COMPLETADA</a></li>
             </ul>
         </div>
-        
+
         <section class="mn-box">
-            <!-- Free Shipping -->
-            <article class="mn-box-shipping mn-box-custom">
-                <p class="mn-box-shipping-text">Te faltan $24.000 para conseguir ¡envío gratis!</p>
-                <div class="progress mn-box-shipping-progress">
-                    <div class="progress-bar progress-bar-custom" role="progressbar" aria-label="Example with label"
-                        style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-            </article>
-            <!-- Products -->
-            <article class="mn-box-product">
-                <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
-                <figure class="product-fig">
-                    <img class="product-img" src="/imagen/pistolaAgua.jpg" alt="">
-                </figure>
-                <div class="prueba">
-                    <div class="product-details">
-                        <label for="">Pistola de agua - Sin Marca</label>
+            <div class="mn-box-fre-products-coupon">
+                <!-- Free Shipping -->
+                <article class="mn-box-shipping mn-box-custom">
+                    <p class="mn-box-shipping-text">Te faltan <span class="text-missing-amount">$24.000</span> para
+                        conseguir <span class="text-free-shipping">¡envío gratis!</span></p>
+                    <div class="progress mn-box-shipping-progress">
+                        <div class="progress-bar progress-bar-custom" role="progressbar" aria-label="Example with label"
+                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                     </div>
-                    <div class="product-price">
-                        <label class="lbl-product" for="">PRECIO</label>
-                        <label for="">$64.890</label>
-                    </div>
-                    <div class="product-amount">
-                        <label class="lbl-product" for="">CANTIDAD</label>
-                        <div class="product-up-down">
-                            <span>-</span>
-                            <span>1</span>
-                            <span>+</span>
+                </article>
+                <!-- Products -->
+                <article class="mn-box-product">
+                    <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                    <figure class="product-fig">
+                        <img class="product-img" src="/imagen/pistolaAgua.jpg" alt="">
+                    </figure>
+                    <div class="prueba">
+                        <div class="product-details">
+                            <label for="">Pistola de agua - Sin Marca</label>
+                        </div>
+                        <div class="product-price">
+                            <label class="lbl-product" for="">PRECIO</label>
+                            <label for="">$64.890</label>
+                        </div>
+                        <div class="product-amount">
+                            <label class="lbl-product" for="">CANTIDAD</label>
+                            <div class="product-up-down">
+                                <span>-</span>
+                                <span>1</span>
+                                <span>+</span>
+                            </div>
+                        </div>
+                        <div class="product-subtotal">
+                            <label class="lbl-product" for="">SUBTOTAL</label>
+                            <label class="lbl-product-price" for="">$64.890</label>
                         </div>
                     </div>
-                    <div class="product-subtotal">
-                        <label class="lbl-product" for="">SUBTOTAL</label>
-                        <label class="lbl-product-price" for="">$64.890</label>
-                    </div>
-                </div>
-            </article>
-
-            <article class="mn-box-coupon mn-box-custom">
-                <form action="">
-                    <input type="text" class="form-control input-coupon" id="formGroupExampleInput" placeholder="Código de Cupón">
-                    <button type="button" class="btn btn-custom">APLICAR CÚPON</button>
-                </form>
-            </article>
+                </article>
+                <!-- Coupon -->
+                <article class="mn-box-coupon mn-box-custom">
+                    <form class="mn-box-coupon-form" action="">
+                        <input type="text" class="form-control input-coupon" id="formGroupExampleInput"
+                            placeholder="Código de Cupón">
+                        <button type="button" class="btn btn-custom btn-coupon">APLICAR CÚPON</button>
+                    </form>
+                </article>
+            </div>
+            <!-- Totals Cart -->
             <article class="mn-box-totals mn-box-custom">
                 <h2>TOTALES DEL CARRITO</h2>
                 <form action="" class="mn-box-totals-form">
@@ -87,7 +92,7 @@
                     <div class="mn-box-totals-form-item container-shipping">
                         <label class="lbl-shipping">Envio</label>
                         <div class="mn-box-totals-form-item-adress">
-                            <label class="lbl-free">Envio gratis (3a 10 días hábiles)</label>
+                            <label class="lbl-free">Envio gratis (3 a 10 días hábiles)</label>
                             <label class="lbl-city">Enviar a Córdoba</label>
                             <label class="lbl-address">Cambiar dirección</label>
                         </div>
@@ -103,14 +108,16 @@
     </main>
     <!-- Footer -->
     <footer class="ft-container">
-        <div class="ft-row">
-            <div class="ft-row-item">
+        <div class="ft-row ft-row-line">
+            <!-- Logotipo -->
+            <div class="ft-row-item ft-row-item-logo">
                 <figure>
                     <img class="footer-logo" src="/imagen/logo-footer.png" alt="Logo Simplemente Juguetes">
                 </figure>
                 <p>En Simplemente Juguetes trabajamos para que todos los niños y sus familias puedan
                     encontrar ese juguete tan especial que recordarán con cariño toda su vida.</p>
             </div>
+            <!-- Producto -->
             <div class="ft-row-item">
                 <h4 class="ft-title">COMPRAS</h4>
                 <ul class="ft-links-list">
