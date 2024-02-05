@@ -1,3 +1,7 @@
+.sub-footer{
+    position: absolute;
+    width: 100%;
+}
 footer.ft-container {
   background-color: var(--green);
   width: 100%;
@@ -113,6 +117,7 @@ footer.ft-container div.ft-down div.ft-card i {
 
 /**Tablet**/
 @media (min-device-width: 426px) {
+  .sub-footer{}
   footer.ft-container {
   width: 100%;
   }
@@ -215,6 +220,7 @@ footer.ft-container div.ft-down div.ft-card i {
 
 /**Desktop**/
 @media (min-device-width: 769px) {
+  .sub-footer{}
   footer.ft-container {
   }
 

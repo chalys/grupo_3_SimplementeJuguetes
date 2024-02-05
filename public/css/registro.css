@@ -1,5 +1,5 @@
 .bodyRegistro{margin: 0px;}
-main.mainRegistro{}
+main.mainRegistro{padding-bottom: 311px;}
 /* Fondo */
 div.fondoRegis{
     flex-direction: column;
@@ -18,7 +18,7 @@ main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction:
     transform: scale(1);
     }
 .fondoRegis .IMG2{
-    height: 111vh;
+    height: 134vh;
     position: absolute;
     left: -60vh;
     transform: scale(1);
@@ -26,7 +26,7 @@ main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction:
 .fondoRegis .span1{
     position: absolute;
     width: 50vw;
-    height: 110vh;
+    height: 140vh;
     align-self: start;
     overflow: hidden;
 }
@@ -35,7 +35,7 @@ main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction:
     align-self: end;
     position: absolute;
     overflow: hidden;
-    height: 110vh;
+    height: 140vh;
 }
 main.mainRegistro nav form div{
     width: 60%;
@@ -88,7 +88,7 @@ main.mainRegistro div form input{
     border: none;
     }
 main.mainRegistro .perfilReg{
-    bottom: 403px;
+    bottom: 459px;
     gap: 2vw;
     left: 20%;
     background-color: rgba(0,0,0,0);
@@ -202,7 +202,7 @@ main.mainRegistro .perfilReg div{
 main.mainRegistro .perfilReg div.fotodePerfil{width: 87px;height: 87px;}
 main.mainRegistro .perfilReg i{}
 main.mainRegistro .perfilReg{
-    top: -55%;
+    top: -48%;
 }
 main.mainRegistro div form input{
     margin-bottom: 4%;
@@ -229,13 +229,19 @@ main.mainRegistro div{
 }
 .fondoRegis .IMG1{}
 .fondoRegis{}
-main.mainRegistro nav{top: 55vh;}
+main.mainRegistro nav{top: 36vh;}
 .bodyRegistro{}
+main.mainRegistro{
+    padding-bottom: 300px;
+}
 }
 
 /*/////////ESCRITORIO//////////*/
 
 @media(min-device-width: 769px) {
+    main.mainRegistro{
+    padding-bottom: 400px;
+}
     main.mainRegistro div form input{}
     main.mainRegistro form .margenEspRegis{
     margin-bottom: -170px;

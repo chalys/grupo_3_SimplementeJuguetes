@@ -64,6 +64,9 @@ main.mainRegistro-2 nav{flex-wrap: wrap;top: 12vh;position: relative;display: fl
     overflow: hidden;
     height: 110vh;
 }
+main.mainRegistro-2{
+    padding-bottom: 41%;
+}
 @media(min-device-width: 426px) {
     main.mainRegistro-2 nav{
     transform: scale(0.9);
@@ -78,8 +81,12 @@ main.mainRegistro-2 nav{flex-wrap: wrap;top: 12vh;position: relative;display: fl
     }
     .fondoRegis-1 .IMG1-1{}
     .fondoRegis-1{}
+    
+main.mainRegistro-2{}
 }
 @media(min-device-width: 769px) {
+    
+main.mainRegistro-2{}
     main.mainRegistro-2 nav{
     transform: scale(0.7);
 }
