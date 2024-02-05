@@ -95,7 +95,7 @@ main.mainRegistro-1 form div.calleReg .callebloReg4{}
 
 /*/////////TABLET//////////*/
 
-@media(min-device-width: 768px) {
+@media(min-device-width: 426px) {
 .mainRegistro-1 form div.blocReg1 select.blocReg1-2{
     width: 50%;
 }
@@ -163,7 +163,7 @@ main.mainRegistro-1 form div button p{
 
 /*/////////ESCRITORIO//////////*/
 
-@media(min-device-width: 1024px) {
+@media(min-device-width: 769px) {
 .mainRegistro-1{
 }
 .mainRegistro-1 form div.blocReg1 select.blocReg1-2{

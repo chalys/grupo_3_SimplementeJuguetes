@@ -1,4 +1,5 @@
 main.main-login{
+    overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -123,37 +124,15 @@ padding-left: 15px;
 
 }
             
-
-    @media (min-device-width:768px) {
-      main{    
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-    };
-
-        .form{
-            display: flex;
-            flex-direction: column;
-            height: 360px;width: 270px;
-            padding: 40px;
-            margin: 40px;
-            gap: 10px};
-
+@media(min-device-width: 426px) {
+.contenido{transform: scale(1.1);width: 400px;}
+}
+@media(min-device-width: 769px){
+.contenido{
+    transform: scale(1);
+}
+.fondo{
+    width: 100%;
+}
+}
  
-    }
-    @media (min-width:768px) {
-        .form{
-            display: flex;
-            flex-direction: column;
-            height: 360px;width: 270px;
-            padding: 40px;
-            margin: 40px;
-            gap: 10px};
-           
-        }
-        @media (min-width:768px) {
-            .logo-login{top: 16%;right: 0;}
-        }

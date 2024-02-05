@@ -169,7 +169,7 @@ main.mainRegistro div.google h2 a{
 
 /*/////////TABLET//////////*/
 
-@media(min-device-width: 768px) {
+@media(min-device-width: 426px) {
 main.mainRegistro .google{
     margin-top: 4% !important;
     width: 200px !important;
@@ -185,7 +185,6 @@ main.mainRegistro .google h2{
 main.mainRegistro .google h2 a{}
 main.mainRegistro div h2 a{}
 main.mainRegistro div h2{
-    width: 47%;
     padding: 3% 0px 9% 0px;
     font-size: 14px;
 }
@@ -194,13 +193,13 @@ main.mainRegistro div form button{
     height: 35px;
 }
 main.mainRegistro .perfilReg div input{
-    width: 100%;
+    width: 88%;
+    height: 24px;
 }
 main.mainRegistro .perfilReg div{
-    width: 47%;
     padding: 2% 5%;
 }
-main.mainRegistro .perfilReg div.fotodePerfil{width: 110px;height: 110px;}
+main.mainRegistro .perfilReg div.fotodePerfil{width: 87px;height: 87px;}
 main.mainRegistro .perfilReg i{}
 main.mainRegistro .perfilReg{
     top: -55%;
@@ -213,12 +212,13 @@ main.mainRegistro div form label{
     font-size: 100%;
 }
 main.mainRegistro div form img{}
-main.mainRegistro div form{width: 47%;}
+main.mainRegistro div form{}
 .pandaFormularioReg{
     width: 7vh;
     height: 7vh;
 }
-main.mainRegistro div{}
+main.mainRegistro div{
+}
 .fondoRegis .span2{
     height: 140%;
 }
@@ -235,7 +235,7 @@ main.mainRegistro nav{top: 55vh;}
 
 /*/////////ESCRITORIO//////////*/
 
-@media(min-device-width: 1024px) {
+@media(min-device-width: 769px) {
     main.mainRegistro div form input{}
     main.mainRegistro form .margenEspRegis{
     margin-bottom: -170px;
