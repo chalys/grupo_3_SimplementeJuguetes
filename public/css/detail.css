@@ -50,8 +50,7 @@
 .cr-title-characteristics {
   border-bottom: 1px solid var(--green);
 }
-.cr-description-characteristics {
-}
+.cr-description-characteristics {padding-top: 20px;}
 .cr-text-red {
   margin: 0px;
   color: var(--red);
@@ -97,15 +96,25 @@
   border-bottom: 1px solid var(--green);
 }
 .rp-products {
-  width: 100%;
-  padding-top: 20px;
-  display: flex;
+  
+padding-top: 20px;
+  
+display: flex;
+  
+width: 100%;
+  
+/* height: 100vh; */
+  
+overflow-x:scroll;
 }
 .rp-product-link {
 }
 .rp-product-img {
   border: 1px solid var(--green);
-  width: 30%;
+  flex: 0 0 100%;
+  gap: 10px;
+  width: 100%;
+  object-fit: cover;
 }
 .rp-product-title {
   font-size: 0.9rem;
@@ -118,24 +127,21 @@
 .all-features {
 }
 .container-all-features {
-  padding: 30px;
+  padding: 0 30px 30px 30px;
 }
 .af-title {
   border-bottom: 1px solid var(--green);
 }
-.all-table {padding: 30px;}
 
-/**/
-.toy-information {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  margin: 25px 0;
-  color: var(--white);
-  border-collapse: collapse;
+.all-table {
 }
 
+/* Tabla información*/
+.toy-information {
+  margin: 20px 0px;
+  width: 100%;
+  color: var(--white);
+}
 .toy-information tr:nth-child(odd) {
   background-color: var(--orange); /* Color para las filas impares */
 }
@@ -145,18 +151,15 @@
 }
 
 .toy-information tr td {
-  padding: 30px 70px;
+  padding: 30px;
 }
 
 .more-information {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
+  margin: 20px 0px;
+  width: 100%;
   color: var(--white);
-  border-collapse: collapse;
 }
-
+/*Mas informacion*/
 .more-information tr:nth-child(odd) {
   background-color: var(--orange); /* Color para las filas impares */
 }
@@ -166,21 +169,20 @@
 }
 
 .more-information tr td {
-  padding: 30px 60px;
+  padding: 30px;
 }
-
-
-
 
 /* Description*/
-.description{}
-.container-description{
-  padding:30px;
+.description {
 }
-.rp-title-description{
+.container-description {
+  padding: 0px 30px 30px 30px;
+}
+.rp-title-description {
   border-bottom: 1px solid var(--green);
 }
-.paragraph{}
+.paragraph {
+}
 
 /*Tablet*/
 @media (min-width: 426px) {
