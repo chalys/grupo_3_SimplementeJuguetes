@@ -87,164 +87,185 @@
                     </figure>
                 </div>
                 <div class="container-right-down">
-                    <div class="cr-title-characteristics"><h2>Caracteristica</h2></div>
+                    <!-- Characteristics -->
+                    <div class="cr-title-characteristics">
+                        <h2>Caracteristicas</h2>
+                    </div>
                     <div class="cr-description-characteristics">
                         <p class="cr-text-red">Marca:<span class="cr-text-gris">Toy Story</span></p>
                         <p class="cr-text-red">SKU:<span class="cr-text-gris">12345</span></p>
                         <p class="cr-text-red">Disponibilidad:<span class="cr-text-gris">En Stock</span></p>
                         <p class="cr-text-red">Edad recomendada:<span class="cr-text-gris">5 años</span></p>
-                        <p class="cr-text-red">Métodos de pago:<span class="cr-text-gris">Toy Story</span></p>
+                    </div>
+                    <!-- Amount -->
+                    <div class="cr-amount">
+                        <p class="lbl-amount" for="">CANTIDAD</p>
+                        <div class="lbl-amount-up-down">
+                            <span>-</span>
+                            <span>1</span>
+                            <span>+</span>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="cr-button">
+                        <button type="submit" class="btn btn-custom-white">AGREGAR AL CARRITO</button>
+                        <button type="submit" class="btn btn-custom-green">COMPRAR AHORA</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!--CARACTERISTICAS BASICAS-->
-
-        <div class="container-carac">
-
-
-            <!--COMPRAR-->
-            <section class="buy">
-                <p class="amount">CANTIDAD</p>
-                <div class="buttons">
-                    <a class="add" href="#">AGREGAR AL CARRITO</a>
-                    <a class="buy-now" href="#">COMPRAR AHORA</a>
-                </div>
-            </section>
-        </div>
-
         <!--PRODUCTOS RELACIONADOS-->
-
         <section class="related-products">
-            <h2>Productos Relacionados</h2>
+            <div class="container-related-products">
+                <div class="rp-title-products">
+                    <h2>Productos Relacionados</h2>
+                </div>
+                <section class="rp-products">
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img"
+                                src="/imagen/buzz_lightyear_product.png" alt="Producto 1"></a>
+                        <h3 class="rp-product-title">Buzz Lightyear</h3>
+                        <p class="rp-product-price">$39.999</p>
+                    </article>
 
-            <section class="products">
-                <article class="product">
-                    <a href=""><img src="/imagen/buzz_lightyear_product.png" alt="Producto 1"></a>
-                    <h3>Buzz Lightyear</h3>
-                    <p>$39.999</p>
-                </article>
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img"
+                                src="/imagen/jessievaquera_producto.jpg" alt="Producto 2"></a>
+                        <h3 class="rp-product-title">Jessi Vaquera</h3>
+                        <p class="rp-product-price">$39.999</p>
+                    </article>
 
-                <article class="product">
-                    <a href=""><img src="/imagen/jessievaquera_producto.jpg" alt="Producto 2"></a>
-                    <h3>Jessie Vaquera</h3>
-                    <p>$39.999</p>
-                </article>
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img" src="/imagen/rex_producto.png"
+                                alt="Producto 3"></a>
+                        <h3 class="rp-product-title">Rex Dinosaurio</h3>
+                        <p class="rp-product-price">$39.999</p>
+                    </article>
 
-                <article class="product">
-                    <a href=""><img src="/imagen/rex_producto.png" alt="Producto 3"></a>
-                    <h3>Rex Dinosaurio</h3>
-                    <p>$29.999</p>
-                </article>
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img"
+                                src="/imagen/tiroalblanco_producto.png" alt="Producto 4"></a>
+                        <h3 class="rp-product-title">Tiro al Blanco</h3>
+                        <p class="rp-product-price">$29.999</p>
+                    </article>
 
-                <article class="product">
-                    <a href=""><img src="/imagen/tiroalblanco_producto.png" alt="Producto 4"></a>
-                    <h3>Tiro al Blanco</h3>
-                    <p>$29.999</p>
-                </article>
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img" src="/imagen/forky_producto.jpg"
+                                alt="Producto 5"></a>
+                        <h3 class="rp-product-title">Forky Muñeco</h3>
+                        <p class="rp-product-price">$39.999</p>
+                    </article>
 
-                <article class="product">
-                    <a href=""><img src="/imagen/forky_producto.jpg" alt="Producto 5"></a>
-                    <h3>Forky Muñeco</h3>
-                    <p>$39.999</p>
-                </article>
-            </section>
+                </section>
+            </div>
         </section>
 
         <!--CARACTERISTICAS DEL PRODUCTO-->
         <section class="all-features">
-            <h2>Caracteriscas del Producto</h2>
+            <div class="container-all-features">
+                <div class="af-title">
+                    <h2>Caracteriscas del Producto</h2>
+                </div>
+                <section class="all-table">
+                    <table class="toy-information">
+                        <tr>
+                            <td class="esquina1">Fabricante</td>
+                            <td class="esquina2">Ejemplo</td>
+                        </tr>
 
-            <section class="all-table">
-                <table class="toy-information">
-                    <tr>
-                        <td class="esquina1">Fabricante</td>
-                        <td class="esquina2">Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Linea</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Linea</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Coleccion</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Coleccion</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Personaje</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Personaje</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td class="esquina3">Version del personaje</td>
+                            <td class="esquina4">Ejemplo</td>
+                        </tr>
+                    </table>
 
-                    <tr>
-                        <td class="esquina3">Version del personaje</td>
-                        <td class="esquina4">Ejemplo</td>
-                    </tr>
-                </table>
+                    <table class="more-information">
+                        <tr>
+                            <td class="esquina1">Edad minima recomendada</td>
+                            <td class="esquina2">Ejemplo</td>
+                        </tr>
 
-                <table class="more-information">
-                    <tr>
-                        <td class="esquina1">Edad minima recomendada</td>
-                        <td class="esquina2">Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Altura</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Altura</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Profundida</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Profundida</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Ancho</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Ancho</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Materiales</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Materiales</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Es articulada</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Es articulada</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Es coleccionable</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Es coleccionable</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Incluye accesorios</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Incluye accesorios</td>
-                        <td>Ejemplo</td>
-                    </tr>
+                        <tr>
+                            <td>Es bobblehead</td>
+                            <td>Ejemplo</td>
+                        </tr>
 
-                    <tr>
-                        <td>Es bobblehead</td>
-                        <td>Ejemplo</td>
-                    </tr>
-
-                    <tr>
-                        <td class="esquina3">Escala</td>
-                        <td class="esquina4">Ejemplo</td>
-                    </tr>
-                </table>
-            </section>
+                        <tr>
+                            <td class="esquina3">Escala</td>
+                            <td class="esquina4">Ejemplo</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
         </section>
 
         <section class="description">
-            <h2>Descripcion</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consequatur aut commodi dolorem corrupti a
-                eius non! Maxime quaerat unde, beatae aspernatur dolor aliquam consectetur rerum temporibus, amet hic
-                nihil? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia illum, sequi non totam, facilis a
-                est expedita alias iusto iste, quae repudiandae reprehenderit ratione similique. Sequi, alias! Velit,
-                quas odit.</p>
+            <div class="container-description">
+                <div class="rp-title-description"><h2>Descripcion</h2></div>
+                <div><p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consequatur aut commodi dolorem corrupti a
+                    eius non! Maxime quaerat unde, beatae aspernatur dolor aliquam consectetur rerum temporibus, amet hic
+                    nihil? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia illum, sequi non totam, facilis a
+                    est expedita alias iusto iste, quae repudiandae reprehenderit ratione similique. Sequi, alias! Velit,
+                    quas odit.</p>
+                <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consequatur aut commodi dolorem corrupti a
+                    eius non! Maxime quaerat unde, beatae aspernatur dolor aliquam consectetur rerum temporibus, amet hic
+                    nihil? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia illum, sequi non totam, facilis a
+                    est expedita alias iusto iste, quae repudiandae reprehenderit ratione similique. Sequi, alias! Velit,
+                    quas odit.</p></div>
+            </div>
+            
+            
         </section>
 
     </main>
