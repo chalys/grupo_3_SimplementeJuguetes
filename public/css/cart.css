@@ -23,6 +23,7 @@
 .item-cart {
   display: block;
 }
+
 .mn-title-list-item-link {
   color: var(--white);
   text-decoration: none;
@@ -159,7 +160,7 @@
 }
 
 /*Tablet*/
-@media (min-device-width: 426px) {
+@media (min-width: 426px) {
   .mn-title-list-item {
     display: block;
   }
@@ -233,7 +234,7 @@
 }
 
 /*Desktop*/
-@media (min-device-width: 769px) {
+@media (min-width: 769px) {
   .mn-box {
     display: flex;
     gap: 20px;

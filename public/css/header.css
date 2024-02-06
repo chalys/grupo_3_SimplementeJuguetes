@@ -138,7 +138,8 @@
     width: 100px;
     height: 100px;
 }
-.header figure img{}
+.header figure img{
+}
 .header h1{font-size: 3vw;margin: 0;margin-top: 19px;align-self: start;}
 .header h1 p.tituloNegro{
     margin: 0;
