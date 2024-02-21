@@ -1,1 +1,10 @@
-@import "./login.css"
+@import "../css/general.css";
+@import "../css/login.css";
+@import "../css/registro.css";
+@import "../css/cart.css";
+@import "../css/footer.css";
+@import "../css/registro-1.css";
+@import "../css/detail.css";
+@import "../css/registro-2.css";
+@import "../css/header.css";
+@import "../css/home.css";
