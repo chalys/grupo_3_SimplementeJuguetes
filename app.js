@@ -23,6 +23,12 @@ app.get("/carrito", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/cart.html"));
 });
 
+/** Configuración registro producto **/
+app.get("/registro-producto", (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/register-product.html"));
+});
+
+
 app.get("/detalle", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/detail.html"));
 });

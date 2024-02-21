@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Style -->
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <main class="register container my-5 row justify-content-center mx-auto">
+        <form action="/registro" method="post" class="card p-4 col-12 col-md-6 col-lg-4" style="width: 300px;">
+            <!-- TIPO TEXT -->
+            <div class="d-flex flex-column mb-3 container-input">
+                <label for="nameProduct">Nombre del producto</label>
+                <input class="form-control form-control-sm" type="text" name="nameProduct" value="" id="nameProduct">
+            </div>
+
+            <div class="d-flex flex-column mb-3 container-input">
+                <label for="descriptionProduct">Descripción</label>
+                <input class="form-control form-control-sm" type="text" name="descriptionProduct" value="" id="descriptionProduct">                
+            </div>
+
+            <!-- TIPO EMAIL -->
+            <div class="d-flex flex-column mb-3 container-input">
+                <label for="email">Email</label>
+                <input class="form-control form-control-sm" type="email" name="email" value="" id="email">
+                <span class="required-input text-danger fs-4">*</span>
+            </div>
+
+            <!-- TIPO PASSWORD -->
+            <div class="d-flex flex-column mb-3">
+                <label for="contrasenia">Contraseña</label>
+                <input class="form-control form-control-sm" type="password" name="contrasenia" value=""
+                    id="contrasenia">
+            </div>
+
+            <div class="d-flex justify-content-center justify-content-lg-end gap-2 mt-4">
+                <button class="btn btn-sm btn-dark" type="submit">Registrarse</button>
+                <button class="btn btn-sm btn-custom-danger" type="reset">Cancelar</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
