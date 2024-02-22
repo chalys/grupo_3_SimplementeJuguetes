@@ -33,3 +33,8 @@ app.get("/inicio", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/home.html"));
 });
 app.listen(port,()=>{console.log(`http://localhost:${port}`)})
+
+/* EJS */
+app.use("views",path.join(__dirname, "./views"))
+
+app.set("view engine","ejs")
