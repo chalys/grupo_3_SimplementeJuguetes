@@ -1,4 +1,4 @@
-.bodyRegistro-2{margin: 0;}
+.bodyRegistro-2{display: flex;margin: 0px;flex-direction: column;flex-wrap: wrap;margin: 0;}
 .mainRegistro-2 h2{
     margin-bottom: 80px;
 }
@@ -30,51 +30,39 @@ div.fondoRegis-1{
     flex-direction: column;
     align-items: center;
 }
-main.mainRegistro-2 nav{flex-wrap: wrap;top: 12vh;position: relative;display: flex;flex-direction: column;align-items: center;}
+main.mainRegistro-2 nav{right: 10vw;left: 10vw;flex-wrap: wrap;top: 37vh;position: absolute;display: flex;flex-direction: column;align-items: center;}
 .fondoRegis-1{
-    width: 100vw;
+    position: relative;
+    height: 153vh;
     display: flex;
+    width: 100%;
 }
 .fondoRegis-1 .IMG1-1{
-    filter: blur(50px);
     height: 120%;
     position: absolute;
     left: -250px;
     top: -40px;
     transform: scale(1);
+    filter: blur(50px);
     }
 .fondoRegis-1 .IMG2-1{
     filter: blur(50px);
-    height: 111vh;
+    height: 100%;
     position: absolute;
     left: -60vh;
-    transform: scale(1);
+    transform: scale(1.1);
     }
-.fondoRegis-1 .span1-1{
-    position: absolute;
-    width: 50vw;
-    height: 110vh;
-    align-self: start;
-    overflow: hidden;
-}
-.fondoRegis-1 .span2-1{
-    width: 50vw;
-    align-self: end;
-    position: absolute;
-    overflow: hidden;
-    height: 110vh;
-}
-main.mainRegistro-2{
-    padding-bottom: 41%;
-}
+.fondoRegis-1 .span1-1{position: absolute;width: 50%;height: 100%;align-self: start;overflow: hidden;}
+.fondoRegis-1 .span2-1{height: 100%;width: 50%;align-self: end;position: absolute;overflow: hidden;}
+main.mainRegistro-2{order: 2;display: flex;margin: 0px;flex-direction: column;flex-wrap: wrap;}
 @media(min-device-width: 426px) {
     main.mainRegistro-2 nav{
     transform: scale(0.9);
 }
     .fondoRegis-1 .span2-1{
-        height: 140%;
+        height: 100%;
     }
-    .fondoRegis-1 .span1-1{height: 140%;}
+    .fondoRegis-1 .span1-1{height: 100%;}
     .fondoRegis-1 .IMG2-1{
         height: 100%;
         left: -40vh;
@@ -91,10 +79,8 @@ main.mainRegistro-2{}
     transform: scale(0.7);
 }
         .fondoRegis-1 .span2-1{
-    height: 150vh;
 }
 .fondoRegis-1 .span1-1{
-    height: 150vh;
 }
 .fondoRegis-1 .IMG2-1{}
     .fondoRegis-1 .IMG1-1{}
