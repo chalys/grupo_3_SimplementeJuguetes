@@ -1,62 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito - SimplementeJuguetes</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Icon Simplemente Juguetes -->
-    <link rel="icon" href="/imagen/panda-icon.ico" type="image/x-icon">
-</head>
+<%- include("./partials/head") %>
 
 <body>
     <!-- Header -->
-    <header class="header">
-        <figure class="pandaHeader"><img src="../imagen/panda-logo.png" alt="Simplemente Juguetes"></figure>
-        <h1>
-            <p class="tituloNegro">SIMPLEMENTE</p>
-            <p class="tituloBlanco">JUGUETES</p>
-        </h1>
-        <div class="selectoresHeader">
-            <select class="">
-                <option value="" selected hidden>JUEGOS Y JUGUETES</option>
-                <option value=""></option>
-            </select>
-            <select class="">
-                <option value="" selected hidden>EDADES</option>
-                <option value=""></option>
-            </select>
-            <select class="">
-                <option value="" selected hidden>PERSONAJES</option>
-                <option value=""></option>
-            </select>
-        </div>
-        <!--busqueda-->
-        <div class="busquedaHeader">
-            <input type="text" placeholder="Buscar...">
-            <figure><i class="fa-solid fa-magnifying-glass"></i></figure>
-        </div>
-        <!--iconos del header-->
-        <div class="iconosHeader">
-            <a href=""><i class="fa-solid fa-heart"></i></a>
-            <a href="/login"><i class="fa-solid fa-user"></i></a>
-            <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        <!--ofertas y outlet-->
-        <div class="ofertasYOutlet">
-            <h3 class="ofertasHeader"><a href="/"><i class="fa-solid fa-fire-flame-curved"></i>OFERTAS</a></h3>
-            <h3 class="outletHeader"><a href="">OUTLET</a></h3>
-        </div>
-        <figure class="barrasHeader"><i class="fa-solid fa-bars"></i></figure>
-    </header>
+
+    <%- include("./partials/header") %>
+
     <main class="main-detail">
 
         <!--PRODUCTO PRINCIPAL-->
@@ -277,74 +228,9 @@
 
     </main>
     <!-- Footer -->
-    <footer class="ft-container">
-        <div class="ft-row ft-row-line">
-            <!-- Logotipo -->
-            <div class="ft-row-item ft-row-item-logo">
-                <figure>
-                    <img class="footer-logo" src="/imagen/logo-footer.png" alt="Logo Simplemente Juguetes">
-                </figure>
-                <p>En Simplemente Juguetes trabajamos para que todos los niños y sus familias puedan
-                    encontrar ese juguete tan especial que recordarán con cariño toda su vida.</p>
-            </div>
-            <!-- Producto -->
-            <div class="ft-row-item">
-                <h4 class="ft-title">COMPRAS</h4>
-                <ul class="ft-links-list">
-                    <li class="ft-links-list-item"><a href="">Juegos y juguetes</a></li>
-                    <li class="ft-links-list-item"><a href="">Personajes</a></li>
-                    <li class="ft-links-list-item"><a href="">Edades</a></li>
-                    <li class="ft-links-list-item"><a href="">Categorias</a></li>
-                </ul>
-            </div>
-            <div class="ft-row-item">
-                <h4 class="ft-title">CONTACTO</h4>
-                <ul class="ft-links-list">
-                    <li class="ft-links-list-item"><a href="">Atención al cliente</a></li>
-                    <li class="ft-links-list-item"><a href="tel:1122341456"> <i class="fa-brands fa-whatsapp"></i>
-                            1122341456</a>
-                    </li>
-                    <li class="ft-links-list-item"><a href="mailto:simplementejuguetes@gmail.com"> <i
-                                class="fa-solid fa-envelope"></i>
-                            simplementejuguetes@gmail.com</a></li>
-                </ul>
-            </div>
-            <div class="ft-row-item">
-                <h4 class="ft-title">NOSOTROS</h4>
-                <ul class="ft-links-list">
-                    <li class="ft-links-list-item"><a href="">Tiendas</a></li>
-                    <li class="ft-links-list-item"><a href="">La marca</a></li>
-                    <li class="ft-links-list-item"><a href="">Trabaja con nosotros</a></li>
-                    <li class="ft-links-list-item"><a href="">Políticas de privacidad</a></li>
-                </ul>
-            </div>
-            <div class="ft-row-item">
-                <h4 class="ft-title">REDES</h4>
-                <ul class="ft-social-list">
-                    <li class="ft-social-list-item"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                    <li class="ft-social-list-item"><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                    <li class="ft-social-list-item"><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-                    <li class="ft-social-list-item"><a href=""><i class="fa-brands fa-youtube"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="ft-down">
-            <div class="ft-legal">
-                <ul class="ft-legal-list">
-                    <li class="ft-legal-list-item"><a href="">Powered by Mercado Shops</a></li>
-                    <li class="ft-legal-list-item"><a href="">vkdesign.cc</a></li>
-                    <li class="ft-legal-list-item"><a href="">Avisos Legales</a></li>
-                    <li class="ft-legal-list-item">Copyrigth© 2024 Simplemente Juguetes S.A.</li>
-                    <li class="ft-legal-list-item">Todos los derechos
-                        reservados </li>
-                </ul>
-            </div>
-            <div class="ft-card">
-                <i class="fa-brands fa-cc-mastercard"></i>
-                <i class="fa-brands fa-cc-visa"></i>
-            </div>
-        </div>
-    </footer>
+    
+    <%- include("./partials/footer") %>
+
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
