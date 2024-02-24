@@ -5,7 +5,11 @@ const port = 3030;
 
 /*CONFIGS*/
 app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"./views"));
+app.set('views', [
+    path.join(__dirname, 'views'),
+    path.join(__dirname, 'views/users'),
+    path.join(__dirname, 'views/products')
+]);
 
 /* MIDDLEWARE */
 app.use(express.static('public'));
