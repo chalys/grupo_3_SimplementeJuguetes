@@ -1,0 +1,16 @@
+.bg-container-text-custom {
+    background-color: var(--orange) !important;
+}
+
+.color-text-title-custom {
+    color: var(--white) !important;
+}
+
+.btn-custom-green2{
+    background: var(--green)!important;
+    color: var(--white)!important;
+}
+.btn-custom-orange{
+    background: var(--orange)!important;
+    color: var(--white)!important;
+}

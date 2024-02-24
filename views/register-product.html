@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- BOOTSTRAP CSS -->
+    <title>Registro de Juguetes - SimplementeJuguetes</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Style -->
-    <link rel="stylesheet" href="style3.css">
+    <!-- Icon Simplemente Juguetes -->
+    <link rel="icon" href="/imagen/panda-icon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -17,48 +18,148 @@
     <header>
 
     </header>
-    <main class="register container my-5 row justify-content-center mx-auto">
-        <form action="/registro" method="post" class="card p-4 col-12 col-md-6 col-lg-4" style="width: 300px;">
-            <!-- TIPO TEXT -->
-            <div class="d-flex flex-column mb-3 container-input">
-                <label for="nameProduct">Nombre del producto</label>
-                <input class="form-control form-control-sm" type="text" name="nameProduct" value="" id="nameProduct">
-            </div>
+    <main> <!-- CLASS CONTAINER d-flex flex-column justify-content-center  -->
+        <div class="container-text bg-container-text-custom">
+            <h1 class="text-center p-5 color-text-title-custom">REGISTRO DE JUGUETES</h1>
+        </div>
 
-            <div class="d-flex flex-column mb-3 container-input">
-                <label for="descriptionProduct">Descripción</label>
-                <input class="form-control form-control-sm" type="text" name="descriptionProduct" value="" id="descriptionProduct">                
-            </div>
+        <div class="container card">
+            <form class="row justify-content-center">
+                <!-- Name -->
+                <div class="col-10 col-md-12 col-lg-12 mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" value="">
+                </div>
+                <!-- Description -->
+                <div class="col-10 col-md-12 col-lg-12 mb-3">
+                    <label for="description" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                </div>
+                <!-- Imagen -->
+                <div class="col-10 col-md-12 col-lg-12 mb-3">
+                    <label for="image" class="form-label">Imagen</label>
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
 
-            <!-- TIPO EMAIL -->
-            <div class="d-flex flex-column mb-3 container-input">
-                <label for="email">Email</label>
-                <input class="form-control form-control-sm" type="email" name="email" value="" id="email">
-                <span class="required-input text-danger fs-4">*</span>
-            </div>
+                <div class="row d-flex flex-wrap justify-content-center">
+                    <!-- Stock -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label for="stock" class="form-label">Stock</label>
+                        <input type="number" class="form-control" id="stock" name="stock">
+                    </div>
+                    <!-- Price -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label for="price" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="price" name="price">
+                    </div>
+                    <!-- Marker -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label for="maker" class="form-label">Fabricante</label>
+                        <input type="text" class="form-control" id="maker" name="maker" required>
+                    </div>
+                    <!-- Line -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label for="line" class="form-label">Línea</label>
+                        <input type="text" class="form-control" id="line" name="line" required>
+                    </div>
+                    <!-- Collection -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label for="collection" class="form-label">Colección</label>
+                        <input type="text" class="form-control" id="collection" name="collection">
+                    </div>
+                    <!-- Character -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label for="character" class="form-label">Personaje</label>
+                        <input type="text" class="form-control" id="character" name="character">
+                    </div>
+                    <!-- Character Versión -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label for="characterVersion" class="form-label">Versión del Personaje</label>
+                        <input type="text" class="form-control" id="characterVersion" name="characterVersion">
+                    </div>
+                    <!-- Recommended Minimum Age -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label for="recommendedMinimumAge" class="form-label">Edad Mínima Recomendada</label>
+                        <input type="number" class="form-control" id="recommendedMinimumAge"
+                            name="recommendedMinimumAge" min="0">
+                    </div>
+                    <!-- Initial Scale -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3 me-md-auto">
+                        <label for="initialScale" class="form-label">Escala inicial</label>
+                        <input type="number" class="form-control" id="initialScale" name="initialScale" min="0">
+                    </div>
 
-            <!-- TIPO PASSWORD -->
-            <div class="d-flex flex-column mb-3">
-                <label for="contrasenia">Contraseña</label>
-                <input class="form-control form-control-sm" type="password" name="contrasenia" value=""
-                    id="contrasenia">
-            </div>
+                </div>
+                <!-- Articulated -->
+                <div class="col-10 col-md-6 col-lg-4 mb-3">
+                    <label class="form-check-label">¿Es articulado?</label>
+                    <div class="form-check-container d-flex justify-content-evenly">
+                        <div>
+                            <input type="radio" id="articulated_yes" name="articulated" value="yes">
+                            <label for="articulated_yes">Sí</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="articulated_no" name="articulated" value="no">
+                            <label for="articulated_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Collectable -->
+                <div class="col-10 col-md-6 col-lg-4 mb-3">
+                    <label class="form-check-label">¿Es coleccionable?</label>
+                    <div class="form-check-container d-flex justify-content-evenly">
+                        <div>
+                            <input type="radio" id="collectable_yes" name="collectable" value="yes">
+                            <label for="collectable_yes">Sí</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="collectable_no" name="collectable" value="no">
+                            <label for="collectable_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Includes Accessories -->
+                <div class="col-10 col-md-6 col-lg-4 mb-3">
+                    <label class="form-check-label">¿Incluye accesorios?</label>
+                    <div class="form-check-container d-flex justify-content-evenly">
+                        <div>
+                            <input type="radio" id="includes_accessories_yes" name="includesAccessories" value="yes">
+                            <label for="includes_accessories_yes">Sí</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="includes_accessories_no" name="includesAccessories" value="no">
+                            <label for="includes_accessories_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Boble Head -->
+                <div class="col-10 col-md-6 col-lg-4 mb-3">
+                    <label class="form-check-label">¿Tiene cabeza móvil?</label>
+                    <div class="form-check-container d-flex justify-content-evenly">
+                        <div>
+                            <input type="radio" id="bobblehead_yes" name="bobblehead" value="yes">
+                            <label for="bobblehead_yes">Sí</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="bobblehead_no" name="bobblehead" value="no">
+                            <label for="bobblehead_no">No</label>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="d-flex justify-content-center justify-content-lg-end gap-2 mt-4">
-                <button class="btn btn-sm btn-dark" type="submit">Registrarse</button>
-                <button class="btn btn-sm btn-custom-danger" type="reset">Cancelar</button>
-            </div>
-        </form>
+                <div class="d-flex flex-column flex-md-row justify-content-center justify-content-lg-end gap-2 mb-3">
+                    <!--  -->
+                    <button class="btn btn-custom-green2" type="submit">REGISTRAR</button>
+                    <button class="btn btn-custom-orange" type="reset">CANCELAR</button> <!-- btn-sm -->
+                </div>
+            </form>
+        </div>
     </main>
-
     <footer>
-
     </footer>
 
     <!-- Script Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
