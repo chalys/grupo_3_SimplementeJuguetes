@@ -21,7 +21,7 @@ app.use("/",otherRoutes);
 app.use("/",authRoutes);
 app.use("/",cartRoutes);
 app.use("/",prodRoutes);
-
+app.use("/",otherRoutes);
 /* EXTENSIONES
 carrito
 detalle

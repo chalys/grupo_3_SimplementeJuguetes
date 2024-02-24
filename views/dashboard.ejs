@@ -1,0 +1,43 @@
+<html>
+    <%- include("./partials/head") %>
+  <body class="body-dashboard">
+    <%- include("./partials/header") %>
+    <main class="main-dashboard">
+    <nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="https://jbfarrow.com">
+                        <i class="fa-solid fa-pen"></i>
+                        <span class="nav-text">
+                         Editar Producto
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa-solid fa-tag"></i>
+                        <span class="nav-text">
+                            Subir Producto
+                        </span>
+                    </a>
+</ul>
+
+            <ul class="logout">
+                <li>
+                   <a href="#">
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                         <i class="fa fa-power-off fa-2x"></i>
+
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+    </main>
+    <footer class="sub-footer">
+        <%- include("./partials/footer") %>
+    </footer>
+  </body>
+    </html>
