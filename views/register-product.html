@@ -14,143 +14,208 @@
 </head>
 
 <body>
-
     <header>
-
     </header>
-    <main> <!-- CLASS CONTAINER d-flex flex-column justify-content-center  -->
-        <div class="container-text bg-container-text-custom">
-            <h1 class="text-center p-5 color-text-title-custom">REGISTRO DE JUGUETES</h1>
+    <main class="container-main " style="width: 100%;">
+        <!-- title -->
+        <div class="container-title bg-container-title-custom mb-4">
+            <h1 class="color-title-custom">REGISTRO DE JUGUETES</h1>
         </div>
+        <!-- form -->
+        <div class="">
+            <form class=" needs-validation" novalidate>
+                <div class="row d-flex flex-wrap justify-content-center">
+                    <!-- Name -->
+                    <div class="col-10 col-md-12 col-lg-12 mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Introduzca el nombre"
+                            value="" required>
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            Es necesario introducir el nombre
+                        </div>
+                    </div>
+                    <!-- Description -->
+                    <div class="col-10 col-md-12 col-lg-12 mb-3">
+                        <label for="description" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"
+                            placeholder="Introduzca la descripción" required></textarea>
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            Es necesario introducir la descripción
+                        </div>
+                    </div>
+                </div>
 
-        <div class="container card">
-            <form class="row justify-content-center">
-                <!-- Name -->
-                <div class="col-10 col-md-12 col-lg-12 mb-3">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" value="">
-                </div>
-                <!-- Description -->
-                <div class="col-10 col-md-12 col-lg-12 mb-3">
-                    <label for="description" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                </div>
-                <!-- Imagen -->
-                <div class="col-10 col-md-12 col-lg-12 mb-3">
-                    <label for="image" class="form-label">Imagen</label>
-                    <input type="file" class="form-control" id="image" name="image">
+                <div class="row d-flex flex-wrap flex-md-column justify-content-center mb-3">
+                    <!-- Imagen -->
+                    <div class="col-10 col-md-6 col-lg-4 d-flex justify-content-center mb-3">
+                        <figure>
+                            <img class="img-thumbnail" src="/imagen/unnamed.jpg" alt="default imagen">
+                        </figure>
+                    </div>
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <input class="form-control" type="file" name="imagen" id="imagen" value="imagen" accept=".jpg"
+                            multiple>
+                    </div>
                 </div>
 
                 <div class="row d-flex flex-wrap justify-content-center">
                     <!-- Stock -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3">
-                        <label for="stock" class="form-label">Stock</label>
-                        <input type="number" class="form-control" id="stock" name="stock">
+                        <label for="stock" class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" id="stock" name="stock"
+                            placeholder="Introduzca la cantidad" required>
+                        <div class="valid-feedback">
+                            Correcto
+                        </div>
+                        <div class="invalid-feedback">
+                            Es necesario introducir la cantidad disponible
+                        </div>
                     </div>
                     <!-- Price -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3">
                         <label for="price" class="form-label">Precio</label>
-                        <input type="number" class="form-control" id="price" name="price">
+                        <input type="number" class="form-control" id="price" name="price"
+                            placeholder="Introduzca el precio" required>
+                            <div class="valid-feedback">
+                                Correcto
+                            </div>
+                            <div class="invalid-feedback">
+                                Es necesario introducir el precio
+                            </div>
                     </div>
                     <!-- Marker -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3">
                         <label for="maker" class="form-label">Fabricante</label>
-                        <input type="text" class="form-control" id="maker" name="maker" required>
+                        <input type="text" class="form-control" id="maker" name="maker"
+                            placeholder="Introduzca el fabricante" required>
+                            <div class="valid-feedback">
+                                Correcto
+                            </div>
+                            <div class="invalid-feedback">
+                                Es necesario introducir el fabricante
+                            </div>
                     </div>
                     <!-- Line -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3">
                         <label for="line" class="form-label">Línea</label>
-                        <input type="text" class="form-control" id="line" name="line" required>
+                        <input type="text" class="form-control" id="line" name="line" placeholder="Introduzca la línea">
                     </div>
                     <!-- Collection -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3">
                         <label for="collection" class="form-label">Colección</label>
-                        <input type="text" class="form-control" id="collection" name="collection">
+                        <input type="text" class="form-control" id="collection" name="collection"
+                            placeholder="Introduzca la colección">
                     </div>
                     <!-- Character -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3">
                         <label for="character" class="form-label">Personaje</label>
-                        <input type="text" class="form-control" id="character" name="character">
+                        <input type="text" class="form-control" id="character" name="character"
+                            placeholder="Introduzca el personaje" required>
+                            <div class="valid-feedback">
+                                Correcto
+                            </div>
+                            <div class="invalid-feedback">
+                                Es necesario introducir el personaje
+                            </div>
                     </div>
                     <!-- Character Versión -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3">
                         <label for="characterVersion" class="form-label">Versión del Personaje</label>
-                        <input type="text" class="form-control" id="characterVersion" name="characterVersion">
+                        <input type="text" class="form-control" id="characterVersion" name="characterVersion"
+                            placeholder="Introduzca la versión del personaje">
                     </div>
                     <!-- Recommended Minimum Age -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3">
                         <label for="recommendedMinimumAge" class="form-label">Edad Mínima Recomendada</label>
                         <input type="number" class="form-control" id="recommendedMinimumAge"
-                            name="recommendedMinimumAge" min="0">
+                            name="recommendedMinimumAge" min="0" placeholder="Introduzca la edad mínima recomendada"
+                            required>
+                            <div class="valid-feedback">
+                                Correcto
+                            </div>
+                            <div class="invalid-feedback">
+                                Es necesario introducir la mínima edad recomendada
+                            </div>
                     </div>
                     <!-- Initial Scale -->
                     <div class="col-10 col-md-6 col-lg-4 mb-3 me-md-auto">
                         <label for="initialScale" class="form-label">Escala inicial</label>
-                        <input type="number" class="form-control" id="initialScale" name="initialScale" min="0">
-                    </div>
-
-                </div>
-                <!-- Articulated -->
-                <div class="col-10 col-md-6 col-lg-4 mb-3">
-                    <label class="form-check-label">¿Es articulado?</label>
-                    <div class="form-check-container d-flex justify-content-evenly">
-                        <div>
-                            <input type="radio" id="articulated_yes" name="articulated" value="yes">
-                            <label for="articulated_yes">Sí</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="articulated_no" name="articulated" value="no">
-                            <label for="articulated_no">No</label>
-                        </div>
+                        <input type="number" class="form-control" id="initialScale" name="initialScale" min="0"
+                            placeholder="Introduzca la escala inicial">
                     </div>
                 </div>
-                <!-- Collectable -->
-                <div class="col-10 col-md-6 col-lg-4 mb-3">
-                    <label class="form-check-label">¿Es coleccionable?</label>
-                    <div class="form-check-container d-flex justify-content-evenly">
-                        <div>
-                            <input type="radio" id="collectable_yes" name="collectable" value="yes">
-                            <label for="collectable_yes">Sí</label>
+                <div class="row d-flex flex-wrap justify-content-center mb-4">
+                    <!-- Articulated -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label class="form-check-label">¿Es articulado?</label>
+                        <div class="form-check-container d-flex justify-content-evenly">
+                            <div>
+                                <input type="radio" id="articulated_yes" name="articulated" value="yes" checked>
+                                <label for="articulated_yes">Sí</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="articulated_no" name="articulated" value="no">
+                                <label for="articulated_no">No</label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="radio" id="collectable_no" name="collectable" value="no">
-                            <label for="collectable_no">No</label>
+                    </div>
+                    <!-- Collectable -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label class="form-check-label">¿Es coleccionable?</label>
+                        <div class="form-check-container d-flex justify-content-evenly">
+                            <div>
+                                <input type="radio" id="collectable_yes" name="collectable" value="yes" checked>
+                                <label for="collectable_yes">Sí</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="collectable_no" name="collectable" value="no">
+                                <label for="collectable_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Includes Accessories -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label class="form-check-label">¿Incluye accesorios?</label>
+                        <div class="form-check-container d-flex justify-content-evenly">
+                            <div>
+                                <input type="radio" id="includes_accessories_yes" name="includesAccessories" value="yes"
+                                    checked>
+                                <label for="includes_accessories_yes">Sí</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="includes_accessories_no" name="includesAccessories" value="no">
+                                <label for="includes_accessories_no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boble Head -->
+                    <div class="col-10 col-md-6 col-lg-4 mb-3">
+                        <label class="form-check-label">¿Tiene cabeza móvil?</label>
+                        <div class="form-check-container d-flex justify-content-evenly">
+                            <div>
+                                <input type="radio" id="bobblehead_yes" name="bobblehead" value="yes" checked>
+                                <label for="bobblehead_yes">Sí</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="bobblehead_no" name="bobblehead" value="no">
+                                <label for="bobblehead_no">No</label>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Includes Accessories -->
-                <div class="col-10 col-md-6 col-lg-4 mb-3">
-                    <label class="form-check-label">¿Incluye accesorios?</label>
-                    <div class="form-check-container d-flex justify-content-evenly">
-                        <div>
-                            <input type="radio" id="includes_accessories_yes" name="includesAccessories" value="yes">
-                            <label for="includes_accessories_yes">Sí</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="includes_accessories_no" name="includesAccessories" value="no">
-                            <label for="includes_accessories_no">No</label>
-                        </div>
+                <div class="row d-flex flex-wrap justify-content-center">
+                    <div
+                        class="col-10 col-md-6 col-lg-4 d-flex flex-column flex-md-row justify-content-center justify-content-lg-end gap-2 mb-3">
+                        <!--  -->
+                        <button class="btn btn-custom-green2 " type="submit">REGISTRAR</button>
+                        <button class="btn btn-custom-orange" type="reset">CANCELAR</button> <!-- btn-sm -->
                     </div>
-                </div>
-                <!-- Boble Head -->
-                <div class="col-10 col-md-6 col-lg-4 mb-3">
-                    <label class="form-check-label">¿Tiene cabeza móvil?</label>
-                    <div class="form-check-container d-flex justify-content-evenly">
-                        <div>
-                            <input type="radio" id="bobblehead_yes" name="bobblehead" value="yes">
-                            <label for="bobblehead_yes">Sí</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="bobblehead_no" name="bobblehead" value="no">
-                            <label for="bobblehead_no">No</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-column flex-md-row justify-content-center justify-content-lg-end gap-2 mb-3">
-                    <!--  -->
-                    <button class="btn btn-custom-green2" type="submit">REGISTRAR</button>
-                    <button class="btn btn-custom-orange" type="reset">CANCELAR</button> <!-- btn-sm -->
                 </div>
             </form>
         </div>
@@ -160,6 +225,28 @@
 
     <!-- Script Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 </body>
 
 </html>

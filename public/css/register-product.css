@@ -1,8 +1,9 @@
-.bg-container-text-custom {
+.bg-container-title-custom {
     background-color: var(--orange) !important;
 }
 
-.color-text-title-custom {
+.color-title-custom {
+    text-align: center;
     color: var(--white) !important;
 }
 
@@ -14,3 +15,4 @@
     background: var(--orange)!important;
     color: var(--white)!important;
 }
+
