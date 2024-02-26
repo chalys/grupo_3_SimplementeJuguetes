@@ -1,5 +1,6 @@
 .mn-container {
   width: 100%;
+  height: 100%;
 }
 
 .mn-title {
@@ -29,6 +30,9 @@
   text-decoration: none;
 }
 
+.mn-title-arrow{
+ margin: 0px 8px;
+}
 .mn-box {
   width: 90%;
   margin-left: auto;
@@ -106,7 +110,7 @@
 }
 
 .vt-desktop {display: none;}
-.vt-mobile-tableta {display: flex;align-items: center;position: relative;border-bottom: 1px solid;}
+.vt-mobile-tableta {display: flex;align-items: center;position: relative;border-bottom: 1px solid var(--grisObs);}
 
 .lbl-titles-column {
   display: none;
