@@ -18,10 +18,10 @@
                 </figure>
                 <div class="container-left-down">
                     <img class="secondary-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
-                    <img class="secondary-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
-                    <img class="secondary-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
-                    <img class="secondary-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
-                    <img class="secondary-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
+                    <img class="secondary-photo" src="/imagen/secondary-photo-1.jpg" alt="Imagen del producto">
+                    <img class="secondary-photo" src="/imagen/secondary-photo-2.jpg" alt="Imagen del producto">
+                    <img class="secondary-photo" src="/imagen/secondary-photo-3.jpg" alt="Imagen del producto">
+                    <img class="secondary-photo" src="/imagen/secondary-photo-4.jpg" alt="Imagen del producto">
                 </div>
             </div>
             <div class="container-right">
@@ -52,9 +52,21 @@
                     <div class="cr-amount">
                         <p class="lbl-amount" for="">CANTIDAD</p>
                         <div class="lbl-amount-up-down">
-                            <span>-</span>
-                            <span>1</span>
-                            <span>+</span>
+
+                            <button onclick="decrementar()">-</button>
+                            <input type="number" id="numero" value="0" size="3" readonly>
+                            <button onclick="incrementar()">+</button>
+                            
+                            <script>
+                              function incrementar() {
+                                document.getElementById('numero').stepUp();
+                              }
+                              
+                              function decrementar() {
+                                document.getElementById('numero').stepDown();
+                              }
+                            </script>
+
                         </div>
                     </div>
                     <!-- Button -->
