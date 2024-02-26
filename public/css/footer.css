@@ -1,5 +1,6 @@
 .sub-footer{
-    position: absolute;
+    order: 3;
+    /* position: absolute; */
     width: 100%;
 }
 footer.ft-container {
