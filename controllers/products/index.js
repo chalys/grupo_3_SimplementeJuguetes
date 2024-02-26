@@ -1,3 +1,4 @@
 module.exports = {
-    detail: require("./detail.controller")
- }
+    detail: require("./detail.controller"),
+    registroProducto: require("./registroProducto.controller")
+}
