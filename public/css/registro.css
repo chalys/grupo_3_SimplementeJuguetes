@@ -1,13 +1,14 @@
-.bodyRegistro{margin: 0px;}
-main.mainRegistro{padding-bottom: 311px;}
+.bodyRegistro{display: flex;margin: 0px;flex-direction: column;flex-wrap: wrap;}
+main.mainRegistro{order: 2;height: auto;}
 /* Fondo */
 div.fondoRegis{
     flex-direction: column;
     align-items: center;
 }
-main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction: column;align-items: center;}
+main.mainRegistro nav{right: 20vw;left: 20vw;top: 58vh;position: absolute;display: flex;flex-direction: column;align-items: center;}
 .fondoRegis{
-    width: 100vw;
+    position: relative;
+    height: 153vh;
     display: flex;
 }
 .fondoRegis .IMG1{
@@ -18,24 +19,24 @@ main.mainRegistro nav{top: 38vh;position: relative;display: flex;flex-direction:
     transform: scale(1);
     }
 .fondoRegis .IMG2{
-    height: 134vh;
+    height: 100%;
     position: absolute;
     left: -60vh;
-    transform: scale(1);
+    transform: scale(1.1);
     }
 .fondoRegis .span1{
     position: absolute;
-    width: 50vw;
-    height: 140vh;
+    width: 50%;
+    height: 100%;
     align-self: start;
     overflow: hidden;
 }
 .fondoRegis .span2{
-    width: 50vw;
+    height: 100%;
+    width: 50%;
     align-self: end;
     position: absolute;
     overflow: hidden;
-    height: 140vh;
 }
 main.mainRegistro nav form div{
     width: 60%;
@@ -220,27 +221,23 @@ main.mainRegistro div form{}
 main.mainRegistro div{
 }
 .fondoRegis .span2{
-    height: 140%;
-}
-.fondoRegis .span1{height: 140%;}
-.fondoRegis .IMG2{
     height: 100%;
+}
+.fondoRegis .span1{height: 100%;}
+.fondoRegis .IMG2{
     left: -40vh;
 }
 .fondoRegis .IMG1{}
 .fondoRegis{}
-main.mainRegistro nav{top: 36vh;}
+main.mainRegistro nav{top: 67vh;}
 .bodyRegistro{}
-main.mainRegistro{
-    padding-bottom: 300px;
-}
+main.mainRegistro{}
 }
 
 /*/////////ESCRITORIO//////////*/
 
 @media(min-device-width: 769px) {
     main.mainRegistro{
-    padding-bottom: 400px;
 }
     main.mainRegistro div form input{}
     main.mainRegistro form .margenEspRegis{
@@ -290,16 +287,15 @@ main.mainRegistro{
     main.mainRegistro div{
 }
     .fondoRegis .span2{
-    height: 150vh;
 }
 .fondoRegis .span1{
-    height: 150vh;
 }
 .fondoRegis .IMG2{}
     .fondoRegis .IMG1{}
-    .fondoRegis{}
+    .fondoRegis{
+}
     main.mainRegistro nav{
-    top: 40vh;
+    top: 52vh;
 }
     .bodyRegistro{}
 }

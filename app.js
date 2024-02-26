@@ -1,41 +1,39 @@
 const express = require("express");
-const app = express();
 const path = require("path");
+const app = express();
 const port = 3030;
 
-app.use(express.static('public'))
+/*CONFIGS*/
+app.set("view engine","ejs");
+app.set('views', [
+    path.join(__dirname, 'views'),
+    path.join(__dirname, 'views/users'),
+    path.join(__dirname, 'views/products')
+]);
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/home.html"));
-});
-app.get("/registro", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/registro.html"));
-});
-app.get("/registro-paso-2", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/registro-1.html"));
-});
-app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/login.html"));
-});
+/* MIDDLEWARE */
+app.use(express.static('public'));
 
-/** Configuración ruta carrito **/
-app.get("/carrito", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/cart.html"));
-});
+/* ROUTERS */
+const otherRoutes = require("./routes/other.routes");
+const authRoutes = require("./routes/authentication.routes");
+const cartRoutes = require("./routes/cart.routes");
+const prodRoutes = require("./routes/products.routes");
 
-/** Configuración registro producto **/
-app.get("/registro-producto", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/register-product.html"));
-});
+/* ROUTES */
+app.use("/",otherRoutes);
+app.use("/",authRoutes);
+app.use("/",cartRoutes);
+app.use("/",prodRoutes);
+app.use("/",otherRoutes);
+/* EXTENSIONES
+carrito
+detalle
+login
+registro
+registro-segunda-parte
+registro-tercera-parte
+*/
 
-
-app.get("/detalle", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/detail.html"));
-});
-app.get("/registro-paso-3", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/registro-2.html"));
-});
-app.get("/inicio", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/home.html"));
-});
+/* SERVER */
 app.listen(port,()=>{console.log(`http://localhost:${port}`)})
