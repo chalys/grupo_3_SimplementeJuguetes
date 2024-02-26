@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("./partials/head") %>
+    <!--   HEADER    -->
+    <%- include("./partials/header") %>
+<!--     MAIN    -->
+<main class="mainRegistro">
+    <div class="fondoRegis">
+        <span class="span1">
+    <img src="../imagen/fondRegis1.jpg" alt="" class="IMG1">
+</span>
+<span class="span2">
+    <img src="../imagen/fondRegis2.jpg" alt=""class="IMG2">
+</span>
+</div>
+    <nav>
+<div class="divFormReg">
+<form>
+    <!--formulario principal-->
+    <img src="../imagen/panda-logo.png" alt="logo" class="pandaFormularioReg">
+    <label for="Email">E-mail</label>
+    <input type="email" name="Email" placeholder="nadie@gmail.com" required>
+    <label for="password">Contraseña</label>
+    <input type="password" name="password" placeholder="" required>
+    <label for="confgPass">Confirmar contraseña</label>
+    <input type="password" name="confgPass" class="margenEspRegis" placeholder="" required>
+    <!--menu de insercion de foto y nombre-->
+    <div class="perfilReg">
+        <!--imagen de usuario-->
+        <div class="fotodePerfil">
+        <i class="fa-solid fa-user"></i>
+        </div>
+    <div>
+        <label for="nombreUsuario">Usuario</label>
+        <input type="text" name="nombreUsuario" placeholder="nombreUsuario">
+    </div>
+    </div>
+    <button type="submit"><a href="/registro-paso-2">Registrarme</a></button>
+</form>
+<h2>¿Ya tienes cuenta?<a href="/login">accede aqui</a></h2>
+</div>
+<div class="google">
+    <img src="../imagen/google-icon.png" alt="google">
+    <h2><a href="">Ingresar con Google</a></h2>
+</div>
+</nav>
+</main>
+<footer class="sub-footer">
+   <!-- Footer -->
+   <%- include("./partials/footer") %>
+</footer>
+<!-- Script Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    </body>
+</html>
+
+

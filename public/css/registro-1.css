@@ -1,11 +1,14 @@
 .bodyRegistro-1{
+    display: flex;
+    margin: 0px;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: 0;
 }
-main.mainRegistro-1{
-    padding-bottom: 15%;
-}
-main.mainRegistro-1 nav{top: 6vh;position: relative;display: flex;justify-content: center;flex-direction: row;}
+main.mainRegistro-1{order: 2;display: flex;margin: 0px;flex-direction: column;flex-wrap: wrap;}
+main.mainRegistro-1 nav{top: -143vh;position: relative;display: flex;justify-content: center;flex-direction: row;}
 main.mainRegistro-1 form{
+    position: absolute;
     width: 80%;
     gap: 8px;
     border-radius: 7px;
