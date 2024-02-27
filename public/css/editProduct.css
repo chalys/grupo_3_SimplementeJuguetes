@@ -3,8 +3,9 @@
 body.body-edit-product{display: flex;margin: 0;padding: 0;box-sizing: border-box;flex-direction: column;}
 
 .btn-volver{
+    margin-left: 100px;
     order: 2;
-    align-self: center;
+    /* align-self: center; */
     display: flex;
     flex-direction: row;
     align-items: center;

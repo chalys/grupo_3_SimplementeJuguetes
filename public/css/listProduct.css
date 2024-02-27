@@ -3,7 +3,8 @@
     max-width: 100px;
 }
 .list_produt{
+    background: var(--azul);
+    text-align: center;
     width: 100%;
 }
-.tabla-lista-productos{
-}
+.tabla-lista-productos{margin-left: 200px;}

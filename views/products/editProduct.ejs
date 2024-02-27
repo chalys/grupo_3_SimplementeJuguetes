@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("./partials/head") %>
-<%- include("./partials/header") %>
+  <body class="body-edit-product">
+    
+<%- include("./partials/dashbar") %>
   <div class="h2-edit"><h2 >Editar producto</h2></div>
-  <div class="btn-volver"><button type="button" class="btn btn-secondary ">volver</button></div>
+  <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product" href="/dashboard">volver</a></button></div>
     <form class="form-edit  col-9 ">
     
         <div class="mb-3 col-6">
@@ -156,10 +158,12 @@
 <button type="reset" class="btn btn-danger  ">borrar</button>
 </div>
     </form>
-  </main>
+    <footer class="sub-footer">
+
+  </footer>
+</main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
-
