@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("./partials/head") %>
-
+<%- include("../partials/head") %>
+<%- include("./partials/dashbar") %>
     <body>
         <main class="container-main ">
             <!-- title -->
             <div class="container-title bg-container-title-custom">
                 <h1 class="color-title-custom">REGISTRO DE JUGUETES</h1>
             </div>
+            <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product" href="/dashboard">volver</a></button></div>
             <!-- form -->
             <form class="container d-lg-flex flex-lg-column align-items-lg-center needs-validation py-4" novalidate>
                 <div class="col-12 d-md-flex justify-content-center">
@@ -214,7 +215,6 @@
                     </div>
             </form>
         </main>
-        
         <!-- Script Bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script>
