@@ -1,0 +1,33 @@
+[
+    {
+        "id":1,
+        "name":"Comisario Woody Toy Story Muñeco Coleccionable",
+        "description":"Uraeginthus granatina",
+        "amount":71,
+        "manufacturer":"Thnkway Toys",
+        "mark":"Toy Story",
+        "sku":12345,
+        "available": true,
+        "colection":"Discover Financial Services",
+        "price":58.999,
+        "line":"Toy Story 4",
+        "character":"Toy Story",
+        "character-version":"Toy Story",
+        "min-age":5,
+        "height":"40 cm",
+        "depth":"5 cm",
+        "width":"6 cm",
+        "materials":"Plastico",
+        "scale":"40 cm",
+        "articulated":true,
+        "collectable":true,
+        "accessories":false,
+        "bobblehead":false,
+        "first-img":"../",
+        "img1":"../",
+        "img2":"../",
+        "img3":"../",
+        "img4":"../",
+        "img5":"../"
+        }
+    ]
