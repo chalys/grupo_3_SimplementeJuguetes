@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("../partials/head") %>
+
+<body>
+    <!-- Header -->
+
+    <%- include("../partials/header") %>
+
+    <main class="main-detail">
+
+        <!--PRODUCTO PRINCIPAL-->
+        <section class="main-product">
+            <div class="container-left">
+                <figure class="container-left-up">
+                    <img class="main-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
+                </figure>
+                <div class="container-left-down">
+                    <img class="secondary-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
+                    <img class="secondary-photo" src="/imagen/secondary-photo-1.jpg" alt="Imagen del producto">
+                    <img class="secondary-photo" src="/imagen/secondary-photo-2.jpg" alt="Imagen del producto">
+                    <img class="secondary-photo" src="/imagen/secondary-photo-3.jpg" alt="Imagen del producto">
+                    <img class="secondary-photo" src="/imagen/secondary-photo-4.jpg" alt="Imagen del producto">
+                </div>
+            </div>
+            <div class="container-right">
+                <div class="container-right-up">
+                    <h1 class="cr-description">Comisario Woody Toy Story Muñeco Coleccionable</h1>
+                    <p class="cr-article cr-details">Número de Articulo: 16536</p>
+                    <h2 class="cr-price cr-details">$58.999</h2>
+                    <p class="cr-dues cr-details">en 12x $XXXX</p>
+                    <p class="cr-payment cr-details">Metodos de pago</p>
+                    <figure class="logo-cards">
+                        <i class="fa-brands fa-cc-mastercard custom-cards"></i>
+                        <i class="fa-brands fa-cc-paypal custom-cards""></i>
+                    <i class=" fa-brands fa-cc-visa custom-cards""></i>
+                    </figure>
+                </div>
+                <div class="container-right-down">
+                    <!-- Characteristics -->
+                    <div class="cr-title-characteristics">
+                        <h2>Caracteristicas</h2>
+                    </div>
+                    <div class="cr-description-characteristics">
+                        <p class="cr-text-red">Marca:<span class="cr-text-gris">Toy Story</span></p>
+                        <p class="cr-text-red">SKU:<span class="cr-text-gris">12345</span></p>
+                        <p class="cr-text-red">Disponibilidad:<span class="cr-text-gris">En Stock</span></p>
+                        <p class="cr-text-red">Edad recomendada:<span class="cr-text-gris">5 años</span></p>
+                    </div>
+                    <!-- Amount -->
+                    <div class="cr-amount">
+                        <p class="lbl-amount" for="">CANTIDAD</p>
+                        <div class="lbl-amount-up-down">
+
+                            <button onclick="decrementar()">-</button>
+                            <input type="number" id="numero" value="0" size="3" readonly>
+                            <button onclick="incrementar()">+</button>
+                            
+                            <script>
+                              function incrementar() {
+                                document.getElementById('numero').stepUp();
+                              }
+                              
+                              function decrementar() {
+                                document.getElementById('numero').stepDown();
+                              }
+                            </script>
+
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="cr-button">
+                        <button type="submit" class="btn btn-custom-white">AGREGAR AL CARRITO</button>
+                        <button type="submit" class="btn btn-custom-green">COMPRAR AHORA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--PRODUCTOS RELACIONADOS-->
+        <section class="related-products">
+            <div class="container-related-products">
+                <div class="rp-title-products">
+                    <h2>Productos Relacionados</h2>
+                </div>
+                <section class="rp-products">
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img"
+                                src="/imagen/buzz_lightyear_product.jpg" alt="Producto 1"></a>
+                        <h3 class="rp-product-title">Buzz Lightyear</h3>
+                        <p class="rp-product-price">$39.999</p>
+                    </article>
+
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img"
+                                src="/imagen/jessievaquera_producto.jpg" alt="Producto 2"></a>
+                        <h3 class="rp-product-title">Jessi Vaquera</h3>
+                        <p class="rp-product-price">$39.999</p>
+                    </article>
+
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img" src="/imagen/rex_producto.jpg"
+                                alt="Producto 3"></a>
+                        <h3 class="rp-product-title">Rex Dinosaurio</h3>
+                        <p class="rp-product-price">$39.999</p>
+                    </article>
+
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img"
+                                src="/imagen/tiroalblanco_producto.jpg" alt="Producto 4"></a>
+                        <h3 class="rp-product-title">Tiro al Blanco</h3>
+                        <p class="rp-product-price">$29.999</p>
+                    </article>
+
+                    <article class="rp-product">
+                        <a class="rp-product-link" href=""><img class="rp-product-img" src="/imagen/forky_producto.jpg"
+                                alt="Producto 5"></a>
+                        <h3 class="rp-product-title">Forky Muñeco</h3>
+                        <p class="rp-product-price">$39.999</p>
+                    </article>
+
+                </section>
+            </div>
+        </section>
+
+        <!--CARACTERISTICAS DEL PRODUCTO-->
+        <section class="all-features">
+            <div class="container-all-features">
+                <div class="af-title">
+                    <h2>Caracteriscas del Producto</h2>
+                </div>
+                <section class="all-table">
+                    <table class="toy-information">
+                        <tr>
+                            <td class="esquina1">Fabricante</td>
+                            <td class="esquina2">Thnkway Toys</td>
+                        </tr>
+
+                        <tr>
+                            <td>Linea</td>
+                            <td>Toy Story 4</td>
+                        </tr>
+
+                        <tr>
+                            <td>Coleccion</td>
+                            <td>Toy Story</td>
+                        </tr>
+
+                        <tr>
+                            <td>Personaje</td>
+                            <td>Woody</td>
+                        </tr>
+
+                        <tr>
+                            <td class="esquina3">Version del personaje</td>
+                            <td class="esquina4">Woody</td>
+                        </tr>
+                    </table>
+
+                    <table class="more-information">
+                        <tr>
+                            <td class="esquina1">Edad minima recomendada</td>
+                            <td class="esquina2">4 años</td>
+                        </tr>
+
+                        <tr>
+                            <td>Altura</td>
+                            <td>40 cm</td>
+                        </tr>
+
+                        <tr>
+                            <td>Profundida</td>
+                            <td>5 cm</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ancho</td>
+                            <td>6 cm</td>
+                        </tr>
+
+                        <tr>
+                            <td>Materiales</td>
+                            <td>Plastico</td>
+                        </tr>
+
+                        <tr>
+                            <td>Es articulada</td>
+                            <td>Si</td>
+                        </tr>
+
+                        <tr>
+                            <td>Es coleccionable</td>
+                            <td>Si</td>
+                        </tr>
+
+                        <tr>
+                            <td>Incluye accesorios</td>
+                            <td>No</td>
+                        </tr>
+
+                        <tr>
+                            <td>Es bobblehead</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td class="esquina3">Escala</td>
+                            <td class="esquina4">40 cm</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </section>
+
+        <section class="description">
+            <div class="container-description">
+                <div class="rp-title-description">
+                    <h2>Descripcion</h2>
+                </div>
+                <div>
+                    <p class="paragraph">Con Woody de Toy Story de la línea Toy Story 4 de Thinkway Toys las horas de
+                        diversión están
+                        aseguradas. Podrás jugar con ellos siguiendo sus historias o coleccionarlos el tiempo que
+                        quieras.</p>
+                    <p class="paragraph">Materiales noblesLas figuras de acción están hechas de plástico lo que asegura
+                        que sean amables y
+                        suaves al tacto, diferenciando las distintas texturas y relieves del cuerpo de los personajes.
+                    </p>
+                    <p class="paragraph">Ideal para coleccionistasUna de las actividades que podrás hacer con este tipo de figuras es
+                        coleccionarlas y guardarlas en un lugar especial. A medida que conozcas más y más, tu colección irá
+                        creciendo y será más variada.</p>
+                    <p class="paragraph">Juguetes articuladosAl tener marcadas las articulaciones podrás manejar y acomodar tus figuras
+                        como más te guste. Con ellas, vas a poder crear historias en la que los personajes puedan movilizarse
+                        y cobrar vida</p>
+                </div>
+            </div>
+
+
+        </section>
+
+    </main>
+    <!-- Footer -->
+    
+    <%- include("../partials/footer") %>
+
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

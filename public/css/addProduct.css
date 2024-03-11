@@ -1,3 +1,9 @@
+/*====== Add Products ======*/
+.container-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
 .bg-container-title-custom {
     background-color: var(--orange) !important;
 }
@@ -7,12 +13,12 @@
     color: var(--white) !important;
 }
 
-.btn-custom-green2{
+.btn-custom-register{
     background: var(--green)!important;
     color: var(--white)!important;
 }
-.btn-custom-orange{
-    background: var(--orange)!important;
+.btn-custom-cancel{
+    background-color: var(--orange)!important;
     color: var(--white)!important;
 }
 
