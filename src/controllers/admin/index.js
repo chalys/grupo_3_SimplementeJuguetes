@@ -1,6 +1,6 @@
 
 module.exports = {
     add: require("./addProduct.controller"),
-    edit: require("./editarProducto.controller"),
+    edit: require("./editProduct.controller"),
     store:require("./storeProduct.controller")
 }

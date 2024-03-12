@@ -23,27 +23,20 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 
 // ************ WRITE YOUR CODE FROM HERE ************
 // ************ Route System require and use() ************
-/*
-const otherRouter = require('./routes/other.routes'); // Rutas main
-const adminRouter = require('./routes/admin.routes'); // Rutas /admin
-const productsRouter = require('./routes/products.routes') // Rutas /products
-const authRouter = require('./routes/autentication.routes') // Rutas /autemtication
-*/
 
-//HABILITAR
 const otherRouter = require('./routes/other.routes'); // Rutas main
 const adminRouter = require('./routes/admin.routes'); // Rutas admin
 const authRouter = require("./routes/authentication.routes"); // Rutas autentication
 const prodRouter = require("./routes/products.routes"); // Rutas products
-//const cartRoutes = require("./routes/cart.routes");
+const cartRouter = require("./routes/cart.routes");
 
 
 /* ROUTES */
 app.use('/', otherRouter);
-app.use ('/admin', adminRouter);
-app.use("/autenticacion",authRouter);
-app.use("/productos",prodRouter);
-//app.use("/",cartRoutes);
+app.use('/admin', adminRouter);
+app.use("/autenticacion", authRouter);
+app.use("/productos", prodRouter);
+app.use("/carrito-compra", cartRouter);
 
 // ************ DON'T TOUCH FROM HERE ************
 // ************ catch 404 and forward to error handler ************
