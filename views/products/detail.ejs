@@ -18,7 +18,7 @@
                 </figure>
                 <div class="container-left-down">
                     <% for( let i = 0; i < 4; i++ ) { %>
-                        <img class="secondary-photo" src="/imagen/<%= p.secondImg[i] %>" alt="Imagen del producto">
+                        <img class="secondary-photo" src="/imagen/<%= p.secondImg[i]?p.secondImg[i]:'unnamed.jpg' %>" alt="Imagen del producto">
                         <% } %>
              
                 </div>

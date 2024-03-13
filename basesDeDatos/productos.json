@@ -48,7 +48,7 @@
             "accessories":false,
             "bobblehead":false,
             "firstImg":"buzz_lightyear_product.jpg",
-            "secondImg":"../",
+            "secondImg":[],
             "description":"Con Woody de Toy Story de la línea Toy Story 4 de Thinkway Toys las horas de diversión están aseguradas. Podrás jugar con ellos siguiendo sus historias o coleccionarlos el tiempo que quieras. Materiales noblesLas figuras de acción están hechas de plástico lo que asegura que sean amables y suaves al tacto, diferenciando las distintas texturas y relieves del cuerpo de los personajes. Ideal para coleccionistasUna de las actividades que podrás hacer con este tipo de figuras es coleccionarlas y guardarlas en un lugar especial. A medida que conozcas más y más, tu colección irá creciendo y será más variada. Juguetes articuladosAl tener marcadas las articulaciones podrás manejar y acomodar tus figuras como más te guste. Con ellas, vas a poder crear historias en la que los personajes puedan movilizarse y cobrar vida."
             }, 
             {
@@ -74,7 +74,7 @@
                 "accessories":false,
                 "bobblehead":false,
                 "firstImg":"jessievaquera_producto.jpg",
-                "secondImg":"../",
+                "secondImg":[],
                 "description":"Con Woody de Toy Story de la línea Toy Story 4 de Thinkway Toys las horas de diversión están aseguradas. Podrás jugar con ellos siguiendo sus historias o coleccionarlos el tiempo que quieras. Materiales noblesLas figuras de acción están hechas de plástico lo que asegura que sean amables y suaves al tacto, diferenciando las distintas texturas y relieves del cuerpo de los personajes. Ideal para coleccionistasUna de las actividades que podrás hacer con este tipo de figuras es coleccionarlas y guardarlas en un lugar especial. A medida que conozcas más y más, tu colección irá creciendo y será más variada. Juguetes articuladosAl tener marcadas las articulaciones podrás manejar y acomodar tus figuras como más te guste. Con ellas, vas a poder crear historias en la que los personajes puedan movilizarse y cobrar vida."
                 }, 
                 {
@@ -100,7 +100,7 @@
                     "accessories":false,
                     "bobblehead":false,
                     "firstImg":"rex_producto.jpg",
-                    "secondImg":"../",
+                    "secondImg":[],
                     "description":"Con Woody de Toy Story de la línea Toy Story 4 de Thinkway Toys las horas de diversión están aseguradas. Podrás jugar con ellos siguiendo sus historias o coleccionarlos el tiempo que quieras. Materiales noblesLas figuras de acción están hechas de plástico lo que asegura que sean amables y suaves al tacto, diferenciando las distintas texturas y relieves del cuerpo de los personajes. Ideal para coleccionistasUna de las actividades que podrás hacer con este tipo de figuras es coleccionarlas y guardarlas en un lugar especial. A medida que conozcas más y más, tu colección irá creciendo y será más variada. Juguetes articuladosAl tener marcadas las articulaciones podrás manejar y acomodar tus figuras como más te guste. Con ellas, vas a poder crear historias en la que los personajes puedan movilizarse y cobrar vida."
                     },
                     {
@@ -126,7 +126,7 @@
                         "accessories":false,
                         "bobblehead":false,
                         "firstImg":"tiroalblanco_producto.jpg",
-                        "secondImg":"../",
+                        "secondImg":[],
                         "description":"Con Woody de Toy Story de la línea Toy Story 4 de Thinkway Toys las horas de diversión están aseguradas. Podrás jugar con ellos siguiendo sus historias o coleccionarlos el tiempo que quieras. Materiales noblesLas figuras de acción están hechas de plástico lo que asegura que sean amables y suaves al tacto, diferenciando las distintas texturas y relieves del cuerpo de los personajes. Ideal para coleccionistasUna de las actividades que podrás hacer con este tipo de figuras es coleccionarlas y guardarlas en un lugar especial. A medida que conozcas más y más, tu colección irá creciendo y será más variada. Juguetes articuladosAl tener marcadas las articulaciones podrás manejar y acomodar tus figuras como más te guste. Con ellas, vas a poder crear historias en la que los personajes puedan movilizarse y cobrar vida."
                         },
                         {
@@ -152,7 +152,7 @@
                             "accessories":false,
                             "bobblehead":false,
                             "firstImg":"forky_producto.jpg",
-                            "secondImg":"../",
+                            "secondImg":[],
                             "description":"Con Woody de Toy Story de la línea Toy Story 4 de Thinkway Toys las horas de diversión están aseguradas. Podrás jugar con ellos siguiendo sus historias o coleccionarlos el tiempo que quieras. Materiales noblesLas figuras de acción están hechas de plástico lo que asegura que sean amables y suaves al tacto, diferenciando las distintas texturas y relieves del cuerpo de los personajes. Ideal para coleccionistasUna de las actividades que podrás hacer con este tipo de figuras es coleccionarlas y guardarlas en un lugar especial. A medida que conozcas más y más, tu colección irá creciendo y será más variada. Juguetes articuladosAl tener marcadas las articulaciones podrás manejar y acomodar tus figuras como más te guste. Con ellas, vas a poder crear historias en la que los personajes puedan movilizarse y cobrar vida."
                             }
     
