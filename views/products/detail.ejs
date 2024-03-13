@@ -14,14 +14,13 @@
         <section class="main-product">
             <div class="container-left">
                 <figure class="container-left-up">
-                    <img class="main-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
+                    <img class="main-photo" src="/imagen/<%= p.firstImg %>" alt="Imagen del producto">
                 </figure>
                 <div class="container-left-down">
-                    <img class="secondary-photo" src="/imagen/imagen_detail_main.jpg" alt="Imagen del producto">
-                    <img class="secondary-photo" src="/imagen/secondary-photo-1.jpg" alt="Imagen del producto">
-                    <img class="secondary-photo" src="/imagen/secondary-photo-2.jpg" alt="Imagen del producto">
-                    <img class="secondary-photo" src="/imagen/secondary-photo-3.jpg" alt="Imagen del producto">
-                    <img class="secondary-photo" src="/imagen/secondary-photo-4.jpg" alt="Imagen del producto">
+                    <% for( let i = 0; i < 4; i++ ) { %>
+                        <img class="secondary-photo" src="/imagen/<%= p.secondImg[i] %>" alt="Imagen del producto">
+                        <% } %>
+             
                 </div>
             </div>
             <div class="container-right">
@@ -45,7 +44,7 @@
                     <div class="cr-description-characteristics">
                         <p class="cr-text-red">Marca:<span class="cr-text-gris"><%= p.mark %></span></p>
                         <p class="cr-text-red">SKU:<span class="cr-text-gris"><%= p.sku %></span></p>
-                        <p class="cr-text-red">Disponibilidad:<span class="cr-text-gris"><%= p.available %></span></p>
+                        <p class="cr-text-red">Disponibilidad:<span class="cr-text-gris"><%= p.available? "En stock" : "Sin stock" %></span></p>
                         <p class="cr-text-red">Edad recomendada:<span class="cr-text-gris"><%= p.minAge %> años</span></p>
                     </div>
                     <!-- Amount -->
@@ -87,8 +86,8 @@
                 <section class="rp-products">
                     <% for( let i = 0; i < ps.length; i++ ) { %>
                         <article class="rp-product">
-                            <a class="rp-product-link" href=""><img class="rp-product-img" src="<%= ps[i].firstImg %>"
-                                    alt="Producto 5"></a>
+                            <a class="rp-product-link" href="/detalle/<%= ps[i].id %>"><img class="rp-product-img" src="<%= ps[i].firstImg %>"
+                                    alt="Producto <%= ps[i].id %>"></a>
                             <h3 class="rp-product-title"><%= ps[i].name %></h3>
                             <p class="rp-product-price">$<%= ps[i].price %></p>
                         </article>
@@ -135,7 +134,7 @@
                     <table class="more-information">
                         <tr>
                             <td class="esquina1">Edad minima recomendada</td>
-                            <td class="esquina2"><%= p.minAge %></td>
+                            <td class="esquina2"><%= p.minAge %> años</td>
                         </tr>
 
                         <tr>
@@ -160,22 +159,22 @@
 
                         <tr>
                             <td>Es articulada</td>
-                            <td><%= p.articulated %></td>
+                            <td><%= p.articulated? "Si":"No" %></td>
                         </tr>
 
                         <tr>
                             <td>Es coleccionable</td>
-                            <td><%= p.collectable %></td>
+                            <td><%= p.collectable? "Si":"No" %></td>
                         </tr>
 
                         <tr>
                             <td>Incluye accesorios</td>
-                            <td><%= p.accessories %></td>
+                            <td><%= p.accessories? "Si":"No" %></td>
                         </tr>
 
                         <tr>
                             <td>Es bobblehead</td>
-                            <td><%= p.bobblehead %></td>
+                            <td><%= p.bobblehead? "Si":"No" %></td>
                         </tr>
                         <tr>
                             <td class="esquina3">Escala</td>
