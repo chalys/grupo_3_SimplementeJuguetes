@@ -2,7 +2,7 @@
    {
       "id": 1,
       "name": "Muñeca de Jessie",
-      "description": "¡Acompaña a Jessie en sus aventuras con esta muñeca articulada! Perfecta para fans de Toy Story.",
+ 
       "manufacturer": "Thnkway Toys",
       "mark": "Disney Store",
       "sku": 12345,
@@ -26,6 +26,7 @@
       "secondImg": [
          "secondImg-1710373000298.jpg",
          "secondImg-1710373000303.jpg"
-      ]
+      ],
+      "description": "¡Acompaña a Jessie en sus aventuras con esta muñeca articulada! Perfecta para fans de Toy Story."
    }
 ]
