@@ -1,12 +1,11 @@
 const { loadData, saveData } = require("../../data");
 
 module.exports = (req, res) => {
-  const {name,description,stock,price,maker,line,collection,character,characterVersion,recommendedMinimumAge,initialScale,articulated,collectable,includesAccessories} = req.body;
-  //const imagePrimary = req.file;
+  const {name,description,manufacturer,mark, sku, available, colection,price, line, character,characterVersion,minAge,height, depth,width, materials, scale,articulated,collectable,accessories,bobbleHead} = req.body;
 
   let newImages = [];
-  if(req.files.imagesSecondary?.length) {
-    newImages = req.files.imagesSecondary?.map(img => img.filename)
+  if(req.files.secondImg?.length) {
+    newImages = req.files.secondImg?.map(img => img.filename)
   }
 
   const products = loadData();
@@ -15,25 +14,31 @@ module.exports = (req, res) => {
     id: newID,
     name: name.trim(),
     description: description.trim(),
-    //imagePrimary: imagePrimary ? imagePrimary.filename : "default-image.png",
-    imagePrimary: req.files.imagePrimary?.length ? req.files.imagePrimary[0]?.filename : "default-image.png",
-    imagesSecondary: newImages.length ? newImages : ["default-image.png"],
-    stock: +stock,
+    manufacturer:manufacturer.trim(),
+    mark:mark.trim(),
+    sku:+sku,
+    available:available?.trim(),
+    colection: colection.trim(),
     price: +price,
-    maker: maker.trim(),
     line: line.trim(),
-    collection: collection.trim(),
     character: character.trim(),
     characterVersion: characterVersion.trim(), 
-    recommendedMinimumAge: +recommendedMinimumAge,
-    initialScale: +initialScale,
+    minAge: minAge?.trim(),
+    height:+height,
+    depth:+depth,
+    width:+width,
+    materials:materials?.trim(),
+    scale: +scale,
     articulated: articulated?.trim(),
     collectable: collectable?.trim(),
-    includesAccessories: includesAccessories?.trim() 
+    accessories: accessories?.trim(),
+    bobbleHead:bobbleHead?.trim(),
+    firstImg: req.files.firstImg?.length ? req.files.firstImg[0]?.filename : "default-image.png",
+    secondImg: newImages.length ? newImages : ["default-image.png"],      
   };
 
   products.push(newProduct);
   saveData(products);
   /*res.redirect(`/productos/detalle/${newID}`);*/
-  res.redirect(`/productos/lista-productos`);
+  res.redirect(`/productos/detalle`);
 };

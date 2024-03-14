@@ -15,8 +15,8 @@ router.get("/crear-producto/", add);
 router.post(
   "/crear-producto/",
   uploadProducts.fields([
-    { name: "imagePrimary", maxCount: 1 },
-    { name: "imagesSecondary", maxCount: 3 },
+    { name: "firstImg", maxCount: 1 },
+    { name: "secondImg", maxCount: 3 },
   ]),
   store
 );
