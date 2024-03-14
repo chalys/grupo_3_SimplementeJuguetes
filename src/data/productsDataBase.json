@@ -1,0 +1,32 @@
+[
+   {
+      "id": 1,
+      "name": "Muñeca de Jessie",
+ 
+      "manufacturer": "Thnkway Toys",
+      "mark": "Disney Store",
+      "sku": 12345,
+      "available": "yes",
+      "colection": "Toy Story 2",
+      "price": 19.99,
+      "line": "Toy Story",
+      "character": "Jessie",
+      "characterVersion": "Toy Story 2",
+      "minAge": "3-6",
+      "height": 10,
+      "depth": 10,
+      "width": 10,
+      "materials": "Plástico",
+      "scale": "1:6",
+      "articulated": "yes",
+      "collectable": "yes",
+      "accessories": "yes",
+      "bobblehead": "yes",
+      "firstImg": "firstImg-1710373000296.jpg",
+      "secondImg": [
+         "secondImg-1710373000298.jpg",
+         "secondImg-1710373000303.jpg"
+      ],
+      "description": "¡Acompaña a Jessie en sus aventuras con esta muñeca articulada! Perfecta para fans de Toy Story."
+   }
+]

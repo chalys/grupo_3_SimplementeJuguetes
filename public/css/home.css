@@ -1,6 +1,11 @@
-main.mainHome{}
+main.mainHome{order: 2;}
 main.mainHome img{
     width: 100%;
+}
+main.mainHome div.articulosHome article figure {
+    margin: 0;
+    background: var(--blanco);
+    height: 170px;
 }
 main.mainHome .titulosHome{
     margin-top: 10px;
@@ -80,10 +85,16 @@ main.mainHome div.articulosHome h2{
     color: var(--blanco);
 }
 main.mainHome div.articulosHome article{
+    width: 101%;
     position: relative;
 }
-main.mainHome div.articulosHome article img{}
+main.mainHome div.articulosHome article img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
 main.mainHome div.articulosHome article div{
+    height: 140px;
     padding-bottom: 1px;
     background: var(--orange);
 }
@@ -169,10 +180,9 @@ main.mainHome div.articulosHome h2{
     width: 100%;
 }
 main.mainHome div.articulosHome article{
-    width: 47%;
+    width: 45%;
 }
 main.mainHome div.articulosHome article img{
-    height: 270px;
 }
 main.mainHome div.articulosHome article div{}
 main.mainHome div.articulosHome article div p{}
@@ -242,11 +252,10 @@ main.mainHome div.articulosHome{
 }
 main.mainHome div.articulosHome h2{}
 main.mainHome div.articulosHome article{
-    height: 12%;
+    height: 17%;
     width: 23%;
 }
 main.mainHome div.articulosHome article img{
-    height: 100%;
 }
 main.mainHome div.articulosHome article div{}
 main.mainHome div.articulosHome article div p{}

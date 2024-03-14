@@ -1,8 +1,7 @@
-node_modules
-package.json
 .vscode
 node_modules
 package-lock.json
 bocetos
 desing
 wireframes
+extras

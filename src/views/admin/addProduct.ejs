@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("../partials/head") %>
+    <%- include("../partials/dashbar") %>
+
+    <body>
+        <!-- main -->
+        <main class="container container-wrapper">
+            <!-- title -->
+            <div class="row mb-4">
+                <div class="col-12 bg-container-title-custom">
+                    <h2 class="color-title-custom">REGISTRO DE JUGUETES</h2>
+                </div>
+            </div>
+            <!-- /title -->
+            <!-- boton volver -->
+            <div class="mb-3"><a class="btn btn-secondary a-volver-edit-product" href="/dashboard">volver</a></div>
+            <!-- /boton volver-->
+            <div class="row ">
+                <div class="col-12 ">
+                    <form action="/admin/crear-producto/" method="post" enctype="multipart/form-data">
+                        <div class="row justify-content-center">
+                            <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                <h5>INFORMACIÓN BÁSICA:</h5>
+                            </div>
+                            <!-- Name -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="name">Nombre <span
+                                        class="required-custom">*</span></label>
+                                <input class="form-control" type="text" id="name" name="name"
+                                    placeholder="Introduce el nombre del juguete" required>
+                            </div>
+                            <!-- /Name -->
+                            <!-- manufacturer -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="manufacturer">Fabricante <span
+                                        class="required-custom">*</span></label>
+                                <input type="text" class="form-control" id="manufacturer" name="manufacturer"
+                                    placeholder="Especifica el fabricante del juguete" required>
+                            </div>
+                            <!-- /manufacturer -->
+                            <!-- mark -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="mark">Marca <span
+                                        class="required-custom">*</span></label>
+                                <input class="form-control" type="text" id="mark" name="mark"
+                                    placeholder="Ingresa la marca del juguete" required>
+                            </div>
+                            <!-- /mark -->
+                            <!-- sku -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="sku">SKU <span class="required-custom">*</span></label>
+                                <input type="text" class="form-control" id="sku" name="sku"
+                                    placeholder="Escribe el código SKU del juguete" required>
+                            </div>
+                            <!-- /sku -->
+                            <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                <h5>DISPONIBILIDAD Y COLECCIÓN:</h5>
+                            </div>
+                            <!-- available -->
+                            <!-- <div class="col-12 col-md-5 col-lg-5 mb-3">
+                                <label class="form-label" for="available">Disponible <span
+                                        class="required-custom">*</span></label>
+                                <input type="text" class="form-control" id="available" name="available"
+                                    placeholder="Introduzca la disponibilidad" required>
+                            </div> -->
+
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="available">Disponible <span
+                                        class="required-custom">*</span></label>
+                                <select class="form-select" id="available" name="available" required>
+                                    <option selected>¿Está disponible este juguete? </option>
+                                    <option value="yes">Si</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <!-- /available -->
+                            <!-- colection -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="colection">Colección <span
+                                        class="required-custom">*</span></label>
+                                <input type="text" class="form-control" id="colection" name="colection"
+                                    placeholder="Describe la colección a la que pertenece el juguete" required>
+                            </div>
+                            <!-- /colection -->
+                            <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                <h5>PRECIOS Y LÍNEA:</h5>
+                            </div>
+
+                            <!-- Price -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="price">Precio <span
+                                        class="required-custom">*</span></label>
+                                <input type="number" class="form-control" id="price" name="price"
+                                    placeholder="Indica el precio del juguete" required>
+                            </div>
+                            <!-- /Price -->
+                            <!-- Line -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="line">Línea <span
+                                        class="required-custom">*</span></label>
+                                <input type="text" class="form-control" id="line" name="line"
+                                    placeholder="¿A qué línea pertenece el juguete?" required>
+                            </div>
+                            <!-- /Line -->
+                            <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                <h5>CARACTERÍSTICAS DEL JUGUETE:</h5>
+                            </div>
+                            <!-- Character -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="character">Personaje <span
+                                        class="required-custom">*</span></label>
+                                <input type="text" class="form-control" id="character" name="character"
+                                    placeholder="Nombre del personaje del juguete" required>
+                            </div>
+                            <!-- /Character -->
+                            <!-- Character Versión -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="characterVersion">Versión del Personaje <span
+                                        class="required-custom">*</span></label>
+                                <input type="text" class="form-control" id="characterVersion" name="characterVersion"
+                                    placeholder="Especifica la versión del personaje" required>
+                            </div>
+                            <!-- /Character Versión -->
+                            <!-- Recommended Minimum Age -->
+                            <!-- <div class="col-12 col-md-5 col-lg-5 mb-3">
+                                <label class="form-label" for="minAge">Edad Mínima
+                                    Recomendada</label>
+                                <input type="number" class="form-control" id="minAge" name="minAge" min="0"
+                                    placeholder="¿Cuál es la edad mínima recomendada para este juguete?" required>
+                            </div> -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="minAge">Edad Mínima
+                                    Recomendada <span class="required-custom">*</span></label>
+                                <select class="form-select" id="minAge" name="minAge" required>
+                                    <option selected>¿Cuál es la edad mínima recomendada para este juguete? </option>
+                                    <option value="0-1">0-1 año</option>
+                                    <option value="1-3">1-3 años</option>
+                                    <option value="3-6">3-6 años</option>
+                                    <option value="6-9">6-9 años</option>
+                                    <option value="9-12">9-12 años</option>
+                                </select>
+                            </div>
+                            <!-- /Recommended Minimum Age -->
+                            <!-- height -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="height">Alto</label>
+                                <input type="number" class="form-control" id="height" name="height" min="0"
+                                    placeholder="Ingresa la altura del juguete en centímetros" required>
+                            </div>
+                            <!-- /height -->
+                            <!-- depth -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="depth">Profundidad</label>
+                                <input type="number" class="form-control" id="depth" name="depth" min="0"
+                                    placeholder="Ingresa la profundidad del juguete en centímetros" required>
+                            </div>
+                            <!-- /depth-->
+                            <!-- width -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="width">Ancho</label>
+                                <input type="number" class="form-control" id="width" name="width" min="0"
+                                    placeholder="Ingresa el ancho del juguete en centímetros" required>
+                            </div>
+                            <!-- /width -->
+                            <!-- materials -->
+
+
+                            <!-- <div class="col-12 col-md-5 col-lg-5 mb-3">
+                                <label class="form-label" for="materials">Edad Mínima
+                                    Recomendada</label>
+                                <input type="number" class="form-control" id="materials" name="materials" min="0"
+                                    placeholder="¿Cuál es la edad mínima recomendada para este juguete?" required>
+                            </div> -->
+
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="materials">Materiales <span
+                                        class="required-custom">*</span></label>
+                                <select class="form-select" id="materials" name="materials" required>
+                                    <option selected>¿Cuál es el material del que está hecho el juguete?</option>
+                                    <option value="plastico">Plástico</option>
+                                    <option value="madera">Madera</option>
+                                    <option value="metal">Metal</option>
+                                    <option value="tela">Tela</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+
+                            <!-- /materials-->
+                            <!-- Initial Scale -->
+                            <div class="col-12 col-md-5 mb-3">
+                                <label class="form-label" for="initialScale">Escala inicial</label>
+                                <input type="text" class="form-control" id="initialScale" name="initialScale" min="0"
+                                    placeholder="Indica la escala del juguete (por ejemplo, 1:12)" required>
+                            </div>
+                            <!-- /Initial Scale -->
+                            <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                <h5>ELEMENTOS ADICIONALES:</h5>
+                            </div>
+                            <div class="row justify-content-center p-0">
+                                <div class="col-md-10 d-flex flex-wrap ">
+                                    <!-- Articulated -->
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label class="form-check-label">¿Es articulado?</label>
+                                        <div class="form-check-container d-flex justify-content-evenly">
+                                            <div>
+                                                <input type="radio" id="articulated_yes" name="articulated" value="yes"
+                                                    checked>
+                                                <label for="articulated_yes">Sí</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="articulated_no" name="articulated" value="no">
+                                                <label for="articulated_no">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Collectable -->
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label class="form-check-label">¿Es coleccionable?</label>
+                                        <div class="form-check-container d-flex justify-content-evenly">
+                                            <div>
+                                                <input type="radio" id="collectable_yes" name="collectable" value="yes"
+                                                    checked>
+                                                <label for="collectable_yes">Sí</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="collectable_no" name="collectable" value="no">
+                                                <label for="collectable_no">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Accessories -->
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label class="form-check-label">¿Incluye accesorios?</label>
+                                        <div class="form-check-container d-flex justify-content-evenly">
+                                            <div>
+                                                <input type="radio" id="accessories_yes" name="accessories" value="yes"
+                                                    checked>
+                                                <label for="accessories_yes">Sí</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="accessories_no" name="accessories" value="no">
+                                                <label for="accessories_no">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- bobblehead -->
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label class="form-check-label">¿Cabezón?</label>
+                                        <div class="form-check-container d-flex justify-content-evenly">
+                                            <div>
+                                                <input type="radio" id="bobblehead_yes" name="bobblehead" value="yes"
+                                                    checked>
+                                                <label for="bobblehead_yes">Sí</label>
+                                            </div>
+                                            <div>
+                                                <input type="radio" id="bobblehead_no" name="bobblehead" value="no">
+                                                <label for="bobblehead_no">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Line -->
+                            <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                <h5>IMÁGENES Y DESCRIPCIÓN:</h5>
+                            </div>
+                            <!-- Primary imagen-->
+                            <div class="col-12 col-md-10 col-lg-5 mb-3">
+                                <label for="firstImg" class="form-label">Selecciona la imagen
+                                    principal del juguete<span class="required-custom">*</span></label>
+                                <input class="form-control" id="firstImg" type="file" name="firstImg" accept="image/*"
+                                    required>
+                            </div>
+                            <!-- /Primary imagen-->
+                            <!-- Secondary imagen-->
+                            <div class="col-12 col-md-10 col-lg-5 mb-3">
+                                <label for="secondImg" class="form-label">Selecciona las imágenes
+                                    secundarias del juguete <span class="required-custom">*</span></label>
+                                <input class="form-control" id="secondImg" type="file" name="secondImg" multiple
+                                    accept="image/*" required>
+                            </div>
+                            <!-- /Secondary imagen-->
+                            <!-- Description -->
+                            <div class="col-12 col-md-10 mb-3">
+                                <label class="form-label" for="description">Descripción <span
+                                        class="required-custom">*</span></label>
+                                <textarea class="form-control" id="description" name="description" rows="3"
+                                    placeholder="Escribe una descripción detallada del juguete" required></textarea>
+                            </div>
+                            <!-- /Description -->
+                            <!-- Botones-->
+                            <div
+                                class="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
+                                <button class="btn btn-register-custom " type="submit">REGISTRAR</button>
+                                <button class="btn btn-cancel-custom" type="reset">CANCELAR</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- /main -->
+        <!-- scripts -->
+        <%- include("../partials/scripts") %>
+            <!-- /scripts -->
+    </body>
+</html>
