@@ -30,120 +30,30 @@
         </tr>
         </thead>
         <tbody>
+            <% products.forEach(p => { %>
+                
+           
         <tr class="col-12">
-            <th scope="row ">1</th>
+            <th scope="row "><%=p.id%></th>
             <td ><img src="/No_Image_Available.jpg" alt="" class="no_img"></td>
-            <td>si</td>
-            <td>58.999</td>
-            <td>si</td>
-            <td>20</td>
-            <td>juguete infantil de pelicula animada</td>
-            <td >Toy Story 4</td>
-            <td>woody</td>
-            <td>Toy Story</td>
-            <td>si</td>
-            <td>no</td>
-            <td>si</td>
-            <td>5</td>
+            <td><%=p.name%></td>
+            <td><%=p.price%></td>
+            <td><%=p.sku%></td>
+            <td><%=p.colection%></td>
+            <td><%=p.description%></td>
+            <td ><%=p.line%></td>
+            <td><%=p.character%></td>
+            <td><%=p.characterVersion%></td>
+            <td><%=p.articulated%></td>
+            <td><%=p.accessories%></td>
+            <td><%=p.collectable%></td>
+            <td><%=p.minAge%></td>
             <td> <button type="button" class="btn btn-success ">guardar</button></td>
             <td><button type="reset" class="btn btn-danger boton">borrar</button></td>
-            <td><a href="/editarProducto" class="btn btn-warning boton">editar</a></td>
+            <td><a href="/editarProducto/<%= p.id %>" class="btn btn-warning boton">editar</a></td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td ></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td ></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td> <button type="button" class="btn btn-success ">guardar</button></td>
-            <td><button type="reset" class="btn btn-danger boton">borrar</button></td>
-            <td><a href="/edicionDeP.html" class="btn btn-warning boton">editar</a></td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td ></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td ></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td> <button type="button" class="btn btn-success ">guardar</button></td>
-            <td><button type="reset" class="btn btn-danger boton">borrar</button></td>
-            <td><a href="/edicionDeP.html" class="btn btn-warning boton">editar</a></td>
-        </tr> 
-        <tr>
-            <th scope="row">4</th>
-            <td ></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td ></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td> <button type="button" class="btn btn-success ">guardar</button></td>
-            <td><button type="reset" class="btn btn-danger boton">borrar</button></td>
-            <td><a href="/edicionDeP.html" class="btn btn-warning boton">editar</a></td>
-        </tr> 
-        <tr>
-            <th scope="row">5</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td> <button type="button" class="btn btn-success ">guardar</button></td>
-            <td><button type="reset" class="btn btn-danger boton">borrar</button></td>
-            <td><a href="/edicionDeP.html" class="btn btn-warning boton">editar</a></td>
-        </tr> 
-        <tr>
-            <th scope="row">6</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td> <button type="button" class="btn btn-success ">guardar</button></td>
-            <td><button type="reset" class="btn btn-danger boton">borrar</button></td>
-            <td><a href="/edicionDeP.html" class="btn btn-warning boton">editar</a></td>
-        </tr> 
+        <tr> 
+       <%  }); %>
      <tbody>
         
      </tbody>
