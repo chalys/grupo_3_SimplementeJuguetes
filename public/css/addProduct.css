@@ -1,0 +1,35 @@
+/*====== Add Products ======*/
+.container-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;    
+    border-radius: 5px;     
+    box-shadow: 3px 0px 20px 10px rgba(0,0,0,0.2);
+  }
+
+.bg-container-title-custom {
+    background-color: var(--orange) !important;
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+}
+
+.color-title-custom {
+    text-align: center;
+    color: var(--white) !important;
+}
+
+.bg-subtitle-custom{
+    background-color: var(--green) ;
+    color: var(--white);
+}
+.required-custom{
+    color: var(--red);
+}
+.btn-register-custom{
+    background: var(--green)!important;
+    color: var(--white)!important;
+}
+.btn-cancel-custom{
+    background-color: var(--orange)!important;
+    color: var(--white)!important;
+}
+
