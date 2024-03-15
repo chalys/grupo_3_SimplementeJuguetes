@@ -18,9 +18,9 @@ const {name,price,description,line,
     stock:+stock,
     maker:maker.trim(),
     character:character.trim(),
-    articulated:,
+   /*articulated:,
     collectable:,
-    includesAccessories:
+    includesAccessories:*/
 
  }
 }
