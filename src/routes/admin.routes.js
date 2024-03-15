@@ -20,11 +20,7 @@ router.post(
   ]),
   store
 );
-<<<<<<< HEAD
-
-=======
 router.get('/listado-productos', list);
->>>>>>> 3c8b44de3b5f16e95e0b9ce5621fc0d17c7e6670
 //*** EDIT ONE PRODUCT ***/
 router.get('/editar-producto/', edit);
 //router.get('/editar-producto/:id', edit);
