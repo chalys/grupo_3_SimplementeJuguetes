@@ -7,4 +7,4 @@
     text-align: center;
     width: 100%;
 }
-.tabla-lista-productos{margin-left: 200px;}
+.tabla-lista-productos{display: flex;margin-left: 200px;flex-direction: column;flex-wrap: wrap;}

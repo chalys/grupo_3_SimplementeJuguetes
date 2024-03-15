@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const port = 3030;
-
+const methodOverride = require('method-override');
 /*CONFIGS*/
 app.set("view engine","ejs");
 app.set('views', [
@@ -13,7 +13,7 @@ app.set('views', [
 
 /* MIDDLEWARE */
 app.use(express.static('public'));
-
+app.use(methodOverride('_method'))
 /* ROUTERS */
 const otherRoutes = require("./routes/other.routes");
 const authRoutes = require("./routes/authentication.routes");
