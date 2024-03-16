@@ -14,7 +14,7 @@
         <section class="main-product">
             <div class="container-left">
                 <figure class="container-left-up">
-                    <img class="main-photo" src="/imagen/<%= p.firstImg %>" alt="Imagen del producto">
+                    <img class="main-photo" src="/imagen/products/<%= p.firstImg %>" alt="Imagen del producto">
                 </figure>
                 <div class="container-left-down">
                     <% for( let i = 0; i < 4; i++ ) { %>
@@ -88,7 +88,7 @@
                         <article class="rp-product">
                             <a class="rp-product-link" href="/productos/detalle/<%= ps[i].id %>">
                                 <figure class="figureDetDin">
-                                <img class="rp-product-img" src="/imagen/<%= ps[i].firstImg %>"
+                                <img class="rp-product-img" src="/imagen/products/<%= ps[i].firstImg %>"
                                     alt="Producto <%= ps[i].id %>"></figure>
                                 </a>
                             <h3 class="rp-product-title"><%= ps[i].name %></h3>
