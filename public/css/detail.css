@@ -483,9 +483,15 @@ td.esquina4 {
 }
 .rp-product-img {
 
+height: 100%;
 }
 .rp-product-title {
 
+object-fit: contain;
+
+/* height: 10px; */
+
+width: 3px;
 }
 .rp-product-price {
 

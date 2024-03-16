@@ -4,7 +4,7 @@ const router = express.Router();
 const { uploadProducts } = require("../middlewares/uploadFiles");
 
 // ************ Controller Require ************
-const { add, store, edit } = require("../controllers/admin");
+const { add, store, edit, list } = require("../controllers/admin");
 //const {add, store, edit, update, destroy} = require('../controllers/admin');
 
 // /admin
@@ -20,7 +20,7 @@ router.post(
   ]),
   store
 );
-
+router.get('/listado-productos', list);
 //*** EDIT ONE PRODUCT ***/
 router.get('/editar-producto/', edit);
 //router.get('/editar-producto/:id', edit);
