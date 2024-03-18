@@ -6,7 +6,7 @@
 <%- include("./partials/dashbar") %>
   <div class="h2-edit"><h2 >Editar producto</h2></div>
 
-  <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product" href="/lista-productos">volver</a></button></div>
+  <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product" href="/productos/lista-productos">volver</a></button></div>
     <form action="/editarProducto/<%= product.id %>?_method=PUT" method="post" class="form-edit  col-9 ">
 
         <div class="mb-3 col-6">
