@@ -1,3 +1,7 @@
 module.exports = (req, res) =>{
-    res.render("./admin/editProduct")
+    const products = require("../../data/productsDataBase.json")
+    const { id }=req.params;
+  const product =  products.find((p)=>p.id=== +id);
+    
+    res.render("editProduct",{product});
 }

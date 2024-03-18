@@ -1,3 +1,7 @@
 module.exports = (req, res) =>{
-    res.render("listProduct")
+    const products=require("../../basesDeDatos/productos.json")
+
+    res.render("listProduct",{
+        products
+    })
 }

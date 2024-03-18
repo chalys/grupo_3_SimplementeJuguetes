@@ -125,11 +125,12 @@ padding-left: 15px;
 }
             
 @media(min-device-width: 426px) {
-.contenido{transform: scale(1.1);width: 400px;}
+.contenido{transform: scale(1.3);width: 400px;
+top: 80px;}
 }
 @media(min-device-width: 769px){
 .contenido{
-    transform: scale(1);
+    transform: scale(1.3);
 }
 .fondo{
     width: 100%;
