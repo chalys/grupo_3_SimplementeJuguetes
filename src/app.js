@@ -44,6 +44,9 @@ app.use('/admin', adminRouter);
 app.use("/autenticacion", authRouter);
 app.use("/productos", prodRouter);
 app.use("/carrito-compra", cartRouter);
+app.use((req,res,next)=>{
+  res.status(404).render("other/notFound")
+})
 
 // ************ DON'T TOUCH FROM HERE ************
 // ************ catch 404 and forward to error handler ************
