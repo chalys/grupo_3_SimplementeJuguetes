@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <%- include("./partials/head") %>
   <body class="body-edit-product">
     
@@ -7,7 +7,7 @@
   <div class="h2-edit"><h2 >Editar producto</h2></div>
 
   <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product" href="/productos/lista-productos">volver</a></button></div>
-    <form action="/editarProducto/<%= product.id %>?_method=PUT" method="post" class="form-edit  col-9 ">
+    <form action="/admin/editar-producto/<%= product.id %>?_method=PUT" method="post" class="form-edit  col-9 ">
 
         <div class="mb-3 col-6">
           <label for="number" class="form-label btn-success">version</label>

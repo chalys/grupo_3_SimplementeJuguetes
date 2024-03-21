@@ -33,12 +33,11 @@ module.exports = (req, res) => {
     collectable: collectable?.trim(),
     accessories: accessories?.trim(),
     bobbleHead:bobbleHead?.trim(),
-    firstImg: req.files.firstImg?.length ? req.files.firstImg[0]?.filename : "default-image.png",
-    secondImg: newImages.length ? newImages : ["default-image.png"],      
+    firstImg: req.files.firstImg?.length ? req.files.firstImg[0]?.filename : "default-image.jpg",
+    secondImg: newImages.length ? newImages : ["default-image.jpg"],      
   };
 
   products.push(newProduct);
   saveData(products);
-  /*res.redirect(`/productos/detalle/${newID}`);*/
-  res.redirect(`/productos/detalle`);
+  res.redirect(`/productos/detalle/${newID}`);
 };
