@@ -1,4 +1,4 @@
-const { loadData, saveData } = require("../../data");
+const { loadData, saveData } = require("../../dataBase");
 
 module.exports = (req, res) => {
   const {name,description,manufacturer,mark, sku, available, colection,price, line, character,characterVersion,minAge,height, depth,width, materials, scale,articulated,collectable,accessories,bobbleHead} = req.body;
@@ -8,7 +8,7 @@ module.exports = (req, res) => {
     newImages = req.files.secondImg?.map(img => img.filename)
   }
 
-  const products = loadData();
+  const products = loadData("products");
   const newID = products[products.length - 1].id + 1;
   const newProduct = {
     id: newID,
@@ -38,6 +38,6 @@ module.exports = (req, res) => {
   };
 
   products.push(newProduct);
-  saveData(products);
-  res.redirect(`/productos/detalle/${newID}`);
+  saveData(products,'products');
+  res.redirect(`/productos/detalle-producto/${newID}`);
 };

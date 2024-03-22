@@ -1,5 +1,5 @@
 module.exports = (req, res) => {
-    const users = require("../../data/usersDataBase.json");
+    const users = require("../../dataBase/usersDataBase.json");
     //const { id } = req.params;
     res.render("./authentication/editUser");
     /*const { id } = req.params;

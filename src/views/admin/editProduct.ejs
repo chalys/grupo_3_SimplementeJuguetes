@@ -1,86 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("./partials/head") %>
-  <body class="body-edit-product">
-    
-<%- include("./partials/dashbar") %>
-  <div class="h2-edit"><h2 >Editar producto</h2></div>
+<%- include("./partials/head") %>
 
-  <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product" href="/productos/lista-productos">volver</a></button></div>
-    <form action="/admin/editar-producto/<%= product.id %>?_method=PUT" method="post" class="form-edit  col-9 ">
+  <body class="body-edit-product">
+
+    <%- include("./partials/dashbar") %>
+      <div class="h2-edit">
+        <h2>Editar producto</h2>
+      </div>
+
+      <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product"
+            href="/productos/lista-productos">volver</a></button></div>
+      <form action="/admin/editar-producto/<%= product.id %>?_method=PUT" method="post" class="form-edit col-9">
 
         <div class="mb-3 col-6">
           <label for="number" class="form-label btn-success">version</label>
-          <input type="text" class="form-control"  name="characterVersion" value="<%= product.characterVersion %>" >
+          <input type="text" class="form-control" name="characterVersion" value="<%= product.characterVersion %>">
           <hr>
         </div>
-
-    
-<div class="mb-3 col-6 ">
-  <label for="exampleInputPassword1" class="form-label">nombre</label>
-  <input type="text" class="form-control" name="name" value="<%= product.name %>">
-  <hr>
-</div> 
-    
-
-      <div class="mb-3  col-6">
-        <label for="exampleInputPassword1" class="form-label">stock</label>
-        <input type="number" class="form-control" name="stock" value="<%= product.sku %>">
-      <hr>
-      </div>
-
-      <div class="mb-3   col-6">
-        <label for="exampleInputEmail1" class="form-label"> precio</label>
-        <input type="text" class="form-control" name="price" value="<%= product.price %>">
+        <div class="mb-3 col-6 ">
+          <label for="exampleInputPassword1" class="form-label">nombre</label>
+          <input type="text" class="form-control" name="name" value="<%= product.name %>">
+          <hr>
+        </div>
+        <div class="mb-3  col-6">
+          <label for="exampleInputPassword1" class="form-label">stock</label>
+          <input type="number" class="form-control" name="stock" value="<%= product.sku %>">
+          <hr>
+        </div>
+        <div class="mb-3   col-6">
+          <label for="exampleInputEmail1" class="form-label"> precio</label>
+          <input type="text" class="form-control" name="price" value="<%= product.price %>">
+          <hr>
+        </div>
+        <div class="mb-3    col-6 ">
+          <label for="exampleInputPassword1" class="form-label">fabricante</label>
+          <input type="text" class="form-control" name="maker" value="<%= product.manufacturer %>">
+          <hr>
+        </div>
+        <div class="mb-3 col-6 ">
+          <label for="exampleInputPassword1" class="form-label">linea</label>
+          <input type="text" class="form-control" name="line" value="<%= product.line %>">
+          <hr>
+        </div>
+        <div class="mb-3    col-6 ">
+          <label for="exampleInputEmail1" class="form-label btn-success">personaje</label>
+          <input type="text" class="form-control" name="character" value="<%= product.character %>">
+          <hr>
+        </div>
+        <div class="mb-3   col-6 ">
+          <label for="exampleInputEmail1" class="form-label btn-success">coleccion</label>
+          <input type="text" class="form-control" name="collection" value="<%= product.colection %>">
+          <hr>
+        </div>
+        <div class="mb-3 col-6 ">
+          <label for="formFileSm" class="form-label">seleciona una img </label>
+          <input class="form-control form-control-sm" type="file">
+          <hr>
+        </div>
+        <div class="mb-3 descripcion col-6 ">
+          <label for="exampleFormControlTextarea1" class="form-label ">descripcion</label>
+          <textarea class="form-control" name="description" rows="1"><%= product.description %></textarea>
+          <hr>
+        </div>
         <hr>
-      </div>
-
-      <div class="mb-3    col-6 ">
-        <label for="exampleInputPassword1" class="form-label">fabricante</label>
-        <input type="text" class="form-control" name="maker" value="<%= product.manufacturer %>" >
-        <hr>
-      </div>
-
-      <div class="mb-3 col-6 ">
-        <label for="exampleInputPassword1" class="form-label">linea</label>
-        <input type="text" class="form-control" name="line" value="<%= product.line %>" >
-        <hr>
-      </div>
-
-      <div class="mb-3    col-6 ">
-        <label for="exampleInputEmail1" class="form-label btn-success">personaje</label>
-        <input type="text" class="form-control" name="character" value="<%= product.character %>"  >
-        <hr>
-      </div>
-
-          <div class="mb-3   col-6 ">
-            <label for="exampleInputEmail1" class="form-label btn-success">coleccion</label>
-            <input type="text" class="form-control" name="collection" value="<%= product.colection %>" >
-            <hr>
-          </div>
-
-<div class="mb-3 col-6 "> 
-  <label for="formFileSm" class="form-label">seleciona una img </label>
-  <input class="form-control form-control-sm"  type="file">
-  <hr>
-</div>
-
-<div class="mb-3 descripcion col-6 ">
-  <label for="exampleFormControlTextarea1" class="form-label ">descripcion</label>
-  <textarea class="form-control" name="description"  rows="1"><%= product.description %></textarea>
-  <hr>
-</div>
-<hr>
-
-          <div class="form-check col-6">
-          <div  >
+        <div class="form-check col-6">
+          <div>
             <label for="form-check-label  " class="form-label f-l">articulado</label>
-            <input class="form-check-input" type="radio" name="articulated" >
+            <input class="form-check-input" type="radio" name="articulated">
             <label class="form-check-label" for="si1">
-            si
+              si
             </label>
           </div>
-          <div >
+          <div>
             <input class="form-check-input" type="radio" name="articulated" checked>
             <label class="form-check-label" for="no2">
               no
@@ -88,21 +80,18 @@
           </div>
           <hr>
         </div>
-        
-         <div class="form-check col-6">
-          <div >
+        <div class="form-check col-6">
+          <div>
             <label for="form-check-label " class="form-label  ">colecionable</label>
-            <input class="form-check-input" type="radio" name="collectable" >
+            <input class="form-check-input" type="radio" name="collectable">
             <label class="form-check-label f-l" for="no3">
-             si
+              si
             </label>
           </div>
-
-          <div >
-          
+          <div>
             <input class="form-check-input" type="radio" name="collectable" checked>
             <label class="form-check-label f-l" for="si4">
-             no 
+              no
             </label>
           </div>
           <hr>
@@ -112,7 +101,7 @@
             <label for="form-check-label " class="form-label ">tiene accesorios</label>
             <input class="form-check-input" type="radio" name="includesAccessories">
             <label class="form-check-label f-l" for="si1">
-            si
+              si
             </label>
           </div>
           <div class=>
@@ -123,31 +112,33 @@
           </div>
           <hr>
         </div>
-         
-       
+
+
         <div class=" mb-3 edad-edit col-2 ">
-          <label class="input-group-text  "  data-bs-theme="light" for="inputGroupSelect01">edad</label>
-          <select class="form-select xs  " >
+          <label class="input-group-text  " data-bs-theme="light" for="inputGroupSelect01">edad</label>
+          <select class="form-select xs  ">
             <option selected>elige una opcion</option>
             <option value="1">0-3</option>
             <option value="2">3-7</option>
             <option value="3">7 o mas</option>
           </select>
           <hr>
-      </div>
-       
-<div class="col-12">
-<button type="submit" class="btn btn-success  " >guardar</button>
+        </div>
 
-<button type="reset" class="btn btn-danger  ">borrar</button>
-</div>
-    </form>
-    <footer class="sub-footer">
+        <div class="col-12">
+          <button type="submit" class="btn btn-success  ">guardar</button>
 
-  </footer>
-</main>
+          <button type="reset" class="btn btn-danger  ">borrar</button>
+        </div>
+      </form>
+      <footer class="sub-footer">
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+      </footer>
+      </main>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+  </body>
 
 </html>

@@ -1,4 +1,4 @@
-const { loadData, saveData } = require("../../data");
+const { loadData, saveData } = require("../../dataBase");
 
 module.exports = (req, res) => {
   const { id } = req.params;
@@ -16,7 +16,7 @@ module.exports = (req, res) => {
     includesAccessories,
   } = req.body;
 
-  const products = loadData();
+  const products = loadData("products");
   const productsMapped = products.map((p) => {
     if (p.id === +id) {
       productUpdate = {
@@ -37,6 +37,6 @@ module.exports = (req, res) => {
     }
     return p;
   });
-  saveData(productsMapped);
-  res.redirect(`productos/detalle/${id}`);
+  saveData(productsMapped,'products');
+  res.redirect(`/productos/detalle-producto/${id}`);
 };

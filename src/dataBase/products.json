@@ -189,5 +189,36 @@
          "secondImg-1710995041328.jpg",
          "secondImg-1710995041329.jpg"
       ]
+   },
+   {
+      "id": 8,
+      "name": "wqerwqer1243568989",
+      "description": "dfghdfghdfghdfhfdghfd",
+      "manufacturer": "wqerqwer",
+      "mark": "wqer",
+      "sku": null,
+      "available": "yes",
+      "colection": "wqer",
+      "price": 23,
+      "line": "asdfas",
+      "character": "sadf",
+      "characterVersion": "asdsaqw",
+      "minAge": "3-6",
+      "height": 234,
+      "depth": 234,
+      "width": 234,
+      "materials": "metal",
+      "scale": null,
+      "articulated": "yes",
+      "collectable": "yes",
+      "accessories": "yes",
+      "firstImg": "firstImg-1711062927314.jpg",
+      "secondImg": [
+         "secondImg-1711062927315.jpg",
+         "secondImg-1711062927318.jpg",
+         "secondImg-1711062927322.jpg"
+      ],
+      "stock": 0,
+      "maker": "wqerqwer"
    }
 ]
