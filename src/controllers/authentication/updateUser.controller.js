@@ -1,3 +1,5 @@
+const path = require("path");
+const fs = require("fs");
 const { loadData, saveData } = require("../../dataBase");
 
 module.exports = (req, res) => {
@@ -20,28 +22,25 @@ module.exports = (req, res) => {
   const users = loadData("users");
   const usersMapped = users.map((u) => {
     if (u.id === +id) {
-      userUpdate = {
+      const userUpdate = {
         ...u,
         name: name.trim(),
-        /*userPicture: req.files.userPicture?.length
-          ? req.files.userPicture[0]?.filename
-          : "default-user.jpg",*/
-        userPicture: userPicture? userPicture.filename: u.userPicture,
+        userPicture: userPicture ? userPicture.filename : u.userPicture,
         province: province.trim(),
-        locality:locality.trim(),
-        postal:postal.trim(),
-        street:street.trim(),
+        locality: locality.trim(),
+        postal: postal.trim(),
+        street: street.trim(),
         streetNumber: +streetNumber,
-        floor:+floor,
-        betweenSt1:betweenSt1.trim(),
-        betweenSt2:betweenSt2.trim(),
-        phoneNumber:phoneNumber.trim(),
-        indications:indications.trim()
+        floor: +floor,
+        betweenSt1: betweenSt1.trim(),
+        betweenSt2: betweenSt2.trim(),
+        phoneNumber: phoneNumber.trim(),
+        indications: indications.trim(),
       };
       if (userPicture?.filename) {
         const pathBeforeFile = path.join(
           __dirname,
-          "../../../public/images/authentication/" + u.userPicture
+          `../../../public/images/authentication/` + u.userPicture
         );
         const existFile = fs.existsSync(pathBeforeFile);
         if (existFile) {

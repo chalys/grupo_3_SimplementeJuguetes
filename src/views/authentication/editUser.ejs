@@ -19,10 +19,31 @@
                 <!-- form -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="/autenticacion/editar-usuario/<%=user.id%>?_method=PUT" method="post">
-                            <div class="row justify-content-center" enctype="multipart/form-data">
+                        <form action="/autenticacion/editar-usuario/<%=user.id%>?_method=PUT" method="post"
+                            enctype="multipart/form-data">
+                            <div class="row justify-content-center">
+                                <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                    <h5>INFORMACIÓN DE CUENTA:</h5>
+                                </div>
+                                <!-- Name -->
+                                <div class="col-12 col-md-5 col-lg-5 mb-3">
+                                    <label class="form-label" for="userName">Nombre de usuario</label>
+                                    <input class="form-control" type="text" id="userName" name="userName"
+                                        placeholder="Introduce nombre y apellido" value="<%= user.userName %>" disabled>
+                                </div>
+                                <!-- /Name -->
+                                <!-- Email  -->
+                                <div class="col-12 col-md-5 col-lg-5 mb-3">
+                                    <label class="form-label" for="email">Correo electrónico</label>
+                                    <input class="form-control" type="text" id="email" name="email"
+                                        placeholder="Introduce tu correo electrónico" value="<%= user.email %>" disabled>
+                                </div>
+                                <!-- /Email -->
+                                <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                    <h5>INFORMACIÓN PERSONAL:</h5>
+                                </div>
                                 <!-- Name and Surname -->
-                                <div class="col-12 col-md-6 col-lg-8 mb-3">
+                                <div class="col-12 col-md-5 col-lg-6 mb-3">
                                     <label class="form-label" for="name">Nombre y apellido<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="text" id="name" name="name"
@@ -30,14 +51,15 @@
                                 </div>
                                 <!-- /Name and Surname -->
                                 <!-- Avatar-->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                    <label for="userPicture" class="form-label">Selecciona la imgen de usuario<span class="required-custom">*</span></label>
+                                <div class="col-12 col-md-5 col-lg-4 mb-3">
+                                    <label for="userPicture" class="form-label">Selecciona la imgen de usuario<span
+                                            class="required-custom">*</span></label>
                                     <input class="form-control" id="userPicture" type="file" name="userPicture"
-                                        accept="image/*" value="<%= user.userPicture %>">
+                                        accept="image/*">
                                 </div>
                                 <!-- /Avatar-->
                                 <!-- Provincia -->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="province">Provincia <span
                                             class="required-custom">*</span></label>
                                     <select class="form-select" id="province" name="province" required>
@@ -53,7 +75,7 @@
                                 </div>
                                 <!-- /Provincia -->
                                 <!-- Locality -->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="locality">Localidad<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="text" id="locality" name="locality"
@@ -61,7 +83,7 @@
                                 </div>
                                 <!-- /Localidad -->
                                 <!-- Codigo Postal -->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="col-12 col-md-5 col-lg-2 mb-3">
                                     <label class="form-label" for="postal">Código postal<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="number" id="postal" name="postal"
@@ -69,7 +91,7 @@
                                 </div>
                                 <!-- /Codigo Postal -->
                                 <!-- Street -->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="street">Dirección<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="text" id="street" name="street"
@@ -77,7 +99,7 @@
                                 </div>
                                 <!-- /Street -->
                                 <!-- streetNumber -->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="streetNumber">Numeración<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="number" id="streetNumber" name="streetNumber"
@@ -85,7 +107,7 @@
                                 </div>
                                 <!-- /streetNumber -->
                                 <!-- floor -->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="col-12 col-md-5 col-lg-2 mb-3">
                                     <label class="form-label" for="floor">Piso<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="number" id="floor" name="floor"
@@ -93,7 +115,7 @@
                                 </div>
                                 <!-- /floor -->
                                 <!-- Between 1 -->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="betweenSt1">Calle 1<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="text" id="betweenSt1" name="betweenSt1"
@@ -101,7 +123,7 @@
                                 </div>
                                 <!-- /Between 1 -->
                                 <!-- Between 2 -->
-                                <div class="2 l-12 col-md-6 col-lg-4 mb-3">
+                                <div class="2 l-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="betweenSt2">Calle 2<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="text" id="betweenSt2" name="betweenSt2"
@@ -109,7 +131,7 @@
                                 </div>
                                 <!-- /Between 2 -->
                                 <!-- phoneNumber -->
-                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                <div class="col-12 col-md-5 col-lg-2 mb-3">
                                     <label class="form-label" for="phoneNumber">Teléfono de contacto<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
@@ -118,7 +140,7 @@
                                 </div>
                                 <!-- /phoneNumber -->
                                 <!-- indications -->
-                                <div class="col-12 col-md-6 col-lg-12 mb-3">
+                                <div class="col-12 col-md-5 col-lg-10 mb-3">
                                     <label class="form-label" for="indications">Indicaciones adicionales<span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="text" id="indications" name="indications"
