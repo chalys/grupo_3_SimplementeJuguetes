@@ -1,102 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head") %>
-    <!--   HEADER    -->
-    <%- include("../partials/header") %>
+<%- include("../partials/head", {title: 'Editar registro de usuario' }) %>
+    <!-- <body class="bodyRegistro-1"> -->
 
-        <body class="bodyRegistro-1">
-            <main class="mainRegistro-1">
-                <div class="fondoRegis">
-                    <span class="span1">
-                        <img src="../images/other/fondRegis1.jpg" alt="" class="IMG1">
-                    </span>
-                    <span class="span2">
-                        <img src="../images/other/fondRegis2.jpg" alt="" class="IMG2">
-                    </span>
+    <body>
+        <!-- header -->
+        <%- include("../partials/header") %>
+            <!-- /header -->
+            <!-- main -->
+            <main class="container container-wrapper">
+                <!-- title -->
+                <div class="row mb-4">
+                    <div class="col-12 bg-container-title-custom">
+                        <h2 class="color-title-custom">EDITAR REGISTRO DE USUARIO</h2>
+                    </div>
                 </div>
-                <nav>
-                    <!--Formulario opcional-->
-                    <form action="">
-                        <label for="nombreCompleto" class="elCienReg">Nombre y apellido</label>
-                        <input type="text" class="elCienReg" placeholder="nombreEjemplo" name="" value="">
-                        <div class="blocReg1">
-                            <label for="provincia" class="blocReg1-1">Provincia</label>
-                            <select class="blocReg1-2" name="" value="">
-                                <option value="" selected hidden>provinciaEjemplo</option>
-                                <option value="BA">Buenos Aires</option>
-                                <option value="CA">Catamarca</option>
-                                <option value="CH">Chaco</option>
-                                <option value="CT">Chubut</option>
-                                <option value="CB">Córdoba</option>
-                                <option value="CR">Corrientes</option>
-                                <option value="ALLÍ">Entre Ríos</option>
-                                <option value="FO">Formosa</option>
-                                <option value="TU">Jujuy</option>
-                                <option value="ELEPÉ">La Pampa</option>
-                                <option value="LR">La Rioja</option>
-                                <option value="MZ">Mendoza</option>
-                                <option value="MI">Misiones</option>
-                                <option value="NQ">Neuquén</option>
-                                <option value="RN">Río Negro</option>
-                                <option value="SA">Salta</option>
-                                <option value="SJ">San Juan</option>
-                                <option value="SL">San Luis</option>
-                                <option value="SC">Santa Cruz</option>
-                                <option value="SF">Santa Fe</option>
-                                <option value="SE">Santiago del Estero</option>
-                                <option value="TF">Tierra del Fuego</option>
-                                <option value="TU">Tucumán</option>
-                            </select>
-                            <label for="calle" class="blocReg1-3">Calle</label>
-                            <input type="text" class="blocReg1-4" placeholder="calleEjemplo" name="" value="">
-                        </div>
-                        <div class="blocReg2">
-                            <label for="localidad" class="blocReg2-1">Localidad</label>
-                            <input type="text" class="blocReg2-2" placeholder="localidadEjemplo" name="" value="">
-                            <label for="numero" class="blocReg2-3">Número</label>
-                            <input type="number" placeholder="S/N" class="blocReg2-4" name="" value="">
-                        </div>
-                        <label class="queCallesRegis">¿Entre qué calles está? (opcional)</label>
-                        <div class="calleReg">
-                            <label for="calle1" class="callebloReg1">Calle 1</label>
-                            <input type="text" class="callebloReg2" placeholder="calleEjemplo1" name="" value="">
-                            <label for="calle2" class="callebloReg3">Calle 2</label>
-                            <input type="text" class="callebloReg4" placeholder="calleEjemplo2" name="" value="">
-                        </div>
-                        <div class="blocReg3">
-                            <label for="codigoPos" class="blocReg3-1">Código postal</label>
-                            <input type="number" class="blocReg3-2" placeholder="0000" name="" value="">
-                            <label for="piso" class="blocReg3-3">Piso (opcional)</label>
-                            <input type="text" class="blocReg3-4" placeholder="pisoEjemplo" name="" value="">
-                            <label for="telContac" class="blocReg3-5">Telefono de contacto</label>
-                            <input type="number" class="blocReg3-6" placeholder="telCont." name="" value="">
-                        </div>
-                        <div class="blocReg4">
-                            <label for="indicAdic" class="elCienReg">Indicaciones adicionales (opcional)</label>
-                            <input type="text" class="elCienReg" placeholder="textoEjemplo" name="" value="">
-                        </div>
-                        <div>
-                            <button class="botonVolverRegis">
-                                <p><a href="/autenticacion/registro">Volver</a></p>
-                            </button>
-                            <button class="botonOmitirRegis">
-                                <p><a href="/autenticacion/registro-paso-3">Omitir</a></p>
-                            </button>
-                            <button class="botonContinuarRegis">
-                                <p><a href="/autenticacion/registro-paso-3">Continuar</a></p>
-                            </button>
-                        </div>
-                    </form>
-                </nav>
+                <!-- /title -->
+                <!-- form -->
+                <div class="row">
+                    <div class="col-12">
+                        <form action="/autenticacion/editar-usuario/<%=user.id%>?_method=PUT" method="post">
+                            <div class="row justify-content-center" enctype="multipart/form-data">
+                                <!-- Name and Surname -->
+                                <div class="col-12 col-md-6 col-lg-8 mb-3">
+                                    <label class="form-label" for="name">Nombre y apellido<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="text" id="name" name="name"
+                                        placeholder="Introduce nombre y apellido" value="<%= user.name %>" required>
+                                </div>
+                                <!-- /Name and Surname -->
+                                <!-- Avatar-->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label for="userPicture" class="form-label">Selecciona la imgen de usuario<span class="required-custom">*</span></label>
+                                    <input class="form-control" id="userPicture" type="file" name="userPicture"
+                                        accept="image/*" value="<%= user.userPicture %>">
+                                </div>
+                                <!-- /Avatar-->
+                                <!-- Provincia -->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="province">Provincia <span
+                                            class="required-custom">*</span></label>
+                                    <select class="form-select" id="province" name="province" required>
+                                        <% province.forEach((p)=> {%>
+                                            <option value="<%= p.code %>" <%=p.code===user.province ? 'selected' : '' %>
+                                                >
+                                                <%= p.name %>
+                                            </option>
+                                            <% }); %>
+
+                                                <!-- <option selected>¿Selecciona una provincia?</option> -->
+                                    </select>
+                                </div>
+                                <!-- /Provincia -->
+                                <!-- Locality -->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="locality">Localidad<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="text" id="locality" name="locality"
+                                        placeholder="Introduce la localidad" value="<%= user.locality %>" required>
+                                </div>
+                                <!-- /Localidad -->
+                                <!-- Codigo Postal -->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="postal">Código postal<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="number" id="postal" name="postal"
+                                        placeholder="Introduce el código postal" value="<%= user.postal %>" required>
+                                </div>
+                                <!-- /Codigo Postal -->
+                                <!-- Street -->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="street">Dirección<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="text" id="street" name="street"
+                                        placeholder="Introduce la dirección" value="<%= user.street %>" required>
+                                </div>
+                                <!-- /Street -->
+                                <!-- streetNumber -->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="streetNumber">Numeración<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="number" id="streetNumber" name="streetNumber"
+                                        placeholder="Introduce la numeración" value="<%= user.streetNumber %>" required>
+                                </div>
+                                <!-- /streetNumber -->
+                                <!-- floor -->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="floor">Piso<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="number" id="floor" name="floor"
+                                        placeholder="Introduce el número de piso" value="<%= user.floor %>" required>
+                                </div>
+                                <!-- /floor -->
+                                <!-- Between 1 -->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="betweenSt1">Calle 1<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="text" id="betweenSt1" name="betweenSt1"
+                                        placeholder="Introduce la calle" value="<%= user.betweenSt1 %>" required>
+                                </div>
+                                <!-- /Between 1 -->
+                                <!-- Between 2 -->
+                                <div class="2 l-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="betweenSt2">Calle 2<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="text" id="betweenSt2" name="betweenSt2"
+                                        placeholder="Introduce la calle" value="<%= user.betweenSt2 %>" required>
+                                </div>
+                                <!-- /Between 2 -->
+                                <!-- phoneNumber -->
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <label class="form-label" for="phoneNumber">Teléfono de contacto<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
+                                        placeholder="Introduce el teléfono de contacto" value="<%= user.phoneNumber %>"
+                                        required>
+                                </div>
+                                <!-- /phoneNumber -->
+                                <!-- indications -->
+                                <div class="col-12 col-md-6 col-lg-12 mb-3">
+                                    <label class="form-label" for="indications">Indicaciones adicionales<span
+                                            class="required-custom">*</span></label>
+                                    <input class="form-control" type="text" id="indications" name="indications"
+                                        placeholder="Introduce las indicaciones adicionales"
+                                        value="<%= user.indications %>" required>
+                                </div>
+                                <!-- /indications -->
+                                <div
+                                    class="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
+                                    <button class="btn btn-register-custom " type="submit">REGISTRAR</button>
+                                    <button class="btn btn-cancel-custom" type="reset">CANCELAR</button>
+                                </div>
+                                <!-- /Button-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /form -->
             </main>
+            <!-- /main -->
+            <!-- footer -->
             <footer class="sub-footer">
                 <!-- Footer -->
                 <%- include("../partials/footer") %>
             </footer>
+            <!-- /footer -->
             <!-- Script Bootstrap -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                crossorigin="anonymous"></script>
-        </body>
+            <%- include("../partials/scripts") %>
+                <!-- /Script Bootstrap -->
+    </body>
 
 </html>

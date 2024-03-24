@@ -220,5 +220,34 @@
       ],
       "stock": 0,
       "maker": "wqerqwer"
+   },
+   {
+      "id": 9,
+      "name": "asdfasfd",
+      "description": "asdgasdfasfasdfasf",
+      "manufacturer": "asdfasd",
+      "mark": "asdf",
+      "sku": null,
+      "available": "yes",
+      "colection": "234",
+      "price": 123,
+      "line": "asdfasf",
+      "character": "sadf",
+      "characterVersion": "123",
+      "minAge": "6-9",
+      "height": 444,
+      "depth": 44,
+      "width": 44,
+      "materials": "tela",
+      "scale": null,
+      "articulated": "yes",
+      "collectable": "yes",
+      "accessories": "yes",
+      "firstImg": "firstImg-1711287037854.jpg",
+      "secondImg": [
+         "secondImg-1711287037863.jpg",
+         "secondImg-1711287037864.jpg",
+         "secondImg-1711287037871.jpg"
+      ]
    }
 ]

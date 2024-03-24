@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include("../partials/head") %>
+<%- include("../partials/head", {title: 'Registro de juguete'}) %>
     <%- include("../partials/dashbar") %>
 
     <body>
@@ -10,7 +10,7 @@
             <!-- title -->
             <div class="row mb-4">
                 <div class="col-12 bg-container-title-custom">
-                    <h2 class="color-title-custom">REGISTRO DE JUGUETES</h2>
+                    <h2 class="color-title-custom">REGISTRO DE JUGUETE</h2>
                 </div>
             </div>
             <!-- /title -->
@@ -290,12 +290,13 @@
                                     placeholder="Escribe una descripción detallada del juguete" required></textarea>
                             </div>
                             <!-- /Description -->
-                            <!-- Botones-->
+                            <!-- Button-->
                             <div
                                 class="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
                                 <button class="btn btn-register-custom " type="submit">REGISTRAR</button>
                                 <button class="btn btn-cancel-custom" type="reset">CANCELAR</button>
                             </div>
+                            <!-- /Button-->
                         </div>
                     </form>
                 </div>
