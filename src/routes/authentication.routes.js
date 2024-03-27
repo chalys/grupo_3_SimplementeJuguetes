@@ -12,6 +12,7 @@ const {
   edit,
   update,
 } = require("../controllers/authentication");
+const { updateUserValidation } = require("../middlewares/validations");
 
 // /autenticacion
 
@@ -24,7 +25,7 @@ router.get("/login", login);
 
 //*** EDIT ONE USER ***/
 router.get("/editar-usuario/:id", edit);
-router.put("/editar-usuario/:id", uploadAuthentication.single("userPicture"), update);
+router.put("/editar-usuario/:id", uploadAuthentication.single("userPicture"),updateUserValidation, update);
 
 //*** DELETE ONE USER ***/
 //router.delete('/eliminar-usuario/:id', destroy);

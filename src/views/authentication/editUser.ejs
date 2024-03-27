@@ -7,6 +7,7 @@
         <!-- header -->
         <%- include("../partials/header") %>
             <!-- /header -->
+
             <!-- main -->
             <main class="container container-wrapper">
                 <!-- title -->
@@ -19,37 +20,26 @@
                 <!-- form -->
                 <div class="row">
                     <div class="col-12">
+
                         <form action="/autenticacion/editar-usuario/<%=user.id%>?_method=PUT" method="post"
                             enctype="multipart/form-data">
                             <div class="row justify-content-center">
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
-                                    <h5>INFORMACIÓN DE CUENTA:</h5>
-                                </div>
-                                <!-- Name -->
-                                <div class="col-12 col-md-5 col-lg-5 mb-3">
-                                    <label class="form-label" for="userName">Nombre de usuario</label>
-                                    <input class="form-control" type="text" id="userName" name="userName"
-                                        placeholder="Introduce nombre y apellido" value="<%= user.userName %>" disabled>
-                                </div>
-                                <!-- /Name -->
-                                <!-- Email  -->
-                                <div class="col-12 col-md-5 col-lg-5 mb-3">
-                                    <label class="form-label" for="email">Correo electrónico</label>
-                                    <input class="form-control" type="text" id="email" name="email"
-                                        placeholder="Introduce tu correo electrónico" value="<%= user.email %>" disabled>
-                                </div>
-                                <!-- /Email -->
-                                <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
                                     <h5>INFORMACIÓN PERSONAL:</h5>
                                 </div>
-                                <!-- Name and Surname -->
+                                <!-- Nombre y Apellido -->
                                 <div class="col-12 col-md-5 col-lg-6 mb-3">
                                     <label class="form-label" for="name">Nombre y apellido<span
                                             class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="name" name="name"
-                                        placeholder="Introduce nombre y apellido" value="<%= user.name %>" required>
+                                    <input
+                                        class="form-control <%= locals.errors?.name ? 'is-invalid' : (locals.old?.name ? 'is-valid' : '') %>"
+                                        type="text" id="name" name="name" placeholder="Introduce nombre y apellido"
+                                        value="<%= locals.old?.name || locals.old?.name === '' ? locals.old?.name : user.name %>">
+                                    <p class="invalid-feedback p-0 m-0">
+                                        <%= locals.errors?.name?.msg %>
+                                    </p>
                                 </div>
-                                <!-- /Name and Surname -->
+                                <!-- /Nombre y Apellido -->
                                 <!-- Avatar-->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label for="userPicture" class="form-label">Selecciona la imgen de usuario<span
@@ -62,7 +52,7 @@
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="province">Provincia <span
                                             class="required-custom">*</span></label>
-                                    <select class="form-select" id="province" name="province" required>
+                                    <select class="form-select" id="province" name="province">
                                         <% province.forEach((p)=> {%>
                                             <option value="<%= p.code %>" <%=p.code===user.province ? 'selected' : '' %>
                                                 >
@@ -74,86 +64,125 @@
                                     </select>
                                 </div>
                                 <!-- /Provincia -->
-                                <!-- Locality -->
+
+                                <!-- Localidad -->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="locality">Localidad<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="locality" name="locality"
-                                        placeholder="Introduce la localidad" value="<%= user.locality %>" required>
+                                    <label class="form-label" for="locality">Localidad</label>
+                                    <input
+                                        class="form-control <%= locals.errors?.locality ? 'is-invalid' : (locals.old?.locality ? 'is-valid' : '') %>"
+                                        type="text" id="locality" name="locality" placeholder="Introduce la localidad"
+                                        value="<%= locals.old?.locality || locals.old?.locality === '' ? locals.old?.locality : user.locality %>">
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.locality?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Localidad -->
                                 <!-- Codigo Postal -->
                                 <div class="col-12 col-md-5 col-lg-2 mb-3">
-                                    <label class="form-label" for="postal">Código postal<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="number" id="postal" name="postal"
-                                        placeholder="Introduce el código postal" value="<%= user.postal %>" required>
+                                    <label class="form-label" for="postal">Código postal</label>
+                                    <input
+                                        class="form-control <%= locals.errors?.postal ? 'is-invalid' : (locals.old?.postal ? 'is-valid' : '') %>"
+                                        type="text" id="postal" name="postal" placeholder="Introduce el código postal"
+                                        value="<%= locals.old?.postal || locals.old?.postal === '' ? locals.old.postal : user.postal %>">
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.postal?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Codigo Postal -->
                                 <!-- Street -->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="street">Dirección<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="street" name="street"
-                                        placeholder="Introduce la dirección" value="<%= user.street %>" required>
+                                    <label class="form-label" for="street">Dirección</label>
+                                    <input
+                                        class="form-control <%= locals.errors?.street ? 'is-invalid' : (locals.old?.street ? 'is-valid' : '') %>"
+                                        type="text" id="street" name="street" placeholder="Introduce la dirección"
+                                        value="<%= locals.old?.street || locals.old?.street === ''? locals.old.street : user.street %>">
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.street?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Street -->
                                 <!-- streetNumber -->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="streetNumber">Numeración<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="number" id="streetNumber" name="streetNumber"
-                                        placeholder="Introduce la numeración" value="<%= user.streetNumber %>" required>
+                                    <label class="form-label" for="streetNumber">Numeración</label>
+                                    <input
+                                        class="form-control <%= locals.errors?.streetNumber ? 'is-invalid' : (locals.old?.streetNumber? 'is-valid' : '') %>"
+                                        type="number" id="streetNumber" name="streetNumber"
+                                        placeholder="Introduce la numeración"
+                                        value="<%= locals.old?.streetNumber || locals.old?.streetNumber === '' ? locals.old.streetNumber : user.streetNumber %>">
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.streetNumber?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /streetNumber -->
                                 <!-- floor -->
                                 <div class="col-12 col-md-5 col-lg-2 mb-3">
-                                    <label class="form-label" for="floor">Piso<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="number" id="floor" name="floor"
-                                        placeholder="Introduce el número de piso" value="<%= user.floor %>" required>
+                                    <label class="form-label" for="floor">Piso</label>
+                                    <input
+                                        class="form-control <%= locals.errors?.floor ? 'is-invalid' : (locals.old?.floor ? 'is-valid' : '') %>"
+                                        type="number" id="floor" name="floor" placeholder="Introduce el número de piso"
+                                        value="<%= locals.old?.floor || locals.old?.floor === '' ? locals.old.floor : user.floor %>">
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.floor?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /floor -->
                                 <!-- Between 1 -->
+
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="betweenSt1">Calle 1<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="betweenSt1" name="betweenSt1"
-                                        placeholder="Introduce la calle" value="<%= user.betweenSt1 %>" required>
+                                    <label class="form-label" for="betweenSt1">Calle 1</label>
+                                    <input
+                                        class="form-control <%= locals.errors?.betweenSt1 ? 'is-invalid' : (locals.old?.betweenSt1 ? 'is-valid' : '') %>"
+                                        type="text" id="betweenSt1" name="betweenSt1"
+                                        placeholder="Introduce el nombre de calle"
+                                        value="<%= locals.old?.betweenSt1 || locals.old?.betweenSt1 === '' ? locals.old.betweenSt1 : user.betweenSt1 %>">
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.betweenSt1?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Between 1 -->
                                 <!-- Between 2 -->
-                                <div class="2 l-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="betweenSt2">Calle 2<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="betweenSt2" name="betweenSt2"
-                                        placeholder="Introduce la calle" value="<%= user.betweenSt2 %>" required>
+                                <div class="col-12 col-md-5 col-lg-4 mb-3">
+                                    <label class="form-label" for="betweenSt2">Calle 2</label>
+                                    <input
+                                        class="form-control <%= locals.errors?.betweenSt2 ? 'is-invalid' : (locals.old?.betweenSt2 ? 'is-valid' : '') %>"
+                                        type="text" id="betweenSt2" name="betweenSt2"
+                                        placeholder="Introduce el nombre de calle"
+                                        value="<%= locals.old?.betweenSt2 || locals.old?.betweenSt2 === '' ? locals.old.betweenSt2 : user.betweenSt2 %>">
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.betweenSt2?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Between 2 -->
                                 <!-- phoneNumber -->
                                 <div class="col-12 col-md-5 col-lg-2 mb-3">
-                                    <label class="form-label" for="phoneNumber">Teléfono de contacto<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
-                                        placeholder="Introduce el teléfono de contacto" value="<%= user.phoneNumber %>"
-                                        required>
+                                    <label class="form-label" for="phoneNumber">Teléfono de contacto</label>
+                                    <input
+                                        class="form-control <%= locals.errors?.phoneNumber ? 'is-invalid' : (locals.old?.phoneNumber ? 'is-valid' : '') %>"
+                                        type="text" id="phoneNumber" name="phoneNumber" placeholder="Introduce el teléfono de contacto" 
+                                        value="<%= locals.old?.phoneNumber || locals.old?.phoneNumber === '' ? locals.old.phoneNumber : user.phoneNumber %>">
+                                        <p class="invalid-feedback">
+                                            <%= locals.errors?.phoneNumber?.msg %>
+                                        </p>
                                 </div>
                                 <!-- /phoneNumber -->
                                 <!-- indications -->
                                 <div class="col-12 col-md-5 col-lg-10 mb-3">
-                                    <label class="form-label" for="indications">Indicaciones adicionales<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="indications" name="indications"
-                                        placeholder="Introduce las indicaciones adicionales"
-                                        value="<%= user.indications %>" required>
+                                    <label class="form-label" for="indications">Indicaciones adicionales</label>
+                                    <input class="form-control <%= locals.errors?.indications ? 'is-invalid' : (locals.old?.indications ? 'is-valid' : '') %>" 
+                                    type="text" id="indications" name="indications" placeholder="Introduce las indicaciones adicionales" 
+                                    value="<%= locals.old?.indications || locals.old?.indications === '' ? locals.old.indications : user.indications %>">
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.indications?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /indications -->
+                                <!-- Botones -->
                                 <div
                                     class="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
-                                    <button class="btn btn-register-custom " type="submit">REGISTRAR</button>
+                                    <button class="btn btn-register-custom" type="submit">REGISTRAR</button>
                                     <button class="btn btn-cancel-custom" type="reset">CANCELAR</button>
                                 </div>
-                                <!-- /Button-->
+                                <!-- /Botones -->
                             </div>
                         </form>
                     </div>
