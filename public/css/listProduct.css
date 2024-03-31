@@ -1,0 +1,22 @@
+
+.no_img{
+    max-width: 100px;
+}
+.list_produt{
+    background: var(--azul);
+    text-align: center;
+    width: 100%;
+}
+.tabla-lista-productos{ *//* flex-wrap: wrap; */;margin-left: 100px;}
+.lista-productos-vista{
+    display: flex;
+    overflow-y: auto !important;
+    overflow-x: auto !important;
+    width: 100vw;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: center;
+}
+.lista-productos-vista td{
+    overflow: hidden;
+}

@@ -1,0 +1,312 @@
+.f1{
+    z-index: 0 !important;
+    transform: scale(0) translateX(600px)!important;
+}
+.f2{
+    z-index: 1 !important;
+    transform: scale(0.8) translateX(0) !important;
+    display: flex !important;
+}
+.bodyRegistro-1{
+    display: flex;
+    margin: 0px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0;
+}
+main.mainRegistro-1{height: 100%;width: 100%;order: 2;/* display: none; *//* margin: 0px; */flex-direction: column;flex-wrap: wrap;}
+main.mainRegistro-1 nav{top: 40%;z-index: 0;left: 0;right: 0;width: 100%;display: flex;align-self: center;/* position: absolute; */justify-content: center;flex-direction: row;}
+main.mainRegistro-1 .form{
+    bottom: 90px;
+    align-items: self-start;
+    z-index: 0;
+    transition: 1s all;
+    width: 0%;
+    transform: scale(0) translateX(-200px);
+    align-self: center;
+    /* position: absolute; */
+    width: 80%;
+    gap: 8px;
+    border-radius: 7px;
+    padding: 4%;
+    background: var(
+    --blanco);
+    flex-direction: column;
+}
+main.mainRegistro-1 .form label{
+    margin-bottom: -7px;
+}
+main.mainRegistro-1 .form input{
+    height: 20px;
+    border: none;
+    background: var(--gris);
+}
+main.mainRegistro-1 .form div.calleReg{
+    gap: 6px 0px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start;
+}
+
+main.mainRegistro-1 .form input.elCienReg{}
+main.mainRegistro-1 .form div{
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: self-start;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between;
+}
+main.mainRegistro-1 .form .queCallesRegis{
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+main.mainRegistro-1 .form div button{}
+main.mainRegistro-1 .form div button.botonVolverRegis{
+    background: var(--gris);
+    border: solid 1px;
+    font-size: 13px;
+}
+main.mainRegistro-1 .form div button.botonOmitirRegis{
+    background: var(--gris);
+    border: solid 1px black;
+    font-size: 13px;
+    color: var(--azul);
+}
+main.mainRegistro-1 .form div button.botonContinuarRegis{
+    background: var(--azul);
+    border: solid 1px;
+    font-size: 13px;
+}
+main.mainRegistro-1 .form div button p{
+    margin: 1px;
+    width: 60px;
+}
+main.mainRegistro-1 .form div button p a{
+    text-decoration: none;
+    color: black;
+}
+main.mainRegistro-1 .form div.calleReg{}
+main.mainRegistro-1 .form div.calleReg .callebloReg1{}
+main.mainRegistro-1 .form div.calleReg .callebloReg2{}
+main.mainRegistro-1 .form div.calleReg .callebloReg3{}
+main.mainRegistro-1 .form div.calleReg .callebloReg4{}
+.mainRegistro-1 form div.blocReg1{
+    flex-direction: column !important;
+    gap: 6px 0px;
+}
+.mainRegistro-1 .form div.blocReg1 select.blocReg1-2{
+    color: gray;
+    width: 100%;
+    height: 20px;
+    border: none;
+    background: var(--gris);
+}
+.mainRegistro-1 .form div.blocReg2{
+    align-items: self-start;
+    flex-direction: column !important;
+    gap: 6px 0px;
+}
+.mainRegistro-1 .form div.blocReg3{
+    align-items: self-start;
+    flex-direction: column !important;
+    gap: 6px 0px;
+}
+.mainRegistro-1 .form div.blocReg4{
+    align-items: self-start;
+    flex-direction: column !important;
+    gap: 6px 0px;
+}
+
+
+/*/////////TABLET//////////*/
+
+@media(min-device-width: 426px) {
+    
+main.mainRegistro-1{}
+.mainRegistro-1 .form div.blocReg1 select.blocReg1-2{
+    width: 50%;
+}
+.mainRegistro-1{}
+main.mainRegistro-1 nav{
+}
+.mainRegistro-1 .form{
+}
+.mainRegistro-1 .form label{}
+.mainRegistro-1 .form input{
+    width: 50%;
+    display: block;
+}
+.mainRegistro-1 .form div{
+    margin-top: 47px;
+}
+main.mainRegistro-1 .form input.elCienReg{
+    width: 100%;
+}
+main.mainRegistro-1 .form .queCallesRegis{}
+main.mainRegistro-1 .form div.calleReg{margin: 0px;gap: 10px 0px;display: flex;flex-direction: row;flex-wrap: wrap;}
+main.mainRegistro-1 .form div.calleReg .callebloReg1{
+    width: 24%;
+    order: 1;
+}
+main.mainRegistro-1 .form div.calleReg .callebloReg2{
+    width: 50%;
+    order: 3;
+}
+main.mainRegistro-1 .form div.calleReg .callebloReg3{
+    width: 37%;
+    order: 2;
+}
+main.mainRegistro-1 .form div.calleReg .callebloReg4{
+    width: 48%;
+    order: 4;
+}
+.mainRegistro-1 .form div button{}
+main.mainRegistro-1 .form div button.botonVolverRegis{
+    font-size: 16px;
+}
+main.mainRegistro-1 .form div button.botonOmitirRegis{
+    font-size: 16px;
+}
+main.mainRegistro-1 .form div button.botonContinuarRegis{
+    font-size: 16px;
+}
+main.mainRegistro-1 .form div button p{
+    width: 75px;
+    margin: 6px;
+}
+.mainRegistro-1 .form div.blocReg1{
+    margin: 0;
+}
+.mainRegistro-1 .form div.blocReg2{
+    margin: 0;
+}
+.mainRegistro-1 .form div.blocReg3{
+    margin: 0;
+}
+.mainRegistro-1 .form div.blocReg4{
+    margin: 0;
+}
+}
+
+/*/////////ESCRITORIO//////////*/
+
+@media(min-device-width: 769px) {
+.mainRegistro-1{
+}
+.mainRegistro-1 .form div.blocReg1 select.blocReg1-2{
+    width: 100%;
+    height: 30px;
+}
+main.mainRegistro-1 nav{
+}
+.mainRegistro-1 .form{height: 533px;width: 800px !important;flex-wrap: wrap;flex-direction: row !important;}
+.mainRegistro-1 .form label{}
+.mainRegistro-1 .form input{
+    height: 30px !important;
+    width: 100%;
+}
+main.mainRegistro-1 .form input.elCienReg{
+    margin-right: 35%;
+    width: 66%;
+}
+main.mainRegistro-1 .form label.elCienReg{
+    width: 100%;
+}
+.mainRegistro-1 .form div{
+    margin-top: 3%;
+    order: 8;
+}
+main.mainRegistro-1 .form div.calleReg{
+    display: flex !important;
+    gap: 15px 6%;
+    width: 66% !important;
+    order: 5;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row !important;
+}
+main.mainRegistro-1 .form div.calleReg .callebloReg1{}
+main.mainRegistro-1 .form div.calleReg .callebloReg2{}
+main.mainRegistro-1 .form div.calleReg .callebloReg3{}
+main.mainRegistro-1 .form div.calleReg .callebloReg4{}
+.mainRegistro-1 .form div.blocReg1{
+    margin: 1.3% 4% 4% 0;
+    gap: 15px;
+    order: 1;
+    width: 30% !important;
+}
+.mainRegistro-1 .form div.blocReg2{
+    margin: 1.3% 4% 4% 0;
+    gap: 15px;
+    order: 2;
+    width: 30% !important;
+}
+.mainRegistro-1 .form div.blocReg3{
+    margin: -25% 0px 0.3% 5%;
+    gap: 15px;
+    width: 27% !important;
+    order: 6;
+}
+.mainRegistro-1 .form div.blocReg4{
+    margin-top: 10px;
+    gap: 15px 0;
+    order: 7;
+}
+main.mainRegistro-1 .form .queCallesRegis{
+    top: 47%;
+    position: absolute;
+    margin: 0;
+    width: 62%;
+    order: 4;
+}
+
+.mainRegistro-1 form div button{}
+main.mainRegistro-1 .form div button.botonVolverRegis{font-size: 20px;}
+main.mainRegistro-1 .form div button.botonOmitirRegis{
+    font-size: 20px;
+}
+main.mainRegistro-1 .form div button.botonContinuarRegis{
+    font-size: 20px;
+}
+main.mainRegistro-1 .form div button p{
+    width: 159px;
+    margin: 9px;
+}
+
+.mainRegistro-1 .form div.blocReg1 .blocReg1-1{}
+.mainRegistro-1 .form div.blocReg1 .blocReg1-2{
+}
+.mainRegistro-1 .form div.blocReg1 .blocReg1-3{}
+
+.mainRegistro-1 .form div.blocReg2 .blocReg2-1{}
+.mainRegistro-1 .form div.blocReg2 .blocReg2-2{}
+.mainRegistro-1 .form div.blocReg2 .blocReg2-3{}
+
+.mainRegistro-1 .form div.blocReg3 .blocReg3-1{}
+.mainRegistro-1 .form div.blocReg3 .blocReg3-2{}
+.mainRegistro-1 .form div.blocReg3 .blocReg3-3{}
+.mainRegistro-1 .form div.blocReg3 .blocReg3-4{
+    margin-bottom: 6px;
+}
+.mainRegistro-1 .form div.blocReg3 .blocReg3-5{}
+.mainRegistro-1 .form div.blocReg3 .blocReg3-6{}
+
+main.mainRegistro-1 .form div.calleReg .callebloReg1{
+ 
+width: 45%;
+}
+main.mainRegistro-1 .form div.calleReg .callebloReg2{
+
+width: 46%;
+}
+main.mainRegistro-1 .form div.calleReg .callebloReg3{
+}
+main.mainRegistro-1 .form div.calleReg .callebloReg4{
+
+width: 46%;
+}
+
+}

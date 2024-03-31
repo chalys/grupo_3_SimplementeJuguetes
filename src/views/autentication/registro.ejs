@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head") %>
+    <!--   HEADER    -->
+    <%- include("../partials/header") %>
+        <!--     MAIN    -->
+        <main class="mainRegistro">
+            <div class="fondoRegis">
+                <span class="span1">
+                    <img src="../imagen/fondRegis1.jpg" alt="" class="IMG1">
+                </span>
+                <span class="span2">
+                    <img src="../imagen/fondRegis2.jpg" alt="" class="IMG2">
+                </span>
+            </div>
+            <div class="errorsReg">
+                <%- locals.errors?.userName?.msg %>
+                <%- locals.errors?.name?.msg %>
+                <%- locals.errors?.email?.msg %>
+                <%- locals.errors?.password?.msg %>
+                <%- locals.errors?.confirmpassword?.msg %>
+                <%- locals.errors?.province?.msg %>
+                <%- locals.errors?.locality?.msg %>
+                <%- locals.errors?.postal?.msg %>
+                <%- locals.errors?.street?.msg %>
+                <%- locals.errors?.streetNumber?.msg %>
+                <%- locals.errors?.floor?.msg %>
+                <%- locals.errors?.phoneNumber?.msg %>
+                <%- locals.errors?.userPicture?.msg %>
+
+            </div>
+            <nav class="naregdes">
+                <div class="divFormReg" id="">
+                    <form method="post" action="/autenticacion/registro" enctype="multipart/form-data">
+                        <!--formulario principal-->
+                        <img src="../imagen/panda-logo.png" alt="logo" class="pandaFormularioReg">
+                        <label for="Email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="nadie@gmail.com" value="<%= locals.old?.email %>">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" placeholder="" >
+                        <label for="confgPass">Confirmar contraseña</label>
+                        <input type="password" name="confirmpassword" class="margenEspRegis" placeholder="" >
+                        <!--menu de insercion de foto y nombre-->
+                        <div class="perfilReg">
+                            <!--imagen de usuario-->
+                            <div class="fotodePerfil">
+                            
+                                    <figure class="figureuserPictureReg">
+                                        <img id="userPictureReg" class="userPictureReg" src="/imagen/usersPictures/default.png" alt="">
+                                        <div class="selectDivUser"><input class="selectPicUser"  id="selectPicUser" type="file" name="userPicture" accept="image/*"></div>
+                                    </figure>
+                            </div>
+                            <div>
+                                <label for="nombreUsuario">Usuario</label>
+                                <input type="text" name="userName" placeholder="nombreUsuario" value="<%= locals.old?.userName %>">
+                            </div>
+                        </div>
+                        <button type="button" class="botonSiguienteRegis toggle" ><a
+                                href="">Registrarme</a></button>
+        
+                    <h2>¿Ya tienes cuenta?<a href="/autenticacion/login">accede aqui</a></h2>
+                </div>
+                <div class="google">
+                    <img src="../imagen/google-icon.png" alt="google">
+                    <h2><a href="">Ingresar con Google</a></h2>
+                </div>
+            </nav>
+            <main class="mainRegistro-1" id="">
+                <nav>
+                    <!--Formulario opcional-->
+                    <div class="form">
+                        <label for="nombreCompleto" class="elCienReg">Nombre y apellido</label>
+                        <input type="text" class="elCienReg" placeholder="nombreEjemplo" name="name" value="<%= locals.old?.name %>">
+                        <div class="blocReg1">
+                            <label for="provincia" class="blocReg1-1">Provincia</label>
+                            <select class="blocReg1-2" name="province" value="<%= locals.old?.province %>">
+                                <option value="" selected hidden>provinciaEjemplo</option>
+                                <option value="BA">Buenos Aires</option>
+                                <option value="CA">Catamarca</option>
+                                <option value="CH">Chaco</option>
+                                <option value="CT">Chubut</option>
+                                <option value="CB">Córdoba</option>
+                                <option value="CR">Corrientes</option>
+                                <option value="ALLÍ">Entre Ríos</option>
+                                <option value="FO">Formosa</option>
+                                <option value="TU">Jujuy</option>
+                                <option value="ELEPÉ">La Pampa</option>
+                                <option value="LR">La Rioja</option>
+                                <option value="MZ">Mendoza</option>
+                                <option value="MI">Misiones</option>
+                                <option value="NQ">Neuquén</option>
+                                <option value="RN">Río Negro</option>
+                                <option value="SA">Salta</option>
+                                <option value="SJ">San Juan</option>
+                                <option value="SL">San Luis</option>
+                                <option value="SC">Santa Cruz</option>
+                                <option value="SF">Santa Fe</option>
+                                <option value="SE">Santiago del Estero</option>
+                                <option value="TF">Tierra del Fuego</option>
+                                <option value="TU">Tucumán</option>
+                            </select>
+                            <label for="calle" class="blocReg1-3">Calle</label>
+                            <input type="text" class="blocReg1-4" placeholder="calleEjemplo" name="street" value="<%= locals.old?.street %>">
+                        </div>
+                        <div class="blocReg2">
+                            <label for="localidad" class="blocReg2-1">Localidad</label>
+                            <input type="text" class="blocReg2-2" placeholder="localidadEjemplo" name="locality" value="<%= locals.old?.locality %>">
+                            <label for="numero" class="blocReg2-3">Número</label>
+                            <input type="number" placeholder="S/N" class="blocReg2-4" name="streetNumber" value="<%= locals.old?.streetNumber %>">
+                        </div>
+                        <label class="queCallesRegis">¿Entre qué calles está? (opcional)</label>
+                        <div class="calleReg">
+                            <label for="calle1" class="callebloReg1">Calle 1</label>
+                            <input type="text" class="callebloReg2" placeholder="calleEjemplo1" name="betweenSt1" value="<%= locals.old?.betweenSt1 %>">
+                            <label for="calle2" class="callebloReg3">Calle 2</label>
+                            <input type="text" class="callebloReg4" placeholder="calleEjemplo2" name="betweenSt2" value="<%= locals.old?.betweenSt2 %>">
+                        </div>
+                        <div class="blocReg3">
+                            <label for="codigoPos" class="blocReg3-1">Código postal</label>
+                            <input type="number" class="blocReg3-2" placeholder="0000" name="postal" value="<%= locals.old?.postal %>">
+                            <label for="piso" class="blocReg3-3">Piso (opcional)</label>
+                            <input type="number"  class="blocReg3-4" placeholder="pisoEjemplo" name="floor" value="<%= locals.old?.floor %>">
+                            <label for="telContac" class="blocReg3-5">Telefono de contacto</label>
+                            <input type="number"  class="blocReg3-6" placeholder="telCont." name="phoneNumber" value="<%= locals.old?.phoneNumber %>">
+                        </div>
+                        <div class="blocReg4">
+                            <label for="indicAdic" class="elCienReg">Indicaciones adicionales (opcional)</label>
+                            <input type="text" class="elCienReg" placeholder="textoEjemplo" name="indications" value="<%= locals.old?.indications %>">
+                        </div>
+                        <div class="botonesReg">
+                            <button class="botonVolverRegis toggle2" type="button">
+                                <p><a href="">Volver</a></p>
+                            </button>
+                            <button class="botonOmitirRegis" type="submit">
+                                <p>Omitir</p>
+                            </button>
+                            <button class="botonContinuarRegis" type="submit">
+                                <p>Continuar</p>
+                            </button>
+                        </div>
+                    </div>
+                    </form>
+                </nav>
+            </main>
+
+        </main>
+        <footer class="sub-footer">
+            <!-- Footer -->
+            <%- include("../partials/footer") %>
+        </footer>
+        <script src="/js/registro.js"></script>
+        <script src="/js/imageSelector.js"></script>
+        <!-- Script Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        </body>
+
+</html>
