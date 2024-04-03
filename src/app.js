@@ -5,6 +5,7 @@ const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const saveSession = require('./middlewares/validations/saveSession');
 const dataLocal = require('./middlewares/validations/dataLocal');  //CRPG
 const session = require ("express-session");  //CRPG
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(session({secret: "Secreto"})) //CRPG
 
+app.use(saveSession)
 app.use(dataLocal)
 
 // ************ Template Engine - (don't touch) ************
@@ -44,6 +46,7 @@ const authRouter = require("./routes/authentication.routes"); // Rutas autentica
 const prodRouter = require("./routes/products.routes"); // Rutas products
 const cartRouter = require("./routes/cart.routes");
 const userRouter = require("./routes/users.routes");
+
 
 /* ROUTES */
 app.use('/', otherRouter);
