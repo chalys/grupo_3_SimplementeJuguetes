@@ -52,5 +52,23 @@
       "phoneNumber": null,
       "indications": "",
       "userPicture": "default.png"
+   },
+   {
+      "id": 5,
+      "userName": "vargas1234",
+      "name": "",
+      "email": "vargasfgaston@gmail.com",
+      "password": "12345678",
+      "province": "",
+      "locality": "",
+      "postal": null,
+      "street": "",
+      "streetNumber": null,
+      "floor": null,
+      "betweenSt1": "",
+      "betweenSt2": "",
+      "phoneNumber": null,
+      "indications": "",
+      "userPicture": "default.png"
    }
 ]
