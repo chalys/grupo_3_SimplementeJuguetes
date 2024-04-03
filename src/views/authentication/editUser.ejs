@@ -42,29 +42,35 @@
                                 <!-- /Nombre y Apellido -->
                                 <!-- Avatar-->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label for="userPicture" class="form-label">Selecciona la imgen de usuario<span
-                                            class="required-custom">*</span></label>
-                                    <input class="form-control" id="userPicture" type="file" name="userPicture"
+                                    <label for="userPicture" class="form-label">Selecciona la imgen de usuario</label>
+                                    <input class="form-control <%= locals.errors?.userPicture ? 'is-invalid' : (locals.old?.userPicture ? 'is-valid' : '') %>" id="userPicture" type="file" name="userPicture"
                                         accept="image/*">
+                                        <p class="invalid-feedback">
+                                            <%= locals.errors?.userPicture?.msg %>
+                                        </p>
                                 </div>
                                 <!-- /Avatar-->
                                 <!-- Provincia -->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="province">Provincia <span
                                             class="required-custom">*</span></label>
-                                    <select class="form-select" id="province" name="province">
+                                    <select class="form-select <%= locals.errors?.province ? 'is-invalid' : (locals.old?.province ? 'is-valid' : '') %>" id="province" name="province">
+                                        <option selected>¿Selecciona una provincia?</option>
+                                        <!-- Esta es la línea agregada -->
                                         <% province.forEach((p)=> {%>
-                                            <option value="<%= p.code %>" <%=p.code===user.province ? 'selected' : '' %>
+                                            <option value="<%= p.code %>"
+                                                <%=p.code===(locals.old?.province||locals.old?.province===''
+                                                ?locals.old.province:user.province) ? 'selected' : '' %>
                                                 >
                                                 <%= p.name %>
                                             </option>
                                             <% }); %>
-
-                                                <!-- <option selected>¿Selecciona una provincia?</option> -->
                                     </select>
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.province?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Provincia -->
-
                                 <!-- Localidad -->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="locality">Localidad</label>
@@ -158,19 +164,22 @@
                                     <label class="form-label" for="phoneNumber">Teléfono de contacto</label>
                                     <input
                                         class="form-control <%= locals.errors?.phoneNumber ? 'is-invalid' : (locals.old?.phoneNumber ? 'is-valid' : '') %>"
-                                        type="text" id="phoneNumber" name="phoneNumber" placeholder="Introduce el teléfono de contacto" 
+                                        type="text" id="phoneNumber" name="phoneNumber"
+                                        placeholder="Introduce el teléfono de contacto"
                                         value="<%= locals.old?.phoneNumber || locals.old?.phoneNumber === '' ? locals.old.phoneNumber : user.phoneNumber %>">
-                                        <p class="invalid-feedback">
-                                            <%= locals.errors?.phoneNumber?.msg %>
-                                        </p>
+                                    <p class="invalid-feedback">
+                                        <%= locals.errors?.phoneNumber?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /phoneNumber -->
                                 <!-- indications -->
                                 <div class="col-12 col-md-5 col-lg-10 mb-3">
                                     <label class="form-label" for="indications">Indicaciones adicionales</label>
-                                    <input class="form-control <%= locals.errors?.indications ? 'is-invalid' : (locals.old?.indications ? 'is-valid' : '') %>" 
-                                    type="text" id="indications" name="indications" placeholder="Introduce las indicaciones adicionales" 
-                                    value="<%= locals.old?.indications || locals.old?.indications === '' ? locals.old.indications : user.indications %>">
+                                    <input
+                                        class="form-control <%= locals.errors?.indications ? 'is-invalid' : (locals.old?.indications ? 'is-valid' : '') %>"
+                                        type="text" id="indications" name="indications"
+                                        placeholder="Introduce las indicaciones adicionales"
+                                        value="<%= locals.old?.indications || locals.old?.indications === '' ? locals.old.indications : user.indications %>">
                                     <p class="invalid-feedback">
                                         <%= locals.errors?.indications?.msg %>
                                     </p>

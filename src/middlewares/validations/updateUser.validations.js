@@ -1,5 +1,7 @@
 const { check, body } = require("express-validator");
+const { loadData } = require("../../dataBase");
 const path = require("path");
+const provinces = loadData("province");
 /*
 const fieldUserName = check("userName")
   .notEmpty()
@@ -23,6 +25,71 @@ const fieldName = check("name")
   .isLength({ min: 5, max: 80 })
   .withMessage("La longitud del nombre y apellido es incorrecta");
 
+
+  const fieldUserPicture = body("userPicture").custom((value, { req }) => {
+    const image = req.file;
+    const extValid = /\.(png|jpg|jpeg|webp|gif)$/i; // Expresión regular para validar la extensión del archivo
+  
+    if (!image) { // Si no hay imagen en la solicitud
+      throw new Error("El archivo es requerido");
+    } else {
+      const ext = path.extname(image.originalname); // Obtener la extensión del archivo desde el nombre original
+  
+      if (!extValid.test(ext)) { // Comprobar si la extensión es válida
+        throw new Error("El tipo de imagen es incorrecto");
+      }
+    }
+    
+    return true; // Indica que la validación ha sido exitosa
+  });
+
+/*
+  const fieldUserPicture = body("userPicture")
+  .custom((value, { req }) => {
+  const image = req.file;
+  const extValid = [".png", ".webp", ".jpeg", ".jpg"];
+
+  if (!image) {
+    req.locals.errors = { userPicture: { msg: "El archivo es requerido" } };
+    throw new Error("El archivo es requerido");
+  }
+
+  const ext = path.extname(image.filename);
+
+  if (!extValid.includes(ext)) {
+    req.locals.errors = { userPicture: { msg: "El tipo de imagen es incorrecto" } };
+    throw new Error("El tipo de imagen es incorrecto");
+  }
+
+  return true;
+});*/
+/*const fieldUserPicture = body("userPicture").custom((value, { req }) => {
+  const image = req.file;
+  const extValid = [".png", ".webp", ".jpeg", ".jpg"];
+
+  if (!image) {
+    throw new Error("El archivo es requerido");
+  }
+
+  const ext = path.extname(image.filename);
+
+  if (!extValid.includes(ext)) {
+    throw new Error("El tipo de imagen es incorrecto");
+  }
+
+  return true;
+});*/
+
+const fieldProvince = check("province")
+  .notEmpty()
+  .withMessage("La provincia es requerida")
+  .custom((value) => {
+    const provinciaCode = provinces.map((pr) => pr.code);
+    if (!provinciaCode.includes(value)) {
+      throw new Error("El código de la provincia no es válido");
+    }
+    return true;
+  });
 const fieldLocality = check("locality")
   .optional({ checkFalsy: true })
   .isAlphanumeric("es-ES", { ignore: " " })
@@ -65,7 +132,7 @@ const fieldFloor = check("floor")
     return true;
   });
 
-  const fieldBetweenSt1 = check("betweenSt1")
+const fieldBetweenSt1 = check("betweenSt1")
   .optional({ checkFalsy: true })
   .isAlphanumeric("es-ES", { ignore: " " })
   .withMessage("La dirección debe ser alfanúmerica")
@@ -73,7 +140,7 @@ const fieldFloor = check("floor")
   .isLength({ min: 5, max: 100 })
   .withMessage("La longitud de la dirección es incorrecta");
 
-  const fieldBetweenSt2 = check("betweenSt2")
+const fieldBetweenSt2 = check("betweenSt2")
   .optional({ checkFalsy: true })
   .isAlphanumeric("es-ES", { ignore: " " })
   .withMessage("La dirección debe ser alfanúmerica")
@@ -81,46 +148,22 @@ const fieldFloor = check("floor")
   .isLength({ min: 5, max: 100 })
   .withMessage("La longitud de la dirección es incorrecta");
 
-  const fieldPhoneNumber = check("phoneNumber")
+const fieldPhoneNumber = check("phoneNumber")
   .optional({ checkFalsy: true })
   .isMobilePhone()
   .withMessage("El número de teléfono no es válido");
 
-  const fieldIndications = check("indications")  
+const fieldIndications = check("indications")
   .optional({ checkFalsy: true })
   .isAlphanumeric("es-ES", { ignore: " " })
   .withMessage("Las indicaciones adicionales debe ser alfanúmerica")
   .bail()
   .isLength({ min: 5, max: 100 })
   .withMessage("La longitud de las indicaciones adicionales es incorrecta");
-/*
-const fieldProvince = check("province")
-  .not().isIn([""])
-  .withMessage("La provincia es requerida");
 
-const fieldUserPicture = body("userPicture").custom((value, { req }) => {
-  const image = req.file;
-  const extValid = [".png", ".webp", ".jpeg", ".jpg"];
-  if (image?.filename) {
-    const file = req.file?.filename;
-    const ext = path.extname(image.filename);
-
-    if (!file) throw new Error("El archivo es requerido");
-    else {
-      if (!extValid.includes(ext)) {
-        throw new Error("El tipo de imagen es incorrecto");
-      }
-    }
-  }
-  return true;
-}
-);*/
-/*
 module.exports = [
-  fieldUserName,
-  fieldEmail,
-  fieldPassword,
   fieldName,
+  fieldUserPicture,
   fieldProvince,
   fieldLocality,
   fieldPostal,
@@ -130,19 +173,5 @@ module.exports = [
   fieldBetweenSt1,
   fieldBetweenSt2,
   fieldPhoneNumber,
-  
-  fieldUserPicture
-];
-*/
-module.exports = [
-  fieldName,
-  fieldLocality,
-  fieldPostal,
-  fieldStreet,
-  fieldStreetNumber,
-  fieldFloor,
-  fieldBetweenSt1,
-  fieldBetweenSt2,
-  fieldPhoneNumber,
-  fieldIndications
+  fieldIndications,
 ];

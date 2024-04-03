@@ -11,8 +11,10 @@ module.exports = (req, res) => {
 
   if (errors.isEmpty()) {
     //Si no existe errores
+    const userPicture = req.file;
     const {
       name,
+      province,
       locality,
       postal,
       street,
@@ -21,7 +23,7 @@ module.exports = (req, res) => {
       betweenSt1,
       betweenSt2,
       phoneNumber,
-      indications
+      indications,
     } = req.body;
 
     const usersMapped = users.map((u) => {
@@ -29,6 +31,8 @@ module.exports = (req, res) => {
         const userUpdate = {
           ...u,
           name: name.trim(),
+          userPicture: userPicture ? userPicture.filename : u.userPicture,
+          province: province.trim(),
           locality: locality.trim(),
           postal: postal.trim(),
           street: street.trim(),
@@ -36,9 +40,21 @@ module.exports = (req, res) => {
           floor: floor.trim(),
           betweenSt1: betweenSt1.trim(),
           betweenSt2: betweenSt2.trim(),
-          phoneNumber:phoneNumber.trim(),
-          indications:indications.trim()
+          phoneNumber: phoneNumber.trim(),
+          indications: indications.trim(),
         };
+        if (userPicture?.filename) {
+          const pathBeforeFile = path.join(
+            __dirname,
+            `../../../public/images/authentication/` + u.userPicture
+          );
+          const existFile = fs.existsSync(pathBeforeFile);
+          if (existFile) {
+            fs.unlinkSync(pathBeforeFile);
+          }
+          /*fs.exist();*/
+        }
+
         return userUpdate;
       }
       return u;
