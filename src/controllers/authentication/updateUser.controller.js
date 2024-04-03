@@ -31,7 +31,7 @@ module.exports = (req, res) => {
         const userUpdate = {
           ...u,
           name: name.trim(),
-          userPicture: userPicture ? userPicture.filename : u.userPicture,
+          userPicture: userPicture? userPicture.filename : u.userPicture, // image:image ? image.filename : "default-image.png"
           province: province.trim(),
           locality: locality.trim(),
           postal: postal.trim(),
@@ -52,7 +52,6 @@ module.exports = (req, res) => {
           if (existFile) {
             fs.unlinkSync(pathBeforeFile);
           }
-          /*fs.exist();*/
         }
 
         return userUpdate;
@@ -66,7 +65,7 @@ module.exports = (req, res) => {
     //si existe errores entonces
     const userFind = users.find((u) => u.id === +id);
     const errorsMapped = errors.mapped();
-    //res.render("./authentication/editUser", { user: userFind, province: loadProvince, errors:errorsMapped, old });
+
     res.render(
       "./authentication/editUser",
       {
@@ -75,11 +74,6 @@ module.exports = (req, res) => {
         errors: errorsMapped,
         old: req.body,
       }
-      //(err, contentView) => {
-      // (err) => {
-      //err && res.send(err.message)
-      //res.render("partials/dasboard",{contentView})
-      //   }
     );
   }
 };

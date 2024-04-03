@@ -12,6 +12,7 @@ const {
   edit,
   update,
 } = require("../controllers/authentication");
+
 const { updateUserValidation } = require("../middlewares/validations");
 
 // /autenticacion

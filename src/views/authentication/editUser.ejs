@@ -13,7 +13,7 @@
                 <!-- title -->
                 <div class="row mb-4">
                     <div class="col-12 bg-container-title-custom">
-                        <h2 class="color-title-custom">EDITAR REGISTRO DE USUARIO</h2>
+                        <h2 class="color-title-custom">EDITAR PERFIL DE USUARIO</h2>
                     </div>
                 </div>
                 <!-- /title -->
@@ -24,6 +24,24 @@
                         <form action="/autenticacion/editar-usuario/<%=user.id%>?_method=PUT" method="post"
                             enctype="multipart/form-data">
                             <div class="row justify-content-center">
+                                <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
+                                    <h5>INFORMACIÓN DE CUENTA:</h5>
+                                </div>
+                                <!-- Name -->
+                                <div class="col-12 col-md-5 col-lg-5 mb-3">
+                                    <label class="form-label" for="userName">Nombre de usuario</label>
+                                    <input class="form-control" type="text" id="userName" name="userName"
+                                        placeholder="Introduce nombre y apellido" value="<%= user.userName %>" disabled>
+                                </div>
+                                <!-- /Name -->
+                                <!-- Email  -->
+                                <div class="col-12 col-md-5 col-lg-5 mb-3">
+                                    <label class="form-label" for="email">Correo electrónico</label>
+                                    <input class="form-control" type="text" id="email" name="email"
+                                        placeholder="Introduce tu correo electrónico" value="<%= user.email %>"
+                                        disabled>
+                                </div>
+                                <!-- /Email -->
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
                                     <h5>INFORMACIÓN PERSONAL:</h5>
                                 </div>
@@ -43,18 +61,27 @@
                                 <!-- Avatar-->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label for="userPicture" class="form-label">Selecciona la imgen de usuario</label>
-                                    <input class="form-control <%= locals.errors?.userPicture ? 'is-invalid' : (locals.old?.userPicture ? 'is-valid' : '') %>" id="userPicture" type="file" name="userPicture"
-                                        accept="image/*">
-                                        <p class="invalid-feedback">
-                                            <%= locals.errors?.userPicture?.msg %>
-                                        </p>
+                                    <input
+                                        class="form-control <%= locals.errors?.userPicture ? 'is-invalid' : (locals.old?.userPicture ? 'is-valid' : '') %>"
+                                        id="userPicture" type="file" name="userPicture" accept="image/*">
+                                        <% if (locals.errors && locals.errors.userPicture) { %>
+                                            <p class="invalid-feedback">
+                                                <%= locals.errors.userPicture.msg %>
+                                            </p>
+                                        <% } else if (locals.errors && locals.errors.uploadError) { %>
+                                            <p class="invalid-feedback">
+                                                <%= locals.errors.uploadError.message %>
+                                            </p>
+                                        <% } %>
                                 </div>
                                 <!-- /Avatar-->
                                 <!-- Provincia -->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
                                     <label class="form-label" for="province">Provincia <span
                                             class="required-custom">*</span></label>
-                                    <select class="form-select <%= locals.errors?.province ? 'is-invalid' : (locals.old?.province ? 'is-valid' : '') %>" id="province" name="province">
+                                    <select
+                                        class="form-select <%= locals.errors?.province ? 'is-invalid' : (locals.old?.province ? 'is-valid' : '') %>"
+                                        id="province" name="province">
                                         <option selected>¿Selecciona una provincia?</option>
                                         <!-- Esta es la línea agregada -->
                                         <% province.forEach((p)=> {%>

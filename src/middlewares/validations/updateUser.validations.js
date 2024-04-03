@@ -25,22 +25,17 @@ const fieldName = check("name")
   .isLength({ min: 5, max: 80 })
   .withMessage("La longitud del nombre y apellido es incorrecta");
 
-
   const fieldUserPicture = body("userPicture").custom((value, { req }) => {
     const image = req.file;
-    const extValid = /\.(png|jpg|jpeg|webp|gif)$/i; // Expresión regular para validar la extensión del archivo
+    const extValid = ['.jpg', '.jpeg', '.png', '.gif','.webp'];
   
-    if (!image) { // Si no hay imagen en la solicitud
-      throw new Error("El archivo es requerido");
-    } else {
-      const ext = path.extname(image.originalname); // Obtener la extensión del archivo desde el nombre original
-  
-      if (!extValid.test(ext)) { // Comprobar si la extensión es válida
+    if (image) {
+      const ext = path.extname(image.originalname).toLowerCase(); // Obtener la extensión del archivo en minúsculas
+      if (!extValid.includes(ext)) {
         throw new Error("El tipo de imagen es incorrecto");
       }
     }
-    
-    return true; // Indica que la validación ha sido exitosa
+    return true;
   });
 
 /*
