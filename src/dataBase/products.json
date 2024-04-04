@@ -1,7 +1,7 @@
 [
    {
       "id": 1,
-      "name": "Comisario Woody Toy Story Muñeco Coleccionable",
+      "name": "Comisario Woody",
       "manufacturer": "Thnkway Toys",
       "mark": "Toy Story",
       "sku": 12345,
@@ -83,7 +83,7 @@
    },
    {
       "id": 4,
-      "name": "Rex Dinosaurio 3",
+      "name": "Rex Dinosaurio",
       "manufacturer": "Thnkway Toys",
       "mark": "Toy Story",
       "sku": 12345,
