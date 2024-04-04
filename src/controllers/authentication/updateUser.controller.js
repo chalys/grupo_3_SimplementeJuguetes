@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const { loadData, saveData } = require("../../dataBase");
+const { loadData, saveData } = require("../../data");
 const { validationResult } = require("express-validator");
 
 module.exports = (req, res) => {
@@ -67,7 +67,7 @@ module.exports = (req, res) => {
     const errorsMapped = errors.mapped();
 
     res.render(
-      "./authentication/editUser",
+      "./autentication/editUser",
       {
         user: userFind,
         province: loadProvince,
