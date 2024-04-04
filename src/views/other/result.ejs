@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%- include('../partials/head') %>
+
+	<body>
+		<!-- Header -->
+		<%- include('../partials/header') %>
+			<!-- /Header -->
+			<main class="flex-shrink-0">
+				<!-- todos los productos -->
+				<div class="container container-wrapper">
+					<div class="row">
+						<div class="col-12">
+							<h2 class="products-title">Resultados de la búsqueda: <%= keywords %>
+							</h2>
+						</div>
+
+						<% products.forEach(p=> { %>
+							<div class="col-12 col-sm-6 col-lg-3 py-3">
+								<div class="card card-with-shadow">
+									<div class="img-wrapper">
+										<img src="/imagen/products/<%= p.firstImg %>" class="card-img"
+											alt="<%= p.firstImg %>">
+									</div>
+									<div class="card-body card-body-custom">
+										<h5 class="card-title card-title-custom">
+											<%= p.name %>
+										</h5>
+										<div class="d-flex column-flex justify-content-between align-items-center">
+											<p class="card-text card-text-custom">
+												$ <%= p.price %>
+											</p>
+											<a href="/productos/detalle-producto/<%= p.id %>"
+												class="btn btn-register-custom">COMPRAR</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<% }); %>
+
+								<% if (!products.length) {%>
+									<div class="col-12">
+										<h2 class="products-title" style="color: tomato;">No hay productos que
+											coincidan con esa
+											búsqueda</h2>
+									</div>
+									<%}%>
+					</div>
+				</div>
+				<!-- /todos los productos -->
+			</main>
+			<!-- footer -->
+			<%- include('../partials/footer') %>
+				<!-- /footer -->
+
+				<!-- scripts -->
+				<%- include("../partials/scripts") %>
+					<!-- /scripts -->
+	</body>
+
+</html>

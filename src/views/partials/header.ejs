@@ -21,10 +21,14 @@
     </select>
   </div>
   <!--busqueda-->
-  <div class="busquedaHeader">
-    <input type="text" placeholder="Buscar...">
-    <figure><i class="fa-solid fa-magnifying-glass"></i></figure>
+  <div> <!--class="busquedaHeader"-->
+    <form action="/buscar" method="GET"> <!--  class="search-form" -->
+      <input type="text" name="keywords" placeholder="Buscar..." class="search-form_input">
+      <!-- <figure><i class="fa-solid fa-magnifying-glass"></i></figure> -->
+      <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+    </form>
   </div>
+  <!--/busqueda-->
   <!--iconos del header-->
   <div class="iconosHeader">
     <a href=""><i class="fa-solid fa-heart"></i></a>
