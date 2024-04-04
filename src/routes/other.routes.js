@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const otherController = require("../controllers/other");
+const {home, dashboard, search} = require("../controllers/other");
 
-router.get("/", otherController.home);
-router.get("/home", otherController.home);
-router.get("/dashboard", otherController.dashboard);
+router.get("/", home);
+router.get("/home", home);
+router.get("/dashboard", dashboard);
+router.get('/buscar', search);
 
 module.exports = router;
