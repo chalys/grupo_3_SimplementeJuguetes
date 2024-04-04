@@ -66,3 +66,21 @@ Punto tres (3): Continuar haciendo: -Pedir ayuda cuando necesitemos conocimiento
 Punto cuatro (4): Hacer menos: -Llegar hasta el último día de entrega. -No actualizar las tarjetas de JIRA. -No organizar reuniones más seguido.
 
 Punto cinco (5): Dejar de hacer: -No prender cámara. -No avisar con tiempo (en caso de no llegar con una actividad).
+
+RETROSPECTIVA DEL PROYECTO SPRINT 4
+
+Punto uno (1): Comenzar a hacer: -Tener algún tipo de calendario con los horarios disponibles de los integrantes. -Organizar reuniones independientes.
+
+Punto dos (2): Continuar haciendo: -Pedir ayuda cuando necesitemos conocimiento de un tema o en caso de estar atascados. -Mover las tarjetas de JIRA. -Reuniones grupales. -Subir documentación del progreso. -Comunicar en caso de no poder continuar. -Comunicar sobre horarios disponibles. -Solucionar conflictos del código en grupo. -Contribuir ayudando a los demás a resolver sus problemas.
+
+Punto tres (3): Hacer menos: -Llegar hasta el último día de entrega. -No actualizar las tarjetas de JIRA. -No organizar reuniones más seguido.
+
+RETROSPECTIVA DEL PROYECTO SPRINT 5
+
+-en la retro de antes se hizo una acutalizacion por encima de las cosas ya que hubo distintos temas que imposibilitaron la comunicación como de mi parte (R. Alexandre Vivar Toledo) -
+
+Punto uno (1): Comenzar a hacer: -Tener algún tipo de calendario con los horarios disponibles de los integrantes. -Organizar reuniones independientes. (se sigue sin poder poner una fecha pero igual se sigue intentando buscar un horario en donde estemos la mayoria)
+
+Punto dos (2): Continuar haciendo: -Pedir ayuda cuando necesitemos conocimiento de un tema o en caso de estar atascados. -Mover las tarjetas de JIRA. -Reuniones grupales. -Subir documentación del progreso. -Comunicar en caso de no poder continuar. -Comunicar sobre horarios disponibles. -Solucionar conflictos del código en grupo. -Contribuir ayudando a los demás a resolver sus problemas. (por ahora veo que seguimos viendo que en el grupo de whatsapp se siguen compartiendo dudas y acciones)
+
+Punto tres (3): Hacer menos: -Llegar hasta el último día de entrega. -No actualizar las tarjetas de JIRA. -No organizar reuniones más seguido. (tal vez en eso seguimos comunicandonos pero con lapsos o tiempos perdido sy seguimos entregando a ultima instancia)
