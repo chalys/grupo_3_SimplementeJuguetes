@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(session({secret: "Secreto"})) //CRPG
-
+app.use (checkSession)
 app.use(dataLocal)
 
 // ************ Template Engine - (don't touch) ************
@@ -45,6 +45,7 @@ const authRouter = require("./routes/authentication.routes"); // Rutas autentica
 const prodRouter = require("./routes/products.routes"); // Rutas products
 const cartRouter = require("./routes/cart.routes");
 const userRouter = require("./routes/users.routes");
+const { check } = require('express-validator');
 
 /* ROUTES */
 app.use('/', otherRouter);
