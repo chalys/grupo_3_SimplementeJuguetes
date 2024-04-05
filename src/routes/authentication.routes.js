@@ -12,7 +12,7 @@ router.get("/registro-paso-1", registro1);
 router.get("/registro-paso-2", registro2);   
 router.get("/login", login);
 
-router.post("/login", loginProcess, validactionLogin);
+router.post("/login", loginProcess, loginValidation);
 
 //*** EDIT ONE USER ***/
 router.get("/editar-usuario/:id", edit);
