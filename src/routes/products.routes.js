@@ -1,12 +1,14 @@
 const express = require("express");
 const router = express.Router();
+const prodController = require("../controllers/products");
 
-const { detail, list }=require("../controllers/products")
+router.get('/detalle/:id', prodController.detail);
+router.get("/registro-producto", prodController.registroProducto);
 
-// /productos
-//*** DETAIL ONE PRODUCT ***/
-router.get('/detalle-producto/:id', detail);
 
-//*** LIST ALL PRODUCTS ***/
-router.get("/lista-productos", list);
+//router de edicion de productos
+router.get("/editarProducto/:id", prodController.editarProducto);
+router.put("/editarProducto/:id", prodController.editsProducts);
+
+router.get("/lista-productos", prodController.listaProductos)
 module.exports = router;

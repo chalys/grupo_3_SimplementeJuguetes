@@ -20,7 +20,7 @@ Se identificó que la documentación del código podría mejorarse para facilita
 Esta retrospectiva proporciona una visión equilibrada de los aspectos positivos y las áreas de mejora, sirviendo como base para el aprendizaje continuo y la optimización del proceso de desarrollo del proyecto.
 
 
-
+------------------------------------------------------------------------------------------
 
 RETROSPECTIVA DEL PROYECTO SPRINT 2
 
@@ -40,6 +40,33 @@ Punto dos (2): Hacer más:
 Punto tres (3): Continuar haciendo:
 -Reuniones grupales.
 -Pedir ayuda.
+-Subir documentación del progreso.
+-Comunicar en caso de no poder continuar.
+-Comunicar sobre horarios disponibles.
+-Solucionar conflictos del código en grupo.
+-Contribuir ayudando a los demás a resolver sus problemas.
+
+Punto cuatro (4): Hacer menos:
+-Llegar hasta el último día de entrega.
+-No actualizar las tarjetas de JIRA.
+-No organizar reuniones más seguido.
+------------------------------------------------------------------------------------------
+RETROSPECTIVA DEL PROYECTO SPRINT 3
+
+Punto uno (1): Comenzar a hacer:
+-Tener algún tipo de calendario con los horarios disponibles de los integrantes.
+-Organizar reuniones independientes.
+
+Punto dos (2): Hacer más:
+-Empezar a hacer reuniones de equipo con mayor frecuencia.
+-Subir imagenes, fotos, screenshots, videos etc. Referido al progreso de las actividades.
+-Añadir comentarios en el código sobre lo que tratan sus partes o funcionalidades.
+-Auto asignarse actividades
+
+Punto tres (3): Continuar haciendo:
+-Pedir ayuda cuando necesitemos conocimiento de un tema o en caso de estar atascados.
+-Mover las tarjetas de JIRA.
+-Reuniones grupales.
 -Subir documentación del progreso.
 -Comunicar en caso de no poder continuar.
 -Comunicar sobre horarios disponibles.

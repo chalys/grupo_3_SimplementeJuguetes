@@ -14,15 +14,17 @@ const {
 } = require("../controllers/authentication");
 
 const { updateUserValidation } = require("../middlewares/validations");
-
-// /autenticacion
+const { userValidation } = require("../middlewares/validations");
 
 //*** CREATE ONE USER ***/
 //router.get("/crear-usuario/", add);
+
+// /autenticacion
 router.get("/registro", registro);
-router.get("/registro-paso-2", registro1);
-router.get("/registro-paso-3", registro2);
+router.post("/registro",uploadUserPicture.fields([{ name: "userPicture", maxCount: 1 }]),userValidation , registro1);
+router.get("/registro-completado", registro2);   
 router.get("/login", login);
+
 
 //*** EDIT ONE USER ***/
 router.get("/editar-usuario/:id", edit);

@@ -1,0 +1,102 @@
+.favorite-container {
+    width: 100%;
+    height: 100%;
+    padding: 50px 50px;
+  }
+  
+  
+  .favorite-container .title-favorite{
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .favorite-title-list-item-link {
+    color: var(--white);
+    text-decoration: none;
+  }
+  
+  .favorite-title-arrow{
+   margin: 0px 8px;
+  }
+  .favorite-box {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ 
+  /*Tablet*/
+  @media (min-width: 426px) {
+    .mn-title-list-item {
+      display: block;
+    }
+  
+    .prueba {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .lbl-product {
+      display: none;
+    }
+  
+    .product-close {
+      display: contents;
+    }
+    .product-price {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 0px;
+    }
+    .product-amount {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 0px;
+    }
+    .product-subtotal {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .input-coupon {
+      margin: 0px;
+    }
+  
+    .ft-row-item-logo {
+      width: 30%;
+    }
+  
+    .ft-row-line {
+      border-bottom: 1px solid var(--white);
+    }
+    .mn-box-product {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .vt-desktop {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--grisObs);
+    }
+    .vt-mobile-tableta {
+        padding: 20px 0;
+    }
+
+    .mn-box-title-column {
+      display: block;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  
+  /*Desktop*/
+  @media (min-width: 769px) {
+    .mn-box {
+      display: flex;
+      gap: 20px;
+    }
+    .mn-box-fre-products-coupon {
+      width: 75%;
+    }
+  }
+  
