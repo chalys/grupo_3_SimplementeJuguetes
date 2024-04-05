@@ -1,126 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head") %>
+<%- include("../partials/head", {title: 'Inicio'}) %>
+<body class="bodyRegistro">
+    <!--   HEADER    -->
+    <%- include("../partials/header") %>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <!--     MAIN    -->
+        <main class="mainHome">
 
-    <body class="bodyRegistro">
-        <!--   HEADER    -->
-        <%- include("../partials/header") %>
-            <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
-            <!--     MAIN    -->
-            <main class="mainHome">
+            <!--BANNER"tenemos lo mejor para tus hijos"-->
+            <img src="/images/home/banner1.jpg" alt="">
+            <div class="titulosHome">
+                <h2>JUGUETES PARA TODAS LAS EDADES</h2>
+            </div>
 
-                <!--BANNER"tenemos lo mejor para tus hijos"-->
-                <img src="../imagen/home/banner1.jpg" alt="">
-                <div class="titulosHome">
-                    <h2>JUGUETES PARA TODAS LAS EDADES</h2>
+            <div class="diverHome">
+                <img src="/images/home/art1.png" alt="">
+                <img src="/images/home/art2.jpg" alt="">
+                <img src="/images/home/art3.jpg" alt="">
+                <img src="/images/home/art4.jfif" alt="">
+                <p>DIVERSIÓN ASEGURADA</p>
+            </div>
+
+            <!--//////////////// ICONOS //////////////////-->
+            <div class="titulosHome">
+                <!--PAGOS-->
+                <div class="pagosHome">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <p>3,6 y 12 PAGOS SIN INTERES SELECCIONANDO MERCADO PAGO Con tarjertas de bancos adheridos</p>
                 </div>
-
-                <div class="diverHome">
-                    <img src="../imagen/home/art1.png" alt="">
-                    <img src="../imagen/home/art2.jpg" alt="">
-                    <img src="../imagen/home/art3.jpg" alt="">
-                    <img src="../imagen/home/art4.jfif" alt="">
-                    <p>DIVERSIÓN ASEGURADA</p>
+                <!--ENVIOS-->
+                <div class="enviosHome">
+                    <i class="fa-solid fa-truck"></i>
+                    <p>ENVÍOS GRATIS DESDE $19990</p>
                 </div>
-
-                <!--//////////////// ICONOS //////////////////-->
-                <div class="titulosHome">
-                    <!--PAGOS-->
-                    <div class="pagosHome">
-                        <i class="fa-solid fa-credit-card"></i>
-                        <p>3,6 y 12 PAGOS SIN INTERES SELECCIONANDO MERCADO PAGO Con tarjertas de bancos adheridos</p>
-                    </div>
-                    <!--ENVIOS-->
-                    <div class="enviosHome">
-                        <i class="fa-solid fa-truck"></i>
-                        <p>ENVÍOS GRATIS DESDE $19990</p>
-                    </div>
-                    <!--DESCUENTO-->
-                    <div class="descuentoHome">
-                        <i class="fa-solid fa-dollar-sign"></i>
-                        <p>15% DE DESCUENTO EFECTIVO O TRANSFERENCIA BANCARIA</p>
-                    </div>
+                <!--DESCUENTO-->
+                <div class="descuentoHome">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <p>15% DE DESCUENTO EFECTIVO O TRANSFERENCIA BANCARIA</p>
                 </div>
+            </div>
 
+            <!--///////////////// NOVEDADES //////////////////-->
 
-                <!--///////////////// NOVEDADES //////////////////-->
-
-                <!--banner-->
-                <img src="/imagen/home/banner2.jpg" alt="">
-                <!--articulos-->
-                <div class="articulosHome">
-                    <h2 class="subtitle-custom">NOVEDADES SIMPLEMENTE JUGUETES</h2>
-                    <!-- funciona -->
-                    <div class="container mt-5">
-                        <div id="multi-item-carousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <% for (let i=0; i < products.length; i +=4) { %>
-                                    <div class="carousel-item <%= i === 0 ? 'active' : '' %> col-12">
-                                        <div class="row">
-                                            <% for (let j=i; j < i + 4 && j < products.length; j++) { %>
-                                                <div class="col-sm-3">
-                                                    <div class="card">
-                                                        <div class="img-wrapper">
-                                                            <img src="/imagen/products/<%= products[j].firstImg %>"
-                                                                class="card-img" alt="...">
-                                                        </div>
-                                                        <div class="card-body card-body-custom">
-                                                            <h5 class="card-title card-title-custom">
-                                                                <%= products[j].name %>
-                                                            </h5>
-                                                            <div
-                                                                class="d-flex column-flex justify-content-between align-items-center">
-                                                                <p class="card-text card-text-custom">
-                                                                    $ <%= products[j].price %>
-                                                                </p>
-                                                                <a href="/productos/detalle/<%= products[j].id %>"
-                                                                    class="btn btn-register-custom">COMPRAR</a>
-                                                            </div>
+            <!--banner-->
+            <img src="/images/home/banner2.jpg" alt="">
+            <!--articulos-->
+            <div class="articulosHome">
+                <h2 class="subtitle-custom">NOVEDADES SIMPLEMENTE JUGUETES</h2>
+                <!-- funciona -->
+                <div class="container mt-5">
+                    <div id="multi-item-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <% for (let i=0; i < products.length; i +=4) { %>
+                                <div class="carousel-item <%= i === 0 ? 'active' : '' %> col-12">
+                                    <div class="row">
+                                        <% for (let j=i; j < i + 4 && j < products.length; j++) { %>
+                                            <div class="col-sm-3">
+                                                <div class="card card-with-shadow">
+                                                    <div class="img-wrapper">
+                                                        <img src="/images/products/<%= products[j].firstImg %>" class="card-img" alt="...">
+                                                    </div>
+                                                    <div class="card-body card-body-custom">
+                                                        <h5 class="card-title card-title-custom">
+                                                            <%= products[j].name %>
+                                                        </h5>
+                                                        <div class="d-flex column-flex justify-content-between align-items-center">
+                                                            <p class="card-text card-text-custom">
+                                                                $ <%= products[j].price %>
+                                                            </p>
+                                                            <a href="/productos/detalle-producto/<%= products[j].id %>" class="btn btn-register-custom">COMPRAR</a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <% } %>
-                                        </div>
+                                            </div>
+                                        <% } %>
                                     </div>
-                                    <% } %>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#multi-item-carousel"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#multi-item-carousel"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                                </div>
+                            <% } %>
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#multi-item-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#multi-item-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
-                <!--articulos-->
-                <!--/////////////// SEDE CENTRAL /////////////-->
-                <div class="titulosHome">
-                    <h2>SIMPLEMENTE JUGUETES SEDE CENTRAL</h2>
-                </div>
-                <div class="mapa-home">
-                    <figure>
-                        <img src="/imagen/home/local.png" alt="">
-                    </figure>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29306771.325544856!2d-33.6754848!3d63.363602!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondres%2C%20Reino%20Unido!5e0!3m2!1ses!2sar!4v1707164547011!5m2!1ses!2sar"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+            </div>
+            <!--articulos-->
+            <!--/////////////// SEDE CENTRAL /////////////-->
+            <div class="titulosHome">
+                <h2 >SIMPLEMENTE JUGUETES SEDE CENTRAL</h2>
+            </div>
+            <div class="mapa-home">
+                <figure>
+                    <img src="/images/home/local.png" alt="">
+                </figure>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29306771.325544856!2d-33.6754848!3d63.363602!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondres%2C%20Reino%20Unido!5e0!3m2!1ses!2sar!4v1707164547011!5m2!1ses!2sar"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
-            </main>
-            <footer class="sub-footer">
-                <!-- Footer -->
-                <%- include("../partials/footer") %>
-            </footer>
-            <!-- scripts -->
-            <%- include("../partials/scripts") %>
-                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-    </body>
+        </main>
+        <footer class="sub-footer">
+            <!-- Footer -->
+            <%- include("../partials/footer") %>
+        </footer>
+        <!-- scripts -->
+        <%- include("../partials/scripts") %>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
 
 </html>

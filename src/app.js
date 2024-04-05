@@ -60,6 +60,7 @@ app.use('/', userRouter);
 app.use("/autenticacion", authRouter);
 app.use("/productos", prodRouter);
 app.use("/carrito-compra", cartRouter);
+
 app.use((req,res,next)=>{
   res.status(404).render("other/notFound")
 })

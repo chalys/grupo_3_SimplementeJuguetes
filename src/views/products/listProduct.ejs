@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head") %>
-
+    <%- include("../partials/head", {title: 'Lista de jueguetes'}) %>
 <body>
-
     <%- include("../partials/dashbar") %>
     <main>
         <h2 class="list_produt">listado de productos</h2>
@@ -36,7 +34,7 @@
            
         <tr class="col-12">
             <th scope="row "><%=p.id%></th>
-            <td ><img src="/No_Image_Available.jpg" alt="" class="no_img"></td>
+            <td ><img src="/images/products/<%= p.firstImg !== "" ? p.firstImg : 'default-image.jpg' %>" alt="" class="no_img"></td>
             <td><%=p.name%></td>
             <td><%=p.price%></td>
             <td><%=p.sku%></td>
@@ -49,9 +47,9 @@
             <td><%=p.accessories%></td>
             <td><%=p.collectable%></td>
             <td><%=p.minAge%></td>
-            <td> <button type="button" class="btn btn-success ">guardar</button></td>
+            
             <td><button type="reset" class="btn btn-danger boton">borrar</button></td>
-            <td><a href="/admin/editarProducto/<%= p.id %>" class="btn btn-warning boton">editar</a></td>
+            <td><a href="/admin/editar-producto/<%= p.id %>" class="btn btn-warning boton">editar</a></td>
         </tr>
         <tr> 
        <%  }); %>

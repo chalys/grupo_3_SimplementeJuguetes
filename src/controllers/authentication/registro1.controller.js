@@ -1,3 +1,3 @@
 module.exports = (req, res) =>{
-    res.render("./autentication/registro-1");
+    res.render("./authentication/registro-1");
 }

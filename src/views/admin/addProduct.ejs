@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include("../partials/head") %>
+<%- include("../partials/head", {title: 'Registro de juguete'}) %>
     <%- include("../partials/dashbar") %>
 
     <body>
@@ -10,7 +10,7 @@
             <!-- title -->
             <div class="row mb-4">
                 <div class="col-12 bg-container-title-custom">
-                    <h2 class="color-title-custom">REGISTRO DE JUGUETES</h2>
+                    <h2 class="color-title-custom">REGISTRO DE JUGUETE</h2>
                 </div>
             </div>
             <!-- /title -->
@@ -266,22 +266,22 @@
                             <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
                                 <h5>IMÁGENES Y DESCRIPCIÓN:</h5>
                             </div>
-                            <!-- Primary imagen-->
+                            <!-- Primary images-->
                             <div class="col-12 col-md-10 col-lg-5 mb-3">
-                                <label for="firstImg" class="form-label">Selecciona la imagen
+                                <label for="firstImg" class="form-label">Selecciona la images
                                     principal del juguete<span class="required-custom">*</span></label>
                                 <input class="form-control" id="firstImg" type="file" name="firstImg" accept="image/*"
                                     required>
                             </div>
-                            <!-- /Primary imagen-->
-                            <!-- Secondary imagen-->
+                            <!-- /Primary images-->
+                            <!-- Secondary images-->
                             <div class="col-12 col-md-10 col-lg-5 mb-3">
                                 <label for="secondImg" class="form-label">Selecciona las imágenes
                                     secundarias del juguete <span class="required-custom">*</span></label>
                                 <input class="form-control" id="secondImg" type="file" name="secondImg" multiple
                                     accept="image/*" required>
                             </div>
-                            <!-- /Secondary imagen-->
+                            <!-- /Secondary images-->
                             <!-- Description -->
                             <div class="col-12 col-md-10 mb-3">
                                 <label class="form-label" for="description">Descripción <span
@@ -290,12 +290,13 @@
                                     placeholder="Escribe una descripción detallada del juguete" required></textarea>
                             </div>
                             <!-- /Description -->
-                            <!-- Botones-->
+                            <!-- Button-->
                             <div
                                 class="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
                                 <button class="btn btn-register-custom " type="submit">REGISTRAR</button>
                                 <button class="btn btn-cancel-custom" type="reset">CANCELAR</button>
                             </div>
+                            <!-- /Button-->
                         </div>
                     </form>
                 </div>

@@ -1,8 +1,20 @@
 const { check, body } = require("express-validator");
-const { loadData } = require("../../data");
+const { loadData } = require("../../dataBase");
 const path = require("path");
 const provinces = loadData("province");
+/*
+const fieldUserName = check("userName")
+  .notEmpty()
+  .withMessage("El nombre de usuario es requerido");
 
+const fieldEmail = check("email")
+  .isEmail()
+  .withMessage("El email no es válido");
+
+const fieldPassword = check("password")
+  .isStrongPassword()
+  .withMessage("La contraseña debe ser segura");
+*/
 const fieldName = check("name")
   .notEmpty()
   .withMessage("El nombre y apellido es requerido")
@@ -25,6 +37,43 @@ const fieldName = check("name")
     }
     return true;
   });
+
+/*
+  const fieldUserPicture = body("userPicture")
+  .custom((value, { req }) => {
+  const image = req.file;
+  const extValid = [".png", ".webp", ".jpeg", ".jpg"];
+
+  if (!image) {
+    req.locals.errors = { userPicture: { msg: "El archivo es requerido" } };
+    throw new Error("El archivo es requerido");
+  }
+
+  const ext = path.extname(image.filename);
+
+  if (!extValid.includes(ext)) {
+    req.locals.errors = { userPicture: { msg: "El tipo de imagen es incorrecto" } };
+    throw new Error("El tipo de imagen es incorrecto");
+  }
+
+  return true;
+});*/
+/*const fieldUserPicture = body("userPicture").custom((value, { req }) => {
+  const image = req.file;
+  const extValid = [".png", ".webp", ".jpeg", ".jpg"];
+
+  if (!image) {
+    throw new Error("El archivo es requerido");
+  }
+
+  const ext = path.extname(image.filename);
+
+  if (!extValid.includes(ext)) {
+    throw new Error("El tipo de imagen es incorrecto");
+  }
+
+  return true;
+});*/
 
 const fieldProvince = check("province")
   .notEmpty()

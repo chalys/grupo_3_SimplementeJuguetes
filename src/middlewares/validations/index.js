@@ -1,6 +1,7 @@
 const checkSession = require("./checkSession");
 
 module.exports = {
+    userValidation: require("./user.validation"),
     updateUserValidation: require("./updateUser.validations"),
     saveSession: require("./saveSession"),
     dataLocal: require("./dataLocal"),

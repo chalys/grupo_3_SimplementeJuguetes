@@ -1,21 +1,36 @@
+// ************ Require's ************
 const express = require("express");
 const router = express.Router();
 const { uploadAuthentication } = require("../middlewares/uploadFiles");
-const { registro, registro1, registro2, login,  edit,
-    update, loginProcess } = require("../controllers/authentication");
 
-const { updateUserValidation, validactionLogin } = require("../middlewares/validations");
+// ************ Controller Require ************
+const {
+  registro,
+  registro1,
+  registro2,
+  login,
+  edit,
+  update,
+} = require("../controllers/authentication");
+
+const { updateUserValidation } = require("../middlewares/validations");
+const { userValidation } = require("../middlewares/validations");
+
+//*** CREATE ONE USER ***/
+//router.get("/crear-usuario/", add);
 
 // /autenticacion
 router.get("/registro", registro);
-router.get("/registro-paso-1", registro1);
-router.get("/registro-paso-2", registro2);   
+router.post("/registro",uploadUserPicture.fields([{ name: "userPicture", maxCount: 1 }]),userValidation , registro1);
+router.get("/registro-completado", registro2);   
 router.get("/login", login);
 
-router.post("/login", loginProcess, loginValidation);
 
 //*** EDIT ONE USER ***/
 router.get("/editar-usuario/:id", edit);
 router.put("/editar-usuario/:id", uploadAuthentication.single("userPicture"),updateUserValidation, update);
+
+//*** DELETE ONE USER ***/
+//router.delete('/eliminar-usuario/:id', destroy);
 
 module.exports = router;

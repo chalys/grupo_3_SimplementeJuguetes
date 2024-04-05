@@ -1,13 +1,18 @@
-main.mainHome{order: 2;}
-main.mainHome img{
+main.mainHome {
+    order: 2;
+}
+
+main.mainHome img {
     width: 100%;
 }
+
 main.mainHome div.articulosHome article figure {
     margin: 0;
     background: var(--blanco);
     height: 170px;
 }
-main.mainHome .titulosHome{
+
+main.mainHome .titulosHome {
     margin-top: 10px;
     padding: 10px;
     text-align: center;
@@ -15,7 +20,8 @@ main.mainHome .titulosHome{
     color: var(--blanco);
     background: var(--orange);
 }
-main.mainHome div.diverHome{
+
+main.mainHome div.diverHome {
     gap: 30px;
     display: flex;
     margin: 10px;
@@ -23,55 +29,69 @@ main.mainHome div.diverHome{
     background: var(--green);
     flex-direction: column;
 }
-main.mainHome div.diverHome img{}
-main.mainHome div.diverHome p{
+
+main.mainHome div.diverHome img {}
+
+main.mainHome div.diverHome p {
     align-self: center;
     color: var(--blanco);
 }
-main.mainHome div.titulosHome{
+
+main.mainHome div.titulosHome {
     height: 80px;
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-main.mainHome div.titulosHome h2{}
-main.mainHome div.titulosHome div.pagosHome{
+
+main.mainHome div.titulosHome h2 {}
+
+main.mainHome div.titulosHome div.pagosHome {
     order: 3;
     display: flex;
     align-items: center;
 }
-main.mainHome div.titulosHome div.enviosHome{
+
+main.mainHome div.titulosHome div.enviosHome {
     margin-right: 24px;
     display: flex;
     order: 1;
     align-items: center;
 }
-main.mainHome div.titulosHome div.descuentoHome{
+
+main.mainHome div.titulosHome div.descuentoHome {
     order: 2;
     display: flex;
     align-items: center;
 }
-main.mainHome div.titulosHome div.pagosHome p{
+
+main.mainHome div.titulosHome div.pagosHome p {
     text-align: left;
     font-size: 8px;
     width: 126px;
 }
-main.mainHome div.titulosHome div.enviosHome p{
+
+main.mainHome div.titulosHome div.enviosHome p {
     font-size: 10px;
     width: 10px;
 }
-main.mainHome div.titulosHome div.descuentoHome p{
+
+main.mainHome div.titulosHome div.descuentoHome p {
     text-align: left;
     font-size: 10px;
     width: 93px;
 }
-main.mainHome div.titulosHome div.pagosHome i{
+
+main.mainHome div.titulosHome div.pagosHome i {
     margin-right: 10px;
 }
-main.mainHome div.titulosHome div.enviosHome i{}
-main.mainHome div.titulosHome div.descuentoHome i{}
-main.mainHome div.articulosHome{
+
+main.mainHome div.titulosHome div.enviosHome i {}
+
+main.mainHome div.titulosHome div.descuentoHome i {}
+
+main.mainHome div.articulosHome {
     gap: 30px;
     background: var(--red);
     padding: 30px;
@@ -79,36 +99,45 @@ main.mainHome div.articulosHome{
     display: flex;
     flex-direction: column;
 }
-main.mainHome div.articulosHome h2{
+
+main.mainHome div.articulosHome h2 {
     text-align: center;
     font-size: 18px;
     color: var(--blanco);
 }
-main.mainHome div.articulosHome article{
+
+main.mainHome div.articulosHome article {
     width: 101%;
     position: relative;
 }
-main.mainHome div.articulosHome article img{
+
+main.mainHome div.articulosHome article img {
     object-fit: contain;
     height: 100%;
     width: 100%;
 }
-main.mainHome div.articulosHome article div{
+
+main.mainHome div.articulosHome article div {
     height: 140px;
     padding-bottom: 1px;
     background: var(--orange);
 }
-main.mainHome div.articulosHome article div p{
+
+main.mainHome div.articulosHome article div p {
     color: var(--blanco);
 }
-main.mainHome div.articulosHome article div p.tituloProduc{}
-main.mainHome div.articulosHome article div p.precioAnt{
+
+main.mainHome div.articulosHome article div p.tituloProduc {}
+
+main.mainHome div.articulosHome article div p.precioAnt {
     margin: 0;
     color: var(--gris);
     text-decoration: line-through;
 }
-main.mainHome div.articulosHome article div p.precioProduc{}
-main.mainHome div.articulosHome article div a{
+
+main.mainHome div.articulosHome article div p.precioProduc {}
+
+main.mainHome div.articulosHome article div a {
     bottom: 9px;
     right: 7px;
     position: absolute;
@@ -117,149 +146,219 @@ main.mainHome div.articulosHome article div a{
     color: var(--blanco);
     padding: 10px;
 }
-main.mainHome div.mapa-home{
+
+main.mainHome div.mapa-home {
     margin: 10px;
 }
-main.mainHome div.mapa-home figure{
+
+main.mainHome div.mapa-home figure {
     margin: 0;
 }
-main.mainHome div.mapa-home figure img{
+
+main.mainHome div.mapa-home figure img {
     width: 100%;
     height: 100%;
 }
-main.mainHome div.mapa-home iframe{
+
+main.mainHome div.mapa-home iframe {
     width: 100%;
 }
-@media(min-device-width: 426px){
-    main.mainHome div.articulosHome article div p.tituloProduc{}
-    main.mainHome div.articulosHome article div p.precioAnt{}
-    main.mainHome div.articulosHome article div p.precioProduc{}
-main.mainHome{}
-main.mainHome img{}
-main.mainHome .titulosHome{}
-main.mainHome div.diverHome{
-    flex-wrap: wrap;
-    flex-direction: row;
+
+@media(min-device-width: 426px) {
+    main.mainHome div.articulosHome article div p.tituloProduc {}
+
+    main.mainHome div.articulosHome article div p.precioAnt {}
+
+    main.mainHome div.articulosHome article div p.precioProduc {}
+
+    main.mainHome {}
+
+    main.mainHome img {}
+
+    main.mainHome .titulosHome {}
+
+    main.mainHome div.diverHome {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    main.mainHome div.diverHome img {
+        width: 47%;
+    }
+
+    main.mainHome div.diverHome p {
+        text-align: center;
+        width: 100%;
+    }
+
+    main.mainHome div.titulosHome {}
+
+    main.mainHome div.titulosHome h2 {}
+
+    main.mainHome div.titulosHome div.pagosHome {
+        order: 1;
+    }
+
+    main.mainHome div.titulosHome div.enviosHome {
+        order: 2;
+    }
+
+    main.mainHome div.titulosHome div.descuentoHome {
+        order: 3;
+    }
+
+    main.mainHome div.titulosHome div.pagosHome p {}
+
+    main.mainHome div.titulosHome div.enviosHome p {
+        margin-left: 10px;
+        text-align: left;
+        width: 130px;
+    }
+
+    main.mainHome div.titulosHome div.descuentoHome p {
+        margin-left: 5px;
+        width: 140px;
+    }
+
+    main.mainHome div.titulosHome div.pagosHome i {}
+
+    main.mainHome div.titulosHome div.enviosHome i {}
+
+    main.mainHome div.titulosHome div.descuentoHome i {}
+
+    main.mainHome div.articulosHome {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    main.mainHome div.articulosHome h2 {
+        width: 100%;
+    }
+
+    main.mainHome div.articulosHome article {
+        width: 45%;
+    }
+
+    main.mainHome div.articulosHome article img {}
+
+    main.mainHome div.articulosHome article div {}
+
+    main.mainHome div.articulosHome article div p {}
+
+    main.mainHome div.articulosHome article div a {}
+
+    main.mainHome div.mapa-home {}
+
+    main.mainHome div.mapa-home figure {}
+
+    main.mainHome div.mapa-home figure img {}
+
+    main.mainHome div.mapa-home iframe {}
 }
-main.mainHome div.diverHome img{
-    width: 47%;
-}
-main.mainHome div.diverHome p{
-    text-align: center;
-    width: 100%;
-}
-main.mainHome div.titulosHome{}
-main.mainHome div.titulosHome h2{}
-main.mainHome div.titulosHome div.pagosHome{
-    order: 1;
-}
-main.mainHome div.titulosHome div.enviosHome{
-    order: 2;
-}
-main.mainHome div.titulosHome div.descuentoHome{
-    order: 3;
-}
-main.mainHome div.titulosHome div.pagosHome p{}
-main.mainHome div.titulosHome div.enviosHome p{
-    margin-left: 10px;
-    text-align: left;
-    width: 130px;
-}
-main.mainHome div.titulosHome div.descuentoHome p{
-    margin-left: 5px;
-    width: 140px;
-}
-main.mainHome div.titulosHome div.pagosHome i{}
-main.mainHome div.titulosHome div.enviosHome i{}
-main.mainHome div.titulosHome div.descuentoHome i{}
-main.mainHome div.articulosHome{
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-main.mainHome div.articulosHome h2{
-    width: 100%;
-}
-main.mainHome div.articulosHome article{
-    width: 45%;
-}
-main.mainHome div.articulosHome article img{
-}
-main.mainHome div.articulosHome article div{}
-main.mainHome div.articulosHome article div p{}
-main.mainHome div.articulosHome article div a{}
-main.mainHome div.mapa-home{}
-main.mainHome div.mapa-home figure{}
-main.mainHome div.mapa-home figure img{}
-main.mainHome div.mapa-home iframe{}
-}
-@media(min-device-width: 769px){
-    main.mainHome div.mapa-home{
-    flex-wrap: wrap;
-    display: flex;
-}
-main.mainHome div.mapa-home figure{
-    width: 50%;
-}
-main.mainHome div.mapa-home figure img{}
-main.mainHome div.mapa-home iframe{
-    width: 50%;
-}
-    main.mainHome div.articulosHome article div p.tituloProduc{}
-main.mainHome div.articulosHome article div p.precioAnt{}
-main.mainHome div.articulosHome article div p.precioProduc{}
-main.mainHome{}
-main.mainHome img{}
-main.mainHome .titulosHome{}
-main.mainHome div.diverHome{}
-main.mainHome div.diverHome img{
-    width: 21%;
-}
-main.mainHome div.diverHome p{}
-main.mainHome div.titulosHome{height: 10%;align-items: start;}
-main.mainHome div.titulosHome h2{}
-main.mainHome div.titulosHome div.pagosHome{
-    height: 100%;
-    width: 30%;
-    font-size: 20px;
-}
-main.mainHome div.titulosHome div.enviosHome{
-    width: 30%;
-}
-main.mainHome div.titulosHome div.descuentoHome{height: 100%;width: 30%;}
-main.mainHome div.titulosHome div.pagosHome p{
-    width: 100%;
-    font-size: 15px;
-}
-main.mainHome div.titulosHome div.enviosHome p{
-    width: 50%;
-    font-size: 20px;
-}
-main.mainHome div.titulosHome div.descuentoHome p{
-    width: 94%;
-    font-size: 20px;
-}
-main.mainHome div.titulosHome div.pagosHome i{
-    font-size: 30px;
-}
-main.mainHome div.titulosHome div.enviosHome i{
-    font-size: 30px;
-}
-main.mainHome div.titulosHome div.descuentoHome i{
-    font-size: 30px;
-}
-main.mainHome div.articulosHome{
-    gap: 10px;
-}
-main.mainHome div.articulosHome h2{}
-main.mainHome div.articulosHome article{
-    height: 17%;
-    width: 23%;
-}
-main.mainHome div.articulosHome article img{
-}
-main.mainHome div.articulosHome article div{}
-main.mainHome div.articulosHome article div p{}
-main.mainHome div.articulosHome article div a{}
+
+@media(min-device-width: 769px) {
+    main.mainHome div.mapa-home {
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    main.mainHome div.mapa-home figure {
+        width: 50%;
+    }
+
+    main.mainHome div.mapa-home figure img {}
+
+    main.mainHome div.mapa-home iframe {
+        width: 50%;
+    }
+
+    main.mainHome div.articulosHome article div p.tituloProduc {}
+
+    main.mainHome div.articulosHome article div p.precioAnt {}
+
+    main.mainHome div.articulosHome article div p.precioProduc {}
+
+    main.mainHome {}
+
+    main.mainHome img {}
+
+    main.mainHome .titulosHome {}
+
+    main.mainHome div.diverHome {}
+
+    main.mainHome div.diverHome img {
+        width: 21%;
+    }
+
+    main.mainHome div.diverHome p {}
+
+    main.mainHome div.titulosHome {
+        height: 10%;
+        align-items: start;
+    }
+
+    main.mainHome div.titulosHome h2 {}
+
+    main.mainHome div.titulosHome div.pagosHome {
+        height: 100%;
+        width: 30%;
+        font-size: 20px;
+    }
+
+    main.mainHome div.titulosHome div.enviosHome {
+        width: 30%;
+    }
+
+    main.mainHome div.titulosHome div.descuentoHome {
+        height: 100%;
+        width: 30%;
+    }
+
+    main.mainHome div.titulosHome div.pagosHome p {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    main.mainHome div.titulosHome div.enviosHome p {
+        width: 50%;
+        font-size: 20px;
+    }
+
+    main.mainHome div.titulosHome div.descuentoHome p {
+        width: 94%;
+        font-size: 20px;
+    }
+
+    main.mainHome div.titulosHome div.pagosHome i {
+        font-size: 30px;
+    }
+
+    main.mainHome div.titulosHome div.enviosHome i {
+        font-size: 30px;
+    }
+
+    main.mainHome div.titulosHome div.descuentoHome i {
+        font-size: 30px;
+    }
+
+    main.mainHome div.articulosHome {
+        gap: 10px;
+    }
+
+    main.mainHome div.articulosHome h2 {}
+
+    main.mainHome div.articulosHome article {
+        height: 17%;
+        width: 23%;
+    }
+
+    main.mainHome div.articulosHome article img {}
+
+    main.mainHome div.articulosHome article div {}
+
+    main.mainHome div.articulosHome article div p {}
+
+    main.mainHome div.articulosHome article div a {}
 }
 
 /*  CORROSEL*/
