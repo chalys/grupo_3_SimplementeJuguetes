@@ -5,4 +5,5 @@ module.exports = {
     saveSession: require("./saveSession"),
     dataLocal: require("./dataLocal"),
     checkSession: require("./checkSession"),
+    validactionLogin: require("./validactionLogin")
 }

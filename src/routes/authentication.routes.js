@@ -4,7 +4,7 @@ const { uploadAuthentication } = require("../middlewares/uploadFiles");
 const { registro, registro1, registro2, login,  edit,
     update, loginProcess } = require("../controllers/authentication");
 
-const { updateUserValidation } = require("../middlewares/validations");
+const { updateUserValidation, validactionLogin } = require("../middlewares/validations");
 
 // /autenticacion
 router.get("/registro", registro);
@@ -12,7 +12,7 @@ router.get("/registro-paso-1", registro1);
 router.get("/registro-paso-2", registro2);   
 router.get("/login", login);
 
-router.post("/login", loginProcess);
+router.post("/login", loginProcess, validactionLogin);
 
 //*** EDIT ONE USER ***/
 router.get("/editar-usuario/:id", edit);
