@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const { registro, registro1, registro2, login, processLogin } = require("../controllers/authentication");
 const { uploadAuthentication } = require("../middlewares/uploadFiles");
 const { registro, registro1, registro2, login,  edit,
     update, loginProcess } = require("../controllers/authentication");
@@ -9,10 +8,10 @@ const { updateUserValidation } = require("../middlewares/validations");
 
 // /autenticacion
 router.get("/registro", registro);
-router.get("/registro-paso-2", registro1);
-router.get("/registro-paso-3", registro2);   
+router.get("/registro-paso-1", registro1);
+router.get("/registro-paso-2", registro2);   
 router.get("/login", login);
-router.post("login",processLogin)
+
 router.post("/login", loginProcess);
 
 //*** EDIT ONE USER ***/
