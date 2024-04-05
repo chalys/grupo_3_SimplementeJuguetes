@@ -1,6 +1,6 @@
 <header class="header">
   <a href="/">
-    <figure class="pandaHeader"><img src="../imagen/panda-logo.png" alt="Simplemente Juguetes"></figure>
+    <figure class="pandaHeader"><img src="/imagen/panda-logo.png" alt="Simplemente Juguetes"></figure>
   </a>
   <h1>
     <p class="tituloNegro">SIMPLEMENTE</p>
@@ -21,16 +21,37 @@
     </select>
   </div>
   <!--busqueda-->
-  <div class="busquedaHeader">
-    <input type="text" placeholder="Buscar...">
-    <figure><i class="fa-solid fa-magnifying-glass"></i></figure>
+  <div> <!--class="busquedaHeader"-->
+    <form action="/buscar" method="GET"> <!--  class="search-form" -->
+      <input type="text" name="keywords" placeholder="Buscar..." class="search-form_input">
+      <!-- <figure><i class="fa-solid fa-magnifying-glass"></i></figure> -->
+      <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+    </form>
   </div>
+  <!--/busqueda-->
   <!--iconos del header-->
-  <div class="iconosHeader">
-    <a href=""><i class="fa-solid fa-heart"></i></a>
-    <a href="/autenticacion/login"><i class="fa-solid fa-user"></i></a>
-    <a href="/carrito-compra"><i class="fa-solid fa-cart-shopping"></i></a>
-  </div>
+
+    <!--autenticacion favoritos-->
+    <% if(!locals.userLogin){ %>  
+      <a href="/autenticacion/login"><i class="fa-solid fa-heart"></i></a>
+    <% } else { %> 
+      <a href="/favoritos"><i class="fa-solid fa-heart"></i></a>
+    <% } %>
+
+    <!--autenticacion perfil-->
+    <% if(!locals.userLogin){ %>  
+      <a href="/autenticacion/login"><i class="fa-solid fa-user"></i></a>
+    <% } else { %> 
+      <a href="/perfil"><i class="fa-solid fa-user"></i></a>
+   <% } %> 
+
+    <!--autenticacion carrito-->
+    <% if(!locals.userLogin){ %>  
+      <a href="/autenticacion/login"><i class="fa-solid fa-cart-shopping"></i></a>
+    <% } else { %> 
+      <a href="/carrito-compra"><i class="fa-solid fa-cart-shopping"></i></a>
+    <% } %>
+
   <!--ofertas y outlet-->
   <div class="ofertasYOutlet">
     <h3 class="ofertasHeader"><a href="/"><i class="fa-solid fa-fire-flame-curved"></i>OFERTAS</a></h3>

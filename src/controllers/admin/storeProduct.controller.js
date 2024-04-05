@@ -8,7 +8,7 @@ module.exports = (req, res) => {
     newImages = req.files.secondImg?.map(img => img.filename)
   }
 
-  const products = loadData();
+  const products = loadData("productsDataBase");
   const newID = products[products.length - 1].id + 1;
   const newProduct = {
     id: newID,
