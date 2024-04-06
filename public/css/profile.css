@@ -1,5 +1,5 @@
-main{
-    /*background-color: var(--gris);*/
+.main-bg{
+    background-color: var(--gris);
 }
 
 main .title-profile{
