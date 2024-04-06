@@ -1,5 +1,5 @@
 const {check,body} =require("express-validator")
-const { loadData } = require("../../data");
+const { loadData } = require("../../dataBase");
 const path = require("path");
 
 loginValidation= [

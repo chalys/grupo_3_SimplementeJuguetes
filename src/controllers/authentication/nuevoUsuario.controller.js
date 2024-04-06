@@ -1,4 +1,4 @@
-const { loadData, saveData } = require("../../data");
+const { loadData, saveData } = require("../../dataBase");
 const { validationResult } = require("express-validator");
 
 module.exports = (req,res)=>{
@@ -35,7 +35,7 @@ module.exports = (req,res)=>{
     // const errores = [mapeoErroes.userName,mapeoErroes.name,mapeoErroes.email,mapeoErroes.password,mapeoErroes.confirmpassword,mapeoErroes.province,mapeoErroes.locality,mapeoErroes.postal,mapeoErroes.street,mapeoErroes.streetNumber,mapeoErroes.floor,mapeoErroes.phoneNumber,mapeoErroes.userPicture]
     const old = req.body
     // return res.send(mapeoErroes)
-    res.render("./autentication/registro",{
+    res.render("./authentication/registro",{
         errors: mapeoErroes,
         old: old,
     })

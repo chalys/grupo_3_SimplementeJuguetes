@@ -70,5 +70,23 @@
       "phoneNumber": null,
       "indications": "",
       "userPicture": "default.png"
+   },
+   {
+      "id": 6,
+      "userName": "ale",
+      "name": "alexis peloso",
+      "email": "alexisthd1961@gmail.com",
+      "password": "papafrita101",
+      "province": "",
+      "locality": "",
+      "postal": null,
+      "street": "",
+      "streetNumber": null,
+      "floor": null,
+      "betweenSt1": "",
+      "betweenSt2": "",
+      "phoneNumber": null,
+      "indications": "",
+      "userPicture": "default.png"
    }
 ]

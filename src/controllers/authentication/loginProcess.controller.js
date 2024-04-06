@@ -1,5 +1,5 @@
 const { compareSync } = require("bcryptjs");
-const {loadData} = require("../../data");
+const {loadData} = require("../../dataBase");
 module.exports = (req, res) => { 
 
     //Login

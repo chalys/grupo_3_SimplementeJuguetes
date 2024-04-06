@@ -15,6 +15,7 @@ const {
 
 const { updateUserValidation } = require("../middlewares/validations");
 const { userValidation } = require("../middlewares/validations");
+const { uploadUserPicture } = require("../middlewares/uploadUserPicture");
 
 //*** CREATE ONE USER ***/
 //router.get("/crear-usuario/", add);

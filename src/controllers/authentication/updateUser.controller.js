@@ -6,7 +6,7 @@ const { validationResult } = require("express-validator");
 module.exports = (req, res) => {
   const errors = validationResult(req);
   const { id } = req.params;
-  const users = loadData("users");
+  const users = loadData("usuarios");
   const loadProvince = loadData("province");
 
   if (errors.isEmpty()) {
