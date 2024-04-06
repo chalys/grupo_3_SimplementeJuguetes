@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include('../partials/head') %>
+<%- include('../partials/head', {title: 'Resultados de tu búsqueda' }) %>
 
 	<body>
 		<!-- Header -->
@@ -16,12 +16,11 @@
 							</h2>
 						</div>
 
-						<% products.forEach(p=> { %>
-							<div class="col-12 col-sm-6 col-lg-3 py-3">
-								<div class="card card-with-shadow">
+						<!-- <% products.forEach(p=> {%>
+							<div class="col-12 col-sm-6 col-lg-3">
+								<div class="card">
 									<div class="img-wrapper">
-										<img src="/imagen/products/<%= p.firstImg %>" class="card-img"
-											alt="<%= p.firstImg %>">
+										<img src="/images/products/<%= p.firstImg %>" class="card-img" alt="...">
 									</div>
 									<div class="card-body card-body-custom">
 										<h5 class="card-title card-title-custom">
@@ -37,6 +36,27 @@
 									</div>
 								</div>
 							</div>
+							<%});%> -->
+
+							<% products.forEach(p => { %>
+								<div class="col-12 col-sm-6 col-lg-3 py-3">
+									<div class="card card-with-shadow">
+										<div class="img-wrapper">
+											<img src="/images/products/<%= p.firstImg %>" class="card-img" alt="<%= p.firstImg %>">
+										</div>
+										<div class="card-body card-body-custom">
+											<h5 class="card-title card-title-custom">
+												<%= p.name %>
+											</h5>
+											<div class="d-flex column-flex justify-content-between align-items-center">
+												<p class="card-text card-text-custom">
+													$ <%= p.price %>
+												</p>
+												<a href="/productos/detalle-producto/<%= p.id %>" class="btn btn-register-custom">COMPRAR</a>
+											</div>
+										</div>
+									</div>
+								</div>
 							<% }); %>
 
 								<% if (!products.length) {%>

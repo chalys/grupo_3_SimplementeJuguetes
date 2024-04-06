@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head",{title:'Ingresar'}) %>
+
+    <body>
+
+        <!-- Header -->
+        <%- include("../partials/header") %>
+
+            <!--     MAIN    -->
+            <main class="main-login">
+                <img class="fondo" src="../images/other/fondo-login.png" alt="fondo">
+                <div class="contenido">
+                    <form action="/autenticacion/login" method="post" class="form">
+                        <img src="/images/logo/panda-logo.png" alt="logo" class="logo-login">
+                        <div class="login-h2">
+                            <h2>Bienvenido</h2>
+                        </div>
+                        <div class="login-nombre">
+                            <label class="text-login" for="nombre">Nombre de usuario</label>
+                            <input type="text" name="name" id="nombre" class="input-ln">
+                        </div>
+                        <div class="login-contrasenia">
+                            <label class="text-login" for="contraseña">Contraseña</label>
+                            <input type="password" id="contraseña" class="input-login" name="contraseña">
+                        </div>
+                        <div class="check-login">
+                            <input type="checkbox" name="recuerdame" id="recuerdame">
+                            <label class="text-checkbox" for="recuerdame"> Recuerdame</label>
+                        </div>
+                        <div class="login-boton">
+                            <button type="submit" class="button-login">Ingresar</button>
+                        </div>
+                        <div class="link-create-account">
+                            <p>¿no tenes cuenta?</p>
+                            <a href="/autenticacion/registro" class="link-create-account">crea tu cuenta</a>
+                        </div>
+                    </form>
+                    <div class="div-img-google">
+                        <img class="img-google" src="/images/other/google-icon.png" alt="">
+                        <p>ingresa con google</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <%- include("../partials/footer") %>
+
+                <!-- Script Bootstrap -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                    crossorigin="anonymous"></script>
+    </body>
+
+</html>

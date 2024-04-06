@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
-<%- include("../partials/head") %>
+<%- include("../partials/head", {title: 'Detalle de juguete'}) %>
 <link rel="stylesheet" href="/css/style.css" type="text/css"/>
 <body>
     <!-- Header -->
-
     <%- include("../partials/header") %>
 
     <main class="main-detail">
-
         <!--PRODUCTO PRINCIPAL-->
         <section class="main-product">
             <div class="container-left">
                 <figure class="container-left-up">
-                    <img class="main-photo" src="/imagen/products/<%= p.firstImg %>" alt="Imagen del producto">
+                    <img class="main-photo" src="/images/products/<%= p.firstImg %>" alt="images del producto">
                 </figure>
                 <div class="container-left-down">
                     <% for( let i = 0; i < 4; i++ ) { %>
-                        <img class="secondary-photo" src="/imagen/<%= p.secondImg[i]?p.secondImg[i]:'unnamed.jpg' %>" alt="Imagen del producto">
+                        <img class="secondary-photo" src="/images/products/<%= p.secondImg[i]? p.secondImg[i]:'default-image.jpg' %>" alt="images del producto">
                         <% } %>
              
                 </div>
@@ -32,8 +30,8 @@
                     <p class="cr-payment cr-details">Metodos de pago</p>
                     <figure class="logo-cards">
                         <i class="fa-brands fa-cc-mastercard custom-cards"></i>
-                        <i class="fa-brands fa-cc-paypal custom-cards""></i>
-                    <i class=" fa-brands fa-cc-visa custom-cards""></i>
+                        <i class="fa-brands fa-cc-paypal custom-cards"></i>
+                    <i class=" fa-brands fa-cc-visa custom-cards"></i>
                     </figure>
                 </div>
                 <div class="container-right-down">
@@ -86,9 +84,9 @@
                 <section class="rp-products">
                     <% for( let i = 0; i < ps.length; i++ ) { %>
                         <article class="rp-product">
-                            <a class="rp-product-link" href="/productos/detalle/<%= ps[i].id %>">
+                            <a class="rp-product-link" href="/productos/detalle-producto/<%= ps[i].id %>">
                                 <figure class="figureDetDin">
-                                <img class="rp-product-img" src="/imagen/products/<%= ps[i].firstImg %>"
+                                <img class="rp-product-img" src="/images/products/<%= ps[i].firstImg %>"
                                     alt="Producto <%= ps[i].id %>"></figure>
                                 </a>
                             <h3 class="rp-product-title"><%= ps[i].name %></h3>

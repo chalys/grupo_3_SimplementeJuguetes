@@ -1,12 +1,12 @@
 const path = require("path");
 const fs = require("fs");
-const { loadData, saveData } = require("../../data");
+const { loadData, saveData } = require("../../dataBase");
 const { validationResult } = require("express-validator");
 
 module.exports = (req, res) => {
   const errors = validationResult(req);
   const { id } = req.params;
-  const users = loadData("users");
+  const users = loadData("usuarios");
   const loadProvince = loadData("province");
 
   if (errors.isEmpty()) {
@@ -59,15 +59,16 @@ module.exports = (req, res) => {
       return u;
     });
 
-    saveData(usersMapped, "users");
+    saveData(usersMapped, "usuarios");
     res.redirect(`/autenticacion/editar-usuario/${id}`);
+    
   } else {
     //si existe errores entonces
     const userFind = users.find((u) => u.id === +id);
     const errorsMapped = errors.mapped();
 
     res.render(
-      "./autentication/editUser",
+      "./authentication/editUser",
       {
         user: userFind,
         province: loadProvince,

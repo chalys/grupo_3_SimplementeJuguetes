@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head")%>
+    <%- include("../partials/head", {title: 'Página no encontrada'}) %>
 
     <body>
         <%- include("../partials/header") %>
@@ -10,7 +10,7 @@
                         <h1 class="fw-bold">404</h1>
                         <p class="fs-3"><span class="text-danger">Opps!</span> Página no encontrada.</p>
                         <p class="lead"> La página que estás buscando no existe.</p>
-                        <img src="/imagen/panda-logo.png" class="img-fluid img-thumbnail"
+                        <img src="/images/logo/panda-triste.png" class="img-fluid img-thumbnail"
                             alt="simplemente-juguetes-logo" style="max-width: 200px;">
                         <p><a href="/" class="btn btn-register-custom mt-5">Volver a la página de inicio</a></p>
                     </div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("../partials/head",{title:'favoritos'}) %>
+
+<body>
+    <!-- Header EJS -->
+
+    <%- include("../partials/header") %>
+
+    <!-- Main -->
+    <main class="favorite-container">
+
+        <h1 class="title-favorite">Favoritos</h1>
+
+        <section class="favorite-box">
+                <!-- Products -->
+                <article class="mn-box-product">
+                    <div class="vt-desktop">
+                        <div></div>
+                        <div></div>
+                        <div>PRODUCTO</div>
+                        <div></div>
+                        <div>PRECIO</div>
+                        <div></div>
+                    </div>
+
+                    <div class="vt-mobile-tableta">
+                        <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                        <figure class="product-fig">
+                            <img class="product-img" src="/imagen/buzz_lightyear_product.jpg" alt="">
+                        </figure>
+                        <div class="prueba">
+
+                            <div class="product-details">
+                                <label for="">Pistola de agua - Sin Marca</label>
+                            </div>
+
+                            <div  class="product-price">
+                                <label class="lbl-product" for="">PRECIO</label>
+                                <label for="">$64.890</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="vt-mobile-tableta">
+                        <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                        <figure class="product-fig">
+                            <img class="product-img" src="/imagen/imagen_detail_main.jpg" alt="">
+                        </figure>
+                        <div class="prueba">
+                            <div class="product-details">
+                                <label for="">Pistola de agua - Sin Marca</label>
+                            </div>
+
+                            <div  class="product-price">
+                                <label class="lbl-product" for="">PRECIO</label>
+                                <label for="">$64.890</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </article>
+        </section>
+    </main>
+    
+    <!-- Footer EJS -->
+    <%- include("../partials/footer") %>
+
+</body>
+
+</html>

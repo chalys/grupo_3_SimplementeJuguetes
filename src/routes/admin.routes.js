@@ -20,9 +20,9 @@ router.post(
   ]),
   store
 );
-router.get('/listado-productos', list);
+router.get('/lista-productos', list);
 
 //router de edicion de productos
-router.get("/editarProducto/:id", editarProducto);
-router.put("/editarProducto/:id", editsProducts);
+router.get("/editar-producto/:id", editarProducto);
+router.put("/editar-producto/:id", editsProducts);
 module.exports = router;

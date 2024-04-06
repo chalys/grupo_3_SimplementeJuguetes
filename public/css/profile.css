@@ -1,0 +1,76 @@
+main{
+    /*background-color: var(--gris);*/
+}
+
+main .title-profile{
+    text-align: center;
+    padding: 50px 0;
+}
+
+main .form-profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .form-profile label{
+    display: inline-block;
+    font-size: 1.6em;
+    margin: 10px 0;
+}
+
+main .form-profile input{
+    border-radius: 10px;
+    width: 50%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px var(--gray);
+    padding: 0 15px;
+}
+
+
+main .form-profile textarea{
+    border-radius: 10px;
+    width: 50%;
+    height: 200px;
+}
+
+main.profile form #image{
+    display: block;
+    width: fit-content; 
+    text-align: center;
+    margin: 0;
+}
+
+main.profile form div.sm-button{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+main.profile form div.sm-button input.save-button{
+    color: white;
+    background-color: var(--red);
+    padding: 10px 50px; 
+    font-size: 20px;
+    margin: 0 50px;
+}
+
+main.profile form div.sm-button input.change-password-button{
+    color: white;
+    background-color: var(--azul);
+    padding: 10px 50px; 
+    font-size: 20px;
+    margin: 0 50px;
+}
+
+main.profile form div.sm-button button.change-button{
+    color: white;
+    background-color: var(--green);
+    padding: 10px 50px; 
+    font-size: 20px; 
+    margin: 0 50px;
+}
