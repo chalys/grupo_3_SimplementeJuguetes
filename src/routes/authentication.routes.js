@@ -11,11 +11,13 @@ const {
   login,
   edit,
   update,
+  loginProcess
 } = require("../controllers/authentication");
 
 const { updateUserValidation } = require("../middlewares/validations");
 const { userValidation } = require("../middlewares/validations");
 const { uploadUserPicture } = require("../middlewares/uploadUserPicture");
+router.post("/login", loginProcess);
 
 //*** CREATE ONE USER ***/
 //router.get("/crear-usuario/", add);

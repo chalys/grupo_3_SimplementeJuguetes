@@ -26,9 +26,6 @@ app.use(checkSession);
 app.use(saveSession);
 
 
-
-
-
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');
 app.set('views',[

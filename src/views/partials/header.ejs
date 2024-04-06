@@ -31,26 +31,26 @@
   <!--/busqueda-->
   <!--iconos del header-->
   <div class="iconosHeader">
+
     <!--autenticacion favoritos-->
     <% if(!locals.userLogin){ %>  
       <a href="/autenticacion/login"><i class="fa-solid fa-heart"></i></a>
     <% } else { %> 
       <a ref="/favoritos"><i class="fa-solid fa-heart"></i></a>
     <% } %>
-
     <!--autenticacion perfil-->
     <% if(!locals.userLogin){ %>  
-      <a ref="/autenticacion/login"><i class="fa-solid fa-user"></i></a>
+      <a href="/autenticacion/login"><i class="fa-solid fa-user"></i></a>
     <% } else { %> 
       <a ref="/perfil"><i class="fa-solid fa-user"></i></a>
-   <% } %> 
-
+    <% } %>
     <!--autenticacion carrito-->
     <% if(!locals.userLogin){ %>  
-      <a ref="/autenticacion/login"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a href="/autenticacion/login"><i class="fa-solid fa-cart-shopping"></i></a>
     <% } else { %> 
       <a ref="/carrito-compra"><i class="fa-solid fa-cart-shopping"></i></a>
     <% } %>
+
   </div>
   <!--ofertas y outlet-->
   <div class="ofertasYOutlet">
