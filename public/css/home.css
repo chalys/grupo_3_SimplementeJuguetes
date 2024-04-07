@@ -149,7 +149,6 @@ main.mainHome div.articulosHome article div a {
 main.mainHome div.titulosHome{
     display: flex;
     align-content: center;
-   
     justify-content: center;
 }
 main.mainHome div.mapa-home {
