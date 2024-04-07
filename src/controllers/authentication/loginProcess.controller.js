@@ -4,29 +4,43 @@ module.exports = (req, res) => {
 
     //Login
    
-   const { name, contraseña, recuerdame } = req.body; // Cambiar 'nombre' a 'name'
+   const { name, password, recuerdame } = req.body; // Cambiar 'nombre' a 'name'
    const user = loadData("usuarios");
 
    if(!name){ // Cambiar 'nombre' a 'name'
-      return res.send("Debe ingresar su usuario")
+      res.render("./authentication/errorAuth", 
+      {mensage: "Debe ingresar su usuario",
+       boton: "Intente nuevamente", 
+       redireccion: "/autenticacion/login"
+      });
    }
    const userFind = user.find(u => u.userName === name)//.toLowerCase()) // Cambiar 'nombre' a 'name'
 
    if(!userFind){
-      return res.send("El usuario no existe")
+      res.render("./authentication/errorAuth",
+       {mensage: "El usuario no existe",
+       boton: "Registrese para continuar", 
+       redireccion: "/autenticacion/registro"
+      
+      
+      });
    }
 
-   const passValid = compareSync(contraseña, userFind.password)
+   const passValid = compareSync(password, userFind.password)
 
    if(!passValid){
-      return res.send("Usuario o contraseña incorrectos")
+      res.render("./authentication/errorAuth",
+      {mensage: "El usuario o contraseña son incorrectos",
+      boton: "Intente nuevamente", 
+      redireccion: "/autenticacion/login"
+      });
    }
 
    //Ingresar como usuario con session y recordar la session
-const {userName, names, email, province, locality, postal, street, streetNumber, floor, betweenSt1, betweenSt2, phoneNumber, indications, userPicture} = userFind;
+const {userName, email, province, locality, postal, street, streetNumber, floor, betweenSt1, betweenSt2, phoneNumber, indications, userPicture} = userFind;
 req.session.userLogin ={
    userName,
-   name: names, // Esta es la variable 'name' que proviene de 'userFind'
+   name, // Esta es la variable 'name' que proviene de 'userFind'
    email,
    password, // Asegúrate de que esta variable esté definida en 'userFind'
    province,
@@ -41,6 +55,7 @@ req.session.userLogin ={
    indications,
    userPicture
 }
+
 
 if(recuerdame){ //remenber es una variable creada para representar un valor boleano.
    res.cookie("userLogin", req.session.userLogin, {maxAge: 360 })
