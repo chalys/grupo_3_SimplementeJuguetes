@@ -11,13 +11,14 @@ const {
   login,
   edit,
   update,
-  loginProcess
+  loginProcess,
+  errorAuth,
 } = require("../controllers/authentication");
 
 const { updateUserValidation } = require("../middlewares/validations");
 const { userValidation } = require("../middlewares/validations");
 const { uploadUserPicture } = require("../middlewares/uploadUserPicture");
-router.post("/login", loginProcess);
+
 
 //*** CREATE ONE USER ***/
 //router.get("/crear-usuario/", add);
@@ -27,7 +28,8 @@ router.get("/registro", registro);
 router.post("/registro",uploadUserPicture.fields([{ name: "userPicture", maxCount: 1 }]),userValidation , registro1);
 router.get("/registro-completado", registro2);   
 router.get("/login", login);
-
+router.post("/login", loginProcess);
+router.post("/error", errorAuth);
 
 //*** EDIT ONE USER ***/
 router.get("/editar-usuario/:id", edit);

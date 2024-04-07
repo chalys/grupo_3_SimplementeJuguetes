@@ -5,5 +5,6 @@ module.exports = {
     login : require("./login.controller"),
     edit:require("./editUser.controller"),
     update:require("./updateUser.controller"),
-    loginProcess:require("./loginProcess.controller")
+    loginProcess:require("./loginProcess.controller"),
+    errorAuth:require("./errorAuth.controller")
 }
