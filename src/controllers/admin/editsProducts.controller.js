@@ -1,5 +1,5 @@
 module.exports= (req,res) => {
-    const products =require("../../data/productsDataBase.json")
+    const products =require("../../dataBase/products.json")
 const { id }= req.params
 const {name,price,description,line,
     characterVersion,stock,maker,

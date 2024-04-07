@@ -1,6 +1,6 @@
 const { loadData, saveData } = require("../../dataBase");
 const { validationResult } = require("express-validator");
-
+const bc = require('bcryptjs')
 module.exports = (req,res)=>{
     const errors = validationResult(req)
 
@@ -14,7 +14,7 @@ module.exports = (req,res)=>{
         userName: userName.trim(),
         name: name?.trim(),
         email: email.trim(),
-        password: password.trim(),
+        password: bc.hashSync(password.trim(),10),
         province: province?.trim(),
         locality: locality?.trim(),
         postal: postal? +postal: null,

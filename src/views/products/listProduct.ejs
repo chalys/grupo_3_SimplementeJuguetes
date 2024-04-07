@@ -48,7 +48,9 @@
             <td><%=p.collectable%></td>
             <td><%=p.minAge%></td>
             
-            <td><button type="reset" class="btn btn-danger boton">borrar</button></td>
+            <form action="/admin/eliminar-producto/<%= p.id %>?_method=DELETE" method="POST">
+                <td><button type="submit" class="btn btn-danger boton">borrar</button></td>
+            </form>
             <td><a href="/admin/editar-producto/<%= p.id %>" class="btn btn-warning boton">editar</a></td>
         </tr>
         <tr> 

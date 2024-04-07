@@ -4,7 +4,7 @@ const router = express.Router();
 const { uploadProducts } = require("../middlewares/uploadFiles");
 
 // ************ Controller Require ************
-const { add, store, editarProducto, editsProducts,list } = require("../controllers/admin");
+const {destroy, add, store, editarProducto, editsProducts,list } = require("../controllers/admin");
 //const {add, store, edit, update, destroy} = require('../controllers/admin');
 
 // /admin
@@ -25,4 +25,5 @@ router.get('/lista-productos', list);
 //router de edicion de productos
 router.get("/editar-producto/:id", editarProducto);
 router.put("/editar-producto/:id", editsProducts);
+router.delete('/eliminar-producto/:id', destroy);
 module.exports = router;

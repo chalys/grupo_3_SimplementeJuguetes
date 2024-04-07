@@ -2,8 +2,8 @@
 module.exports =(req,res,next)=>{
 
 
-    if (req.session.userlogin) {
-        res.local.userlogin = req.session.userlogin //obtiene la info de la sesion en la vista
+    if (req.session.userLogin) {
+        res.locals.userLogin = req.session.userLogin //obtiene la info de la sesion en la vista
 
     }
     next();
