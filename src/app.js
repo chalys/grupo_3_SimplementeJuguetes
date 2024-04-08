@@ -8,6 +8,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const dataLocal = require('./middlewares/validations/dataLocal'); 
 const saveSession  = require('./middlewares/validations/saveSession');
 const session = require ("express-session");  
+const userId = require("./middlewares/validations/userId");
 const checkSession = require('./middlewares/validations/checkSession');
 // ************ express() - (don't touch) ************
 const app = express();
@@ -24,7 +25,7 @@ app.use(session({secret: "Secreto",resave: false, saveUninitialized: false})) //
 app.use(dataLocal);
 app.use(checkSession);
 app.use(saveSession);
-
+app.use(userId);
 
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');

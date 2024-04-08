@@ -68,9 +68,13 @@ main.profile form div.sm-button input.change-password-button{
 }
 
 main.profile form div.sm-button button.change-button{
-    color: white;
     background-color: var(--green);
     padding: 10px 50px; 
     font-size: 20px; 
     margin: 0 50px;
+}
+
+main.profile form div.sm-button button.change-button a{
+    color: white;
+    text-decoration: none;
 }
