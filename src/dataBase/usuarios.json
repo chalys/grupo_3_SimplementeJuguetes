@@ -16,5 +16,23 @@
       "phoneNumber": "+54 9 11 1234 5678",
       "indications": "Edificio de oficinas, segundo piso, puerta 302",
       "userPicture": "default.png"
+   },
+   {
+      "id": 2,
+      "userName": "manola",
+      "name": "",
+      "email": "manola@gmail.com",
+      "password": "$2a$10$VVwyAYnTHARrOm36oLg3jeBE44ZiYXUyIR0tnAvRRzd4qgQjgH2Sy",
+      "province": "",
+      "locality": "",
+      "postal": null,
+      "street": "",
+      "streetNumber": null,
+      "floor": null,
+      "betweenSt1": "",
+      "betweenSt2": "",
+      "phoneNumber": null,
+      "indications": "",
+      "userPicture": "default.png"
    }
 ]

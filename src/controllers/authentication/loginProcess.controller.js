@@ -37,8 +37,9 @@ module.exports = (req, res) => {
    }
 
    //Ingresar como usuario con session y recordar la session
-const {userName, email, province, locality, postal, street, streetNumber, floor, betweenSt1, betweenSt2, phoneNumber, indications, userPicture} = userFind;
+const {id,userName, email, province, locality, postal, street, streetNumber, floor, betweenSt1, betweenSt2, phoneNumber, indications, userPicture} = userFind;
 req.session.userLogin ={
+   id,
    userName,
    name, // Esta es la variable 'name' que proviene de 'userFind'
    email,
