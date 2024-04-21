@@ -13,6 +13,7 @@ const {
   update,
   loginProcess,
   errorAuth,
+  logout,
 } = require("../controllers/authentication");
 
 const { updateUserValidation } = require("../middlewares/validations");
@@ -37,5 +38,7 @@ router.put("/editar-usuario/:id", uploadAuthentication.single("userPicture"),upd
 
 //*** DELETE ONE USER ***/
 //router.delete('/eliminar-usuario/:id', destroy);
+
+router.get("/cerrar-session", logout);
 
 module.exports = router;

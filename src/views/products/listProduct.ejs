@@ -4,8 +4,8 @@
 <body>
     <%- include("../partials/dashbar") %>
     <main>
-        <h2 class="list_produt">listado de productos</h2>
-        <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product" href="/dashboard">volver</a></button></div>
+        <h2 class="list_produt">Listado de Productos</h2>
+        <div class="btn-volver"><button type="button" class="btn btn-secondary "><a class="a-volver-edit-product" href="/">Volver</a></button></div>
         <div class="lista-productos-vista">
         <table class="table table-success tabla-lista-productos" >
         <thead>
@@ -49,9 +49,9 @@
             <td><%=p.minAge%></td>
             
             <form action="/admin/eliminar-producto/<%= p.id %>?_method=DELETE" method="POST">
-                <td><button type="submit" class="btn btn-danger boton">borrar</button></td>
+                <td><button type="submit" class="btn btn-danger boton">Borrar</button></td>
             </form>
-            <td><a href="/admin/editar-producto/<%= p.id %>" class="btn btn-warning boton">editar</a></td>
+            <td><a href="/admin/editar-producto/<%= p.id %>" class="btn btn-warning boton">Editar</a></td>
         </tr>
         <tr> 
        <%  }); %>
