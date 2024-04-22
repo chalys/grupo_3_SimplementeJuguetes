@@ -7,18 +7,12 @@
     <p class="tituloBlanco">JUGUETES</p>
   </h1>
   <div class="selectoresHeader">
-    <select class="">
-      <option value="" selected hidden>JUEGOS Y JUGUETES</option>
-      <option value=""></option>
-    </select>
-    <select class="">
-      <option value="" selected hidden>EDADES</option>
-      <option value=""></option>
-    </select>
-    <select class="">
-      <option value="" selected hidden>PERSONAJES</option>
-      <option value=""></option>
-    </select>
+    
+      <a href="">JUEGOS Y JUGUETES</a>
+      
+      <a href="">EDADES</a>
+    
+      <a href="">PERSONAJES</a>
   </div>
   <!--busqueda-->
   <div> <!--class="busquedaHeader"-->
@@ -50,7 +44,8 @@
     <% } else { %> 
       <a href="/carrito-compra"><i class="fa-solid fa-cart-shopping"></i></a>
     <% } %>
-
+    <%if(locals.userLogin){%>
+      <p class="text-white btn-de-sesion">!Bienvenido! <%=locals.userLogin.name%></p> <% }%>
   </div>
   <!--ofertas y outlet-->
   <div class="ofertasYOutlet">
