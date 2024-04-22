@@ -3,29 +3,29 @@ const path = require('path')
 const regExpFiles = /.png|.jpg|.jpeg|.webp|.gif/i;
 const fieldUserName = check('userName')
   .notEmpty()
-  .withMessage('<div><p>USUARIO</p><i class="fa-solid fa-triangle-exclamation"></i>Debe ingresar un nombre de usuario</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>Debe ingresar un nombre de usuario</div>')
   .bail()
   .isLength({ max: 45 })
-  .withMessage('<div><p>USUARIO</p><i class="fa-solid fa-triangle-exclamation"></i>El nombre no debe ser mayor a 45 caracteres</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>El nombre no debe ser mayor a 45 caracteres</div>')
   .bail()
   .isAlphanumeric("es-ES", { ignore: " " })
-  .withMessage('<div><p>USUARIO</p><i class="fa-solid fa-triangle-exclamation"></i>El nombre debe ser alfanumerico</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>El nombre debe ser alfanumerico</div>')
 const fieldEmail = check('email')
   .notEmpty()
-  .withMessage('<div><p>EMAIL</p><i class="fa-solid fa-triangle-exclamation"></i>Debe ingresar un correo</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>Debe ingresar un correo</div>')
   .bail()
   .isEmail()
-  .withMessage('<div><p>EMAIL</p><i class="fa-solid fa-triangle-exclamation"></i>Debe ingresar un correo valido</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>Debe ingresar un correo valido</div>')
   .bail()
 const fieldPassword = check('password')
   .notEmpty()
-  .withMessage('<div><p>CONTRASEÑA</p><i class="fa-solid fa-triangle-exclamation"></i>Debe ingresar una contraseña</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>Debe ingresar una contraseña</div>')
   .bail()
   .isAlphanumeric("es-ES")
-  .withMessage('<div><p>CONTRASEÑA</p><i class="fa-solid fa-triangle-exclamation"></i> La contraseña debe ser alfanumerica y no contener espacios</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i> La contraseña debe ser alfanumerica y no contener espacios</div>')
   .bail()
   .isLength({ min: 8, max: 20 })
-  .withMessage('<div><p>CONTRASEÑA</p><i class="fa-solid fa-triangle-exclamation"></i> La contraseña debe tener entre 8 y 20 caracteres</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i> La contraseña debe tener entre 8 y 20 caracteres</div>')
 
   const fieldImg = body("userPicture").custom(
     (value, { req }) => {
@@ -34,13 +34,13 @@ const fieldPassword = check('password')
       if (!lengthImages) return true
       else {
         if (lengthImages > 1)
-          throw new Error("<div><p>FOTO DE PERFIL</p><i class='fa-solid fa-triangle-exclamation'></i> Debes usar una unica imagen</div>");
+          throw new Error("<div><p><i class='fa-solid fa-triangle-exclamation'></p></i> Debes usar una unica imagen</div>");
   
         const extFile = path.extname(req.files.userPicture[0].originalname);
         const isFormatSuccess = regExpFiles.test(extFile);
   
         if (!isFormatSuccess)
-          throw new Error("<div><p>FOTO DE PERFIL</p><i class='fa-solid fa-triangle-exclamation'></i> La imagen debe ser .png, .jpg, .jpeg, .webp o .gif</div>");
+          throw new Error("<div><p><i class='fa-solid fa-triangle-exclamation'></p></i> La imagen debe ser .png, .jpg, .jpeg, .webp o .gif</div>");
       }
       return true;
     }
@@ -53,7 +53,7 @@ const fieldSTNum = check('streetNumber')
       return true
     } else {
       if (valor < 0) {
-        throw new Error('<div><p>NUMERO DE CALLE</p><i class="fa-solid fa-triangle-exclamation"></i>El numero debe ser mayor que cero</div>')
+        throw new Error('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>El numero debe ser mayor que cero</div>')
       }
     }
     return true
@@ -70,7 +70,7 @@ const fieldPhone = check('phoneNumber')
     return true
   })
   .isMobilePhone()
-  .withMessage('<div><p>TELEFONO</p><i class="fa-solid fa-triangle-exclamation"></i>debe ser un telefono valido</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>debe ser un telefono valido</div>')
 // .custom((value, {req}) => {
 //   const valor = req.body?.phoneNumber
 //   if(valor == ''){
@@ -88,7 +88,7 @@ const fieldFloor = check('floor')
       return true
     } else {
       if (valor < 0) {
-        throw new Error('<div><p>PISO</p><i class="fa-solid fa-triangle-exclamation"></i>El numero debe ser mayor que cero</div>')
+        throw new Error('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>El numero debe ser mayor que cero</div>')
       }
     }
     return true
@@ -100,7 +100,7 @@ const fieldPostal = check('postal')
       return true
     } else {
       if (valor < 0) {
-        throw new Error('<div><p>POSTAL</p><i class="fa-solid fa-triangle-exclamation"></i>El numero debe ser mayor que cero</div>')
+        throw new Error('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>El numero debe ser mayor que cero</div>')
       }
     }
     return true
@@ -116,7 +116,7 @@ const fieldName = check('name')
     return true
   })
   .isAlphanumeric("es-ES", { ignore: " ", })
-  .withMessage('<div><p>NOMBRE COMPLETO</p><i class="fa-solid fa-triangle-exclamation"></i>El nombre y apellido debe ser alfanumerico</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>El nombre y apellido debe ser alfanumerico</div>')
 
 const fieldProvince = check('province')
   .optional()
@@ -129,7 +129,7 @@ const fieldProvince = check('province')
       if (!province) return true
       else {
         if (!provinces.includes(province)) {
-          throw new Error('<div><p>PROVINCIA</p><i class="fa-solid fa-triangle-exclamation"></i>La provincia debe estar en la lista</div>')
+          throw new Error('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>La provincia debe estar en la lista</div>')
         }
       }
     }
@@ -138,7 +138,7 @@ const fieldProvince = check('province')
   })
 const fieldConfirmPassword = check('confirmpassword')
   .notEmpty()
-  .withMessage('<div><p>CONTASEÑA</p><i class="fa-solid fa-triangle-exclamation"></i>Debe confirmar la contraseña</div>')
+  .withMessage('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>Debe confirmar la contraseña</div>')
   .bail()
   .custom((value, { req }) => {
     const originalPass = req.body?.password
@@ -147,7 +147,7 @@ const fieldConfirmPassword = check('confirmpassword')
       return true
     } else {
       if (confirmPass !== originalPass) {
-        throw new Error('<div><p>CONTASEÑA</p><i class="fa-solid fa-triangle-exclamation"></i>Las contraseñas no coinciden</div>')
+        throw new Error('<div><p><i class="fa-solid fa-triangle-exclamation"></p></i>Las contraseñas no coinciden</div>')
       }
     }
     return true

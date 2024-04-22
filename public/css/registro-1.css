@@ -275,7 +275,7 @@ main.mainRegistro-1 .form div.calleReg .callebloReg4 {}
     main.mainRegistro-1 nav {}
 
     .mainRegistro-1 .form {
-        height: 533px;
+        /* height: 533px; */
         width: 800px !important;
         flex-wrap: wrap;
         flex-direction: row !important;

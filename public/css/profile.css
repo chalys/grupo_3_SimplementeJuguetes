@@ -74,6 +74,16 @@ main.profile form div.sm-button button.change-button{
     margin: 0 50px;
 }
 
+main.profile form div.sm-button a.change-button{
+    background-color: var(--azul);
+    padding: 10px 50px; 
+    font-size: 20px; 
+    margin: 0 50px;
+    color: white;
+    text-decoration: none;
+    border: 2px black solid;
+}
+
 main.profile form div.sm-button button.change-button a{
     color: white;
     text-decoration: none;
