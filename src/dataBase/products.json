@@ -160,34 +160,5 @@
       "firstImg": "firstImg-1710419736182.jpg",
       "secondImg": [],
       "description": "Con Woody de Toy Story de la línea Toy Story 4 de Thinkway Toys las horas de diversión están aseguradas. Podrás jugar con ellos siguiendo sus historias o coleccionarlos el tiempo que quieras. Materiales noblesLas figuras de acción están hechas de plástico lo que asegura que sean amables y suaves al tacto, diferenciando las distintas texturas y relieves del cuerpo de los personajes. Ideal para coleccionistasUna de las actividades que podrás hacer con este tipo de figuras es coleccionarlas y guardarlas en un lugar especial. A medida que conozcas más y más, tu colección irá creciendo y será más variada. Juguetes articuladosAl tener marcadas las articulaciones podrás manejar y acomodar tus figuras como más te guste. Con ellas, vas a poder crear historias en la que los personajes puedan movilizarse y cobrar vida."
-   },
-   {
-      "id": 7,
-      "name": "1",
-      "description": "aaa",
-      "manufacturer": "1",
-      "mark": "1",
-      "sku": 45251,
-      "available": "¿Está disponible este juguete?",
-      "colection": "pepeneros",
-      "price": 100000,
-      "line": "pepeline",
-      "character": "pepe1",
-      "characterVersion": "1",
-      "minAge": "0-1",
-      "height": 1,
-      "depth": 444,
-      "width": 333,
-      "materials": "madera",
-      "scale": null,
-      "articulated": "yes",
-      "collectable": "yes",
-      "accessories": "yes",
-      "firstImg": "firstImg-1712506997018.png",
-      "secondImg": [
-         "secondImg-1712506997320.png",
-         "secondImg-1712506997654.png",
-         "secondImg-1712506998126.png"
-      ]
    }
 ]

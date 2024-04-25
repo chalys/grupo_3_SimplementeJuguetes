@@ -15,7 +15,8 @@
       "betweenSt2": "Av. Córdoba",
       "phoneNumber": "+54 9 11 1234 5678",
       "indications": "Edificio de oficinas, segundo piso, puerta 302",
-      "userPicture": "default.png"
+      "userPicture": "default.png",
+      "rol": "admin"
    },
    {
       "id": 2,
@@ -33,6 +34,7 @@
       "betweenSt2": "",
       "phoneNumber": null,
       "indications": "",
-      "userPicture": "default.png"
+      "userPicture": "default.png",
+      "rol": "regular"
    }
 ]
