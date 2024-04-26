@@ -1,6 +1,25 @@
 [
    {
       "id": 1,
+      "userName": "root",
+      "name": "Adminitrador",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$kH5DX91UdBSeJu8kV8kCjeTQya2IEMasloPzr9m.OwbDY9hOsSAsm",
+      "province": "Administrador Aires",
+      "locality": "Administrador",
+      "postal": "Administrador",
+      "street": "Administrador",
+      "streetNumber": 9999,
+      "floor": 1,
+      "betweenSt1": "Administrador",
+      "betweenSt2": "Administrador",
+      "phoneNumber": "Administrador",
+      "indications": "Administrador",
+      "userPicture": "default.png",
+      "role": "admin"
+   },
+   {
+      "id": 2,
       "userName": "manolo",
       "name": "Manolo Miranda",
       "email": "manolo@gmail.com",
@@ -14,12 +33,12 @@
       "betweenSt1": "Av. Scalabrini Ortiz",
       "betweenSt2": "Av. Córdoba",
       "phoneNumber": "+54 9 11 1234 5678",
-      "indications": "Edificio de oficinas, segundo piso, puerta 302",
+      "indications": "Edificio de oficinas, tercer piso, puerta 302",
       "userPicture": "default.png",
-      "rol": "admin"
+      "role": "admin"
    },
    {
-      "id": 2,
+      "id": 3,
       "userName": "manola",
       "name": "",
       "email": "manola@gmail.com",
@@ -35,6 +54,7 @@
       "phoneNumber": null,
       "indications": "",
       "userPicture": "default.png",
-      "rol": "regular"
+      "role": "user"
    }
+   
 ]

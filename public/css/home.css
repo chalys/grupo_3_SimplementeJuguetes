@@ -291,7 +291,9 @@ main.mainHome div.mapa-home iframe {
     main.mainHome div.diverHome {}
 
     main.mainHome div.diverHome img {
-        width: 21%;
+        width: 23%;
+        display: flex;
+        align-content: center; align-items: center;
     }
 
     main.mainHome div.diverHome p {}

@@ -7,18 +7,12 @@
     <p class="tituloBlanco">JUGUETES</p>
   </h1>
   <div class="selectoresHeader">
-    <select class="">
-      <option value="" selected hidden>JUEGOS Y JUGUETES</option>
-      <option value=""></option>
-    </select>
-    <select class="">
-      <option value="" selected hidden>EDADES</option>
-      <option value=""></option>
-    </select>
-    <select class="">
-      <option value="" selected hidden>PERSONAJES</option>
-      <option value=""></option>
-    </select>
+    
+      <a href="">JUEGOS Y JUGUETES</a>
+      
+      <a href="">EDADES</a>
+    
+      <a href="">PERSONAJES</a>
   </div>
   <!--busqueda-->
   <div> <!--class="busquedaHeader"-->
@@ -34,28 +28,34 @@
 
     <!--autenticacion favoritos-->
     <% if(!locals.userLogin){ %>  
-      <a href="/autenticacion/login"><i class="fa-solid fa-heart"></i></a>
-    <% } else { %> 
-      <a href="/favoritos"><i class="fa-solid fa-heart"></i></a> <!--fa-solid fa-heart-->
-    <% } %>
-    <!--autenticacion perfil-->
-    <% if(!locals.userLogin){ %>  
-      <a href="/autenticacion/login"><i class="fa-solid fa-user"></i></a>
-    <% } else { %> 
-      <a href="/perfil/<%= locals.userLogin.id %>"><i class="fa-solid fa-user"></i></a>
-    <% } %>
-    <!--autenticacion carrito-->
-    <% if(!locals.userLogin){ %>  
-      <a href="/autenticacion/login"><i class="fa-solid fa-cart-shopping"></i></a>
-    <% } else { %> 
-      <a href="/carrito-compra"><i class="fa-solid fa-cart-shopping"></i></a>
-    <% } %>
+      <a href="/autenticacion/login"><i class="fa-solid fa-heart"></i>Favoritos</a>
+      <a href="/autenticacion/login"><i class="fa-solid fa-user"></i>Ingresar</a>
+      <a href="/autenticacion/login"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
 
+    <% } else if(locals.userLogin && locals.userLogin.id === 1){ %> 
+      <a href="/admin/crear-producto"><i class="fa-solid fa-cart-plus"></i>Agregar</a>
+      <a href="/admin/lista-productos"><i class="fa-solid fa-clipboard-list"></i>Productos</a>
+      <a href="/autenticacion/cerrar-session"><i class="fa-solid fa-user"></i>Cerrar Sesion</a>
+  
+    <% } else { %>
+      <a href="/favoritos"><i class="fa-solid fa-heart"></i>Favoritos</a> <!--fa-solid fa-heart-->
+      <a href="/perfil/<%= locals.userLogin.id %>"><i class="fa-solid fa-user-check"></i><%= locals.userLogin.name.charAt(0).toUpperCase() + locals.userLogin.name.slice(1) %></a>
+      <a href="/carrito-compra"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
+    <% } %>
+    <%if(locals.userLogin){%>
+      <p class="text-white btn-de-sesion">!Bienvenido! <%=locals.userLogin.name%></p> <% }%>
   </div>
   <!--ofertas y outlet-->
   <div class="ofertasYOutlet">
+    <% if(!locals.userLogin){ %>  
     <h3 class="ofertasHeader"><a href="/"><i class="fa-solid fa-fire-flame-curved"></i>OFERTAS</a></h3>
     <h3 class="outletHeader"><a href="">OUTLET</a></h3>
+    <% } else if(locals.userLogin && locals.userLogin.id === 1){ %> 
+      <p class="administrator"><a href="">VISTA ADMINITRADOR</a></p>
+    <% } else { %>
+    <h3 class="ofertasHeader"><a href="/"><i class="fa-solid fa-fire-flame-curved"></i>OFERTAS</a></h3>
+    <h3 class="outletHeader"><a href="">OUTLET</a></h3>
+    <% } %>
   </div>
   <figure class="barrasHeader"><i class="fa-solid fa-bars"></i></figure>
 </header>

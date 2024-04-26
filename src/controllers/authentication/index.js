@@ -6,5 +6,6 @@ module.exports = {
     edit:require("./editUser.controller"),
     update:require("./updateUser.controller"),
     loginProcess:require("./loginProcess.controller"),
-    errorAuth:require("./errorAuth.controller")
+    errorAuth:require("./errorAuth.controller"),
+    logout: require("./logout.controller")
 }

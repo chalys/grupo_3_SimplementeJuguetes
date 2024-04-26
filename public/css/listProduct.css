@@ -6,6 +6,8 @@
     background: var(--azul);
     text-align: center;
     width: 100%;
+    padding: 10px;
+    color: var(--blanco);
 }
 
 .tabla-lista-productos {

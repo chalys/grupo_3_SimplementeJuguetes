@@ -13,32 +13,19 @@
                     <img src="../images/other/fondRegis2.jpg" alt="" class="IMG2">
                 </span>
             </div>
-            <div class="errorsReg">
-                <%- locals.errors?.userName?.msg %>
-                <%- locals.errors?.name?.msg %>
-                <%- locals.errors?.email?.msg %>
-                <%- locals.errors?.password?.msg %>
-                <%- locals.errors?.confirmpassword?.msg %>
-                <%- locals.errors?.province?.msg %>
-                <%- locals.errors?.locality?.msg %>
-                <%- locals.errors?.postal?.msg %>
-                <%- locals.errors?.street?.msg %>
-                <%- locals.errors?.streetNumber?.msg %>
-                <%- locals.errors?.floor?.msg %>
-                <%- locals.errors?.phoneNumber?.msg %>
-                <%- locals.errors?.userPicture?.msg %>
-
-            </div>
             <nav class="naregdes">
                 <div class="divFormReg" id="">
                     <form method="post" action="/autenticacion/registro" enctype="multipart/form-data">
                         <!--formulario principal-->
                         <img src="../images/logo/panda-logo.png" alt="logo" class="pandaFormularioReg">
                         <label for="Email">E-mail</label>
+                        <div class="errorsReg"><%- locals.errors?.email?.msg %></div>
                         <input type="email" name="email" id="email" placeholder="nadie@gmail.com" value="<%= locals.old?.email %>">
                         <label for="password">Contraseña</label>
+                        <div class="errorsReg"><%- locals.errors?.password?.msg %></div>
                         <input type="password" name="password" id="password" placeholder="" >
                         <label for="confgPass">Confirmar contraseña</label>
+                        <div class="errorsReg"><%- locals.errors?.confirmpassword?.msg %></div>
                         <input type="password" name="confirmpassword" class="margenEspRegis" placeholder="" >
                         <!--menu de insercion de foto y nombre-->
                         <div class="perfilReg">
@@ -51,7 +38,9 @@
                                     </figure>
                             </div>
                             <div>
+                                <div class="errorsReg"><%- locals.errors?.userPicture?.msg %></div>
                                 <label for="nombreUsuario">Usuario</label>
+                                <div class="errorsReg"><%- locals.errors?.userName?.msg %></div>
                                 <input type="text" name="userName" placeholder="nombreUsuario" value="<%= locals.old?.userName %>">
                             </div>
                         </div>
@@ -69,10 +58,11 @@
                 <nav>
                     <!--Formulario opcional-->
                     <div class="form">
-                        <label for="nombreCompleto" class="elCienReg">Nombre y apellido</label>
+                        <label for="nombreCompleto" class="elCienReg">Nombre y apellido<div class="errorsReg"><%- locals.errors?.name?.msg %></div></label>
                         <input type="text" class="elCienReg" placeholder="nombreEjemplo" name="name" value="<%= locals.old?.name %>">
+                    
                         <div class="blocReg1">
-                            <label for="provincia" class="blocReg1-1">Provincia</label>
+                            <label for="provincia" class="blocReg1-1">Provincia<div class="errorsReg"><%- locals.errors?.province?.msg %></div></label>
                             <select class="blocReg1-2" name="province" value="<%= locals.old?.province %>">
                                 <option value="" selected hidden>provinciaEjemplo</option>
                                 <option value="BA">Buenos Aires</option>
@@ -99,14 +89,18 @@
                                 <option value="TF">Tierra del Fuego</option>
                                 <option value="TU">Tucumán</option>
                             </select>
-                            <label for="calle" class="blocReg1-3">Calle</label>
+                            
+                            <label for="calle" class="blocReg1-3">Calle<div class="errorsReg"><%- locals.errors?.street?.msg %></div></label>
                             <input type="text" class="blocReg1-4" placeholder="calleEjemplo" name="street" value="<%= locals.old?.street %>">
+                            
                         </div>
                         <div class="blocReg2">
-                            <label for="localidad" class="blocReg2-1">Localidad</label>
+                            <label for="localidad" class="blocReg2-1">Localidad<div class="errorsReg"><%- locals.errors?.locality?.msg %></div></label>
                             <input type="text" class="blocReg2-2" placeholder="localidadEjemplo" name="locality" value="<%= locals.old?.locality %>">
-                            <label for="numero" class="blocReg2-3">Número</label>
+                            
+                            <label for="numero" class="blocReg2-3">Número<div class="errorsReg"><%- locals.errors?.streetNumber?.msg %></div></label>
                             <input type="number" placeholder="S/N" class="blocReg2-4" name="streetNumber" value="<%= locals.old?.streetNumber %>">
+                            
                         </div>
                         <label class="queCallesRegis">¿Entre qué calles está? (opcional)</label>
                         <div class="calleReg">
@@ -116,12 +110,15 @@
                             <input type="text" class="callebloReg4" placeholder="calleEjemplo2" name="betweenSt2" value="<%= locals.old?.betweenSt2 %>">
                         </div>
                         <div class="blocReg3">
-                            <label for="codigoPos" class="blocReg3-1">Código postal</label>
+                            <label for="codigoPos" class="blocReg3-1">Código postal<div class="errorsReg"><%- locals.errors?.postal?.msg %></div></label>
                             <input type="number" class="blocReg3-2" placeholder="0000" name="postal" value="<%= locals.old?.postal %>">
-                            <label for="piso" class="blocReg3-3">Piso (opcional)</label>
+                            
+                            <label for="piso" class="blocReg3-3">Piso (opcional)<div class="errorsReg"><%- locals.errors?.floor?.msg %></div></label>
                             <input type="number"  class="blocReg3-4" placeholder="pisoEjemplo" name="floor" value="<%= locals.old?.floor %>">
-                            <label for="telContac" class="blocReg3-5">Telefono de contacto</label>
+                            
+                            <label for="telContac" class="blocReg3-5">Telefono de contacto<div class="errorsReg"><%- locals.errors?.phoneNumber?.msg %></div></label>
                             <input type="number"  class="blocReg3-6" placeholder="telCont." name="phoneNumber" value="<%= locals.old?.phoneNumber %>">
+                            
                         </div>
                         <div class="blocReg4">
                             <label for="indicAdic" class="elCienReg">Indicaciones adicionales (opcional)</label>

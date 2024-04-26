@@ -75,11 +75,13 @@
 }
 
 .header div.iconosHeader a {
-    
+    color: white;
+    text-decoration: none;
 }
 
 .header div.iconosHeader a i {
    color: var(--blanco);
+   margin: 20px;
 }
 
 .header div.ofertasYOutlet {
@@ -89,6 +91,14 @@
 .header div.ofertasYOutlet h3 {}
 
 .header div.ofertasYOutlet h3.ofertasHeader {}
+
+.header div.ofertasYOutlet p.administrator a{
+    background-color: var(--green);
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 0 20px;
+}
 
 .header div.ofertasYOutlet h3.outletHeader {}
 
@@ -516,11 +526,14 @@
         margin-left: -36vw;
     }
 
-    .header div.selectoresHeader select {
+    .header div.selectoresHeader a {
         font-size: 1.4vw;
         color: var(--blanco);
         background: rgba(0, 0, 0, 0);
-        border: none;
+        text-decoration: none;
+        margin-left: 1px;
+        padding: 3px;
+
     }
 
     .header div.selectoresHeader select option {}
@@ -540,7 +553,15 @@
     .header div.iconosHeader a {}
 
     .header div.iconosHeader a i {}
-
+    .header div  .btn-de-sesion{
+padding: 3px;
+border-radius: 5px;
+    }
+.header div  .btn-de-sesion:hover{
+    background-color: #c56308;  
+    color: #000000; 
+  
+};
     .header div.ofertasYOutlet {
         flex-wrap: wrap;
         right: 30px;
