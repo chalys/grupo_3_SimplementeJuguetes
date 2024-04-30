@@ -32,7 +32,7 @@
       <a href="/autenticacion/login"><i class="fa-solid fa-user"></i>Ingresar</a>
       <a href="/autenticacion/login"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
 
-    <% } else if(locals.userLogin && locals.userLogin.id === 1){ %> 
+    <% } else if(locals.userLogin && locals.userLogin.role === "admin"){ %> 
       <a href="/admin/crear-producto"><i class="fa-solid fa-cart-plus"></i>Agregar</a>
       <a href="/admin/lista-productos"><i class="fa-solid fa-clipboard-list"></i>Productos</a>
       <a href="/autenticacion/cerrar-session"><i class="fa-solid fa-user"></i>Cerrar Sesion</a>
