@@ -33,7 +33,7 @@ db.user.findOne({where:{userName,}}).then((userFind)=>{
       });
    }
    //Ingresar como usuario con session y recordar la session
-   const {id,name,userName, email, province, locality, postal, street, streetNumber, floor, betweenSt1, betweenSt2, phoneNumber, indications, userPicture} = userFind;
+   const {id,name,role,userName, email, province, locality, postal, street, streetNumber, floor, betweenSt1, betweenSt2, phoneNumber, indications, userPicture} = userFind;
    req.session.userLogin ={
    id,
    userName,
@@ -50,7 +50,8 @@ db.user.findOne({where:{userName,}}).then((userFind)=>{
    betweenSt2,
    phoneNumber,
    indications,
-   userPicture
+   userPicture,
+   role
    }
    if(recuerdame){ //remenber es una variable creada para representar un valor boleano.
       res.cookie("userLogin", req.session.userLogin, {maxAge: 360 })
