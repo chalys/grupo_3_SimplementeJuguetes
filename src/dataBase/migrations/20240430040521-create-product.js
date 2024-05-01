@@ -1,4 +1,7 @@
 'use strict';
+
+const { toDefaultValue } = require('sequelize/lib/utils');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -22,7 +25,7 @@ module.exports = {
         allowNull: false
       },
       sku: {
-        type: Sequelize.STRING(50),
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       available: {
@@ -91,10 +94,15 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       },
       updatedAt: {
         allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: new Date()
+      },
+      deleteAt:{
         type: Sequelize.DATE
       }
     });
