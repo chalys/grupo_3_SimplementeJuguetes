@@ -1,4 +1,4 @@
-const { loadData } = require("../../dataBase");
+/*const { loadData } = require("../../dataBase");
 
 module.exports = (req, res) => {
   const { id } = req.params;
@@ -9,4 +9,23 @@ module.exports = (req, res) => {
     user: userFind,
     province: loadProvince,
   });
-};
+};*/
+const {baseDatos}= require("../../dataBase/models")
+ module.exports =(req,res)=>{
+
+const {id} =req.params;
+
+const userP = baseDatos.province.findAll();
+const user = baseDatos.user.findByPk(id)
+
+
+
+Promise.all([userP,user])
+.then((userP,user) => {
+  res.render("./authentication/editUser", {
+    user: userFind,
+    province: loadProvince,
+  });
+})
+
+ }

@@ -7,7 +7,7 @@ const {name,price,description,line,
     collectable,includesAccessories
 } = req.body
 
- const productfind = products.find(p=> p.id===+id)
+const productfind = products.find(p=> p.id===+id)
  const productseEdit ={
     ...productfind,
     name: name.trim(),
