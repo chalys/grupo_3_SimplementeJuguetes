@@ -4,10 +4,24 @@ const { validationResult } = require("express-validator");
 const bc = require('bcryptjs')
 module.exports = (req,res)=>{
     const errors = validationResult(req)
+    // const {userName} = req.body
 
+    // db.user.findOne({
+    //     where: {userName}
+    // }).then((u)=>{
+    //     if(!u){
+    //         return res.render("./authentication/errorAuth",
+    //         {mensage: "El usuario ya existe",
+    //         boton: "Intente nuevamente", 
+    //         redireccion: "/autenticacion/registro"
+    //         });
+    //     }
+
+        
+    // })
     if(errors.isEmpty()){
     const {userName,name,email,password,province,locality,postal,street,streetNumber,floor,betweenSt1,betweenSt2,phoneNumber,indications,} = req.body
-    
+ 
     // const usuarios = loadData("usuarios");
     // const nuevaid = usuarios[usuarios.length - 1].id + 1;
     db.user.create( {
