@@ -384,7 +384,7 @@ main.mainHome div.mapa-home iframe {
 
 .img-wrapper {
     height: 300px;
-    overflow: hidden;
+   /* overflow: hidden;*/
 }
 
 .card-img {
@@ -401,11 +401,11 @@ main.mainHome div.mapa-home iframe {
 .card-title-custom,
 .card-text-custom {
     color: var(--white) !important;
-    height: 100%;
+   /* height: 100%;*/
     /* Ajusta el alto */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
 }
 
 .card-text-custom {

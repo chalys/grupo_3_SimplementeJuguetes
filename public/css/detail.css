@@ -399,7 +399,7 @@ td.esquina4 {
   .container-left-down {
   display: flex;
   width: 70%;
-  justify-content: space-between;
+  justify-content: space-around;
   }
 
   .secondary-photo{

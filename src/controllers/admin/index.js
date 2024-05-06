@@ -4,6 +4,6 @@ module.exports = {
     editarProducto: require("./editProduct.controller"),
     editsProducts: require("./editsProducts.controller"),
     store:require("./storeProduct.controller"),
-    list: require("./list.controller"),
+    listProduct: require("./listProduct.controller"),
     destroy: require('./destroyProduct.controller')
 }
