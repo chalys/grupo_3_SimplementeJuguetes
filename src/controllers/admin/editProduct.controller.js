@@ -1,18 +1,40 @@
 const { validationResult } = require("express-validator");
-const { saveData, loadData } = require("../../dataBase");
+//const { saveData, loadData } = require("../../dataBase");
 const db = require("../../dataBase/models");
 
 module.exports= (req,res) => {
 const errors = validationResult(req);
 const { id }= req.params
-const products = loadData("products");
+//const products = loadData("products");
+
 if (errors.isEmpty()) {
     const {name,price,description,line,
     characterVersion,stock,maker,
-    character, section
+    character, section, recSecondaryImage
     } = req.body;
      
+    /*//A implementar ya que no contamos con este campo.
+ 
+    db.secondaryimage.findAll({
+      productId: id
+    })
+    .then(images => {
+      let newImages = [];
+      if(req.files.secondaryimage?.length){
+        newImages = req.files.secondaryimage?.map((img) => img.filename);
+        return{
+          file: img.filename,
+          productId: +id
+        }    
+      }
 
+      if(recSecondaryImage === "on")
+        newImages = [
+          ...newImages,
+          ...images,
+      ]
+    })
+*/
     db.product.update(
       {
       name: name.trim(),
@@ -66,10 +88,10 @@ if (errors.isEmpty()) {
       return p;
     });
 
-    saveData(productsMap,"products");*/
+    saveData(productsMap,"products");
 
     // res.redirect("/admin/lista-productos");
-
+*/
   } else {
     //const product = products.find((p) => p.id === +id);
     const errorsMapped = errors.mapped();
