@@ -13,7 +13,7 @@ if (errors.isEmpty()) {
     } = req.body;
      
 
-    db.Product.update(
+    db.product.update(
       {
       name: name.trim(),
       price: +price,
@@ -68,7 +68,7 @@ if (errors.isEmpty()) {
 
     saveData(productsMap,"products");*/
 
-    res.redirect("/admin/lista-productos");
+    // res.redirect("/admin/lista-productos");
 
   } else {
     //const product = products.find((p) => p.id === +id);
