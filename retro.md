@@ -111,3 +111,13 @@ Punto uno (1): Comenzar a hacer: -Tener algún tipo de calendario con los horari
 Punto dos (2): Continuar haciendo: -Pedir ayuda cuando necesitemos conocimiento de un tema o en caso de estar atascados. -Mover las tarjetas de JIRA. -Reuniones grupales. -Subir documentación del progreso. -Comunicar en caso de no poder continuar. -Comunicar sobre horarios disponibles. -Solucionar conflictos del código en grupo. -Contribuir ayudando a los demás a resolver sus problemas. (por ahora veo que seguimos viendo que en el grupo de whatsapp se siguen compartiendo dudas y acciones)
 
 Punto tres (3): Hacer menos: -Llegar hasta el último día de entrega. -No actualizar las tarjetas de JIRA. -No organizar reuniones más seguido. (tal vez en eso seguimos comunicandonos pero con lapsos o tiempos perdido sy seguimos entregando a ultima instancia)
+
+RETROSPECTIVA DEL PROYECTO SPRINT 6
+
+Punto uno (1): Comenzar a hacer: -Tener algún tipo de calendario con los horarios disponibles de los integrantes. -Organizar reuniones independientes.(Se  aprovecha al maximo las reuniones grupales del Sprint, debido a nuestra imcompatibiidad horaria).
+
+Punto dos (2): Hacer menos: -No llegar hasta el último día de entrega. -No actualizar las tarjetas de JIRA. -No organizar reuniones más seguido. No consultar en caso de necesitar ayuda. No dejar comentado el codigo, con las funcionalidad basica.
+
+Punto tres (3): Continuar haciendo: -Pedir ayuda cuando necesitemos conocimiento de un tema o en caso de estar atascados. -Mover las tarjetas de JIRA. -Reuniones grupales. -Subir documentación del progreso. -Comunicar en caso de no poder continuar. -Comunicar sobre horarios disponibles. -Solucionar conflictos del código en grupo. -Contribuir ayudando a los demás a resolver sus problemas.-Subir imagenes, fotos, screenshots, videos etc. Referido al progreso de las actividades. -Auto asignarse actividades.
+
+
