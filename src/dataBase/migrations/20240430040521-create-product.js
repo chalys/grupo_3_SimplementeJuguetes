@@ -32,7 +32,7 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false
       },
-      colection: {
+      collection: {
         type: Sequelize.STRING(50),
         allowNull: false
       },
@@ -102,7 +102,7 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: new Date()
       },
-      deleteAt:{
+      deletedAt:{
         type: Sequelize.DATE
       }
     });
