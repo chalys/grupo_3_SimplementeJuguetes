@@ -5,7 +5,7 @@ const { uploadProducts } = require("../middlewares/uploadFiles");
 const adminController = require("../controllers/admin");
 
 // ************ Controller Require ************
-const {destroy, add, store, editarProducto, editsProducts,list } = require("../controllers/admin");
+const {destroy, add, store, editarProducto, editsProducts, listProduct } = require("../controllers/admin");
 //const {add, store, edit, update, destroy} = require('../controllers/admin');
 
 // /admin
@@ -21,7 +21,9 @@ router.post(
   ]),
   store
 );
-router.get('/lista-productos', list);
+
+//*** LIST ALL PRODUCT ***/
+router.get('/lista-productos', listProduct);
 
 //router de edicion de productos
 /*

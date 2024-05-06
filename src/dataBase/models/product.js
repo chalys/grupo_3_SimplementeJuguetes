@@ -1,7 +1,6 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = (sequelize, DataTypes) => {
   class product extends Model {
     /**
@@ -11,48 +10,48 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      product.hasMany(models.secondaryimage, {
+        foreignKey: "productId",
+        as: "secondaryImage",
+      });
     }
   }
-  product.init({
-    name: DataTypes.STRING(100),
-    
-    manufacturer: DataTypes.STRING(50),
-    
-    mark: DataTypes.STRING(50),
-    
-    sku: DataTypes.INTEGER,
-    
-    available: DataTypes.BOOLEAN,
-    
-    colection: DataTypes.STRING(50),
-    
-    price: DataTypes.DECIMAL(10,2),
-    
-    line: DataTypes.STRING(50),
-    
-    character: DataTypes.STRING(50),
-    
-    characterVersion: DataTypes.STRING(50),
-    
-    minAge: DataTypes.STRING(30),
-    
-    height: DataTypes.SMALLINT,
-    depth: DataTypes.SMALLINT,
-    width: DataTypes.SMALLINT,
-    materials: DataTypes.STRING(50),
-    
-    scale: DataTypes.STRING(30),
-    
-    articulated: DataTypes.BOOLEAN,
-    collectable: DataTypes.BOOLEAN,
-    accessories: DataTypes.BOOLEAN,
-    bobblehead: DataTypes.BOOLEAN,
-    firstImg: DataTypes.STRING(100),
-    
-    description: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'product',
-  });
+  product.init(
+    {
+      name: DataTypes.STRING,
+      manufacturer: DataTypes.STRING,
+      mark: DataTypes.STRING,
+      sku: DataTypes.INTEGER,
+      available: DataTypes.BOOLEAN,
+      collection: DataTypes.STRING,
+      price: {
+        type: DataTypes.DECIMAL,
+        get() {
+          return toThousand(this.getDataValue("price"))
+        }
+      },
+      line: DataTypes.STRING,
+      character: DataTypes.STRING,
+      characterVersion: DataTypes.STRING,
+      minAge: DataTypes.STRING,
+      height: DataTypes.SMALLINT,
+      depth: DataTypes.SMALLINT,
+      width: DataTypes.SMALLINT,
+      materials: DataTypes.STRING,
+      scale: DataTypes.STRING,
+      articulated: DataTypes.BOOLEAN,
+      collectable: DataTypes.BOOLEAN,
+      accessories: DataTypes.BOOLEAN,
+      bobblehead: DataTypes.BOOLEAN,
+      firstImg: DataTypes.STRING,
+      description: DataTypes.TEXT,
+    },
+    {
+      sequelize,
+      modelName: "product",
+      onDelete: "CASCADE",
+      paranoid: true,
+    }
+  );
   return product;
 };

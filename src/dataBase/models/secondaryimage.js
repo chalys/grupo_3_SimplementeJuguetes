@@ -19,8 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "secondaryimage",
+      timestamps: false,
       onDelete: "CASCADE",
-      onUpdate: "CASCADE",
     }
   );
   return secondaryimage;
