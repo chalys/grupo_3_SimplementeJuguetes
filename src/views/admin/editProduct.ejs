@@ -25,9 +25,16 @@
         </div>
         <div class="mb-3  col-6">
           <label for="exampleInputPassword1" class="form-label">stock</label>
-          <input type="number" class="form-control" name="stock" value="<%= product.sku %>">
-          <hr>
-        </div>
+          <select class="form-control" name="available" required>
+            <% if (product.available == 1) { %>
+              <option value="1" selected>Disponible</option>
+              <option value="0">No disponible</option>
+
+            <% }else{%>
+              <option value="1">Disponible</option>
+              <option value="0"selected>No disponible</option>
+              <% }%>
+        </select>
         <div class="mb-3   col-6">
           <label for="exampleInputEmail1" class="form-label"> precio</label>
           <input type="text" class="form-control" name="price" value="<%= product.price %>">
