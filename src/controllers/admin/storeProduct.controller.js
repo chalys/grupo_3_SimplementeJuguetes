@@ -18,13 +18,13 @@ module.exports = (req, res) => {
     depth,
     width,
     materials,
-    scale,
+    initialScale,
     articulated,
     collectable,
     accessories,
     bobbleHead,
+    newImages,
   } = req.body;
-
 
  db.product.create({
     name: name.trim(),
@@ -32,8 +32,8 @@ module.exports = (req, res) => {
     manufacturer: manufacturer.trim(),
     mark: mark.trim(),
     sku: +sku,
-    available: available?.trim(),
-    colection: colection.trim(),
+    available: available == 'yes'? 1 : 0,
+    collection: colection.trim(),
     price: +price,
     line: line.trim(),
     character: character.trim(),
@@ -43,15 +43,15 @@ module.exports = (req, res) => {
     depth: +depth,
     width: +width,
     materials: materials?.trim(),
-    scale: +scale,
-    articulated: articulated?.trim(),
-    collectable: collectable?.trim(),
-    accessories: accessories?.trim(),
-    bobbleHead: bobbleHead?.trim(),
+    scale: +initialScale,
+    articulated: articulated == 'yes'? 1:0,
+    collectable: collectable == 'yes'?1:0,
+    accessories: accessories == 'yes'?1:0,
+    bobbleHead: bobbleHead == 'yes'?1:0,
     firstImg: req.files.firstImg?.length
       ? req.files.firstImg[0]?.filename
       : "default-image.jpg",
-    secondImg: newImages.length ? newImages : ["default-image.jpg"],
+    secondImg: newImages?.length? newImages : ["default-image.jpg"],
   })
   .then((product) => {
     let newImages = [];
@@ -70,12 +70,12 @@ module.exports = (req, res) => {
             res.send(err.message)
         })
     }
-    return res.redirect(`/admin/productos`)
+    // return res.redirect(`/admin/productos`)
+    res.redirect(`/productos/detalle-producto/${product.id}`);
 })
 
-  products.push(newProduct);
-  saveData(products, "products");
-  res.redirect(`/productos/detalle-producto/${newID}`);
+  // products.push(newProduct);
+  // saveData(products, "products");
 };
 
 

@@ -9,7 +9,7 @@ const productsDBMapped = productsJSON.map((p) => {
     mark: p.mark,
     sku: p.sku,
     available: p.available,
-    collection: p.collection,
+    collection: p.colection,
     price: p.price,
     line: p.line,
     character: p.character,
