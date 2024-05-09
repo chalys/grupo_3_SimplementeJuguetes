@@ -21,18 +21,18 @@
 
 
 
-const { db} = require("../../dataBase/models");
+const db = require("../../dataBase/models");
 
 
 module.exports = (req, res) => {
     const {id} = req.params
-db.secondaryImage.destroy({
+db.secondaryimage.destroy({
     where:{
         productId:id
     }
 })
 .then(()=>{
-db.products.destroy({
+db.product.destroy({
     where: {
         id
     }
