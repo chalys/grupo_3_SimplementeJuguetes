@@ -8,8 +8,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      // Define la asociación con el modelo Product
+      secondaryimage.belongsTo(models.product, {
+        foreignKey: "productId",
+        onDelete: "CASCADE",
+      });
     }
+    
   }
   secondaryimage.init(
     {
@@ -19,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "secondaryimage",
+      tableName:"secondaryimages",
       timestamps: false,
       onDelete: "CASCADE",
     }

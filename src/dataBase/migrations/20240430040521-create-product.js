@@ -70,7 +70,7 @@ module.exports = {
         allowNull: false
       },
       scale: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       articulated: {
