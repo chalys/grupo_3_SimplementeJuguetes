@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
       depth: DataTypes.SMALLINT,
       width: DataTypes.SMALLINT,
       materials: DataTypes.STRING,
-      scale: DataTypes.STRING,
+      scale: DataTypes.INTEGER,
       articulated: DataTypes.BOOLEAN,
       collectable: DataTypes.BOOLEAN,
       accessories: DataTypes.BOOLEAN,
@@ -49,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "product",
+      tableName:"products",
       onDelete: "CASCADE",
       paranoid: true,
     }

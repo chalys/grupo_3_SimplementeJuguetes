@@ -9,7 +9,7 @@ const { id }= req.params
 
 if (errors.isEmpty()) {
     const {name,price,description,line,
-    characterVersion,stock,maker,
+    characterVersion,available,manufacturer,
     character, section, recSecondaryImage
     } = req.body;
      
@@ -42,8 +42,8 @@ if (errors.isEmpty()) {
       description: description.trim(),
       line: line.trim(),
       characterVersion: characterVersion.trim(),
-      stock: +stock,
-      maker: maker.trim(),
+      available: available,
+      manufacturer: manufacturer.trim(),
       character: character.trim(),
       /*imagenPrincipal: req.files.imagenPrincipal[0]?.filename*/
       articulated: section === "articulated",
