@@ -14,6 +14,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "productId",
         as: "secondaryImage",
       });
+      product.belongsToMany(models.order,{
+        through:"orderproducts",
+        foreignKey:"productId",
+        otherKey: "orderId",
+        as:"orders"
+      })
     }
   }
   product.init(
@@ -24,12 +30,13 @@ module.exports = (sequelize, DataTypes) => {
       sku: DataTypes.INTEGER,
       available: DataTypes.BOOLEAN,
       collection: DataTypes.STRING,
-      price: {
-        type: DataTypes.DECIMAL,
-        get() {
-          return toThousand(this.getDataValue("price"))
-        }
-      },
+      price: DataTypes.DECIMAL,
+      // price: {
+      //   type: DataTypes.DECIMAL,
+      //   get() {
+      //     return toThousand(this.getDataValue("price"))
+      //   }
+      // },
       line: DataTypes.STRING,
       character: DataTypes.STRING,
       characterVersion: DataTypes.STRING,
@@ -38,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
       depth: DataTypes.SMALLINT,
       width: DataTypes.SMALLINT,
       materials: DataTypes.STRING,
-      scale: DataTypes.INTEGER,
+      scale: DataTypes.STRING,
       articulated: DataTypes.BOOLEAN,
       collectable: DataTypes.BOOLEAN,
       accessories: DataTypes.BOOLEAN,

@@ -1,0 +1,36 @@
+[
+    {
+      "id": 1,
+      "state": "completed",
+      "total": 197.3,
+      "user": "manola",
+      "products": [
+        {
+          "name": "Comisario Woody",
+          "quantity": 2
+        },
+        {
+          "name": "Buzz Lightyear",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "state": "completed",
+      "total": 76.8,
+      "user": "manolo",
+      "products": [
+        {
+          "name": "Jessi Vaquera",
+          "quantity": 1
+        },
+        {
+          "name": "Rex Dinosaurio",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+  
+  
