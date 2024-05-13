@@ -1,12 +1,19 @@
-const db = require('../../dataBase/models');
-const product = require('../../dataBase/models/product');
-module.exports = (req,res) => {
+const db = require("../../dataBase/models");
 
-    const { id } = req.params;
-db.product.findByPk(id).then((product)=>{
-  res.render("./admin/editProduct",{product})
-})
-}
+module.exports = (req, res) => {
+  const { id } = req.params;
+  const productPromise = db.product.findByPk(id);
+
+  Promise.all([productPromise]).then(([product1]) => {
+    res.render("admin/updateProduct", { product1}, (err) => {
+      err && res.send(err.message);
+    });
+  });
+
+  db.product.findByPk(id).then((product1) => {
+    res.render("./admin/editProduct", { product1 });
+  });
+};
 //   Promise.all([productPromise])
 //     .then(([product]) => {
 
@@ -22,7 +29,6 @@ db.product.findByPk(id).then((product)=>{
 //     })
 
 // }
-
 
 /*
 

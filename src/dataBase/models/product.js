@@ -1,6 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 module.exports = (sequelize, DataTypes) => {
   class product extends Model {
     /**
@@ -49,14 +49,14 @@ module.exports = (sequelize, DataTypes) => {
       articulated: DataTypes.BOOLEAN,
       collectable: DataTypes.BOOLEAN,
       accessories: DataTypes.BOOLEAN,
-      bobblehead: DataTypes.BOOLEAN,
+      bobbleHead: DataTypes.BOOLEAN,
       firstImg: DataTypes.STRING,
       description: DataTypes.TEXT,
     },
     {
       sequelize,
       modelName: "product",
-      tableName:"products",
+      //tableName:"products",
       onDelete: "CASCADE",
       paranoid: true,
     }

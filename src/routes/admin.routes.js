@@ -2,46 +2,51 @@
 const express = require("express");
 const router = express.Router();
 const { uploadProducts } = require("../middlewares/uploadFiles");
-const adminController = require("../controllers/admin");
+const {productsValidationStore} = require("../middlewares/validations")
 
 // ************ Controller Require ************
-const {destroy, add, store, editarProducto, editsProducts, listProduct } = require("../controllers/admin");
-//const {add, store, edit, update, destroy} = require('../controllers/admin');
+const {
+  listProduct,
+  addProduct,
+  updateProduct,
+  storeProduct,
+  editProduct,
+  deleteProduct,
+  removeProduct,
+} = require("../controllers/admin");
 
 // /admin
 
-//*** CREATE ONE PRODUCT ***/
-router.get("/crear-producto/", add);
+//*** LIST ALL PRODUCT ***/
+router.get("/lista-productos", listProduct);
 
+//*** CREATE ONE PRODUCT ***/
+router.get("/crear-producto/", addProduct);
 router.post(
   "/crear-producto/",
   uploadProducts.fields([
     { name: "firstImg", maxCount: 1 },
-    { name: "secondImg", maxCount: 3 },
+    { name: "secondImg", maxCount: 4 },
   ]),
-  store
+  //productsValidationStore,
+  storeProduct
 );
 
-//*** LIST ALL PRODUCT ***/
-router.get('/lista-productos', listProduct);
-
-//router de edicion de productos
-/*
-router.get("/editar-producto/:id", editarProducto);
-router.put("/editar-producto/:id", editsProducts);*/
-
-router.get("/editar-producto/:id", adminController.updateProduct);
+//*** EDIT PRODUCT ***/
+router.get("/editar-producto/:id", updateProduct);
 router.put("/editar-producto/:id",
-/*
+  /*
   uploadProducts.fields([
     { name: "imagePrincipal" },
     { name: "imagesSecondary" },
 ]),
   productsValidationUpdate,*/
-  adminController.editProduct
+  editProduct
 );
 
+//*** DELETE PRODUCT */
+router.get("/eliminar-producto", deleteProduct);
+router.delete("/eliminar-producto/:id", removeProduct);
+//router.delete('/eliminar-producto/:id', destroy);
 
-
-router.delete('/eliminar-producto/:id', destroy);
 module.exports = router;

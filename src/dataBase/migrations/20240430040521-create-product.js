@@ -82,7 +82,7 @@ module.exports = {
       accessories: {
         type: Sequelize.BOOLEAN
       },
-      bobblehead: {
+      bobbleHead: {
         type: Sequelize.BOOLEAN
       },
       firstImg: {

@@ -23,7 +23,7 @@ const productsDBMapped = productsJSON.map((p) => {
     articulated: p.articulated,
     collectable: p.collectable,
     accessories: p.accessories,
-    bobblehead: p.bobblehead,
+    bobbleHead: p.bobbleHead,
     firstImg: p.firstImg,
     description: p.description,
   };

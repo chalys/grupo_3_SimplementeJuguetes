@@ -13,7 +13,7 @@
                         <div class="col-md-12">
                             <div class="dataTables_wrapper form-inline dt-bootstrap">
                                 <div class="row mb-4">
-                                    <div class="col-sm-6 ">
+                                    <div class="col-sm-4 ">
                                         <div class="d-flex align-items-center">
                                             <label for="datatable_length">Mostrar </label>
                                             <select name="datatable_length" aria-controls="datatable"
@@ -26,12 +26,15 @@
                                             <label for="datatable_length" class="ml-2"> registros</label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <div class="d-flex align-items-center">
                                             <label>Buscar:</label>
                                             <input type="search" class="form-control input-sm" placeholder=""
                                                 aria-controls="datatable">
                                         </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <a href="/admin/crear-producto" class="btn btn-dark btn-dark-custom mb-4">Crear Producto</a>
                                     </div>
                                 </div>
                             </div>
@@ -89,13 +92,15 @@
                                                     href="/admin/editar-producto/<%= p.id %>" class="btn"><i
                                                         class="fa-regular fa-pen-to-square text-success"></i></a>
                                             </td>
-                                            <td class="text-center align-middle">
-                                                <form action="/admin/eliminar-producto/<%= p.id %>?_method=DELETE"
+                                            <td class="text-center align-middle">                                           
+                                                <a href="/admin/eliminar-producto?id=<%= p.id %>&name=<%= p.name %>" class="btn" data-toggle="modal" data-target="#exampleModal" ><i
+                                                    class="fa-solid fa-trash-can text-danger"></i></a>
+                                                <!-- <form action="/admin/eliminar-producto/<%= p.id %>?_method=DELETE"
                                                     method="POST">
 
                                                     <button type="submit" class="btn"><i
                                                             class="fa-solid fa-trash-can text-danger"></i></button>
-                                                </form>
+                                                </form> -->
                                             </td>
                                         </tr>
                                         <% }); %>
