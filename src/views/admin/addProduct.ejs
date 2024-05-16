@@ -6,7 +6,8 @@
 
         <body>
             <!-- main -->
-            <main class="container container-wrapper">
+            <main class="container">
+                <!-- <main class="container container-wrapper"> -->
                 <!-- title -->
                 <div class="row mb-4">
                     <div class="col-12 bg-container-title-custom">
@@ -85,6 +86,32 @@
                                         placeholder="Describe la colección a la que pertenece el juguete" required>
                                 </div>
                                 <!-- /collection -->
+                                <!-- stock -->
+                                <div class="col-12 col-md-5 mb-3">
+                                    <label class="form-label" for="stock">Cantidad <span
+                                            class="required-custom">*</span></label>
+                                    <input type="number" class="form-control" id="stock" name="stock"
+                                        placeholder="Indica el precio del juguete" required>
+                                </div>
+                                <!-- /stock -->
+                                <!-- category -->
+                                <div class="col-12 col-md-5 mb-3">
+                                    <label class="form-label" for="category">Categoria <span
+                                            class="required-custom">*</span></label>
+                                    <select
+                                         class="form-select"
+                                        
+                                        id="category" name="category">
+                                        <option selected>¿Selecciona una categoria?</option>
+                                        <!-- Esta es la línea agregada -->
+
+                                    </select>
+                                    <p class="invalid-feedback">
+
+                                    </p>
+                                </div>
+                                <!-- /category -->
+
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
                                     <h5>PRECIOS Y LÍNEA:</h5>
                                 </div>

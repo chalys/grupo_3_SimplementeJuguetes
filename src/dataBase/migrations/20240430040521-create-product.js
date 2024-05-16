@@ -36,6 +36,21 @@ module.exports = {
         type: Sequelize.STRING(50),
         allowNull: false
       },
+      stock: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      categoryId: {
+        type: Sequelize.INTEGER,
+        references:{
+          model:{
+            tableName:"categories"
+          },
+          key: "id"
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE"
+      },
       price: {
         type: Sequelize.DECIMAL(10,2),
         allowNull: false

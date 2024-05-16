@@ -1,8 +1,12 @@
 "use strict";
 
 const productsJSON = require("../../dataBase/products.json");
+const categoryJSON = require("../../dataBase/category.json");
 
 const productsDBMapped = productsJSON.map((p) => {
+
+  const category = categoryJSON.find(c=> c.name === p.category)
+
   return {
     name: p.name,
     manufacturer: p.manufacturer,
@@ -10,6 +14,8 @@ const productsDBMapped = productsJSON.map((p) => {
     sku: p.sku,
     available: p.available,
     collection: p.collection,
+    stock:p.stock,
+    categoryId: category? category.id : null,
     price: p.price,
     line: p.line,
     character: p.character,

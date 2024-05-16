@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "productId",
         as: "secondaryImage",
       });
+
+      product.belongsTo(models.category, {
+        foreignKey: "categoryId",
+        as: "Category" //"category"
+      })
       product.belongsToMany(models.order,{
         through:"orderproducts",
         foreignKey:"productId",
@@ -30,6 +35,8 @@ module.exports = (sequelize, DataTypes) => {
       sku: DataTypes.INTEGER,
       available: DataTypes.BOOLEAN,
       collection: DataTypes.STRING,
+      stock:DataTypes.INTEGER,
+      categoryId:DataTypes.INTEGER,
       price: DataTypes.DECIMAL,
       // price: {
       //   type: DataTypes.DECIMAL,

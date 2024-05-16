@@ -1,5 +1,4 @@
 const router = require("express").Router()
-const {} = require("../../controllers/api/products")
 
 const {
     listApi,
@@ -7,10 +6,13 @@ const {
     updateApi,
     removeApi
   } = require("../../controllers/api/admin");
+  
+const { countApi } = require("../../controllers/api/products");
   // const { uploadProducts } = require("../../middlewares/uploads");
   
   // /* /api/products */
    router.get("/", listApi);
+   router.get("/total-productos", countApi);
   // router.post(
   //   "/",
   //   uploadProducts.fields([

@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "name": "Educativos"
+    },
+    {
+        "id":2,
+        "name": "Juguetes de construcción"
+    },
+    {
+        "id":3,
+        "name": "Muñecas y figuras de acción"
+    },
+    {
+        "id":4,
+        "name": "Juegos de mesa y cartas"
+    },
+    {
+        "id":5,
+        "name": "Juguetes de ciencia y experimentación"
+    },
+    {
+        "id":6,
+        "name": "Juguetes al aire libre"
+    },
+    {
+        "id":7,
+        "name": "Electrónicos y tecnológicos"
+    }
+]
