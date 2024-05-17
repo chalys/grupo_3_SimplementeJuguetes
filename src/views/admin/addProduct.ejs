@@ -171,13 +171,14 @@
                                     <label class="form-label" for="minAge">Edad Mínima
                                         Recomendada <span class="required-custom">*</span></label>
                                     <select class="form-select" id="minAge" name="minAge" >
-                                        <option selected hidden value="">¿Cuál es la edad mínima recomendada para este juguete?
+                                        <option <%=locals.old?.minAge=== '' ? "selected" : null %> hidden value="">¿Cuál es la edad mínima recomendada para este juguete?
                                         </option>
-                                        <option value="0-1">0-1 año</option>
-                                        <option value="1-3">1-3 años</option>
-                                        <option value="3-6">3-6 años</option>
-                                        <option value="6-9">6-9 años</option>
-                                        <option value="9-12">9-12 años</option>
+                                            <option <%=locals.old?.minAge=== '0-1' ? "selected" : null %> value="0-1">0-1 año</option>
+                                            <option <%=locals.old?.minAge=== '1-3' ? "selected" : null %> value="1-3">1-3 años</option>
+                                            <option <%=locals.old?.minAge=== '3-6' ? "selected" : null %> value="3-6">3-6 años</option>
+                                            <option <%=locals.old?.minAge=== '6-9' ? "selected" : null %> value="6-9">6-9 años</option>
+                                            <option <%=locals.old?.minAge=== '9-12' ? "selected" : null %> value="9-12">9-12 años</option>
+    
                                     </select>
                                 </div>
                                 <!-- /Recommended Minimum Age -->
@@ -217,11 +218,13 @@
                                             class="required-custom">*</span></label>
                                     <select class="form-select" id="materials" name="materials" >
                                         <option selected hidden value="">¿Cuál es el material del que está hecho el juguete?</option>
-                                        <option value="plastico">Plástico</option>
-                                        <option value="madera">Madera</option>
-                                        <option value="metal">Metal</option>
-                                        <option value="tela">Tela</option>
-                                        <option value="otros">Otros</option>
+                                        <option <%=locals.old?.materials=== '' ? "selected" : null %> hidden value="">¿Cuál es el material del que está hecho el juguete?</option>
+                                        <option <%=locals.old?.materials=== 'plastico' ? "selected" : null %> value="plastico">Plástico</option>
+                                        <option <%=locals.old?.materials=== 'madera' ? "selected" : null %> value="madera">Madera</option>
+                                        <option <%=locals.old?.materials=== 'metal' ? "selected" : null %> value="metal">Metal</option>
+                                        <option <%=locals.old?.materials=== 'tela' ? "selected" : null %> value="tela">Tela</option>
+                                        <option <%=locals.old?.materials=== 'otros' ? "selected" : null %> value="otros">Otros</option>
+
                                     </select>
                                 </div>
 
