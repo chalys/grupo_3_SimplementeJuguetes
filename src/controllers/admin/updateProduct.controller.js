@@ -1,34 +1,43 @@
-const db = require("../../dataBase/models");
 
-module.exports = (req, res) => {
-  const { id } = req.params;
-  const productPromise = db.product.findByPk(id);
+const db = require('../../dataBase/models');
+const product = require('../../dataBase/models/product');
+module.exports = (req,res) => {
 
-  Promise.all([productPromise]).then(([product1]) => {
-    res.render("admin/updateProduct", { product1}, (err) => {
-      err && res.send(err.message);
-    });
-  });
+    const { id } = req.params;
+db.product.findByPk(id).then((product)=>{
+  // return res.send(product)
+  res.render("./admin/editProduct",{product})
+})
+}
 
-  db.product.findByPk(id).then((product1) => {
-    res.render("./admin/editProduct", { product1 });
-  });
-};
-//   Promise.all([productPromise])
+
+
+
+
+// const db = require('../../dataBase/models')
+// module.exports = (req,res) => {
+
+//     const { id } = req.params;
+//     const productPromise = db.product.findByPk(id)
+
+//     Promise.all([productPromise])
 //     .then(([product]) => {
 
-//       res.render("./admin/editProduct", {product}, (err, content) => {
+//       res.render("./admin/editProduct", {
+//         product
+//       }, (err,content) => {
 //         if (err) {
 //           console.error(err.message);
 //           return res.send(err.message);
 //         }
-//         res.render('./partials/dashbard', {
-//           contentView: content
+//         res.render('./partials/dashbar', {
+//           contentView:content
 //         })
 //       })
 //     })
-
+    
 // }
+
 
 /*
 

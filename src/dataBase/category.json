@@ -26,5 +26,9 @@
     {
         "id":7,
         "name": "Electrónicos y tecnológicos"
+    },
+    {
+        "id":8,
+        "name": "Mixto"
     }
 ]

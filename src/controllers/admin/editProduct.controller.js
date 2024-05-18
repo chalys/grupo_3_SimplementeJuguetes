@@ -1,17 +1,37 @@
 const { validationResult } = require("express-validator");
-//const { saveData, loadData } = require("../../dataBase");
+const { saveData, loadData } = require("../../dataBase");
 const db = require("../../dataBase/models");
 
 module.exports= (req,res) => {
 const errors = validationResult(req);
 const { id }= req.params
-//const products = loadData("products");
-
+const products = loadData("products");
 if (errors.isEmpty()) {
-    const {name,price,description,line,
-    characterVersion,available,manufacturer,
-    character, section, recSecondaryImage
-    } = req.body;
+  const {
+    name,
+    manufacturer,
+    mark,
+    sku,
+    available,
+    collection,
+    stock,
+    categoryId,
+    price,
+    line,
+    character,
+    characterVersion,
+    minAge,
+    height,
+    depth,
+    width,
+    materials,
+    scale,
+    articulated,
+    collectable,
+    accessories,
+    bobbleHead,
+    description,
+  } = req.body;
      
     /*//A implementar ya que no contamos con este campo.
  
@@ -88,10 +108,10 @@ if (errors.isEmpty()) {
       return p;
     });
 
-    saveData(productsMap,"products");
+    saveData(productsMap,"products");*/
 
-    // res.redirect("/admin/lista-productos");
-*/
+    res.redirect("/admin/lista-productos");
+
   } else {
     //const product = products.find((p) => p.id === +id);
     const errorsMapped = errors.mapped();

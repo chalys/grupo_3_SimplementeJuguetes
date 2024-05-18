@@ -28,7 +28,7 @@ router.post(
     { name: "firstImg", maxCount: 1 },
     { name: "secondImg", maxCount: 4 },
   ]),
-  //productsValidationStore,
+  productsValidationStore,
   storeProduct
 );
 

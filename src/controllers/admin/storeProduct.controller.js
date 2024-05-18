@@ -2,11 +2,12 @@ const path = require("path");
 // 1° traer todos los productos existentes en mi base de datos.
 const fs = require("fs");
 const { loadData } = require("../../database");
-const { validationResult } = require("express-validator");
+const { validationResult, body } = require("express-validator");
 
 const db = require("../../dataBase/models");
 
 module.exports = (req, res) => {
+  // return res.send(req.body)
   const errors = validationResult(req);
   if (errors.isEmpty()) {
     const {
@@ -37,34 +38,35 @@ module.exports = (req, res) => {
 
     db.product
       .create({
-        name: name.trim(),
-        manufacturer: manufacturer ? manufacturer.trim() : "",
-        mark: mark ? mark.trim() : "",
+        name: name?.trim(),
+        manufacturer: manufacturer? manufacturer.trim(): "Sin especificar", //
+        mark: mark ? mark.trim() : "Sin clasificar", //
         sku: +sku || 0,
         available: available === "yes" ? 1 : 0,
-        collection: collection ? collection.trim() : "",
+        collection: collection ? collection.trim() : "Sin clasificar", //
         stock: +stock,
-        categoryId: +categoryId,
         price: +price || 0,
-        line: line ? line.trim() : "",
-        character: character ? character.trim() : "",
-        characterVersion: characterVersion ? characterVersion.trim() : "",
-        minAge: minAge ? minAge.trim() : "",
+        line: line? line.trim(): 'sin linea', //
+        categoryId: categoryId? +categoryId : 0,
+        character: character ? character.trim() : "Sin clasificar", //
+        characterVersion: characterVersion ? characterVersion.trim() : "Sin clasificar", //
+        minAge: minAge ? minAge.trim() : "Edad Libre", //
         height: +height || 0,
         depth: +depth || 0,
         width: +width || 0,
-        materials: materials ? materials.trim() : "",
-        scale: scale?scale.trim():"",
+        materials: materials ? materials.trim() : "Sin clasificar", //
+        scale: scale?scale.trim():"Sin escala", //
         articulated: articulated === "yes" ? 1 : 0,
         collectable: collectable === "yes" ? 1 : 0,
         accessories: accessories === "yes" ? 1 : 0,
         bobbleHead: bobbleHead === "yes" ? 1 : 0,
-        description: description ? description.trim() : "",
+        description: description ? description.trim() : "Este juguete no cuenta con una descripcion",//
         firstImg: req.files.firstImg?.length
           ? req.files.firstImg[0]?.filename
           : "default-image.jpg",
         //secondImg: newImages?.length? newImages : ["default-image.jpg"],
       })
+     
       .then((product) => {
         let newImages = [];
         if (req.files.secondImg?.length) {
@@ -81,17 +83,22 @@ module.exports = (req, res) => {
         });
       });
   } else {
+    const old = req.body
     const errorsMapped = errors.mapped();
-    const productPromise = db.product.findByPk(id);
-    Promise.all([productPromise]).then(([product]) => {
-      res.render(
-        "admin/updateProduct",
-        { product, errors: errorsMapped, old: req.body },
-        (err) => {
-          err && res.send(err.message);          
-        }
-      );
-    });
+    res.render("./admin/addProduct",{
+      errors: errorsMapped,
+      old: old,
+  })
+    // const productPromise = db.product.findByPk(id);
+    // Promise.all([productPromise]).then(([product]) => {
+    //   res.render(
+    //     "admin/updateProduct",
+    //     { product, errors: errorsMapped, old: req.body },
+    //     (err) => {
+    //       err && res.send(err.message);          
+    //     }
+    //   );
+    // });
   }
 };
 
