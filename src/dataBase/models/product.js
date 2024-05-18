@@ -38,12 +38,6 @@ module.exports = (sequelize, DataTypes) => {
       stock:DataTypes.INTEGER,
       categoryId:DataTypes.INTEGER,
       price: DataTypes.DECIMAL,
-      // price: {
-      //   type: DataTypes.DECIMAL,
-      //   get() {
-      //     return toThousand(this.getDataValue("price"))
-      //   }
-      // },
       line: DataTypes.STRING,
       character: DataTypes.STRING,
       characterVersion: DataTypes.STRING,

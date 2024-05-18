@@ -48,7 +48,7 @@ if (errors.isEmpty()) {
       /*imagenPrincipal: req.files.imagenPrincipal[0]?.filename*/
       articulated: section === "articulated",
       collectable: section === "collectable",
-      includesAccessories: section === "includesAccessories"
+      accessories: section === "accessories"
     },{
       where: {
         id

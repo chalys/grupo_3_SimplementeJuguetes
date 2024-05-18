@@ -8,19 +8,22 @@ const {
   } = require("../../controllers/api/admin");
   
 const { countApi } = require("../../controllers/api/products");
-  // const { uploadProducts } = require("../../middlewares/uploads");
+const { uploadProducts } = require("../../middlewares/uploads");
+
+router.get("/total-productos", countApi);
   
+
+
   // /* /api/products */
    router.get("/", listApi);
-   router.get("/total-productos", countApi);
-  // router.post(
-  //   "/",
-  //   uploadProducts.fields([
-  //     { name: "imagePrincipal" },
-  //     { name: "imagesSecondary" },
-  //   ]),
-  //   storeApi
-  // );
+   router.post(
+     "/",
+     uploadProducts.fields([
+       { name: "firstImg" },
+       { name: "secondImg" },
+     ]),
+     storeApi
+   );
   
   // router.put(
   //   "/:id",
