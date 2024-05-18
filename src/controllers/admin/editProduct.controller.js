@@ -3,10 +3,11 @@ const { saveData, loadData } = require("../../dataBase");
 const db = require("../../dataBase/models");
 
 module.exports= (req,res) => {
+  // return res.send(req.body)
 const errors = validationResult(req);
 const { id }= req.params
 const products = loadData("products");
-return res.send(req.body)
+
 if (errors.isEmpty()) {
   const {
     name,
@@ -34,7 +35,6 @@ if (errors.isEmpty()) {
     description,
   } = req.body;
      
-
     db.product.update(
       {
         name: name?.trim(),
@@ -46,7 +46,7 @@ if (errors.isEmpty()) {
         stock: +stock,
         price: +price || 0,
         line: line? line.trim(): 'sin linea', //
-        categoryId: categoryId? +categoryId : 0,
+        categoryId: categoryId? +categoryId : 8,
         character: character ? character.trim() : "Sin clasificar", //
         characterVersion: characterVersion ? characterVersion.trim() : "Sin clasificar", //
         minAge: minAge ? minAge.trim() : "Edad Libre", //
@@ -102,7 +102,7 @@ if (errors.isEmpty()) {
 
     saveData(productsMap,"products");*/
 
-    res.redirect("/admin/lista-productos");
+    // res.redirect("/admin/lista-productos");
 
   } else {
     //const product = products.find((p) => p.id === +id);
@@ -113,12 +113,8 @@ if (errors.isEmpty()) {
     .then(([product]) =>{
 
       res.render(
-            "admin/updateProduct",
-            { product, errors: errorsMapped, old: req.body },
-            (err, contentView) => {
-              err && res.send(err.message);
-              res.render("partials/dashboard", { contentView });
-            }
+            "./admin/editProduct",
+            { product, errors: errorsMapped, old: req.body }
           );
 
     })

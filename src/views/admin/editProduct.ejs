@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include("../partials/head", {title: 'Registro de juguete' }) %>
+<%- include("../partials/head", {title: 'actualizar juguete' }) %>
     <%- include("../partials/dashbar") %>
 
         <body>
@@ -311,9 +311,9 @@
                                 <div class="col-12 col-md-10 col-lg-5 mb-3">
                                     <label for="firstImg" class="form-label">Selecciona la images
                                         principal del juguete<span class="required-custom">*</span></label>
-                                    <input class="form-control" id="firstImg" type="file" name="firstImg"
-                                        accept="image/*">
-                                </div>
+                                        <input class="form-control" id="selectPicProduct" type="file" name="firstImg"
+                                        accept="image/*" ><img src="/images/products/<%= product.firstImg %>"
+                                        alt="" class="no_img" id="ProdPictureForm">                                </div>
                                 <!-- /Primary images-->
                                 <!-- Secondary images-->
                                 <div class="col-12 col-md-10 col-lg-5 mb-3">
@@ -345,10 +345,10 @@
             </main>
             <!-- /main -->
             <!-- scripts -->
+            <script src="/js/imageSelectorProduct.js"></script>
             <%- include("../partials/scripts") %>
                 <!-- /scripts -->
         </body>
 
 </html>
 
-<script src=""></script
