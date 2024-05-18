@@ -6,6 +6,7 @@ module.exports= (req,res) => {
 const errors = validationResult(req);
 const { id }= req.params
 const products = loadData("products");
+return res.send(req.body)
 if (errors.isEmpty()) {
   const {
     name,
@@ -34,7 +35,7 @@ if (errors.isEmpty()) {
   } = req.body;
      
 
-    db.Product.update(
+    db.product.update(
       {
         name: name?.trim(),
         manufacturer: manufacturer? manufacturer.trim(): "Sin especificar", //
@@ -59,10 +60,7 @@ if (errors.isEmpty()) {
         accessories: accessories === "yes" ? 1 : 0,
         bobbleHead: bobbleHead === "yes" ? 1 : 0,
         description: description ? description.trim() : "Este juguete no cuenta con una descripcion",//
-        firstImg: req.files.firstImg?.length
-          ? req.files.firstImg[0]?.filename
-          : "default-image.jpg",
-
+        firstImg: req.files.firstImg?.length && req.files.firstImg[0].filename,
     },{
       where: {
         id
