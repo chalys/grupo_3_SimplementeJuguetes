@@ -1,3 +1,4 @@
 module.exports = {//API
-    countApi: require("./count.controller.api")
+    listProductApi: require("./listProduct.controller.api"),
+    detailProductApi: require("./detailProduct.controller.api"),
 }

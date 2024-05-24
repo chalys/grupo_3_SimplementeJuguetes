@@ -54,10 +54,12 @@ const userRouter = require("./routes/users.routes");
 const { check } = require("express-validator");
 
 const apiOtherRoutes = require("./routes/api/other.api");
-const apiProductRoutes = require("./routes/api/products.api")
+const apiProductRoutes = require("./routes/api/products.api");
+const apiCategoryRoutes = require("./routes/api/category.api");
 const apiAuthRoutes = require("./routes/api/authentication.api");
 const apiCartRoutes = require("./routes/api/cart.api");
 const apiAdminRoutes = require("./routes/api/admin.api");
+const apiUserRoutes = require("./routes/api/users.api");
 
 
 app.use(checkSession);
@@ -79,7 +81,10 @@ app.use("/api", apiOtherRoutes);
 app.use("/api/authentication", apiAuthRoutes);
 app.use("/api/cart", apiCartRoutes);
 app.use("/api/products", apiProductRoutes);
+app.use("/api/category", apiCategoryRoutes);
 app.use("/api/admin", apiAdminRoutes);
+app.use("/api/users", apiUserRoutes);
+
 
 app.use((req, res, next) => {
   res.status(404).render("other/notFound");
