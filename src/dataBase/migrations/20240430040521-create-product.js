@@ -61,11 +61,11 @@ module.exports = {
       },
       character: {
         type: Sequelize.STRING(50),
-        allowNull: false
+        allowNull: true
       },
       characterVersion: {
         type: Sequelize.STRING(50),
-        allowNull: false
+        allowNull: true
       },
       minAge: {
         type: Sequelize.STRING(30),
@@ -86,7 +86,7 @@ module.exports = {
       },
       scale: {
         type: Sequelize.STRING(10),
-        allowNull: false
+        allowNull: true
       },
       articulated: {
         type: Sequelize.BOOLEAN
