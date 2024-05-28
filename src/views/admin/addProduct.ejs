@@ -31,6 +31,10 @@
                                                 locals.errors?.name?.msg %></span></label>
                                     <input class="form-control" type="text" id="name" name="name"
                                         placeholder="Introduce el nombre del juguete" value="<%= locals.old?.name %>">
+                                    <p class="text-danger showLength">
+                                        <%=locals.errors?.name?.msg%>
+
+                                    </p>
                                 </div>
                                 <!-- /Name -->
                                 <!-- manufacturer -->
@@ -198,8 +202,8 @@
                                             años</option>
                                         <option <%=locals.old?.minAge==='9-12' ? "selected" : null %> value="9-12">9-12
                                             años</option>
-                                            <option <%=locals.old?.minAge==='12+' ? "selected" : null %> value="12+">12+
-                                                años</option>
+                                        <option <%=locals.old?.minAge==='12+' ? "selected" : null %> value="12+">12+
+                                            años</option>
                                     </select>
                                 </div>
                                 <!-- /Recommended Minimum Age -->
@@ -384,6 +388,10 @@
                                             class="required-custom">*</span></label>
                                     <textarea class="form-control" id="description" name="description" rows="3"
                                         placeholder="Escribe una descripción detallada del juguete"></textarea>
+                                    <p class="text-danger showLength-description">
+                                        <%=locals.errors?.name?.msg%>
+
+                                    </p>
                                 </div>
                                 <!-- /Description -->
                                 <!-- Button-->
@@ -403,6 +411,8 @@
             <script src="/js/imageSelectorProduct.js"></script>
             <%- include("../partials/scripts") %>
                 <!-- /scripts -->
+
+                <script src="/js/functions/validationCreateProduct.js"></script>
         </body>
 
 </html>

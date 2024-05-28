@@ -21,9 +21,18 @@
                             <input type="text" name="userName" id="nombre" class="input-ln">
                         </div>
                         <div class="login-contrasenia">
-                            <label class="text-login" for="contraseña">Contraseña</label>
-                            <input type="password" id="contraseña" class="input-login" name="password">
+                            <label class="text-login" for="password">Contraseña</label>
+                            <input type="password" id="password" class="input-login" name="password">
                         </div>
+                        <!-- <div class="login-contrasenia">
+                            <label class="text-login" for="password">Contraseña</label>
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control form-control-sm input-password" name="password" value="" id="password">
+                                <span class="input-group-text bg-transparent" id="btn-eye">
+                                  <i class="fa-solid fa-eye" id="icon-eye"></i>                        
+                                </span>
+                            </div>
+                        </div> -->
                         <div class="check-login">
                             <input type="checkbox" name="recuerdame" id="recuerdame">
                             <label class="text-checkbox" for="recuerdame"> Recuerdame</label>
@@ -47,9 +56,10 @@
             <%- include("../partials/footer") %>
 
                 <!-- Script Bootstrap -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                    crossorigin="anonymous"></script>
+                <%- include("../partials/scripts") %>
+                    <!-- /Script Bootstrap -->
+
+                    <script src="/js/functions/togglePassword.js"></script>
     </body>
 
 </html>
