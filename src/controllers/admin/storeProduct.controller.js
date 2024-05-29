@@ -85,10 +85,22 @@ module.exports = (req, res) => {
   } else {
     const old = req.body
     const errorsMapped = errors.mapped();
-    res.render("./admin/addProduct",{
-      errors: errorsMapped,
-      old: old,
-  })
+    db.category.findAll()
+    .then(category => {
+
+      res.render(
+        "admin/addProduct",
+        { category, errors: errorsMapped, old: req.body }
+        
+      );
+
+    })
+
+
+    // res.render("./admin/addProduct",{
+    //   errors: errorsMapped,
+    //   old: old,
+  
     // const productPromise = db.product.findByPk(id);
     // Promise.all([productPromise]).then(([product]) => {
     //   res.render(

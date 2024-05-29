@@ -20,27 +20,26 @@
                 <!-- /boton volver-->
                 <div class="row ">
                     <div class="col-12 ">
-                        <form action="/admin/crear-producto/" method="post" enctype="multipart/form-data">
+                        <form action="/admin/crear-producto/" method="post" enctype="multipart/form-data"
+                            id="form-create-product">
                             <div class="row justify-content-center">
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
                                     <h5>INFORMACIÓN BÁSICA:</h5>
                                 </div>
                                 <!-- Name -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="name">Nombre <span class="required-custom"><%-
-                                                locals.errors?.name?.msg %></span></label>
+                                    <label class="form-label" for="name">Nombre <span
+                                            class="field-required text-danger"></span></label>
                                     <input class="form-control" type="text" id="name" name="name"
                                         placeholder="Introduce el nombre del juguete" value="<%= locals.old?.name %>">
-                                    <p class="text-danger showLength">
-                                        <%=locals.errors?.name?.msg%>
-
+                                    <p class="text-danger error-name">
+                                        <%-locals.errors?.name?.msg%>
                                     </p>
                                 </div>
                                 <!-- /Name -->
                                 <!-- manufacturer -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="manufacturer">Fabricante <span
-                                            class="required-custom">*</span></label>
+                                    <label class="form-label" for="manufacturer">Fabricante</label>
                                     <input type="text" class="form-control" id="manufacturer" name="manufacturer"
                                         placeholder="Especifica el fabricante del juguete"
                                         value="<%= locals.old?.manufacturer %>">
@@ -48,18 +47,20 @@
                                 <!-- /manufacturer -->
                                 <!-- mark -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="mark">Marca <span
-                                            class="required-custom">*</span></label>
+                                    <label class="form-label" for="mark">Marca </label>
                                     <input class="form-control" type="text" id="mark" name="mark"
                                         placeholder="Ingresa la marca del juguete" value="<%= locals.old?.mark %>">
                                 </div>
                                 <!-- /mark -->
                                 <!-- sku -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="sku">SKU <span class="required-custom"><%-
-                                                locals.errors?.sku?.msg %></span></label>
+                                    <label class="form-label" for="sku">SKU <span
+                                        class="field-required text-danger"></span></label>
                                     <input type="text" class="form-control" id="sku" name="sku"
                                         placeholder="Escribe el código SKU del juguete" value="<%= locals.old?.sku %>">
+                                    <p class="text-danger error-sku">
+                                        <%- locals.errors?.sku?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /sku -->
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
@@ -75,7 +76,7 @@
 
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="available">Disponible <span
-                                            class="required-custom"><%- locals.errors?.available?.msg %></span></label>
+                                        class="field-required text-danger"></span></label>
                                     <select class="form-select" id="available" name="available"
                                         value="<%= locals.old?.available %>">
                                         <option <%=locals.old?.available==='' ? "selected" : null %> hidden value=""
@@ -85,12 +86,14 @@
                                         <option <%=locals.old?.available==='No' ? "selected" : null %> value="No">No
                                         </option>
                                     </select>
+                                    <p class="text-danger error-available">
+                                        <%- locals.errors?.available?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /available -->
                                 <!-- collection -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="collection">Colección <span
-                                            class="required-custom">*</span></label>
+                                    <label class="form-label" for="collection">Colección </label>
                                     <input type="text" class="form-control" id="collection" name="collection"
                                         placeholder="Describe la colección a la que pertenece el juguete"
                                         value="<%= locals.old?.collection%>">
@@ -98,40 +101,31 @@
                                 <!-- /collection -->
                                 <!-- stock -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="stock">Cantidad <span class="required-custom"><%-
-                                                locals.errors?.stock?.msg %></span></label>
+                                    <label class="form-label" for="stock">Cantidad <span
+                                        class="field-required text-danger"></span></label>
                                     <input type="number" class="form-control" id="stock" name="stock"
                                         placeholder="Indica la cantidad de unidades" value="<%= locals.old?.stock %>">
+                                    <p class="text-danger error-stock">
+                                        <%- locals.errors?.stock?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /stock -->
                                 <!-- category -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="category">Categoria <span class="required-custom"><%-
-                                                locals.errors?.categoryId?.msg %></span></label>
-                                    <select class="form-select" id="category" name="categoryId">
-                                        <option <%=locals.old?.categoryId==='' ? "selected" : null %> hidden
-                                            value="">Selecciona una categoria</option>
-                                        <option <%=locals.old?.categoryId==='1' ? "selected" : null %>
-                                            value="1">Educativos</option>
-                                        <option <%=locals.old?.categoryId==='2' ? "selected" : null %>
-                                            value="2">Juguetes de construcción</option>
-                                        <option <%=locals.old?.categoryId==='3' ? "selected" : null %> value="3">Muñecas
-                                            y figuras de acción</option>
-                                        <option <%=locals.old?.categoryId==='4' ? "selected" : null %> value="4">Juegos
-                                            de mesa y cartas</option>
-                                        <option <%=locals.old?.categoryId==='5' ? "selected" : null %>
-                                            value="5">Juguetes de ciencia y experimentación</option>
-                                        <option <%=locals.old?.categoryId==='6' ? "selected" : null %>
-                                            value="6">Juguetes al aire libre</option>
-                                        <option <%=locals.old?.categoryId==='7' ? "selected" : null %>
-                                            value="7">Electrónicos y tecnológicos</option>
-                                        <option <%=locals.old?.categoryId==='8' ? "selected" : null %> value="8">Mixto
-                                        </option>
-                                        <!-- Esta es la línea agregada -->
+                                    <label class="form-label" for="category">Categoria <span
+                                        class="field-required text-danger"></span></label>
+                                    <select class="form-select" id="category" aria-label="Desplegar las opciones"
+                                        name="categoryId">
+                                        <option value="" selected hidden>Selecciona una categoria</option>
 
+                                        <% category.forEach(c=> { %>
+                                            <option <%=+locals.old?.categoryId===c.id ? "selected" : null %> value="<%=
+                                                    c.id %>"><%= c.name %>
+                                            </option>
+                                            <% }) %>
                                     </select>
-                                    <p class="invalid-feedback">
-
+                                    <p class="text-danger error-category">
+                                        <%-locals.errors?.categoryId?.msg %>
                                     </p>
                                 </div>
                                 <!-- /category -->
@@ -142,16 +136,18 @@
 
                                 <!-- Price -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="price">Precio <span class="required-custom"><%-
-                                                locals.errors?.price?.msg %></span></label>
-                                    <input type="number" class="form-control" id="price" name="price"
+                                    <label class="form-label" for="price">Precio <span
+                                        class="field-required text-danger"></span></label>
+                                    <input type="text" class="form-control" id="price" name="price"
                                         placeholder="Indica el precio del juguete" value="<%= locals.old?.price %>">
+                                    <p class="text-danger error-price">
+                                        <%- locals.errors?.price?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Price -->
                                 <!-- Line -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="line">Línea <span
-                                            class="required-custom">*</span></label>
+                                    <label class="form-label" for="line">Línea </label>
                                     <input type="text" class="form-control" id="line" name="line"
                                         placeholder="¿A qué línea pertenece el juguete?"
                                         value="<%= locals.old?.line %>">
@@ -162,8 +158,7 @@
                                 </div>
                                 <!-- Character -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="character">Personaje <span
-                                            class="required-custom">*</span></label>
+                                    <label class="form-label" for="character">Personaje </label>
                                     <input type="text" class="form-control" id="character" name="character"
                                         placeholder="Nombre del personaje del juguete"
                                         value="<%= locals.old?.character %>">
@@ -171,8 +166,7 @@
                                 <!-- /Character -->
                                 <!-- Character Versión -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="characterVersion">Versión del Personaje <span
-                                            class="required-custom">*</span></label>
+                                    <label class="form-label" for="characterVersion">Versión del Personaje </label>
                                     <input type="text" class="form-control" id="characterVersion"
                                         name="characterVersion" placeholder="Especifica la versión del personaje"
                                         value="<%= locals.old?.characterVersion %>">
@@ -187,7 +181,7 @@
                             </div> -->
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="minAge">Edad Mínima
-                                        Recomendada <span class="required-custom">*</span></label>
+                                        Recomendada </label>
                                     <select class="form-select" id="minAge" name="minAge">
                                         <option <%=locals.old?.minAge==='' ? "selected" : null %> hidden value="">¿Cuál
                                             es la edad mínima recomendada para este juguete?
@@ -196,7 +190,7 @@
                                         </option>
                                         <option <%=locals.old?.minAge==='1-3' ? "selected" : null %> value="1-3">1-3
                                             años</option>
-                                        <option <%=locals.old?.minAge==='3-6' ? "selected" : null %> value="3-6">3-6
+                                     <option <%=locals.old?.minAge==='3-6' ? "selected" : null %> value="3-6">3-6
                                             años</option>
                                         <option <%=locals.old?.minAge==='6-9' ? "selected" : null %> value="6-9">6-9
                                             años</option>
@@ -242,8 +236,7 @@
                             </div> -->
 
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="materials">Materiales <span
-                                            class="required-custom">*</span></label>
+                                    <label class="form-label" for="materials">Materiales </label>
                                     <select class="form-select" id="materials" name="materials">
                                         <option selected hidden value="">¿Cuál es el material del que está hecho el
                                             juguete?</option>
@@ -372,28 +365,34 @@
                                     <input class="form-control" id="selectPicProduct" type="file" name="firstImg"
                                         accept="image/*"><img src="/images/products/default-image.jpg" alt=""
                                         class="no_img" id="ProdPictureForm">
+                                    <p class="text-danger col-12 err-img-principal">
+                                        <%= locals.errors?.firstImg?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Primary images-->
                                 <!-- Secondary images-->
                                 <div class="col-12 col-md-10 col-lg-5 mb-3">
                                     <label for="secondImg" class="form-label">Selecciona las imágenes
-                                        secundarias del juguete <span class="required-custom">*</span></label>
+                                        secundarias del juguete</label>
                                     <input class="form-control" id="secondImg" type="file" name="secondImg" multiple
                                         accept="image/*">
+                                    <p class="text-danger col-12 err-img-secondary">
+                                        <%= locals.errors?.secondImg?.msg %>
+                                    </p>
                                 </div>
                                 <!-- /Secondary images-->
                                 <!-- Description -->
                                 <div class="col-12 col-md-10 mb-3">
                                     <label class="form-label" for="description">Descripción <span
-                                            class="required-custom">*</span></label>
+                                        class="field-required text-danger"></span></label>
                                     <textarea class="form-control" id="description" name="description" rows="3"
                                         placeholder="Escribe una descripción detallada del juguete"></textarea>
-                                    <p class="text-danger showLength-description">
-                                        <%=locals.errors?.name?.msg%>
-
+                                    <p class="text-danger error-description">
+                                        <%=locals.errors?.description?.msg%>
                                     </p>
                                 </div>
                                 <!-- /Description -->
+                                <p class="text-danger col-12 text-center err-form-general"></p>
                                 <!-- Button-->
                                 <div
                                     class="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
@@ -402,6 +401,7 @@
                                 </div>
                                 <!-- /Button-->
                             </div>
+
                         </form>
                     </div>
                 </div>
