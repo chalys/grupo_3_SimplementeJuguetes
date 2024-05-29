@@ -55,7 +55,7 @@
                                 <!-- sku -->
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="sku">SKU <span
-                                        class="field-required text-danger"></span></label>
+                                            class="field-required text-danger"></span></label>
                                     <input type="text" class="form-control" id="sku" name="sku"
                                         placeholder="Escribe el código SKU del juguete" value="<%= locals.old?.sku %>">
                                     <p class="text-danger error-sku">
@@ -73,10 +73,10 @@
                                 <input type="text" class="form-control" id="available" name="available"
                                     placeholder="Introduzca la disponibilidad" required>
                             </div> -->
-
+                                <!-- available -->
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="available">Disponible <span
-                                        class="field-required text-danger"></span></label>
+                                            class="field-required text-danger"></span></label>
                                     <select class="form-select" id="available" name="available"
                                         value="<%= locals.old?.available %>">
                                         <option <%=locals.old?.available==='' ? "selected" : null %> hidden value=""
@@ -102,7 +102,7 @@
                                 <!-- stock -->
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="stock">Cantidad <span
-                                        class="field-required text-danger"></span></label>
+                                            class="field-required text-danger"></span></label>
                                     <input type="number" class="form-control" id="stock" name="stock"
                                         placeholder="Indica la cantidad de unidades" value="<%= locals.old?.stock %>">
                                     <p class="text-danger error-stock">
@@ -113,7 +113,7 @@
                                 <!-- category -->
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="category">Categoria <span
-                                        class="field-required text-danger"></span></label>
+                                            class="field-required text-danger"></span></label>
                                     <select class="form-select" id="category" aria-label="Desplegar las opciones"
                                         name="categoryId">
                                         <option value="" selected hidden>Selecciona una categoria</option>
@@ -137,7 +137,7 @@
                                 <!-- Price -->
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="price">Precio <span
-                                        class="field-required text-danger"></span></label>
+                                            class="field-required text-danger"></span></label>
                                     <input type="text" class="form-control" id="price" name="price"
                                         placeholder="Indica el precio del juguete" value="<%= locals.old?.price %>">
                                     <p class="text-danger error-price">
@@ -190,7 +190,7 @@
                                         </option>
                                         <option <%=locals.old?.minAge==='1-3' ? "selected" : null %> value="1-3">1-3
                                             años</option>
-                                     <option <%=locals.old?.minAge==='3-6' ? "selected" : null %> value="3-6">3-6
+                                        <option <%=locals.old?.minAge==='3-6' ? "selected" : null %> value="3-6">3-6
                                             años</option>
                                         <option <%=locals.old?.minAge==='6-9' ? "selected" : null %> value="6-9">6-9
                                             años</option>
@@ -266,7 +266,6 @@
                                             value="otros">Otros</option>
                                     </select>
                                 </div>
-
                                 <!-- /materials-->
                                 <!-- Initial Scale -->
                                 <div class="col-12 col-md-5 mb-3">
@@ -384,7 +383,7 @@
                                 <!-- Description -->
                                 <div class="col-12 col-md-10 mb-3">
                                     <label class="form-label" for="description">Descripción <span
-                                        class="field-required text-danger"></span></label>
+                                            class="field-required text-danger"></span></label>
                                     <textarea class="form-control" id="description" name="description" rows="3"
                                         placeholder="Escribe una descripción detallada del juguete"></textarea>
                                     <p class="text-danger error-description">

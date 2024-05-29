@@ -1,13 +1,24 @@
 
 const db = require('../../dataBase/models');
-const product = require('../../dataBase/models/product');
+//const product = require('../../dataBase/models/product');
 module.exports = (req,res) => {
 
     const { id } = req.params;
-db.product.findByPk(id).then((product)=>{
+    const categoryPromise = db.category.findAll();
+    const productPromise = db.product.findByPk(id)
+
+    Promise.all([categoryPromise, productPromise])
+    .then(([category, product]) => {
+  
+      res.render("admin/editProduct", { product, category}
+      );
+    })
+
+
+//db.product.findByPk(id).then((product)=>{
   // return res.send(product)
-  res.render("./admin/editProduct",{product})
-})
+  //res.render("./admin/editProduct",{product})
+//})
 }
 
 

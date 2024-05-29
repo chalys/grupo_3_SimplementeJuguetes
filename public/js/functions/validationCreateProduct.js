@@ -29,7 +29,7 @@ const inputBobbleHeadNo = document.querySelector("#bobblehead_no");
 const inputDescription = document.querySelector("[name='description']");
 const inputImagePrincipal = document.querySelector("[name='firstImg']");
 const inputImageSecondary = document.querySelector("[name='secondImg']");
-const exRegAlfanumeric = /^[a-zA-Z0-9\s]*$/;
+const exRegAlfanumeric = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s]*$/;
 
 /* EVENTOS DE FORMULARIO */
 /* focus */
