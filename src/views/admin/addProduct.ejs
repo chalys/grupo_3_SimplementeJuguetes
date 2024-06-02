@@ -38,7 +38,7 @@
                                     <label class="form-label" for="manufacturer">Fabricante <span
                                             class="required-custom">*</span></label>
                                     <input type="text" class="form-control" id="manufacturer" name="manufacturer"
-                                        placeholder="Especifica el fabricante del juguete">
+                                        placeholder="Especifica el fabricante del juguete" value="<%= locals.old?.manufacturer %>">
                                 </div>
                                 <!-- /manufacturer -->
                                 <!-- mark -->
@@ -46,7 +46,7 @@
                                     <label class="form-label" for="mark">Marca <span
                                             class="required-custom">*</span></label>
                                     <input class="form-control" type="text" id="mark" name="mark"
-                                        placeholder="Ingresa la marca del juguete">
+                                        placeholder="Ingresa la marca del juguete" value="<%= locals.old?.mark %>">
                                 </div>
                                 <!-- /mark -->
                                 <!-- sku -->
@@ -83,7 +83,7 @@
                                     <label class="form-label" for="collection">Colección <span
                                             class="required-custom">*</span></label>
                                     <input type="text" class="form-control" id="collection" name="collection"
-                                        placeholder="Describe la colección a la que pertenece el juguete">
+                                        placeholder="Describe la colección a la que pertenece el juguete" value="<%= locals.old?.collection%>">
                                 </div>
                                 <!-- /collection -->
                                 <!-- stock -->
@@ -137,7 +137,7 @@
                                     <label class="form-label" for="line">Línea <span
                                             class="required-custom">*</span></label>
                                     <input type="text" class="form-control" id="line" name="line"
-                                        placeholder="¿A qué línea pertenece el juguete?">
+                                        placeholder="¿A qué línea pertenece el juguete?" value="<%= locals.old?.line %>">
                                 </div>
                                 <!-- /Line -->
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
@@ -148,7 +148,7 @@
                                     <label class="form-label" for="character">Personaje <span
                                             class="required-custom">*</span></label>
                                     <input type="text" class="form-control" id="character" name="character"
-                                        placeholder="Nombre del personaje del juguete">
+                                        placeholder="Nombre del personaje del juguete" value="<%= locals.old?.character %>">
                                 </div>
                                 <!-- /Character -->
                                 <!-- Character Versión -->
@@ -157,7 +157,7 @@
                                             class="required-custom">*</span></label>
                                     <input type="text" class="form-control" id="characterVersion"
                                         name="characterVersion" placeholder="Especifica la versión del personaje"
-                                        >
+                                        value="<%= locals.old?.characterVersion %>"     >
                                 </div>
                                 <!-- /Character Versión -->
                                 <!-- Recommended Minimum Age -->
@@ -186,21 +186,21 @@
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="height">Alto</label>
                                     <input type="number" class="form-control" id="height" name="height" min="0"
-                                        placeholder="Ingresa la altura del juguete en centímetros" >
+                                        placeholder="Ingresa la altura del juguete en centímetros" value="<%= locals.old?.height %>">
                                 </div>
                                 <!-- /height -->
                                 <!-- depth -->
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="depth">Profundidad</label>
                                     <input type="number" class="form-control" id="depth" name="depth" min="0"
-                                        placeholder="Ingresa la profundidad del juguete en centímetros" >
+                                        placeholder="Ingresa la profundidad del juguete en centímetros" value="<%= locals.old?.depth %>">
                                 </div>
                                 <!-- /depth-->
                                 <!-- width -->
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="width">Ancho</label>
                                     <input type="number" class="form-control" id="width" name="width" min="0"
-                                        placeholder="Ingresa el ancho del juguete en centímetros" >
+                                        placeholder="Ingresa el ancho del juguete en centímetros" value="<%= locals.old?.width %>">
                                 </div>
                                 <!-- /width -->
                                 <!-- materials -->
@@ -233,7 +233,7 @@
                                 <div class="col-12 col-md-5 mb-3">
                                     <label class="form-label" for="initialScale">Escala inicial</label>
                                     <input type="text" class="form-control" id="scale" name="scale"
-                                        min="0" placeholder="Indica la escala del juguete (por ejemplo, 1:12)">
+                                        min="0" placeholder="Indica la escala del juguete (por ejemplo, 1:12)" value="<%= locals.old?.scale %>">
                                 </div>
                                 <!-- /Initial Scale -->
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
@@ -244,15 +244,15 @@
                                         <!-- Articulated -->
                                         <div class="col-12 col-md-6 col-lg-4 mb-3">
                                             <label class="form-check-label">¿Es articulado?</label>
-                                            <div class="form-check-container d-flex justify-content-evenly">
+                                            <div class="form-check-container d-flex justify-content-evenly" >
                                                 <div>
                                                     <input type="radio" id="articulated_yes" name="articulated"
-                                                        value="yes" checked>
+                                                        value="yes" <%=locals.old?.articulated=== 'yes' ? "checked" : null %>>
                                                     <label for="articulated_yes">Sí</label>
                                                 </div>
                                                 <div>
                                                     <input type="radio" id="articulated_no" name="articulated"
-                                                        value="no">
+                                                        value="no" <%=locals.old?.articulated=== 'no' ? "checked" : null %>>
                                                     <label for="articulated_no">No</label>
                                                 </div>
                                             </div>
@@ -263,12 +263,12 @@
                                             <div class="form-check-container d-flex justify-content-evenly">
                                                 <div>
                                                     <input type="radio" id="collectable_yes" name="collectable"
-                                                        value="yes" checked>
+                                                        value="yes"  <%=locals.old?.collectable=== 'yes' ? "checked" : null %>>
                                                     <label for="collectable_yes">Sí</label>
                                                 </div>
                                                 <div>
                                                     <input type="radio" id="collectable_no" name="collectable"
-                                                        value="no">
+                                                        value="no" <%=locals.old?.collectable=== 'no' ? "checked" : null %>>
                                                     <label for="collectable_no">No</label>
                                                 </div>
                                             </div>
@@ -279,12 +279,12 @@
                                             <div class="form-check-container d-flex justify-content-evenly">
                                                 <div>
                                                     <input type="radio" id="accessories_yes" name="accessories"
-                                                        value="yes" checked>
+                                                        value="yes"  <%=locals.old?.accessories=== 'yes' ? "checked" : null %>>
                                                     <label for="accessories_yes">Sí</label>
                                                 </div>
                                                 <div>
                                                     <input type="radio" id="accessories_no" name="accessories"
-                                                        value="no">
+                                                        value="no" <%=locals.old?.accessories=== 'no' ? "checked" : null %>>
                                                     <label for="accessories_no">No</label>
                                                 </div>
                                             </div>
@@ -295,11 +295,11 @@
                                             <div class="form-check-container d-flex justify-content-evenly">
                                                 <div>
                                                     <input type="radio" id="bobblehead_yes" name="bobbleHead"
-                                                        value="yes" checked>
+                                                        value="yes"  <%=locals.old?.bobbleHead=== 'yes' ? "checked" : null %>>
                                                     <label for="bobblehead_yes">Sí</label>
                                                 </div>
                                                 <div>
-                                                    <input type="radio" id="bobblehead_no" name="bobbleHead" value="no">
+                                                    <input type="radio" id="bobblehead_no" name="bobbleHead" value="no"  <%=locals.old?.bobbleHead=== 'no' ? "checked" : null %>>
                                                     <label for="bobblehead_no">No</label>
                                                 </div>
                                             </div>
@@ -312,10 +312,11 @@
                                 </div>
                                 <!-- Primary images-->
                                 <div class="col-12 col-md-10 col-lg-5 mb-3">
-                                    <label for="firstImg" class="form-label">Selecciona la images
+                                    <label for="firstImg" class="form-label">Selecciona la imagen
                                         principal del juguete<span class="required-custom">*</span></label>
-                                    <input class="form-control" id="firstImg" type="file" name="firstImg"
-                                        accept="image/*" >
+                                    <input class="form-control" id="selectPicProduct" type="file" name="firstImg"
+                                        accept="image/*" ><img src="/images/products/default-image.jpg"
+                                        alt="" class="no_img" id="ProdPictureForm">
                                 </div>
                                 <!-- /Primary images-->
                                 <!-- Secondary images-->
@@ -348,10 +349,9 @@
             </main>
             <!-- /main -->
             <!-- scripts -->
+            <script src="/js/imageSelectorProduct.js"></script>
             <%- include("../partials/scripts") %>
                 <!-- /scripts -->
         </body>
 
 </html>
-
-<script src=""></script

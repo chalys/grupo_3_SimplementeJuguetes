@@ -19,8 +19,17 @@ const fieldName = check("name")
   .isNumeric()
   .withMessage('El precio debe ser un numero <i class="fa-solid fa-triangle-exclamation"></i>')
   .bail()
-  .isInt({ min: 0 })
-  .withMessage('El precio debe ser positivo <i class="fa-solid fa-triangle-exclamation"></i>')
+  .custom((value, { req }) => {
+    const valor = req.body?.price
+    if (valor == '') {
+      return true
+    } else {
+      if (valor < 0) {
+        throw new Error('El precio debe ser positivo <i class="fa-solid fa-triangle-exclamation"></i>')
+      }
+    }
+    return true
+  })
   .bail()
   .isDecimal()
   .withMessage("El precio debe ser decimal <i class='fa-solid fa-triangle-exclamation'></i>");

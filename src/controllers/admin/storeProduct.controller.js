@@ -1,7 +1,7 @@
 const path = require("path");
 // 1° traer todos los productos existentes en mi base de datos.
 const fs = require("fs");
-const { loadData } = require("../../database");
+// const { loadData } = require("../../database");
 const { validationResult, body } = require("express-validator");
 
 const db = require("../../dataBase/models");

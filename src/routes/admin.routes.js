@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const { uploadProducts } = require("../middlewares/uploadFiles");
-const {productsValidationStore} = require("../middlewares/validations")
+const {productsValidationStore,productsValidationUpdate} = require("../middlewares/validations")
 
 // ************ Controller Require ************
 const {
@@ -35,12 +35,12 @@ router.post(
 //*** EDIT PRODUCT ***/
 router.get("/editar-producto/:id", updateProduct);
 router.put("/editar-producto/:id",
-  /*
+  
   uploadProducts.fields([
-    { name: "imagePrincipal" },
-    { name: "imagesSecondary" },
+    { name: "firstImg" },
+    { name: "secondImg" },
 ]),
-  productsValidationUpdate,*/
+  productsValidationUpdate,
   editProduct
 );
 
