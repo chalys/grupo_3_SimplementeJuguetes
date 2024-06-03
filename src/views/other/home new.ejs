@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head", {title: 'Inicio' }) %>
+
+    <body>
+        <!--   header    -->
+        <%- include("../partials/header") %>
+            <!--   /header    -->
+            <style>
+                .bg-red {
+                    background-color: red !important;
+                }
+            </style>
+            <nav class="navbar navbar-expand-lg bg-red">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">
+                        <figure class="pandaHeader">
+                            <img src="/images/logo/panda-logo.png" alt="Simplemente-Juguetes" width="30" height="24" class="d-inline-block align-text-top">
+                        </figure>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownJuegos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Juegos y Juguetes
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownJuegos">
+                                    <li><a class="dropdown-item" href="#">Opción 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEdades" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Edades
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownEdades">
+                                    <li><a class="dropdown-item" href="#">0-2 años</a></li>
+                                    <li><a class="dropdown-item" href="#">3-5 años</a></li>
+                                    <li><a class="dropdown-item" href="#">6-8 años</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPersonajes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Personajes
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownPersonajes">
+                                    <li><a class="dropdown-item" href="#">Personaje 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Personaje 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Personaje 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                            <button class="btn btn-outline-success" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Favoritos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ingresar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="bi bi-cart"></i> Carrito
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+
+</html>
