@@ -29,7 +29,8 @@
                                 </div>
                                 <!-- Name -->
                                 <div class="col-12 col-md-5 col-lg-5 mb-3">
-                                    <label class="form-label" for="userName">Nombre de usuario</label>
+                                    <label class="form-label" for="userName">Nombre de usuario <span
+                                        class="field-required text-danger"></span></label>
                                     <input class="form-control" type="text" id="userName" name="userName"
                                         placeholder="Introduce nombre y apellido" value="<%= user.userName %>" disabled>
                                 </div>
@@ -53,9 +54,9 @@
                                         class="form-control <%= locals.errors?.name ? 'is-invalid' : (locals.old?.name ? 'is-valid' : '') %>"
                                         type="text" id="name" name="name" placeholder="Introduce nombre y apellido"
                                         value="<%= locals.old?.name || locals.old?.name === '' ? locals.old?.name : user.name %>">
-                                    <p class="invalid-feedback p-0 m-0">
-                                        <%= locals.errors?.name?.msg %>
-                                    </p>
+                                        <p class="text-danger error-name">
+                                            <%-locals.errors?.name?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /Nombre y Apellido -->
                                 <!-- Avatar-->
@@ -73,6 +74,9 @@
                                                 <%= locals.errors.uploadError.message %>
                                             </p>
                                         <% } %>
+                                        <p class="text-danger col-12 err-picture">
+                                            <%= locals.errors?.userPicture.msg %>
+                                        </p>
                                 </div>
                                 <!-- /Avatar-->
                                 <!-- Provincia -->
@@ -100,13 +104,14 @@
                                 <!-- /Provincia -->
                                 <!-- Localidad -->
                                 <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="locality">Localidad</label>
+                                    <label class="form-label" for="locality">Localidad<span
+                                        class="field-required text-danger"></span></label>
                                     <input
                                         class="form-control <%= locals.errors?.locality ? 'is-invalid' : (locals.old?.locality ? 'is-valid' : '') %>"
                                         type="text" id="locality" name="locality" placeholder="Introduce la localidad"
                                         value="<%= locals.old?.locality || locals.old?.locality === '' ? locals.old?.locality : user.locality %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.locality?.msg %>
+                                     <p class="text-danger col-12 error-locality">
+                                        <%= locals.errors?.locality.msg %>
                                     </p>
                                 </div>
                                 <!-- /Localidad -->
@@ -117,9 +122,9 @@
                                         class="form-control <%= locals.errors?.postal ? 'is-invalid' : (locals.old?.postal ? 'is-valid' : '') %>"
                                         type="text" id="postal" name="postal" placeholder="Introduce el código postal"
                                         value="<%= locals.old?.postal || locals.old?.postal === '' ? locals.old.postal : user.postal %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.postal?.msg %>
-                                    </p>
+                                        <p class="text-danger col-12 error-postal">
+                                            <%= locals.errors?.postal.msg %>
+                                        </p>
                                 </div>
                                 <!-- /Codigo Postal -->
                                 <!-- Street -->
@@ -129,9 +134,9 @@
                                         class="form-control <%= locals.errors?.street ? 'is-invalid' : (locals.old?.street ? 'is-valid' : '') %>"
                                         type="text" id="street" name="street" placeholder="Introduce la dirección"
                                         value="<%= locals.old?.street || locals.old?.street === ''? locals.old.street : user.street %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.street?.msg %>
-                                    </p>
+                                        <p class="text-danger col-12 error-street">
+                                            <%= locals.errors?.street.msg %>
+                                        </p>
                                 </div>
                                 <!-- /Street -->
                                 <!-- streetNumber -->
@@ -142,9 +147,9 @@
                                         type="number" id="streetNumber" name="streetNumber"
                                         placeholder="Introduce la numeración"
                                         value="<%= locals.old?.streetNumber || locals.old?.streetNumber === '' ? locals.old.streetNumber : user.streetNumber %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.streetNumber?.msg %>
-                                    </p>
+                                        <p class="text-danger error-streetNumber">
+                                            <%-locals.errors?.streetNumber?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /streetNumber -->
                                 <!-- floor -->
@@ -154,9 +159,9 @@
                                         class="form-control <%= locals.errors?.floor ? 'is-invalid' : (locals.old?.floor ? 'is-valid' : '') %>"
                                         type="number" id="floor" name="floor" placeholder="Introduce el número de piso"
                                         value="<%= locals.old?.floor || locals.old?.floor === '' ? locals.old.floor : user.floor %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.floor?.msg %>
-                                    </p>
+                                        <p class="text-danger error-floor">
+                                            <%-locals.errors?.floor?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /floor -->
                                 <!-- Between 1 -->
@@ -168,9 +173,9 @@
                                         type="text" id="betweenSt1" name="betweenSt1"
                                         placeholder="Introduce el nombre de calle"
                                         value="<%= locals.old?.betweenSt1 || locals.old?.betweenSt1 === '' ? locals.old.betweenSt1 : user.betweenSt1 %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.betweenSt1?.msg %>
-                                    </p>
+                                        <p class="text-danger error-betweenSt1">
+                                            <%-locals.errors?.betweenSt1?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /Between 1 -->
                                 <!-- Between 2 -->
@@ -181,9 +186,9 @@
                                         type="text" id="betweenSt2" name="betweenSt2"
                                         placeholder="Introduce el nombre de calle"
                                         value="<%= locals.old?.betweenSt2 || locals.old?.betweenSt2 === '' ? locals.old.betweenSt2 : user.betweenSt2 %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.betweenSt2?.msg %>
-                                    </p>
+                                        <p class="text-danger error-betweenSt2">
+                                            <%-locals.errors?.betweenSt2?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /Between 2 -->
                                 <!-- phoneNumber -->
@@ -194,9 +199,9 @@
                                         type="text" id="phoneNumber" name="phoneNumber"
                                         placeholder="Introduce el teléfono de contacto"
                                         value="<%= locals.old?.phoneNumber || locals.old?.phoneNumber === '' ? locals.old.phoneNumber : user.phoneNumber %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.phoneNumber?.msg %>
-                                    </p>
+                                        <p class="text-danger error-phoneNumber">
+                                            <%-locals.errors?.phoneNumber?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /phoneNumber -->
                                 <!-- indications -->
@@ -207,11 +212,12 @@
                                         type="text" id="indications" name="indications"
                                         placeholder="Introduce las indicaciones adicionales"
                                         value="<%= locals.old?.indications || locals.old?.indications === '' ? locals.old.indications : user.indications %>">
-                                    <p class="invalid-feedback">
-                                        <%= locals.errors?.indications?.msg %>
-                                    </p>
+                                        <p class="text-danger error-indications">
+                                            <%-locals.errors?.indications?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /indications -->
+                                <p class="text-danger col-12 text-center err-form-general"></p>
                                 <!-- Botones -->
                                 <div
                                     class="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
@@ -235,6 +241,9 @@
             <!-- Script Bootstrap -->
             <%- include("../partials/scripts") %>
                 <!-- /Script Bootstrap -->
+                   <!-- /scripts -->
+             <script src="/js/functions/validationEditUser.js"></script>
+        
     </body>
 
 </html>

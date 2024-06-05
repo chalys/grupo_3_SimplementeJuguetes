@@ -20,7 +20,7 @@
                 <!-- /boton volver-->
                 <div class="row ">
                     <div class="col-12 ">
-                        <form action="/admin/editar-producto/<%= product.id %>?_method=PUT" method="post"
+                        <form id="form-update-product"> action="/admin/editar-producto/<%= product.id %>?_method=PUT" method="post"
                             enctype="multipart/form-data">
                             <div class="row justify-content-center">
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
@@ -40,7 +40,9 @@
                                 <!-- /Name -->
                                 <!-- manufacturer -->
                                 <div class="col-12 col-md-5 mb-3">
-                                    <label class="form-label" for="manufacturer">Fabricante </label>
+                                    <label class="form-label" for="manufacturer">Fabricante <span
+                                        class="field-required text-danger"></span></label>
+                                    
                                     <input value="<%= product.manufacturer %>" type="text" class="form-control"
                                         id="manufacturer" name="manufacturer"
                                         placeholder="Especifica el fabricante del juguete">
@@ -52,7 +54,9 @@
                                     <input class="form-control" type="text" id="mark" name="mark"
                                         placeholder="Ingresa la marca del juguete"
                                         value="value=<%= locals.old?.mark || locals.old?.mark === "" ? locals.old?.mark : product.mark %>">
-                                </div>
+                                       
+
+                                    </div>
                                 <!-- /mark -->
                                 <!-- sku -->
                                 <div class="col-12 col-md-5 mb-3">
@@ -411,6 +415,8 @@
             <%- include("../partials/scripts") %>
                 <!-- /scripts -->
                 <script src="/js/functions/validationProduct.js"></script>
+             <!-- /scripts -->
+             <script src="/js/functions/validationEditProduct.js"></script>
         </body>
 
 </html>

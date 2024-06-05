@@ -161,7 +161,7 @@ module.exports = (req, res) => {
 
     Promise.all([productPromise, categoryPromise]).then(
       ([product, category]) => {
-        res.render("admin/updateProduct", {
+        res.render("admin/editProduct", {
           product,
           category,
           errors: errorsMapped,
