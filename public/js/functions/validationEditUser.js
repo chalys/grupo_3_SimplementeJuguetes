@@ -1,7 +1,7 @@
 const inputName = document.querySelector("#name");
 const inputPicture = document.querySelector("#userPicture");
 const inputLocality = document.querySelector("#locality");
-const inputPostal = document.querySelector("#postal");
+const inputPostal = document.querySelector("#postal"); //ERROR
 const inputStreet= document.querySelector("#street");
 const inputStreetNumber = document.querySelector("#streetNumber");
 const inputFloor = document.querySelector("#floor");
@@ -9,17 +9,17 @@ const inputBetweenSt1 = document.querySelector("#betweenSt1");
 const inputBetweenSt2 = document.querySelector("#betweenSt2");
 const inputPhoneNumber = document.querySelector("#phoneNumber");
 //const inputIndications = document.querySelector("#indications");
-
 const exRegLettersOnly = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 
 window.addEventListener("load", () => {
-    let existError = true;
+  let existError = true;
 
   const statusInvalid = (elementErr, msgErr, elementInput) => {
     elementErr.innerHTML = msgErr;
     elementInput.classList.add("is-invalid");
     existError = true;
   };
+
   const statusValid = (elementErr, elementInput) => {
     elementErr.innerHTML = null;
     elementInput.classList.add("is-valid");
@@ -30,7 +30,7 @@ window.addEventListener("load", () => {
   /* validation input name*/
   const errName = document.querySelector(".error-name");
   inputName.addEventListener("blur", function () {
-    const value = this.value.trim(); // quita espacios
+    const value = this.value.trim(); 
   switch (true) {
     case !value.length:
       statusInvalid(errName, `El nombre es requerido`, this);
@@ -58,7 +58,7 @@ window.addEventListener("load", () => {
   /*end validation input name */
 
   /* validation input picture */
-  const errPicture = document.querySelector(".err-picture");
+  const errPicture = document.querySelector(".err-userPicture");
   inputPicture.addEventListener("change", function () {
     const regExpFiles = /.png|.jpg|.jpeg/i;
     const files = Array.from(this.files);
@@ -126,39 +126,12 @@ inputLocality.addEventListener("focus", function () {
   this.classList.remove("is-invalid");
 });
 
-const inputPostal = document.querySelector("#postal");
-
-/* validation input postal */
-const errPostal = document.querySelector(".error-postal");
-const exRegPostal = /^[A-Z]\d{6}$/;
-
-inputPostal.addEventListener("blur", function () {
-  const value = this.value.trim(); // quita espacios
-  switch (true) {
-    case !value.length:
-      statusInvalid(errPostal, "El código postal es requerido", this);
-      break;
-    case !exRegPostal.test(value):
-      statusInvalid(errPostal, "El código postal debe ser alfanumerico", this);
-      break;
-    default:
-      statusValid(errPostal, this);
-      break;
-  }
-});
-
-inputPostal.addEventListener("focus", function () {
-  errPostal.innerHTML = null;
-  this.classList.remove("is-valid");
-  this.classList.remove("is-invalid");
-});
-/* end validation input postal */
 
 
 /* validation input street*/
 const errStreet = document.querySelector(".error-street");
 inputStreet.addEventListener("blur", function () {
-  const value = this.value.trim(); // quita espacios
+  const value = this.value.trim();
 switch (true) {
   case !value.length:
     statusInvalid(errStreet, `El nombre de la calle es requerido`, this);
@@ -247,7 +220,7 @@ inputFloor.addEventListener("focus", function () {
   /* validation input beetween1*/
   const errBetweenSt1 = document.querySelector(".error-betweenSt1");
   inputBetweenSt1.addEventListener("blur", function () {
-    const value = this.value.trim(); // quita espacios
+    const value = this.value.trim(); 
   switch (true) {
     case !value.length:
       statusInvalid(errBetweenSt1, `El nombre de la calle 1 es requerido`, this);
@@ -276,7 +249,7 @@ inputFloor.addEventListener("focus", function () {
   /* validation input beetween1*/
   const errBetweenSt2 = document.querySelector(".error-betweenSt2");
   inputBetweenSt2.addEventListener("blur", function () {
-    const value = this.value.trim(); // quita espacios
+    const value = this.value.trim(); 
   switch (true) {
     case !value.length:
       statusInvalid(errBetweenSt2, `El nombre de la calle 2 es requerido`, this);
@@ -337,11 +310,12 @@ inputPhoneNumber.addEventListener("focus", function () {
   const formUpdate = document.querySelector("#form-update-user");
   const errFormGeneral = document.querySelector(".err-form-general");
   const fieldsRequired = document.querySelectorAll(".field-required");
+
   formUpdate.addEventListener("submit", function (event) {
     const isName = inputName.value?.trim();
     const isPicture = inputPicture.value?.trim();
     const isLocality = inputLocality.value?.trim();
-    const isPostal = inputPostal.value?.trim();
+    //const isPostal = inputPostal.value?.trim();
     const isStreet= inputStreet.value?.trim();
     const isStreetNumber = inputStreetNumber.value?.trim();
     const isFloor= inputFloor.value?.trim();
@@ -354,13 +328,13 @@ inputPhoneNumber.addEventListener("focus", function () {
       switch (true) {
         case !isName:
         case !isPicture:
-        case !isPostal: 
+        //case !isPostal: 
         case !isLocality:
         case !isStreet: 
         case !isStreetNumber: 
         case !isFloor: 
-        case !isisBetweenSt1: 
-        case !isisBetweenSt2: 
+        case !isBetweenSt1: 
+        case !isBetweenSt2: 
         case !isPhoneNumber: 
           existError = true;
           errFormGeneral.innerHTML = "Todos los campos son requeridos";
@@ -372,13 +346,13 @@ inputPhoneNumber.addEventListener("focus", function () {
       switch (true) {
         case !isName:
         case !isPicture:
-        case !isPostal: 
+        //case !isPostal: 
         case !isLocality:
         case !isStreet: 
         case !isStreetNumber: 
         case !isFloor: 
-        case !isisBetweenSt1: 
-        case !isisBetweenSt2: 
+        case !isBetweenSt1: 
+        case !isBetweenSt2: 
         case !isPhoneNumber: 
           existError = true;
           errFormGeneral.innerHTML = "Todos los campos son requeridos";

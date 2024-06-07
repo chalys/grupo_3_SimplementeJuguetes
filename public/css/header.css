@@ -41,47 +41,70 @@
 
 .header div.selectoresHeader select option {}
 
-.header div.busquedaHeader {
-    border-radius: 10px;
+.busquedaHeader {
     display: flex;
-    width: 20%;
-    height: 25px;
-    background: var(--blanco);
-    justify-content: space-between;
-}
-
-.header div.busquedaHeader input {
-    background: rgba(0, 0, 0, 0);
-    border: none;
-    width: 70%;
-    height: 100%;
-}
-
-.header div.busquedaHeader figure {
-    display: flex;
-    height: 100%;
-    width: 40%;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
-.header div.busquedaHeader figure i {}
+.search-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    width: 300px; 
+}
+
+/* Estilo del campo de texto */
+.search-form_input {
+    flex-grow: 1; 
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin: 0; 
+}
+
+/* Estilo del botón */
+.search-form_button {
+    padding: 8px 12px;
+    background-color: white; 
+    color: red; 
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0; 
+    cursor: pointer;
+}
+
+/* Estilo del ícono dentro del botón */
+.search-form_button i {
+    color: red; 
+}
 
 .header div.iconosHeader {
-
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+
+  
 }
 
 .header div.iconosHeader a {
     color: white;
     text-decoration: none;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    padding-right: 10px;
+    padding-left: 0px;
+    border-radius: 10px;
 }
 
 .header div.iconosHeader a i {
    color: var(--blanco);
-   margin: 20px;
+   margin: 15px;
 }
 
 .header div.ofertasYOutlet {

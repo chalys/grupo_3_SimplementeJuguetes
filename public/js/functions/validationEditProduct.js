@@ -1,6 +1,6 @@
 const inputName = document.querySelector("[name='name']");
-const inputManufacturer = document.querySelector("[name='mark']");
-const inputMark = document.querySelector("[name='mark']");
+const inputManufacturer = document.querySelector("[name='manufacturer']");
+const inputMark = document.querySelector("#mark");
 const inputSku = document.querySelector("[name='sku']");
 const inputAvailable = document.querySelector("[name='available']");
 const inputCollection = document.querySelector("[name='collection']");
@@ -59,20 +59,20 @@ window.addEventListener("load", () => {
       case !value.length:
         statusInvalid(errName, `El nombre es requerido`, this);
         break;
-      case !exRegAlfanumeric.test(value):
-        statusInvalid(errName, "El nombre debe ser alfanumérico", this);
+      case !exRegLettersOnly.test(value):
+        statusInvalid(errName, "El nombre solo debe contener letras y espacios", this);
         break;
       case value.length < 5 || value.length > 100:
         statusInvalid(
           errName,
-          "El nombre debe tener un minimo de 5 caracteres",
+          "El nombre debe tener entre 5 y 100 caracteres",
           this
         );
         break;
       default:
         statusValid(errName, this);
         break;
-    }
+      }
   });
   inputName.addEventListener("focus", function () {
     errName.innerHTML = null;
@@ -81,6 +81,8 @@ window.addEventListener("load", () => {
   });
   /*end validation input name */
 
+  
+//ERROR
 const errManufacturer = document.querySelector(".error-manufacturer");
   
 inputManufacturer.addEventListener("blur", function () {
@@ -111,6 +113,36 @@ inputManufacturer.addEventListener("focus", function () {
   this.classList.remove("is-invalid");
 });
   
+
+  /* validation input name*/
+  const errMark = document.querySelector(".error-mark");
+  inputMark.addEventListener("blur", function () {
+    const value = this.value.trim(); //quita espacios
+    switch (true) {
+      case !value.length:
+        statusInvalid(errMark, `La marca es requerida`, this);
+        break;
+      case !exRegLettersOnly.test(value):
+        statusInvalid(errMark, "La marca solo debe contener letras y espacios", this);
+        break;
+      case value.length < 5 || value.length > 50:
+        statusInvalid(
+          errMark,
+          "El nombre debe tener entre 5 y 50 caracteres",
+          this
+        );
+        break;
+      default:
+        statusValid(errMark, this);
+        break;
+      }
+  });
+  inputMark.addEventListener("focus", function () {
+    errMark.innerHTML = null;
+    this.classList.remove("is-valid");
+    this.classList.remove("is-invalid");
+  });
+  /*end validation input name */
 
   /* validation input price*/
   const errPrice = document.querySelector(".error-price");
@@ -309,48 +341,11 @@ inputManufacturer.addEventListener("focus", function () {
   });
   /* end validation input secondary image*/
 
-  /* validation input description */
-  const errDescription = document.querySelector(".error-description");
-  inputDescription.addEventListener("blur", function () {
-    const value = this.value.trim();
-    switch (true) {
-      case !value.length:
-        statusInvalid(errDescription, "La descripción es requerida", this);
-        break;
-
-      case !exRegAlfanumeric.test(value):
-        statusInvalid(
-          errDescription,
-          "La descripción debe ser alfanumérico",
-          this
-        );
-        break;
-
-      case value.length < 30 || value.length > 500:
-        statusInvalid(
-          errDescription,
-          "La descripción debe tener un mínimo de 30 y un máximo de 500 caracteres",
-          this
-        );
-        break;
-
-      default:
-        statusValid(errDescription, this);
-        break;
-    }
-  });
-
-  inputDescription.addEventListener("focus", function () {
-    this.classList.remove("is-valid");
-    this.classList.remove("is-invalid");
-    errDescription.innerHTML = null;
-  });
-  /* end validation input description */
-
+  
 
   /* FORMULARIO */
 
-  const formCreate = document.querySelector("#form-update");
+  const formCreate = document.querySelector("#form-update-product");
   const errFormGeneral = document.querySelector(".err-form-general");
   const fieldsRequired = document.querySelectorAll(".field-required");
   formCreate.addEventListener("submit", function (event) {
@@ -358,14 +353,13 @@ inputManufacturer.addEventListener("focus", function () {
     const isManufacturer = inputManufacturer.value?.trim();
     const isPrice = inputPrice.value?.trim();
     const isSku = inputSku.value?.trim();
-    const isCategory =
-      inputCategory.options[inputCategory.selectedIndex].value?.trim();
+    const isCategory = inputCategory.options[inputCategory.selectedIndex].value?.trim();
     const isStock = inputStock.value?.trim();
     const isImagePrincipal = inputImagePrincipal.files.length;
     const isImageSecondary = inputImageSecondary.files.length;
     const isDescription = inputDescription.value?.trim();
     event.preventDefault();
-    if (this.id === "form-update") {
+    if (this.id === "form-update-product") {
       switch (true) {
         case !isName:
         case !isManufacturer:
@@ -375,7 +369,6 @@ inputManufacturer.addEventListener("focus", function () {
         case !isStock:
         case !isImagePrincipal:
         //case !isImageSecondary:
-        case !isDescription:
           existError = true;
           errFormGeneral.innerHTML = "Todos los campos son requeridos";
           errFormGeneral.classList.add("alert", "alert-danger");
@@ -390,7 +383,6 @@ inputManufacturer.addEventListener("focus", function () {
         case !isSku:
         case !isCategory:
         case !isStock:
-        case !isDescription:
           existError = true;
           errFormGeneral.innerHTML = "Todos los campos son requeridos";
           errFormGeneral.classList.add("alert", "alert-danger");

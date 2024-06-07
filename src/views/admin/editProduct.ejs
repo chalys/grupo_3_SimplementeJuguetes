@@ -16,12 +16,11 @@
                 </div>
                 <!-- /title -->
                 <!-- boton volver -->
-                <div class="mb-3"><a class="btn btn-secondary a-volver-edit-product" href="/">Volver</a></div>
+                <div class="mb-3"><a class="btn btn-secondary a-volver-edit-product" href="/admin/lista-productos">Volver</a></div>
                 <!-- /boton volver-->
                 <div class="row ">
                     <div class="col-12 ">
-                        <form id="form-update-product"> action="/admin/editar-producto/<%= product.id %>?_method=PUT" method="post"
-                            enctype="multipart/form-data">
+                        <form id="form-update-product"> 
                             <div class="row justify-content-center">
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
                                     <h5>INFORMACIÓN BÁSICA:</h5>
@@ -46,6 +45,9 @@
                                     <input value="<%= product.manufacturer %>" type="text" class="form-control"
                                         id="manufacturer" name="manufacturer"
                                         placeholder="Especifica el fabricante del juguete">
+                                        <p class="text-danger error-manufacturer">
+                                            <%-locals.errors?.manufacturer?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /manufacturer -->
                                 <!-- mark -->
@@ -54,8 +56,6 @@
                                     <input class="form-control" type="text" id="mark" name="mark"
                                         placeholder="Ingresa la marca del juguete"
                                         value="value=<%= locals.old?.mark || locals.old?.mark === "" ? locals.old?.mark : product.mark %>">
-                                       
-
                                     </div>
                                 <!-- /mark -->
                                 <!-- sku -->
@@ -65,9 +65,9 @@
                                     <input type="text" class="form-control" id="sku" name="sku"
                                         placeholder="Escribe el código SKU del juguete"
                                         value="<%= locals.old?.sku || locals.old?.sku === "" ? locals.old?.sku : product.sku %>">
-                                    <p class="text-danger error-sku">
-                                        <%- locals.errors?.sku?.msg %>
-                                    </p>
+                                        <p class="text-danger error-mark">
+                                            <%-locals.errors?.mark?.msg%>
+                                        </p>
                                 </div>
                                 <!-- /sku -->
                                 <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
@@ -369,9 +369,9 @@
                                     <input class="form-control" id="selectPicProduct" type="file" name="firstImg"
                                         accept="image/*"><img src="/images/products/<%= product.firstImg %>" alt=""
                                         class="no_img" id="ProdPictureForm">
-                                    <p class="text-danger col-12 err-img-principal">
-                                        <%= locals.errors?.firstImg?.msg %>
-                                    </p>
+                                        <p class="text-danger col-12 err-userPicture">
+                                            <%= locals.errors?.userPicture?.msg || '' %>
+                                        </p>                                        
                                 </div>
                                 <!-- /Primary images-->
                                 <!-- Secondary images-->
@@ -413,8 +413,6 @@
             <!-- scripts -->
             <script src="/js/imageSelectorProduct.js"></script>
             <%- include("../partials/scripts") %>
-                <!-- /scripts -->
-                <script src="/js/functions/validationProduct.js"></script>
              <!-- /scripts -->
              <script src="/js/functions/validationEditProduct.js"></script>
         </body>

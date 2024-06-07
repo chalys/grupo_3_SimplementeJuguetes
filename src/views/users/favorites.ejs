@@ -10,61 +10,51 @@
 
     <!-- Main -->
     <main class="favorite-container">
-
         <h1 class="title-favorite">Favoritos</h1>
-
+    
         <section class="favorite-box">
-                <!-- Products -->
-                <article class="mn-box-product">
-                    <div class="vt-desktop">
-                        <div></div>
-                        <div></div>
-                        <div>PRODUCTO</div>
-                        <div></div>
-                        <div>PRECIO</div>
-                        <div></div>
+            <!-- Products -->
+            <article class="mn-box-product">
+                <!-- Product Header for Desktop -->
+    
+                <!-- Product Item -->
+                <div class="product-item">
+                    <div class="product-close">
+                        <i class="fa-solid fa-rectangle-xmark"></i>
                     </div>
-
-                    <div class="vt-mobile-tableta">
-                        <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
-                        <figure class="product-fig">
-                            <img class="product-img" src="/images/products/firstImg-1710373000303.jpg" alt="">
-                        </figure>
-                        <div class="prueba">
-
-                            <div class="product-details">
-                                <label for="">Rex Toy Story Original De Mattel</label>
-                            </div>
-
-                            <div  class="product-price">
-                                <label class="lbl-product" for="">PRECIO</label>
-                                <label class="price" for="">$55.890</label>
-                            </div>
-                            
+                    <figure class="product-fig">
+                        <img class="product-img" src="/images/products/firstImg-1710373000303.jpg" alt="Rex Toy Story Original De Mattel">
+                    </figure>
+                    <div class="product-info">
+                        <div class="product-details">
+                            Rex Toy Story Original De Mattel
+                        </div>
+                        <div class="product-price">
+                            $55.890
                         </div>
                     </div>
-
-                    <div class="vt-mobile-tableta">
-                        <div class="product-close"><i class="fa-solid fa-rectangle-xmark"></i></div>
-                        <figure class="product-fig">
-                            <img class="product-img" src="/images/products/firstImg-1710534921951.jpg" alt="">
-                        </figure>
-                        <div class="prueba">
-                            <div class="product-details">
-                                <label for="">Woody Toy Story 4 Vaquero Original 15 Frases</label>
-                            </div>
-
-                            <div  class="product-price">
-                                <label class="lbl-product" for="">PRECIO</label>
-                                <label for="">$64.890</label>
-                            </div>
-
+                </div>
+    
+                <div class="product-item">
+                    <div class="product-close">
+                        <i class="fa-solid fa-rectangle-xmark"></i>
+                    </div>
+                    <figure class="product-fig">
+                        <img class="product-img" src="/images/products/firstImg-1710534921951.jpg" alt="Woody Toy Story 4 Vaquero Original 15 Frases">
+                    </figure>
+                    <div class="product-info">
+                        <div class="product-details">
+                            Woody Toy Story 4 Vaquero Original 15 Frases
+                        </div>
+                        <div class="product-price">
+                            $64.890
                         </div>
                     </div>
-                    
-                </article>
+                </div>
+            </article>
         </section>
     </main>
+    
     
     <!-- Footer EJS -->
     <%- include("../partials/footer") %>
