@@ -10,6 +10,7 @@
     "server-dev": "nodemon ./src/bin/www",
     "client-dev": "cd dashboard & npm run dev",
     "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\""
+
   },
   "author": "",
   "license": "ISC",

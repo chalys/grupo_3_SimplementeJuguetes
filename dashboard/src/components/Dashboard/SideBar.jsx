@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../assets/images/logo-DH.png';
+import image from '../../assets/images/logo-SJ.png';
 import { Link } from 'react-router-dom';
 
 function SideBar(){
@@ -11,7 +11,7 @@ function SideBar(){
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                        <img className="w-100" src={image} alt="Simplemente Juguetes"/>
                     </div>
                 </a>
 
@@ -32,7 +32,6 @@ function SideBar(){
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">Actions</div>
 
-                {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
                     <Link className="nav-link collapsed" to="/productos">
                         <i className="fas fa-fw fa-folder"></i>
@@ -40,14 +39,19 @@ function SideBar(){
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="/categorias">
+                        <i className="fas fa-fw fa-folder"></i>
+                        <span>Categorias</span>
+                    </Link>
+                </li>
+
                 <li className="nav-item">
                     <Link className="nav-link" to="/usuarios">
                         <i class="fa-solid fa-user"></i>
                         <span>Usuarios</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
                     <Link className="nav-link" to="/ordenes">
                         <i className="fas fa-fw fa-table"></i>

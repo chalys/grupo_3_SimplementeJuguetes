@@ -1,47 +1,26 @@
 const router = require("express").Router();
-
-const {listProductApi, detailProductApi } = require("../../controllers/api/products");
+const { uploadProducts } = require("../../middlewares/uploads");
+const {listProductApi, detailProductApi, storeProductApi, updateProductApi, removeProductApi, listGeneral } = require("../../controllers/api/products");
 
 /*** /api/products ***/
-router.get("/", listProductApi);
+
+/*** Listar Producto ***/
+//router.get("/", listProductApi);
+
+/*** Listar General ***/
+router.get("/", listGeneral);
+
+
+/*** Detakke Producto ***/
 router.get("/:id", detailProductApi);
 
+/*** Crear Producto ***/
+router.post("/",uploadProducts.fields([{ name: "firstImg" }, { name: "secondImg" }]),storeProductApi);
 
+/***  Actualizar Producto ***/
+router.put("/:id",uploadProducts.fields([{ name: "firstImg" }, { name: "secondImg" }]),updateProductApi);
 
-const { uploadProducts } = require("../../middlewares/uploads");
-
-
-const {
-  listApi,
-  storeApi,
-  updateApi,
-  removeApi,
-} = require("../../controllers/api/admin");
-
-
-
-
-
-
-
-
-router.post(
-  "/",
-  uploadProducts.fields([{ name: "firstImg" }, { name: "secondImg" }]),
-  storeApi
-);
-
-// router.put(
-//   "/:id",
-//   uploadProducts.fields([
-//     { name: "imagePrincipal" },
-//     { name: "imagesSecondary" },
-//   ]),
-//   updateApi
-// );
-
-// router.delete("/:id", removeApi);
-
-// router.get("/:image", renderImg)
+/*** Eliminar Producto ***/
+router.delete("/:id",removeProductApi)
 
 module.exports = router;

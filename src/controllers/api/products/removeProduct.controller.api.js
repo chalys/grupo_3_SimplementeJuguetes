@@ -5,7 +5,7 @@ module.exports = (req, res) => {
   db.secondaryimage
     .destroy({
       where: {
-        productId: id,
+        id,
       },
     })
     .then(() => {
@@ -18,7 +18,7 @@ module.exports = (req, res) => {
         .then(() => {
           res.status(200).json({
             ok: true,
-            msg: "Producto borrado con éxito",
+            msg: "Producto eliminado con éxito",
           });
         })
         .catch((err) => {
