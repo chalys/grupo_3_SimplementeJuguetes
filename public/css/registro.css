@@ -155,7 +155,7 @@ main.mainRegistro nav div{
     align-items: center;
 }
 main.mainRegistro div.divFormReg{
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -32,4 +32,8 @@
     background-color: var(--orange)!important;
     color: var(--white)!important;
 }
+.btn-cancel-custom a{
+    color: var(--white);
+    text-decoration: none;
+}
 

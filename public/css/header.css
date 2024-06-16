@@ -71,26 +71,30 @@
 /* Estilo del botón */
 .search-form_button {
     padding: 8px 12px;
-    background-color: white; 
-    color: red; 
+    background-color: var(--blanco); 
+    color: var(--red); 
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     margin: 0; 
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Añade una transición suave */
+}
+
+/* Cambiar color y tamaño al pasar el ratón */
+.search-form_button:hover {
+    background-color: rgb(161, 3, 3); /* Color de fondo al pasar el ratón */
+    color: var(--blanco); 
+    transform: scale(1.1); /* Aumenta el tamaño a 110% */
 }
 
 /* Estilo del ícono dentro del botón */
-.search-form_button i {
-    color: red; 
-}
+
 
 .header div.iconosHeader {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-
-  
 }
 
 .header div.iconosHeader a {
@@ -100,6 +104,11 @@
     padding-right: 10px;
     padding-left: 0px;
     border-radius: 10px;
+}
+
+.header div.iconosHeader a:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al 110% */
+    transition: transform 0.2s ease-in-out; /* Suaviza la transformación */
 }
 
 .header div.iconosHeader a i {
