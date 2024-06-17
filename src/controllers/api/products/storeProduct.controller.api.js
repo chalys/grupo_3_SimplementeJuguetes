@@ -66,7 +66,6 @@ module.exports = (req, res) => {
   }
 )
   .then(() => {
-
     res.status(201).json({
       ok: true,
       msg: "Producto creado con éxito",
@@ -79,5 +78,4 @@ module.exports = (req, res) => {
       msg: err.message,
     });
   });
-
 };
