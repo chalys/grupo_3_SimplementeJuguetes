@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { uploadProducts } = require("../../middlewares/uploads");
-const {listProductApi, detailProductApi, storeProductApi, updateProductApi, removeProductApi, listGeneral } = require("../../controllers/api/products");
+const {listProductApi, detailProductApi, storeProductApi, updateProductApi, removeProductApi, listGeneral, renderImgApi} = require("../../controllers/api/products");
 
 /*** /api/products ***/
 
@@ -10,8 +10,7 @@ const {listProductApi, detailProductApi, storeProductApi, updateProductApi, remo
 /*** Listar General ***/
 router.get("/", listGeneral);
 
-
-/*** Detakke Producto ***/
+/*** Detalle Producto ***/
 router.get("/:id", detailProductApi);
 
 /*** Crear Producto ***/
@@ -22,5 +21,8 @@ router.put("/:id",uploadProducts.fields([{ name: "firstImg" }, { name: "secondIm
 
 /*** Eliminar Producto ***/
 router.delete("/:id",removeProductApi)
+
+/*** Mostrar Imagen*/
+router.get("/:image", renderImgApi);
 
 module.exports = router;

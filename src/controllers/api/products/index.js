@@ -4,5 +4,6 @@ module.exports = {//API
     detailProductApi: require("./detailProduct.controller.api"),
     removeProductApi:require("./removeProduct.controller.api"),
     storeProductApi:require("./storeProduct.controller.api"),
-    updateProductApi:require("./updateProduct.controller.api")
+    updateProductApi:require("./updateProduct.controller.api"),
+    renderImgApi:require("./renderImg.controller.api")
 }
