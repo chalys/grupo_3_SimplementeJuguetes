@@ -4,6 +4,7 @@ import Dashboard from "../pages/Dashboard";
 import Orders from "../pages/Orders";
 import { routesProducts } from "./RoutesProducts";
 import { routesUsers } from "./RoutesUsers";
+import { routesCategories }from "./RoutesCategories";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       },
 
       ...routesProducts,
+      ...routesCategories,
       ...routesUsers,
       {
         path: "/ordenes",

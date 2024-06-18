@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const cors = require("cors")
 //const partials = require("express-partials");
 const methodOverride = require("method-override"); // Pasar poder usar los métodos PUT y DELETE
 const session = require("express-session");
@@ -18,9 +19,10 @@ const userId = require("./middlewares/validations/userId");
 const app = express();
 
 // ************ Middlewares - (don't touch) ************
-app.use(express.static("public"));
+//app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "../public"))); // Necesario para los archivos estáticos en el folder /public
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(cookieParser());
