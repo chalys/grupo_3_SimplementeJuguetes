@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Orders = props => {
   return (
-    <h1>TODAS LAS ORDENES</h1>
+    <h1 style={{ textAlign: 'center', color: '#e2001a' }}>TODAS LAS ORDENES</h1>
   )
 }
 

@@ -1,52 +1,113 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { TableHead } from "../components/Products/TableHead";
-import { TableRow } from "../components/Products/TableRow";
+import React, { useEffect, useState } from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import { Container } from "@mui/material";
 
 const Products = () => {
-  const movies = [
-    {
-      id: 1,
-      title: "Billy Elliot",
-      duration: 123,
-      rating: 5,
-      genre: ["Drama", "Comedia"],
-      awards: 2,
-    },
-    {
-      id: 2,
-      title: "Alicia en el país de las maravillas",
-      duration: 142,
-      rating: 4.8,
-      genre: ["Drama", "Acción", "Comedia"],
-      awards: 3,
-    },
-  ];
+  const [statesProducts, setStatesProducts] = useState({
+    loading: true,
+    products: [],
+    error: "",
+  });
 
-  const dataTableHead = ["Titulo", "Duración", "Rating", "Género", "Premios"];
+  const [dataGrid, setDataGrid] = useState({
+    columns: [],
+    rows: [],
+  });
+  useEffect(() => {
+    const endpoint = "http://localhost:3030/api/products?limit=10000";
+    const getProducts = async () => {
+      try {
+        const {
+          ok,
+          data = [],
+          msg = null,
+        } = await fetch(endpoint).then((res) => res.json());
+
+        if (!ok) throw new Error(msg);
+
+        ok &&
+          setStatesProducts({
+            ...statesProducts,
+            products: data,
+            loading: false,
+          });
+      } catch (error) {
+        setStatesProducts({
+          ...statesProducts,
+          error: error.message,
+        });
+      }
+    };
+
+    getProducts();
+  }, []);
+
+  useEffect(() => {
+    const dataObjProduct = Object.entries(
+      statesProducts.products.length ? statesProducts.products[0] : {}
+    );
+
+    const listWrite = ["id", "name", "price", "description"];
+    const headerNameTable = {
+      id: "ID",
+      name: "NOMBRE",
+      price: "PRECIO",
+      description: "DESCRIPCIÓN",
+    };
+    const columnsFormat = dataObjProduct
+      .filter(([key, value]) => listWrite.includes(key))
+      .map(([key, value]) => {
+        return {
+          field: key,
+          headerName: headerNameTable[key],
+          width: 200,
+          type: typeof value,
+          editable: true,
+        };
+      });
+
+    const rowsFormat = [];
+
+    statesProducts.products.forEach((product) => {
+      const objData = {};
+      Object.entries(product).forEach(([key, value]) => {
+        if (listWrite.includes(key)) {
+          objData[key] = value;
+        }
+      });
+      rowsFormat.push(objData);
+    });
+
+    setDataGrid({
+      rows: rowsFormat,
+      columns: columnsFormat,
+    });
+
+    console.log(columnsFormat);
+  }, [statesProducts.products]);
 
   return (
     <>
-      <h1>TODAS LOS PRODUCTOS</h1>
+      <h1 style={{ textAlign: "center", color: "#e2001a" }}>
+        TODOS LOS PRODUCTOS
+      </h1>
 
-      <div className="border p-1 m-3">
-        <table className="table table-bordered m-4">
-          <TableHead items={dataTableHead} />
-
-          <tbody>
-            {movies.map((movie, i) => (
-              /*  <TableRow key={i} title={movie.title} duration={movie.duration} rating={movie.rating} genre={movie.genre} awards={movie.awards}/> */
-              <TableRow key={i} {...movie} />
-            ))}
-          </tbody>
-
-          <TableHead items={dataTableHead} />
-        </table>
-      </div>
+      <Container maxWidth={400} style={{ height: 400 }}>
+        <DataGrid
+          rows={dataGrid.rows}
+          columns={dataGrid.columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
+      </Container>
     </>
   );
 };
-
 Products.propTypes = {};
 
 export default Products;

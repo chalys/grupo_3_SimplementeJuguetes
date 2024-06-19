@@ -7,6 +7,7 @@ module.exports = (req, res) => {
     .update(
       {
         name: name?.trim(),
+        description:description?.trim()
       },
       {
         where: {

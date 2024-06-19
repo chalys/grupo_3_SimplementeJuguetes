@@ -1,34 +1,42 @@
 [
     {
-        "id":1,
-        "name": "Educativos"
+        "id": 1,
+        "name": "Educativos",
+        "description": "Juguetes diseñados para fomentar el aprendizaje y desarrollo cognitivo de los niños."
     },
     {
-        "id":2,
-        "name": "Juguetes de construcción"
+        "id": 2,
+        "name": "Juguetes de construcción",
+        "description": "Juguetes que permiten a los niños construir estructuras y desarrollar habilidades de ingeniería y creatividad."
     },
     {
-        "id":3,
-        "name": "Muñecas y figuras de acción"
+        "id": 3,
+        "name": "Muñecas y figuras de acción",
+        "description": "Juguetes que representan personajes, usados para juegos de roles y desarrollo de la imaginación."
     },
     {
-        "id":4,
-        "name": "Juegos de mesa y cartas"
+        "id": 4,
+        "name": "Juegos de mesa y cartas",
+        "description": "Juegos para múltiples jugadores que fomentan la interacción social, la estrategia y el pensamiento lógico."
     },
     {
-        "id":5,
-        "name": "Juguetes de ciencia y experimentación"
+        "id": 5,
+        "name": "Juguetes de ciencia y experimentación",
+        "description": "Juguetes que introducen a los niños a conceptos científicos y permiten realizar experimentos prácticos."
     },
     {
-        "id":6,
-        "name": "Juguetes al aire libre"
+        "id": 6,
+        "name": "Juguetes al aire libre",
+        "description": "Juguetes diseñados para ser utilizados en exteriores, promoviendo la actividad física y el juego al aire libre."
     },
     {
-        "id":7,
-        "name": "Electrónicos y tecnológicos"
+        "id": 7,
+        "name": "Electrónicos y tecnológicos",
+        "description": "Juguetes que incorporan tecnología y electrónica para ofrecer experiencias interactivas y educativas."
     },
     {
-        "id":8,
-        "name": "Mixto"
+        "id": 8,
+        "name": "Mixto",
+        "description": "Juguetes que combinan elementos de diferentes categorías, ofreciendo una experiencia de juego variada."
     }
 ]

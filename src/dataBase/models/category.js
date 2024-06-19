@@ -1,4 +1,5 @@
 'use strict';
+const sequelizePaginate = require("sequelize-paginate")
 const {
   Model
 } = require('sequelize');
@@ -18,11 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   category.init({
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    description: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'category',
     timestamps: false
   });
+  sequelizePaginate.paginate(category)
   return category;
 };
