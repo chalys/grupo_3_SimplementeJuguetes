@@ -4,6 +4,7 @@ module.exports = (req, res) => {
   db.category
     .create({
       name: name.trim(),
+      description:description.trim()
     })
     .then(() => {
       res.status(201).json({

@@ -5,10 +5,10 @@ const {listProductApi, detailProductApi, storeProductApi, updateProductApi, remo
 /*** /api/products ***/
 
 /*** Listar Producto ***/
-//router.get("/", listProductApi);
+router.get("/", listProductApi);
 
 /*** Listar General ***/
-router.get("/", listGeneral);
+//router.get("/", listGeneral);
 
 /*** Detalle Producto ***/
 router.get("/:id", detailProductApi);
@@ -23,6 +23,6 @@ router.put("/:id",uploadProducts.fields([{ name: "firstImg" }, { name: "secondIm
 router.delete("/:id",removeProductApi)
 
 /*** Mostrar Imagen*/
-router.get("/:image", renderImgApi);
+router.get("/firstImg" , renderImgApi);
 
 module.exports = router;

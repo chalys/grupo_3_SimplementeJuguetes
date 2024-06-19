@@ -5,6 +5,7 @@ const categoriesJSON = require("../../dataBase/category.json")
 const categoriesDBMapped = categoriesJSON.map(c =>{
   return{
     name:c.name,
+    description:c.description
   }
 })
 

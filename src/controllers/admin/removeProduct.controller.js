@@ -5,7 +5,7 @@ module.exports = (req, res) => {
 
   db.secondaryimage.destroy({
     where: {
-      productId: id,
+      productId: +id,
     },
   }).then(() => {
     db.product.destroy({
