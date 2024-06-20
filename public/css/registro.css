@@ -3,6 +3,11 @@
     50%{background:rgb(255, 145, 145)}
     100%{    background: var(--gris);;}
 }
+
+.regiter-h2{
+    margin: 50px 0px -13px 0px;
+}
+
 .bodyRegistro{display: flex;margin: 0px;flex-direction: column;flex-wrap: wrap;}
 
 main.mainRegistro{order: 2;height: auto;}
@@ -10,6 +15,8 @@ main.mainRegistro{order: 2;height: auto;}
 div.fondoRegis{
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centrar en el eje vertical */
+    display: flex; /* Añadir esta línea */
 }
 div.errorsReg{
     max-width: fit-content;
@@ -69,7 +76,8 @@ div.errorsReg:hover{
 .figureuserPictureReg:hover .selectDivUser{
     transform: scale(1);
     left: 64%;
-    width: 100px !important;
+    width: 112px !important;
+    border-radius: 5px;
 }
 .figureuserPictureReg{
     overflow: hidden;
@@ -107,6 +115,18 @@ main.mainRegistro-1 .form div.botonesReg{
     font-size: 10px;
     width: 90% !important;
     position: absolute;
+}
+
+button.botonSiguienteRegis{
+    font-size: 1.2rem;
+    background-color: var(--azul);
+    height: 20px;
+    width: 200px;
+    border-radius: 5px;
+}
+.accessLogin{
+    text-align: center;   
+    margin: 15px;
 }
 
 main.mainRegistro nav{transform: scale(1) translateX(0px);transition: 1s all;z-index: 1000;right: 20vw;left: 20vw;top: 58vh;position: absolute;display: flex;flex-direction: column;align-items: center;}
@@ -168,6 +188,7 @@ main.mainRegistro div.divFormReg{
     width: 27px;
     height: 27px;
 }
+
 main.mainRegistro div form{
     box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
     width: 200px;
@@ -188,10 +209,14 @@ main.mainRegistro div form label{
 main.mainRegistro div form input{
     height: 24px;
     margin-bottom: 7%;
-    width: 100%;
+    width: 85%;
     background-color: var(--gris);
-    border: none;
+    border: 1px solid black;
+    margin-left: auto; 
+    margin-right: auto; 
+    border-radius: 5px;
     }
+
 main.mainRegistro .perfilReg{
     bottom: 491px;
     gap: 2vw;
@@ -220,7 +245,7 @@ main.mainRegistro .perfilReg div{
     /* height: auto; */
     overflow: hidden;
     box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
-    border-radius: 50px;
+    border-radius: 10px;
     width: 180px;
     padding: 10px 10px;
     background-color: var(--blanco);
@@ -231,11 +256,13 @@ main.mainRegistro .perfilReg div input{
     width: 90%;
 }
 main.mainRegistro div form button{
-    margin-top: 10%;
     height: 40px;
     border: solid 1px;
     background-color: var(--azul);
     font-size: 17px;
+    display: block; /* Añadido */
+    margin-left: auto; /* Añadido */
+    margin-right: auto; /* Añadido */
 }
 main.mainRegistro div form button a{
     text-decoration: none;
@@ -315,7 +342,8 @@ main.mainRegistro .perfilReg div input{
 main.mainRegistro .perfilReg div{
     padding: 2% 5%;
 }
-main.mainRegistro .perfilReg div.fotodePerfil{/* height: 100%; */width: 87px;}
+main.mainRegistro .perfilReg div.fotodePerfil{/* height: 100%; */width: 100px;
+    height: 100px;}
 main.mainRegistro .perfilReg i{}
 main.mainRegistro .perfilReg{
     height: auto;
@@ -354,10 +382,14 @@ main.mainRegistro{}
 
 @media(min-device-width: 769px) {
     main.mainRegistro{
+        
 }
-    main.mainRegistro div form input{}
+    main.mainRegistro div form input{
+        height: 29px;
+    }
     main.mainRegistro form .margenEspRegis{
     margin-bottom: -170px;
+    height: 29px;
 }
     main.mainRegistro .google{width: 200px !important;padding: 10px !important;}
     main.mainRegistro .google img{
@@ -366,21 +398,31 @@ main.mainRegistro{}
     main.mainRegistro .google h2{}
     main.mainRegistro .google h2 a{}
     main.mainRegistro div h2 a{}
+
     main.mainRegistro div h2{
-    font-size: 13px;
+    font-size: 33px;
     padding: 1% 0 5% 0;
     width: 185px;
+    margin-left: 50px;
 }
     main.mainRegistro div form button{
     align-self: unset;
     width: 170px;
 }
+main.mainRegistro .perfilReg{
+    
+}
     main.mainRegistro .perfilReg div input{}
     main.mainRegistro .perfilReg div{
     /* padding: 7px 10px; */
-    width: 200px;
+    padding-top: 0px;
 }
-    main.mainRegistro .perfilReg div.fotodePerfil{border: solid 6px var(--blanco);width: 100px;}
+    main.mainRegistro .perfilReg div.fotodePerfil{
+    border: solid 6px var(--blanco);
+    width: 150px;
+    height: 150px;
+    }
+
     main.mainRegistro .perfilReg i{
     font-size: 60px;
 }
@@ -390,30 +432,54 @@ main.mainRegistro{}
     left: 130%;
     width: auto;
 }
-    main.mainRegistro div form input{}
-    main.mainRegistro div form label{}
+
+main.mainRegistro button.botonSiguienteRegis{
+    font-size: 1.2rem;
+    background-color: var(--azul);
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+    main.mainRegistro div form input{
+        height: 29px;
+    }
+    main.mainRegistro div form label{
+       text-align: center;
+    }
     main.mainRegistro div form img{
 }
     main.mainRegistro div form{
-    width: 200px;
+    width: 310px;
 }
     .pandaFormularioReg{
     width: 50px;
     height: 50px;
     margin-right: 23px;
 }
+
+main.pandaFormularioReg h2{
+    color: red ;
+    font-size: 20px
+}
+
     main.mainRegistro div{
 }
     .fondoRegis .span2{
 }
-.fondoRegis .span1{
+    .fondoRegis .span1{
 }
-.fondoRegis .IMG2{}
-    .fondoRegis .IMG1{}
+    .fondoRegis .IMG2{
+    
+}
+    .fondoRegis .IMG1{
+        
+}
     .fondoRegis{
 }
     main.mainRegistro nav{
     top: 52vh;
 }
+
     .bodyRegistro{}
 }

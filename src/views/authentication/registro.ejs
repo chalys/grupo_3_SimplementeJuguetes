@@ -18,36 +18,44 @@
                     <form method="post" class="formReg" action="/autenticacion/registro" enctype="multipart/form-data">
                         <!--formulario principal-->
                         <img src="../images/logo/panda-logo.png" alt="logo" class="pandaFormularioReg">
-                        <label for="Email">E-mail</label>
+                        
+                        
+                            <h2 class="login-h2">Bienvenido</h2>
+                        
+
+                        <label for="Email">Correo electronico</label>
                         <div class="errorsReg emailEr"><%- locals.errors?.email?.msg %></div>
-                        <input type="email" name="email" id="email" placeholder="nadie@gmail.com" value="<%= locals.old?.email %>">
+                        <input type="email" name="email" id="email" placeholder="" value="<%= locals.old?.email %>"> 
+                        
                         <label for="password">Contraseña</label>
                         <div class="errorsReg passwordEr" ><%- locals.errors?.password?.msg %></div>
-                        <input type="password" name="password" id="password" placeholder="" >
+                        <input type="password" name="password" id="password" placeholder="" > 
+                        
                         <label for="confgPass">Confirmar contraseña</label>
                         <div class="errorsReg confirmpasswordEr"><%- locals.errors?.confirmpassword?.msg %></div>
-                        <input type="password" name="confirmpassword" class="margenEspRegis" placeholder="" >
+                        <input type="password" name="confirmpassword" class="margenEspRegis" placeholder="" > 
+                        
                         <!--menu de insercion de foto y nombre-->
                         <div class="perfilReg">
                             <!--imagen de usuario-->
                             <div class="fotodePerfil">
                             
                                     <figure class="figureuserPictureReg">
-                                        <img id="userPictureReg" class="userPictureReg" src="/images/authentication/default.png" alt="">
+                                        <img id="userPictureReg" class="userPictureReg" src="/images/user/solicitudFoto.png" alt="">
                                         <div class="selectDivUser"><input class="selectPicUser"  id="selectPicUser" type="file" name="userPicture" accept="image/*"></div>
                                     </figure>
                             </div>
                             <div>
                                 <div class="errorsReg selectPicUserEr"><%- locals.errors?.userPicture?.msg %></div>
-                                <label for="nombreUsuario">Usuario</label>
+                                <label for="nombreUsuario">Nombre de Usuario</label>
                                 <div class="errorsReg userNameEr"><%- locals.errors?.userName?.msg %></div>
-                                <input type="text" name="userName" placeholder="nombreUsuario" value="<%= locals.old?.userName %>">
+                                <input type="text" name="userName" placeholder="" value="<%= locals.old?.userName %>">
                             </div>
                         </div>
                         <button type="button" class="botonSiguienteRegis toggle" ><a
                                 href="">Registrarme</a></button>
         
-                    <h2>¿Ya tienes cuenta?<a href="/autenticacion/login">accede aqui</a></h2>
+                    <p class="accessLogin">¿Ya tienes cuenta?<a href="/autenticacion/login"> Accede aqui</a></p >
                 </div>
                 <div class="google">
                     <img src="../images/other/google-icon.png" alt="google">
