@@ -70,7 +70,9 @@ main.main-login{
     border-radius: 3px;
 };
 
-.text-login{font-weight: 600;}
+.text-login{
+    font-weight: 600;}
+
 .contenido{
     position: absolute;
     display: flex;
@@ -132,8 +134,21 @@ padding-left: 15px;
 top: 80px;}
 }
 @media(min-device-width: 769px){
+
+    .text-name{
+        margin-top: 20px;
+        text-align: center;
+}
+
+.text-password{
+    text-align: center;
+}
+
+
 .contenido{
     transform: scale(1.3);
+
+    top: 30vh;
 }
 .fondo{
     width: 100%;

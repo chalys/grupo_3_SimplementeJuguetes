@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head",{title:'registrarse'}) %>
+<%- include("../partials/head",{title:'Registrar'}) %>
     <!--   HEADER    -->
     <%- include("../partials/header") %>
         <!--     MAIN    -->
         <main class="mainRegistro">
             <div class="fondoRegis">
                 <span class="span1">
-                    <img src="../images/other/fondRegis1.jpg" alt="" class="IMG1">
+                    <img src="../images/other/fondoPrueba.png" alt="" class="IMG1">
+                <!--fondRegis1.jpg-->
                 </span>
+
+                <!--
                 <span class="span2">
                     <img src="../images/other/fondRegis2.jpg" alt="" class="IMG2">
                 </span>
+                -->>
             </div>
             <nav class="naregdes">
                 <div class="divFormReg" id="">
                     <form method="post" class="formReg" action="/autenticacion/registro" enctype="multipart/form-data">
                         <!--formulario principal-->
                         <img src="../images/logo/panda-logo.png" alt="logo" class="pandaFormularioReg">
+                       
+                        <h2 class="login-h2">Bienvenido</h2>
                         
-                        
-                            <h2 class="login-h2">Bienvenido</h2>
-                        
-
                         <label for="Email">Correo electronico</label>
                         <div class="errorsReg emailEr"><%- locals.errors?.email?.msg %></div>
                         <input type="email" name="email" id="email" placeholder="" value="<%= locals.old?.email %>"> 
@@ -41,7 +43,7 @@
                             <div class="fotodePerfil">
                             
                                     <figure class="figureuserPictureReg">
-                                        <img id="userPictureReg" class="userPictureReg" src="/images/user/solicitudFoto.png" alt="">
+                                        <img id="userPictureReg" class="userPictureReg" src="/images/user/solicitudFoto3.png" alt="">
                                         <div class="selectDivUser"><input class="selectPicUser"  id="selectPicUser" type="file" name="userPicture" accept="image/*"></div>
                                     </figure>
                             </div>
@@ -52,16 +54,15 @@
                                 <input type="text" name="userName" placeholder="" value="<%= locals.old?.userName %>">
                             </div>
                         </div>
-                        <button type="button" class="botonSiguienteRegis toggle" ><a
-                                href="">Registrarme</a></button>
+                        <button type="button" class="botonSiguienteRegis toggle" ><a href="">Registrarme</a></button>
         
                     <p class="accessLogin">¿Ya tienes cuenta?<a href="/autenticacion/login"> Accede aqui</a></p >
                 </div>
-                <div class="google">
-                    <img src="../images/other/google-icon.png" alt="google">
-                    <h2><a href="">Ingresar con Google</a></h2>
-                </div>
+                <div class="div-img-googler">
+                    <img class="img-googler" src="/images/other/google-icon.png" alt="">
+                    <p>Ingresa con google</p>
             </nav>
+
             <main class="mainRegistro-1" id="">
                 <nav>
                     <!--Formulario opcional-->
@@ -132,8 +133,9 @@
                             <label for="indicAdic" class="elCienReg">Indicaciones adicionales (opcional)</label>
                             <input type="text" class="elCienReg" placeholder="textoEjemplo" name="indications" value="<%= locals.old?.indications %>">
                         </div>
+                    
                         <div class="botonesReg">
-                            <button class="botonVolverRegis toggle2" type="button">
+                           <button class="botonVolverRegis toggle2" type="button">
                                 <p><a href="">Volver</a></p>
                             </button>
                             <button class="botonOmitirRegis" type="submit">
@@ -142,10 +144,14 @@
                             <button class="botonContinuarRegis" type="submit">
                                 <p>Continuar</p>
                             </button>
+                           
                         </div>
+
+                        
                     </div>
                     </form>
                 </nav>
+
             </main>
 
         </main>

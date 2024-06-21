@@ -100,6 +100,14 @@ div.errorsReg:hover{
 main.mainRegistro-1 .form div.botonesReg{
     flex-direction: row !important;
 }
+
+.mensajeOmitir{
+    display: block; /* Elemento bloque por defecto */
+    clear: both; /* Limpia cualquier flotación previa */
+    margin-bottom: 10px; 
+    width: 100%; 
+}
+
 .selectDivUser{
     transform: scale(0);
     transition: 400ms all;
@@ -130,11 +138,13 @@ button.botonSiguienteRegis{
 }
 
 main.mainRegistro nav{transform: scale(1) translateX(0px);transition: 1s all;z-index: 1000;right: 20vw;left: 20vw;top: 58vh;position: absolute;display: flex;flex-direction: column;align-items: center;}
+
 .fondoRegis{
     position: relative;
     height: 153vh;
     display: flex;
 }
+
 .fondoRegis .IMG1{
     height: 120%;
     position: absolute;
@@ -150,11 +160,12 @@ main.mainRegistro nav{transform: scale(1) translateX(0px);transition: 1s all;z-i
     }
 .fondoRegis .span1{
     position: absolute;
-    width: 50%;
+    width: 100%;
     height: 100%;
     align-self: start;
     overflow: hidden;
 }
+ /*
 .fondoRegis .span2{
     height: 100%;
     width: 50%;
@@ -162,6 +173,7 @@ main.mainRegistro nav{transform: scale(1) translateX(0px);transition: 1s all;z-i
     position: absolute;
     overflow: hidden;
 }
+    */
 main.mainRegistro nav form div{
     width: 60%;
     display: flex;
@@ -169,9 +181,8 @@ main.mainRegistro nav form div{
     align-items: center;
 }
 main.mainRegistro nav div{
-    width: 60%;
+    width: 310px;
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 main.mainRegistro div.divFormReg{
@@ -287,25 +298,30 @@ main.mainRegistro div h2 a{
     color: #0085ff;*/
 }
 
-/*acceder a google*/
-main.mainRegistro div.google{
-    box-shadow: 10px 10px 3px rgb(0 0 0 / 50%);
-    border-radius: 50px;
-    padding: 15px;
-    width: 180px;
+/*acceder a google*/    .div-img-googler{
+    justify-content: space-around;
+    height: 65px;
+    width: 240px;
+    background: var(--blanco);
+    display: flex;
+    border: solid 1px;
+    border-radius: 45px;
+    margin-bottom: 30px;
+    box-shadow: 3px 8px 5px 3px rgba(0, 0, 0, 0.2);
     align-items: center;
-    justify-content: center;
-    margin-top: 2.1vh;
-    flex-direction: row;
-    background-color: var(--blanco);
-    }
-main.mainRegistro div.google img{width: 17px;}
-main.mainRegistro div.google h2{box-shadow: 0px 0px 0px rgb(0 0 0 / 0%);padding: 0px;font-size: 15px;background-color: rgba(0,0,0,0);}
-main.mainRegistro div.google h2 a{
-    color: black;
-    text-decoration: none;
 }
+.div-img-google p{
+    margin: 0px 0px 0px -40px;
+}
+    .img-google{
+        margin-left: -22px;
+        width: 30px;
+        height: 30px;
+    }
+.text-google{font-size: 18px;
+padding-left: 15px;
 
+}
 
 /*/////////TABLET//////////*/
 
@@ -404,6 +420,7 @@ main.mainRegistro{}
     padding: 1% 0 5% 0;
     width: 185px;
     margin-left: 50px;
+    margin-top: 40px;
 }
     main.mainRegistro div form button{
     align-self: unset;
@@ -448,14 +465,47 @@ main.mainRegistro button.botonSiguienteRegis{
        text-align: center;
     }
     main.mainRegistro div form img{
+        width: 60px;
+        height: 60px;
+        align-self: center;
 }
     main.mainRegistro div form{
     width: 310px;
 }
+
+.div-img-googler{
+    justify-content: space-around;
+    margin-top: 50px;
+    height: 65px;
+    width: 240px;
+    background: var(--blanco);
+    display: flex;
+    border: solid 1px;
+    border-radius: 45px;
+    margin-bottom: 30px;
+    box-shadow: 3px 8px 5px 3px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+.div-img-googler p{
+    margin: 0px 0px 0px -40px;
+    font-size: 21px;
+}
+    .img-googler{
+        margin-left: -22px;
+        width: 40px;
+        height: 40px;
+    }
+
     .pandaFormularioReg{
-    width: 50px;
-    height: 50px;
-    margin-right: 23px;
+        padding: 5px;
+        box-shadow: 10px 10px 5px 9px rgba(0, 0, 0, 0.2);
+        top: -30px;
+        height: 61px;
+        position: absolute;
+        border: 1px solid black;
+        border-radius: 50px;
+        background-color: #E2001A;
 }
 
 main.pandaFormularioReg h2{
