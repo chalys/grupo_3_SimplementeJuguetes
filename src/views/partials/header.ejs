@@ -27,21 +27,30 @@
   <div class="iconosHeader">
     <!-- Autenticación y opciones de usuario -->
     <% if (!locals.userLogin) { %>  
+      <p class="welcome">⚪ ¡BIENVENIDO, EN QUE PODEMOS AYUDARTE! ⚪</p>
+      <div class="admin-links">
         <a href="/autenticacion/login"><i class="fa-solid fa-heart"></i>Favoritos</a>
         <a href="/autenticacion/login"><i class="fa-solid fa-user"></i>Ingresar</a>
         <a href="/autenticacion/login"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
-    <% } else if (locals.userLogin && locals.userLogin.role === 2) { %> 
-         
-     
-        <a href="/admin/crear-producto"><i class="fa-solid fa-cart-plus"></i>Agregar</a>
-        <a href="/admin/lista-productos"><i class="fa-solid fa-clipboard-list"></i>Productos</a>
-        <a href="/autenticacion/cerrar-session"><i class="fa-solid fa-user"></i>Log Out</a>
+      </div>
 
-    <% } else { %>
+        <% } else if (locals.userLogin && locals.userLogin.role === 2) { %> 
+      <p class="welcome">⚪ ¡BIENVENIDO ADMINITRADOR! ⚪</p>
+      <div class="admin-links">
+          <a href="/admin/crear-producto"><i class="fa-solid fa-cart-plus"></i>Agregar</a>
+          <a href="/admin/lista-productos"><i class="fa-solid fa-clipboard-list"></i>Productos</a>
+          <a href="/autenticacion/cerrar-session"><i class="fa-solid fa-user"></i>Log Out</a>
+      </div>
+    
+      </div>
+      <% } else { %>
+      <p class="welcome">⚪ ¡HOLA <strong><%= locals.userLogin.userName.toUpperCase() %></strong> QUE GUSTO VERTE! ⚪</p>
+      <div class="admin-links">
         <a href="/favoritos"><i class="fa-solid fa-heart"></i>Favoritos</a>
         <a href="/perfil/<%= locals.userLogin.id %>"><i class="fa-solid fa-user-check"></i><%= locals.userLogin.userName.charAt(0).toUpperCase() + locals.userLogin.userName.slice(1) %></a>
         <a href="/carrito-compra"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
-    <% } %>
+      </div>
+      <% } %>
 </div>
 
    

@@ -226,6 +226,17 @@
         height: 20%;
     }
 
+    .search-form_input {
+        flex-grow: 1; 
+        padding: 8px;
+        border: none;
+        outline: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        width: 13vw;
+        margin: 0; 
+    }
+
     .header figure {}
 
     .header figure.pandaHeader {
@@ -580,11 +591,77 @@
 
     .header div.busquedaHeader figure i {}
 
-    .header div.iconosHeader {}
+  /* Estilos generales */
+  .header div.iconosHeader {
+    display: flex;
+    flex-direction: column; /* Contenedor principal en columna para colocar mensaje encima */
+    align-items: flex-start; /* Alineación al inicio */
+    gap: 1px;
+    
+    /*AOE*/
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
 
-    .header div.iconosHeader a {}
+/* Estilos para el mensaje del administrador */
+.header div.iconosHeader .admin-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea el contenido centrado horizontalmente */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
 
-    .header div.iconosHeader a i {}
+.header div.iconosHeader .welcome {
+    font-weight: bold;
+    color: var(--blanco); /* Color destacado para el mensaje */
+    font-size: 12px;
+    background-color: var(--green);
+    margin-bottom: 1px; /* Espacio entre el mensaje y los botones */
+    padding: 3px 8px;
+    border-radius: 6px;
+
+    /*
+     font-weight: bold;
+    color: var(--blanco); 
+    font-size: 12px;
+    background-color: var(--green);
+    margin-bottom: 1px; 
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-left: auto; 
+    */
+}
+
+/* Estilos para los enlaces del administrador */
+.header div.iconosHeader .admin-links {
+    display: flex; /* Alinea los enlaces en una fila */
+    gap: 15px;
+}
+
+/* Estilos para los enlaces */
+.header div.iconosHeader a {
+   /*  color: white;
+    text-decoration: none;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    padding: 5px 10px; 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre el icono y el texto */
+}
+
+/* Efecto hover en enlaces */
+.header div.iconosHeader a:hover {
+    transform: scale(1.2); 
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilos para los iconos */
+.header div.iconosHeader a i {
+    color: var(--blanco);
+}
+
+    
     .header div  .btn-de-sesion{
 padding: 3px;
 border-radius: 5px;
