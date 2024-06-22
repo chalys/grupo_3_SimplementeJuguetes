@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head", {title: 'Pefil de usuario' }) %>
+    <!-- <body class="bodyRegistro-1"> -->
+
+    <body>
+        <!-- header -->
+        <%- include("../partials/header") %>
+            <!-- /header -->
+
+            <!-- main -->
+            <main class="principal-c">
+                <div class="contact-form">
+                  <h2>Formulario de Contacto</h2>
+                  <form action="#" method="POST">
+                    <div class="form-group">
+                      <label for="nombre">Nombre:</label>
+                      <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="mail">Email:</label>
+                      <input type="email" id="mail" name="mail" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="mensaje">Mensaje:</label>
+                      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="enviarContact">Enviar</button>
+                  </form>
+                </div>
+            
+                <div class="contact-info">
+                  <div class="info-item">
+                    <strong>Teléfono:</strong> +5411559900
+                  </div>
+                  <div class="info-item">
+                    <strong>Email:</strong> info@simplejuguetes.com
+                  </div>
+                  <div class="info-item">
+                    <strong>Redes:</strong> 
+                    <a href="#">Facebook</a>, 
+                    <a href="#">Twitter</a>, 
+                    <a href="#">Instagram</a>
+                  </div>
+                </div>
+              </main>
+            <!-- /main -->
+            <!-- footer -->
+            <footer class="sub-footer">
+                <!-- Footer -->
+                <%- include("../partials/footer") %>
+            </footer>
+            <!-- /footer -->
+            <!-- Script Bootstrap -->
+            <%- include("../partials/scripts") %>
+                <!-- /Script Bootstrap -->
+    </body>
+
+</html>

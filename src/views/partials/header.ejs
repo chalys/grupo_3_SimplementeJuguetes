@@ -29,9 +29,9 @@
     <% if (!locals.userLogin) { %>  
       <p class="welcome">⚪ ¡BIENVENIDO, EN QUE PODEMOS AYUDARTE! ⚪</p>
       <div class="admin-links">
-        <a href="/autenticacion/login"><i class="fa-solid fa-heart"></i>Favoritos</a>
+        <a href="/sobre-nosotros"><i class="fa-solid fa-building-circle-check"></i>Jugueteria</a>
         <a href="/autenticacion/login"><i class="fa-solid fa-user"></i>Ingresar</a>
-        <a href="/autenticacion/login"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
+        <a href="/contacto"><i class="fa-solid fa-envelope-circle-check"></i>Contacto</a>
       </div>
 
         <% } else if (locals.userLogin && locals.userLogin.role === 2) { %> 
