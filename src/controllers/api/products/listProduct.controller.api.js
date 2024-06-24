@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
       },
     ],
     attributes: {
-      exclude: ["createdAt", "updatedAt"],
+      exclude: ["createdAt", "updatedAt","deletedAt"],
       include: [
         [
           literal(

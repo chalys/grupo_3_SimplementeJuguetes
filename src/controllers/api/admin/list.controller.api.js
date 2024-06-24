@@ -4,7 +4,7 @@ module.exports = (req, res) => {
     .findAll({
       include: ["secondaryImage"],
       attributes: {
-        exclude: ["createdAt", "updatedAt"],
+        exclude: ["createdAt", "updatedAt","deletedAt"],
       },
     })
     .then((products) => {

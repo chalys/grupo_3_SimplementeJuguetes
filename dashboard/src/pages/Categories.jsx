@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { DataGrid } from "@mui/x-data-grid";
-import { Container } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
+import { DataGrid, GridActionsCellItem } from "@mui/x-data-grid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import ConfirmDeleteModal from "../components/Reuse/ConfirmDeleteModal";
+import axios from "axios";
+import "../assets/css/style.css";
 
 const Categories = (props) => {
+  const urlCategories = `http://localhost:3030/productos/`;
+  const urlApiCategories = `http://localhost:3030/api/category/`;
+
   const [statesCategories, setStatesCategories] = useState({
     loading: true,
     categories: [],
@@ -13,6 +21,66 @@ const Categories = (props) => {
     columns: [],
     rows: [],
   });
+
+  const [deleteModal, setDeleteModal] = useState({
+    open: false,
+    itemId: null,
+    itemName: "",
+  });
+
+  const handleNewClick = () => {
+    const url = `${urlApiCategories}crear-categoria/`;
+    window.open(url, "_blank");
+  };
+
+  const handleDetailClick = (params) => {
+    const url = `${urlApiCategories}detalle-categoria/` + params.id;
+    window.open(url, "_blank");
+  };
+  const handleEditClick = (params) => {
+    const url = `${urlApiCategories}editar-categoria/` + params.id;
+    window.open(url, "_blank");
+  };
+
+  const handleDeleteClick = (params) => {
+    setDeleteModal({
+      open: true,
+      itemId: params.id,
+      itemName: params.row.name,
+    });
+  };
+
+  const handleCloseDeleteModal = () => {
+    setDeleteModal({
+      open: false,
+      itemId: null,
+      itemName: "",
+    });
+  };
+
+  const handleConfirmDelete = () => {
+    const { itemId } = deleteModal;
+    axios
+      .delete(`http://localhost:3030/api/category/${itemId}`)
+      .then((response) => {
+        if (response.data.ok) {
+          // Eliminar la categoría del estado
+          setStatesCategories((prevState) => ({
+            ...prevState,
+            categories: prevState.categories.filter(
+              (category) => category.id !== itemId
+            ),
+          }));
+          handleCloseDeleteModal();
+          console.log("Categoría eliminada con éxito.");
+        } else {
+          console.error("Error eliminando la categoría:", response.data.msg);
+        }
+      })
+      .catch((error) => {
+        console.error("Error eliminando la categoría:", error);
+      });
+  };
   useEffect(() => {
     const endpoint = "http://localhost:3030/api/category?limit=10000";
     const getCategories = async () => {
@@ -41,38 +109,47 @@ const Categories = (props) => {
 
     getCategories();
   }, []);
-
   useEffect(() => {
     const dataObjCategory = Object.entries(
       statesCategories.categories.length ? statesCategories.categories[0] : {}
     );
-
-    const listWrite = ["id", "name", "description"];
-    const headerNameTable = {
-      id: "ID",
-      name: "NOMBRE",
-      description: "DESCRIPCIÓN",
-    };
-    const columnsFormat = dataObjCategory
-      .filter(([key, value]) => listWrite.includes(key))
-      .map(([key, value]) => {
-        return {
-          field: key,
-          headerName: headerNameTable[key],
-          width: 200,
-          type: typeof value,
-          editable: true,
-        };
-      });
+    const columnsFormat = [
+      { field: "id", headerName: "ID", width: 60 },
+      { field: "name", headerName: "NOMBRE", width: 350 },
+      { field: "description", headerName: "DESCRIPCIÓN", flex: 1 },
+      {
+        field: "actions",
+        type: "actions",
+        headerName: "ACCIONES",
+        width: 150,
+        getActions: (params) => [
+          <GridActionsCellItem
+            icon={<FontAwesomeIcon icon={faEye} className="green-icon" />}
+            label="Ver"
+            onClick={() => handleDetailClick(params)}
+          />,
+          <GridActionsCellItem
+            icon={<FontAwesomeIcon icon={faEdit} className="blue-icon" />}
+            label="Edit"
+            onClick={() => handleEditClick(params)}
+          />,
+          <GridActionsCellItem
+            icon={<FontAwesomeIcon icon={faTrash} className="red-icon" />}
+            label="Delete"
+            onClick={() => handleDeleteClick(params)}
+          />,
+        ],
+      },
+    ];
 
     const rowsFormat = [];
 
     statesCategories.categories.forEach((category) => {
       const objData = {};
       Object.entries(category).forEach(([key, value]) => {
-        if (listWrite.includes(key)) {
-          objData[key] = value;
-        }
+        //     if (listWrite.includes(key)) {
+        objData[key] = value;
+        //   }
       });
       rowsFormat.push(objData);
     });
@@ -87,10 +164,29 @@ const Categories = (props) => {
 
   return (
     <>
-      <h1 style={{ textAlign: "center", color: "#e2001a" }}>
-        TODAS LAS CATEGORIAS
-      </h1>
-      <Container maxWidth={400} style={{ height: 400 }}>
+      <Container sx={{ height: 700, width: "100%" }}>
+        <Typography
+          variant="h3"
+          component="h3"
+          sx={{ textAlign: "center", mb: 3, color: "#e2001a" }}
+        >
+          TODAS LAS CATEGORIAS
+        </Typography>
+
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleNewClick}
+          sx={{
+            mb: 2,
+            backgroundColor: "#2d8f2c",
+            "&:hover": {
+              backgroundColor: "#256b23",
+            },
+          }}
+        >
+          Agregar Categoría
+        </Button>
         <DataGrid
           rows={dataGrid.rows}
           columns={dataGrid.columns}
@@ -100,9 +196,15 @@ const Categories = (props) => {
             },
           }}
           pageSizeOptions={[5, 10]}
-          checkboxSelection
         />
       </Container>
+      <ConfirmDeleteModal
+        open={deleteModal.open}
+        onClose={handleCloseDeleteModal}
+        onConfirm={handleConfirmDelete}
+        item="Categoria"
+        itemName={deleteModal.itemName}
+      />
     </>
   );
 };

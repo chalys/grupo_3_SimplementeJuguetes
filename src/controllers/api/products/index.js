@@ -1,5 +1,5 @@
 module.exports = {//API
-    listGeneral:require("./listGeneral.api"),
+
     listProductApi: require("./listProduct.controller.api"),
     detailProductApi: require("./detailProduct.controller.api"),
     removeProductApi:require("./removeProduct.controller.api"),

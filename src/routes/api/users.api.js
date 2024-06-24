@@ -16,6 +16,6 @@ router.get("/:id", detailUserApi);
 //router.put("/:id",uploadAuthentication.single("userPicture"), updateUserApi);
 
 /*** Eliminar Usuario ***/
-//router.delete("/:id",removeUserApi)
+router.delete("/:id",removeUserApi)
 
 module.exports = router;

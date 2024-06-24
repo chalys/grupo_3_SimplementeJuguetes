@@ -36,9 +36,6 @@ router.post("/error", errorAuth);
 router.get("/editar-usuario/:id", edit);
 router.put("/editar-usuario/:id", uploadAuthentication.single("userPicture"),updateUserValidation, update);
 
-//*** DELETE ONE USER ***/
-//router.delete('/eliminar-usuario/:id', destroy);
-
 router.get("/cerrar-session", logout);
 
 module.exports = router;
