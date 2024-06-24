@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { DataGrid } from "@mui/x-data-grid";
-import { Container } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
+import { DataGrid, GridActionsCellItem } from "@mui/x-data-grid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import ConfirmDeleteModal from "../components/Reuse/ConfirmDeleteModal";
+import axios from "axios";
+import "../assets/css/style.css";
 
 const Users = (props) => {
+  const urlUsers = `http://localhost:3030/autenticacion/`;
+  const urlApiUsers = `http://localhost:3030/api/users/`;
   const [statesUsers, setStatesUsers] = useState({
     loading: true,
     users: [],
@@ -14,6 +21,64 @@ const Users = (props) => {
     rows: [],
   });
 
+  const [deleteModal, setDeleteModal] = useState({
+    open: false,
+    itemId: null,
+    itemName: "",
+  });
+
+  const handleNewClick = () => {   
+    const url = `${urlUsers}registro/`;
+    window.open(url, "_blank");
+  };
+
+  const handleDetailClick = (params) => {
+    const url = `${urlUsers}detalle-usuario/` + params.id;
+    window.open(url, "_blank");
+  };
+
+  const handleEditClick = (params) => {
+    const url = `${urlUsers}editar-usuario/` + params.id;
+    window.open(url, "_blank");
+  };
+
+  const handleDeleteClick = (params) => {
+    setDeleteModal({
+      open: true,
+      itemId: params.id,
+      itemName: params.row.name,
+    });
+  };
+
+  const handleCloseDeleteModal = () => {
+    setDeleteModal({
+      open: false,
+      itemId: null,
+      itemName: "",
+    });
+  };
+
+  const handleConfirmDelete = () => {
+    const { itemId } = deleteModal;
+    axios
+      .delete(`${urlApiUsers}${itemId}`)
+      .then((response) => {
+        if (response.data.ok) {
+          setStatesUsers((prevState) => ({
+            ...prevState,
+            users: prevState.users.filter((u) => u.id !== itemId),
+          }));
+          handleCloseDeleteModal();
+          console.log("Usuario eliminado con éxito.");
+        } else {
+          console.error("Error al eliminar usuario:", response.data.msg);
+        }
+      })
+      .catch((error) => {
+        console.error("Error al eliminar usuario:", error);
+      });
+  };
+  
   useEffect(() => {
     const endpoint = "http://localhost:3030/api/users?limit=10000";
     const getUsers = async () => {
@@ -48,33 +113,44 @@ const Users = (props) => {
       statesUsers.users.length ? statesUsers.users[0] : {}
     );
 
-    const listWrite = ["id", "userName", "email", "name"];
-    const headerNameTable = {
-      id: "ID",
-      userName: "USUARIO",
-      email: "CORREO ELECTRÓNICO",
-      name: "NOMBRE COMPLETO",
-    };
-    const columnsFormat = dataObjUser
-      .filter(([key, value]) => listWrite.includes(key))
-      .map(([key, value]) => {
-        return {
-          field: key,
-          headerName: headerNameTable[key],
-          width: 300,
-          type: typeof value,
-          editable: true,
-        };
-      });
+    const columnsFormat = [
+      { field: "id", headerName: "ID", width: 60 },
+      { field: "Username", headerName: "USUARIO", width: 350 },
+      { field: "email", headerName: "CORREO ELECTRÓNICO", width: 350 },
+      { field: "name", headerName: "NOMBRE COMPLETO", flex: 1 },
+      {
+        field: "actions",
+        type: "actions",
+        headerName: "ACCIONES",
+        width: 150,
+        getActions: (params) => [
+          <GridActionsCellItem
+            icon={<FontAwesomeIcon icon={faEye} className="green-icon" />}
+            label="Ver"
+            onClick={() => handleDetailClick(params)}
+          />,
+          <GridActionsCellItem
+            icon={<FontAwesomeIcon icon={faEdit} className="blue-icon" />}
+            label="Edit"
+            onClick={() => handleEditClick(params)}
+          />,
+          <GridActionsCellItem
+            icon={<FontAwesomeIcon icon={faTrash} className="red-icon" />}
+            label="Delete"
+            onClick={() => handleDeleteClick(params)}
+          />,
+        ],
+      },
+    ];
 
     const rowsFormat = [];
 
     statesUsers.users.forEach((user) => {
       const objData = {};
       Object.entries(user).forEach(([key, value]) => {
-        if (listWrite.includes(key)) {
+        
           objData[key] = value;
-        }
+        
       });
       rowsFormat.push(objData);
     });
@@ -88,12 +164,29 @@ const Users = (props) => {
   }, [statesUsers.users]);
 
   return (
-    <>
-      <h1 style={{ textAlign: "center", color: "#e2001a" }}>
-        TODOS LOS PRODUCTOS
-      </h1>
-
-      <Container maxWidth={400} style={{ height: 400 }}>
+    <>   
+      <Container sx={{ height: 700, width: "100%" }}>
+        <Typography
+          variant="h3"
+          component="h3"
+          sx={{ textAlign: "center", mb: 3, color: "#e2001a" }}
+        >
+          TODOS LOS USUARIOS
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleNewClick}
+          sx={{
+            mb: 2,
+            backgroundColor: "#2d8f2c",
+            "&:hover": {
+              backgroundColor: "#256b23",
+            },
+          }}
+        >
+          Agregar Usuario
+        </Button>
         <DataGrid
           rows={dataGrid.rows}
           columns={dataGrid.columns}
@@ -103,9 +196,15 @@ const Users = (props) => {
             },
           }}
           pageSizeOptions={[5, 10]}
-          checkboxSelection
         />
       </Container>
+      <ConfirmDeleteModal
+        open={deleteModal.open}
+        onClose={handleCloseDeleteModal}
+        onConfirm={handleConfirmDelete}
+        item="Usuario"
+        itemName={deleteModal.itemName}
+      />
     </>
   );
 };

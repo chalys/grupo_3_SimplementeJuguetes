@@ -7,6 +7,7 @@ const {
   lessQuantity,
   canceledOrder,
   completedOrder,
+  listOrderCompleted,
 } = require("../../controllers/api/cart");
 
 /* /api/cart */
@@ -23,5 +24,7 @@ router.patch("/less/:id", lessQuantity)
 router.patch("/canceled", canceledOrder)
 
 router.patch("/completed", completedOrder)
+
+router.get("/listOrderCompleted", listOrderCompleted)
 
 module.exports = router;

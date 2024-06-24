@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
-const Orders = props => {
-  const [statesOrders, setStatesOrders] = useState({
+const Categories = (props) => {
+  const [statesCategories, setStatesCategories] = useState({
     loading: true,
-    orders: [],
+    categories: [],
     error: "",
   });
 
@@ -13,9 +13,10 @@ const Orders = props => {
     columns: [],
     rows: [],
   });
+
   useEffect(() => {
-    const endpoint = "http://localhost:3030/api/cart/listOrderCompleted?limit=10000";
-    const getOrders = async () => {
+    const endpoint = "http://localhost:3030/api/category?limit=10000";
+    const getCategories = async () => {
       try {
         const {
           ok,
@@ -26,35 +27,34 @@ const Orders = props => {
         if (!ok) throw new Error(msg);
 
         ok &&
-          setStatesOrders({
-            ...statesOrders,
-            orders: data,
+          setStatesCategories({
+            ...statesCategories,
+            categories: data,
             loading: false,
           });
       } catch (error) {
-        setStatesOrders({
-          ...statesOrders,
+        setStatesCategories({
+          ...statesCategories,
           error: error.message,
         });
       }
     };
 
-    getOrders();
+    getCategories();
   }, []);
 
   useEffect(() => {
-    const dataObjOrder = Object.entries(
-      statesOrders.orders.length ? statesOrders.orders[0] : {}
+    const dataObjCategory = Object.entries(
+      statesCategories.categories.length ? statesCategories.categories[0] : {}
     );
 
-    const listWrite = ["id", "products.name", "price", "description"];
+    const listWrite = ["id", "name", "description"];
     const headerNameTable = {
       id: "ID",
       name: "NOMBRE",
-      price: "PRECIO",
       description: "DESCRIPCIÓN",
     };
-    const columnsFormat = dataObjOrder
+    const columnsFormat = dataObjCategory
       .filter(([key, value]) => listWrite.includes(key))
       .map(([key, value]) => {
         return {
@@ -68,9 +68,9 @@ const Orders = props => {
 
     const rowsFormat = [];
 
-    statesOrders.orders.forEach((order) => {
+    statesCategories.categories.forEach((category) => {
       const objData = {};
-      Object.entries(order).forEach(([key, value]) => {
+      Object.entries(category).forEach(([key, value]) => {
         if (listWrite.includes(key)) {
           objData[key] = value;
         }
@@ -84,18 +84,21 @@ const Orders = props => {
     });
 
     console.log(columnsFormat);
-  }, [statesOrders.orders]);
+  }, [statesCategories.categories]);
 
   return (
     <>
-      <h1 style={{ textAlign: "center", color: "#e2001a" }}>
-        TODAS LAS ORDENES
-      </h1>
-
+      <Typography
+        variant="h3"
+        component="h3"
+        sx={{ textAlign: "center", mb: 3, color: "#e2001a" }}
+      >
+        TODOS LOS PRODUCTOS
+      </Typography>
       <Container maxWidth={400} style={{ height: 400 }}>
         <DataGrid
           rows={dataGrid.rows}
-          columns={dataGrid.columns}
+          columns={dataGrid.columns}         
           initialState={{
             pagination: {
               paginationModel: { page: 0, pageSize: 5 },
@@ -103,11 +106,13 @@ const Orders = props => {
           }}
           pageSizeOptions={[5, 10]}
           checkboxSelection
+          
         />
       </Container>
     </>
   );
 };
-Orders.propTypes = {}
 
-export default Orders
+Categories.propTypes = {};
+
+export default Categories;

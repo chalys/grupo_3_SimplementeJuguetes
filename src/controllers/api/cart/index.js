@@ -6,4 +6,6 @@ module.exports = {//API
     lessQuantity: require("./lessQuantity.controller.api"),
     canceledOrder:require("./canceledOrder.controller.api"),
     completedOrder:require("./completedOrder.controller.api"),
+    listOrderCompleted:require("./listOrderCompleted.controller.api")
+    
 }
