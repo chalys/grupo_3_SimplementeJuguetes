@@ -1,6 +1,6 @@
 /* Estilos generales del sidebar */
 .main-menu {
-    background-color: #d32f2f; /* Fondo rojo */
+    background-color: var(--red); /* Fondo rojo */
     width: 60px; /* Ancho de la barra lateral colapsada */
     height: 100vh; /* Altura del sidebar */
     position: fixed; /* Fijo en la pantalla */
@@ -65,7 +65,7 @@
 }
 
 .main-menu ul li a:hover {
-    background-color: #b71c1c; /* Fondo rojo oscuro al pasar el ratón */
+    background-color: var(--redblack); /* Fondo rojo oscuro al pasar el ratón */
 }
 
 .main-menu ul li a i {
@@ -103,9 +103,9 @@
 }
 
 .main-menu .logout a {
-    background-color: #c62828;
+    background-color: var(--redblack);
 }
 
 .main-menu .logout a:hover {
-    background-color: #8e0000;
+    background-color: var(--redblack);
 }
