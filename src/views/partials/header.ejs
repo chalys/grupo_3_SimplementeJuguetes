@@ -30,8 +30,9 @@
       <p class="welcome">⚪ ¡BIENVENIDO, EN QUE PODEMOS AYUDARTE! ⚪</p>
       <div class="admin-links">
         <a href="/sobre-nosotros"><i class="fa-solid fa-building-circle-check"></i>Jugueteria</a>
-        <a href="/autenticacion/login"><i class="fa-solid fa-user"></i>Ingresar</a>
         <a href="/contacto"><i class="fa-solid fa-envelope-circle-check"></i>Contacto</a>
+        <a href="/autenticacion/login"><i class="fa-solid fa-user"></i>Ingresar</a>
+      
       </div>
 
         <% } else if (locals.userLogin && locals.userLogin.role === 2) { %> 
@@ -39,7 +40,7 @@
       <div class="admin-links">
           <a href="/admin/crear-producto"><i class="fa-solid fa-cart-plus"></i>Agregar</a>
           <a href="/admin/lista-productos"><i class="fa-solid fa-clipboard-list"></i>Productos</a>
-          <a href="/autenticacion/cerrar-session"><i class="fa-solid fa-user"></i>Log Out</a>
+          <a href="/autenticacion/cerrar-session"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
       </div>
     
       </div>
@@ -49,6 +50,8 @@
         <a href="/favoritos"><i class="fa-solid fa-heart"></i>Favoritos</a>
         <a href="/perfil/<%= locals.userLogin.id %>"><i class="fa-solid fa-user-check"></i><%= locals.userLogin.userName.charAt(0).toUpperCase() + locals.userLogin.userName.slice(1) %></a>
         <a href="/carrito-compra"><i class="fa-solid fa-cart-shopping"></i>Carrito</a>
+        <a href="/autenticacion/cerrar-session"><i class="fa-solid fa-right-from-bracket"></i>Cerrar Sesion
+        </a>
       </div>
       <% } %>
 </div>

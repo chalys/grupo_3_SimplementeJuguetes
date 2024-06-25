@@ -138,6 +138,7 @@ button.botonSiguienteRegis{
 }
 
 button.botonSiguienteRegis.toggle{
+background-color: var(--red);
 width: 160px;
 height: 32px;
 margin-top: 10px;
@@ -303,7 +304,7 @@ main.mainRegistro div form button{
 }
 main.mainRegistro div form button a{
     text-decoration: none;
-    color: black;
+    color: var(--blanco);
 }
 
 /*redireccion al login*/
@@ -491,10 +492,14 @@ main.mainRegistro .perfilReg{
 
 main.mainRegistro button.botonSiguienteRegis{
     font-size: 1.2rem;
-    background-color: var(--azul);
+    background-color: var(--red);
     height: 40px;
     width: 200px;
     border-radius: 5px;
+}
+
+.accessLogin a{
+   text-decoration: none;
 }
 
     main.mainRegistro div form input{
@@ -510,6 +515,9 @@ main.mainRegistro button.botonSiguienteRegis{
 }
     main.mainRegistro div form{
     width: 310px;
+}
+main.mainRegistro div form button a{
+    font-size: 1.2rem;
 }
 
 .div-img-googler{
@@ -581,6 +589,30 @@ main.mainRegistro div.divFormReg{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    
+}
+
+main.mainRegistro div.divFormReg div input.password-input{
+    position: relative;
+    right: 35px;
+    width: 200px;
+}
+main.mainRegistro div.divFormReg div button{
+    margin-left: 205px;
+    position: absolute;
+}
+
+main.mainRegistro div.divFormReg form.formReg{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centrar en el eje vertical */
+    display: flex; /* Añadir esta línea */
+}
+
+main.mainRegistro div form button{ 
+    width: 29px;
+    height: 29px;
 }
 
 
