@@ -115,7 +115,7 @@ const Users = (props) => {
 
     const columnsFormat = [
       { field: "id", headerName: "ID", width: 60 },
-      { field: "Username", headerName: "USUARIO", width: 350 },
+      { field: "userName", headerName: "USUARIO", width: 350 },
       { field: "email", headerName: "CORREO ELECTRÓNICO", width: 350 },
       { field: "name", headerName: "NOMBRE COMPLETO", flex: 1 },
       {

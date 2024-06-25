@@ -37,6 +37,7 @@ const Categories = (props) => {
     const url = `${urlApiCategories}detalle-categoria/` + params.id;
     window.open(url, "_blank");
   };
+  
   const handleEditClick = (params) => {
     const url = `${urlApiCategories}editar-categoria/` + params.id;
     window.open(url, "_blank");
