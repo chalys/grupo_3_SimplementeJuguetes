@@ -14,14 +14,16 @@ function ContentRowTop({ data }) {
   });
 
   const [errors, setErrors] = useState({
-    metrics:"",
-    categories:"",
+    metrics: "",
+    categories: "",
     lastProduct: "",
   });
 
   const [categories, setCategories] = useState([]);
   const [lastProduct, setLastProduct] = useState({});
-  const [showModal, setShowModal] = useState(false)
+  const [lastCategory, setLastCategory] = useState({});
+  const [lastUser, setLastUser] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const getMetrics = async () => {
@@ -103,14 +105,74 @@ function ContentRowTop({ data }) {
       }
     };
 
+    const getLastCategory = async () => {
+      try {
+        const endpoint =
+          "http://localhost:3030/api/query?q=SELECT * FROM categories WHERE createdAt = (SELECT MAX(createdAt) FROM categories) LIMIT 1";
+        const {
+          ok,
+          data: [category],
+        } = await fetch(endpoint, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then((res) => res.json());
+
+        ok && setLastCategory(category);
+
+        setTimeout(() => {
+          setLoading({
+            ...loading,
+            lastCategory: false,
+          });
+        }, 2000);
+      } catch (error) {
+        setErrors({
+          ...errors,
+          lastCategory: error.message,
+        });
+      }
+    };
+
+    const getLastUser = async () => {
+      try {
+        const endpoint =
+          "http://localhost:3030/api/query?q=SELECT * FROM users WHERE createdAt = (SELECT MAX(createdAt) FROM users) LIMIT 1";
+        const {
+          ok,
+          data: [user],
+        } = await fetch(endpoint, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then((res) => res.json());
+
+        ok && setLastUser(user);
+
+        setTimeout(() => {
+          setLoading({
+            ...loading,
+            lastUser: false,
+          });
+        }, 2000);
+      } catch (error) {
+        setErrors({
+          ...errors,
+          lastUser: error.message,
+        });
+      }
+    };
+
     getMetrics();
     getCategories();
+    getLastCategory();
     getLastProduct();
+    getLastUser();
   }, []);
-  
-  const handleCloseModal = () => setShowModal(false)
-  const handleOpenModal = () =>  setShowModal(true)
-  
+
+  const handleCloseModal = () => setShowModal(false);
+  const handleOpenModal = () => setShowModal(true);
+
   return (
     <React.Fragment>
       {/*<!-- Content Row Top -->*/}
@@ -121,10 +183,6 @@ function ContentRowTop({ data }) {
 
         {/*<!-- Content Row Movies-->*/}
         <div className="row ">
-          {/*<!-- Movies in Data Base -->*/}
-          {/*<!-- Total awards -->*/}
-          {/*<!-- Actors quantity -->*/}
-
           {!loading.metrics ? (
             metrics.map((el, i) => {
               return <ContentData key={i} {...el} />;
@@ -139,12 +197,10 @@ function ContentRowTop({ data }) {
             .map((msg) => {
               return <Alert message={msg} />;
             })}
-        {/*<!-- End movies in Data Base -->*/}
-
         {/*<!-- Content Row Last Movie in Data Base -->*/}
         <div className="row">
           {/*<!-- Last Movie in DB -->*/}
-          <div className="col-lg-6 mb-4">
+          <div className="col-lg-4 mb-4">
             <div className="card shadow mb-4">
               <div className="card-header py-3">
                 <h5 className="m-0 font-weight-bold text-gray-800">
@@ -160,9 +216,7 @@ function ContentRowTop({ data }) {
                     alt={lastProduct.name}
                   />
                 </div>
-                <p>
-                {lastProduct.description}
-                </p>
+                <p>{lastProduct.description}</p>
                 <button
                   className="btn btn-danger"
                   rel="nofollow"
@@ -174,9 +228,61 @@ function ContentRowTop({ data }) {
             </div>
           </div>
           {/*<!-- End content row last movie in Data Base -->*/}
-
-          {/*<!-- Genres in DB -->*/}
-          <div className="col-lg-6 mb-4">
+          <div className="col-lg-4 mb-4">
+            <div className="row">
+              <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                  <h5 className="m-0 font-weight-bold text-gray-800">
+                    Último usuario agregado:
+                  </h5>
+                </div>
+                <div className="card-body">
+                  <div className="d-flex align-items-center">
+                    <img
+                      className="img-fluid rounded-circle"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        marginRight: "10px",
+                      }}
+                      src={`http://localhost:3030/api/users/${lastUser.userPicture}`}
+                      alt={lastUser.userName}
+                    />
+                    <div>
+                      <strong>{lastUser.name}</strong>
+                      <div>ID: {lastUser.id}</div>
+                    </div>
+                  </div>
+                  <div className="row mt-3">
+                    <div className="col-md-5">
+                      <strong>Email:</strong>
+                    </div>
+                    <div className="col-md-7">{lastUser.email}</div>
+                    <div className="col-md-5">
+                      <strong>Dirección:</strong>
+                    </div>
+                    <div className="col-md-7">{lastUser.street}</div>
+                    <div className="col-md-5">
+                      <strong>Número de Teléfono:</strong>
+                    </div>
+                    <div className="col-md-7">{lastUser.phoneNumber}</div>
+                  </div>
+                </div>
+              </div>
+              <div className="card shadow mb-4">
+                <div className="card-header py-3">
+                  <h5 className="m-0 font-weight-bold text-gray-800">
+                    Ultima categoria agregada :{" "}
+                    <strong>{lastCategory.name}</strong>
+                  </h5>
+                </div>
+                <div className="card-body">
+                  <p>{lastCategory.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 mb-4">
             <div className="card shadow mb-4">
               <div className="card-header py-3">
                 <h5 className="m-0 font-weight-bold text-gray-800">
@@ -194,7 +300,7 @@ function ContentRowTop({ data }) {
           </div>
         </div>
       </div>
-      <Modal active={showModal} onClose={handleCloseModal}/>
+      <Modal active={showModal} onClose={handleCloseModal} />
       {/*<!--End Content Row Top-->*/}
     </React.Fragment>
   );

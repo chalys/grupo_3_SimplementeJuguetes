@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Container, Typography, Button } from "@mui/material";
 import { DataGrid, GridActionsCellItem } from "@mui/x-data-grid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEdit, faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 import ConfirmDeleteModal from "../components/Reuse/ConfirmDeleteModal";
 import axios from "axios";
-import "../assets/css/style.css";
+import { ToastContainer } from "react-toastify";
+import { showToast } from "../utils/toastr";
+import "react-toastify/dist/ReactToastify.css";
 
 const Products = () => {
-  const urlProducts = `http://localhost:3030/productos/`;
-  const urlApiProducts = `http://localhost:3030/api/products/`;
+  const urlProducts = `http://localhost:3030/productos`;
+  const urlApiProducts = `http://localhost:3030/api/products`;
+  
 
   const [statesProducts, setStatesProducts] = useState({
     loading: true,
@@ -34,7 +37,7 @@ const Products = () => {
   };
 
   const handleDetailClick = (params) => {
-    const url = `${urlProducts}detalle-producto/` + params.id;
+    const url = `${urlProducts}/detalle-producto/` + params.id;
     window.open(url, "_blank");
   };
 
@@ -62,7 +65,7 @@ const Products = () => {
   const handleConfirmDelete = () => {
     const { itemId } = deleteModal;
     axios
-      .delete(`${urlApiProducts}${itemId}`)
+      .delete(`${urlApiProducts}/${itemId}`)
       .then((response) => {
         if (response.data.ok) {
           setStatesProducts((prevState) => ({
@@ -79,7 +82,13 @@ const Products = () => {
         console.error("Error al eliminar el producto:", error);
       });
   };
-
+  const handleAddClick = () => {
+    // setModalOpen({
+    //   open: true,
+    //   isEdit: false,
+    //   categoryData: [],
+    // });
+  };
   useEffect(() => {
     const urlApiProducts = "http://localhost:3030/api/products?limit=10000";
     const getProducts = async () => {
@@ -115,14 +124,27 @@ const Products = () => {
     );
 
     const columnsFormat = [
-      { field: "id", headerName: "ID", width: 60 },
-      { field: "name", headerName: "NOMBRE", width: 350 },
-      { field: "price", headerName: "PRECIO", width: 350 },
-      { field: "description", headerName: "DESCRIPCIÓN", flex: 1 },
+      { field: "id", headerName: "Id", width: 60 },
+      {
+        field: "firstImg",
+        headerName: "Imagen",
+        width: 80,
+        renderCell: (params) => (
+          <img
+            src={`${urlApiProducts}/${params.value}`}
+            alt="Producto"
+            style={{ width: "100%", height: "auto" }}
+          />
+        ),
+      },
+
+      { field: "name", headerName: "Nombre de Producto", width: 300 },
+      { field: "price", headerName: "Precio", width: 100 },
+      { field: "description", headerName: "Descripción", flex: 1 },
       {
         field: "actions",
         type: "actions",
-        headerName: "ACCIONES",
+        headerName: "Acciones",
         width: 150,
         getActions: (params) => [
           <GridActionsCellItem
@@ -175,14 +197,16 @@ const Products = () => {
         <Button
           variant="contained"
           color="primary"
-          onClick={handleNewClick}
+          onClick={handleAddClick}
           sx={{
             mb: 2,
             backgroundColor: "#2d8f2c",
             "&:hover": {
               backgroundColor: "#256b23",
             },
+            textTransform: "none",
           }}
+          startIcon={<FontAwesomeIcon icon={faPlus} />}
         >
           Agregar Producto
         </Button>
@@ -191,10 +215,25 @@ const Products = () => {
           columns={dataGrid.columns}
           initialState={{
             pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
+              paginationModel: { page: 0, pageSize: 10 },
             },
           }}
-          pageSizeOptions={[5, 10]}
+          //pageSizeOptions={[10, 20]}
+          pageSizeOptions={[10, 20]}
+          slotProps={{
+            pagination: {
+              next: {
+                style: {
+                  color: "green",
+                },
+              },
+              back: {
+                style: {
+                  color: "green",
+                },
+              },
+            },
+          }}
         />
       </Container>
       <ConfirmDeleteModal
