@@ -70,7 +70,9 @@ main.main-login{
     border-radius: 3px;
 };
 
-.text-login{font-weight: 600;}
+.text-login{
+    font-weight: 600;}
+
 .contenido{
     position: absolute;
     display: flex;
@@ -82,10 +84,11 @@ main.main-login{
 }
 .button-login{
     font-size: 1.2rem;
-    background-color: var(--azul);
+    background-color: var(--red);
     height: 40px;
     width: 200px;
     border-radius: 5px;
+    color: var(--blanco);
 }
 div.check-login{align-self: start;margin-left: 11%;}
 
@@ -97,6 +100,7 @@ div.check-login{align-self: start;margin-left: 11%;}
         gap: 5px;
     }
     .link-create-account a{
+    text-decoration: none;
     margin: 0;
 }
     .link-create-account p{
@@ -132,8 +136,21 @@ padding-left: 15px;
 top: 80px;}
 }
 @media(min-device-width: 769px){
+
+    .text-name{
+        margin-top: 20px;
+        text-align: center;
+}
+
+.text-password{
+    text-align: center;
+}
+
+
 .contenido{
     transform: scale(1.3);
+
+    top: 30vh;
 }
 .fondo{
     width: 100%;
