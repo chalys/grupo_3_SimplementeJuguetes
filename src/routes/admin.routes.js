@@ -2,7 +2,8 @@
 const express = require("express");
 const router = express.Router();
 const { uploadProducts } = require("../middlewares/uploadFiles");
-const {productsValidationStore,productsValidationUpdate} = require("../middlewares/validations")
+const { productsValidationStore, productsValidationUpdate } = require("../middlewares/validations")
+const checkAdmin = require('../middlewares/checkAdmin')
 
 // ************ Controller Require ************
 const {
@@ -18,10 +19,10 @@ const {
 // /admin
 
 //*** LIST ALL PRODUCT ***/
-router.get("/lista-productos", listProduct);
+router.get("/lista-productos", checkAdmin, listProduct);
 
 //*** CREATE ONE PRODUCT ***/
-router.get("/crear-producto/", addProduct);
+router.get("/crear-producto/", checkAdmin,  addProduct);
 router.post(
   "/crear-producto/",
   uploadProducts.fields([
@@ -35,11 +36,11 @@ router.post(
 //*** EDIT PRODUCT ***/
 router.get("/editar-producto/:id", updateProduct);
 router.put("/editar-producto/:id",
-  
+
   uploadProducts.fields([
     { name: "firstImg" },
     { name: "secondImg" },
-]),
+  ]),
   productsValidationUpdate,
   editProduct
 );
