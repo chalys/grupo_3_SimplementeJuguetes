@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Container, Typography, Button } from "@mui/material";
 import { DataGrid, GridActionsCellItem } from "@mui/x-data-grid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faEdit,
+  faTrash,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import ConfirmDeleteModal from "../components/Reuse/ConfirmDeleteModal";
 import axios from "axios";
 import "../assets/css/style.css";
 
-const Users = (props) => {
+const Users = () => {
   const urlUsers = `http://localhost:3030/autenticacion/`;
   const urlApiUsers = `http://localhost:3030/api/users/`;
   const [statesUsers, setStatesUsers] = useState({
@@ -27,7 +32,7 @@ const Users = (props) => {
     itemName: "",
   });
 
-  const handleNewClick = () => {   
+  const handleNewClick = () => {
     const url = `${urlUsers}registro/`;
     window.open(url, "_blank");
   };
@@ -78,7 +83,13 @@ const Users = (props) => {
         console.error("Error al eliminar usuario:", error);
       });
   };
-  
+  const handleAddClick = () => {
+    // setModalOpen({
+    //   open: true,
+    //   isEdit: false,
+    //   categoryData: [],
+    // });
+  };
   useEffect(() => {
     const endpoint = "http://localhost:3030/api/users?limit=10000";
     const getUsers = async () => {
@@ -114,10 +125,27 @@ const Users = (props) => {
     );
 
     const columnsFormat = [
-      { field: "id", headerName: "ID", width: 60 },
-      { field: "userName", headerName: "USUARIO", width: 350 },
-      { field: "email", headerName: "CORREO ELECTRÓNICO", width: 350 },
-      { field: "name", headerName: "NOMBRE COMPLETO", flex: 1 },
+      { field: "id", headerName: "Id", width: 60 },
+      {
+        field: "userPicture",
+        headerName: "Imagen",
+        width: 80,
+        renderCell: (params) => (
+          <img
+            src={`${urlApiUsers}/${params.value}`}
+            alt="Avatar"
+            style={{
+              width: "70%",
+              height: "auto",
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+        ),
+      },
+      { field: "userName", headerName: "Usuario", width: 200 },
+      { field: "email", headerName: "Correo Electrónico", width: 300 },
+      { field: "name", headerName: "Nombre Completo", flex: 1 },
       {
         field: "actions",
         type: "actions",
@@ -148,9 +176,7 @@ const Users = (props) => {
     statesUsers.users.forEach((user) => {
       const objData = {};
       Object.entries(user).forEach(([key, value]) => {
-        
-          objData[key] = value;
-        
+        objData[key] = value;
       });
       rowsFormat.push(objData);
     });
@@ -164,7 +190,7 @@ const Users = (props) => {
   }, [statesUsers.users]);
 
   return (
-    <>   
+    <>
       <Container sx={{ height: 700, width: "100%" }}>
         <Typography
           variant="h3"
@@ -176,14 +202,16 @@ const Users = (props) => {
         <Button
           variant="contained"
           color="primary"
-          onClick={handleNewClick}
+          onClick={handleAddClick}
           sx={{
             mb: 2,
             backgroundColor: "#2d8f2c",
             "&:hover": {
               backgroundColor: "#256b23",
             },
+            textTransform: "none",
           }}
+          startIcon={<FontAwesomeIcon icon={faPlus} />}
         >
           Agregar Usuario
         </Button>
@@ -192,10 +220,24 @@ const Users = (props) => {
           columns={dataGrid.columns}
           initialState={{
             pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
+              paginationModel: { page: 0, pageSize: 10 },
             },
           }}
-          pageSizeOptions={[5, 10]}
+          pageSizeOptions={[10, 20]}
+          componentsProps={{
+            pagination: {
+              nextButton: {
+                style: {
+                  color: "green",
+                },
+              },
+              backButton: {
+                style: {
+                  color: "green",
+                },
+              },
+            },
+          }}
         />
       </Container>
       <ConfirmDeleteModal

@@ -2,18 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Container, Typography, Button } from "@mui/material";
 import { DataGrid, GridActionsCellItem } from "@mui/x-data-grid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faTrash, faPlus } from "@fortawesome/free-solid-svg-icons";
 import ConfirmDeleteModal from "../components/Reuse/ConfirmDeleteModal";
+import CategoryModal from "../components/Reuse/CategoryModal";
 import axios from "axios";
-import "../assets/css/style.css";
+import { ToastContainer } from "react-toastify";
+import { showToast } from "../utils/toastr";
+import "react-toastify/dist/ReactToastify.css";
 
-const Categories = (props) => {
-  const urlCategories = `http://localhost:3030/productos/`;
-  const urlApiCategories = `http://localhost:3030/api/category/`;
+const Categories = () => {
+  const urlApiCategories = `http://localhost:3030/api/category`;
 
   const [statesCategories, setStatesCategories] = useState({
     loading: true,
-    categories: [],
+    categoryData: [],
     error: "",
   });
 
@@ -22,26 +24,17 @@ const Categories = (props) => {
     rows: [],
   });
 
+  const [modalOpen, setModalOpen] = useState({
+    open: false,
+    isEdit: false,
+    categoryData: [],
+  });
+
   const [deleteModal, setDeleteModal] = useState({
     open: false,
     itemId: null,
     itemName: "",
   });
-
-  const handleNewClick = () => {
-    const url = `${urlApiCategories}crear-categoria/`;
-    window.open(url, "_blank");
-  };
-
-  const handleDetailClick = (params) => {
-    const url = `${urlApiCategories}detalle-categoria/` + params.id;
-    window.open(url, "_blank");
-  };
-  
-  const handleEditClick = (params) => {
-    const url = `${urlApiCategories}editar-categoria/` + params.id;
-    window.open(url, "_blank");
-  };
 
   const handleDeleteClick = (params) => {
     setDeleteModal({
@@ -62,44 +55,80 @@ const Categories = (props) => {
   const handleConfirmDelete = () => {
     const { itemId } = deleteModal;
     axios
-      .delete(`http://localhost:3030/api/category/${itemId}`)
+      .delete(`${urlApiCategories}/${itemId}`)
       .then((response) => {
         if (response.data.ok) {
-          // Eliminar la categoría del estado
           setStatesCategories((prevState) => ({
             ...prevState,
-            categories: prevState.categories.filter(
+            categoryData: prevState.categoryData.filter(
               (category) => category.id !== itemId
             ),
           }));
           handleCloseDeleteModal();
-          console.log("Categoría eliminada con éxito.");
+          showToast("success", "Categoría eliminada con éxito.");
         } else {
-          console.error("Error eliminando la categoría:", response.data.msg);
+          showToast("error", "Error eliminando la categoría: " + response.data.msg);
         }
       })
       .catch((error) => {
-        console.error("Error eliminando la categoría:", error);
+        showToast("error", "Error eliminando la categoría: " + error.message);
       });
   };
+
+  const handleAddClick = () => {
+    setModalOpen({
+      open: true,
+      isEdit: false,
+      categoryData: [],
+    });
+  };
+
+  const handleEditClick = (params) => {
+    setModalOpen({
+      open: true,
+      isEdit: true,
+      categoryData: params.row,
+    });
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen({
+      open: false,
+      isEdit: false,
+      categoryData: [],
+    });
+  };
+
+  const handleSave = async () => {
+    try {
+      const endpoint = await axios.get(`${urlApiCategories}?limit=1000`);
+      const { ok, data = [], msg = null } = endpoint.data;
+
+      if (!ok) throw new Error(msg);
+
+      setStatesCategories((prevState) => ({
+        ...prevState,
+        categoryData: data,
+      }));
+      showToast("success", "Categoría registrada con éxito");
+    } catch (error) {
+      showToast("error", "Error eliminando la categoría: " + error);      
+    }
+  };
+
   useEffect(() => {
-    const endpoint = "http://localhost:3030/api/category?limit=10000";
+    const endpoint = `${urlApiCategories}?limit=1000`;
     const getCategories = async () => {
       try {
-        const {
-          ok,
-          data = [],
-          msg = null,
-        } = await fetch(endpoint).then((res) => res.json());
+        const { ok, data = [], msg = null } = await fetch(endpoint).then((res) => res.json());
 
         if (!ok) throw new Error(msg);
 
-        ok &&
-          setStatesCategories({
-            ...statesCategories,
-            categories: data,
-            loading: false,
-          });
+        setStatesCategories({
+          ...statesCategories,
+          categoryData: data,
+          loading: false,
+        });
       } catch (error) {
         setStatesCategories({
           ...statesCategories,
@@ -107,28 +136,20 @@ const Categories = (props) => {
         });
       }
     };
-
     getCategories();
   }, []);
+
   useEffect(() => {
-    const dataObjCategory = Object.entries(
-      statesCategories.categories.length ? statesCategories.categories[0] : {}
-    );
     const columnsFormat = [
-      { field: "id", headerName: "ID", width: 60 },
-      { field: "name", headerName: "NOMBRE", width: 350 },
-      { field: "description", headerName: "DESCRIPCIÓN", flex: 1 },
+      { field: "id", headerName: `Id`, width: 60 },
+      { field: "name", headerName: `Nombre`, width: 350 },
+      { field: "description", headerName: `Descripción`, flex: 1 },
       {
         field: "actions",
         type: "actions",
-        headerName: "ACCIONES",
+        headerName: "Acciones",
         width: 150,
         getActions: (params) => [
-          <GridActionsCellItem
-            icon={<FontAwesomeIcon icon={faEye} className="green-icon" />}
-            label="Ver"
-            onClick={() => handleDetailClick(params)}
-          />,
           <GridActionsCellItem
             icon={<FontAwesomeIcon icon={faEdit} className="blue-icon" />}
             label="Edit"
@@ -143,25 +164,17 @@ const Categories = (props) => {
       },
     ];
 
-    const rowsFormat = [];
-
-    statesCategories.categories.forEach((category) => {
-      const objData = {};
-      Object.entries(category).forEach(([key, value]) => {
-        //     if (listWrite.includes(key)) {
-        objData[key] = value;
-        //   }
-      });
-      rowsFormat.push(objData);
-    });
+    const rowsFormat = statesCategories.categoryData.map((category) => ({
+      id: category.id,
+      name: category.name,
+      description: category.description,
+    }));
 
     setDataGrid({
       rows: rowsFormat,
       columns: columnsFormat,
     });
-
-    console.log(columnsFormat);
-  }, [statesCategories.categories]);
+  }, [statesCategories.categoryData]);
 
   return (
     <>
@@ -177,14 +190,16 @@ const Categories = (props) => {
         <Button
           variant="contained"
           color="primary"
-          onClick={handleNewClick}
+          onClick={handleAddClick}
           sx={{
             mb: 2,
             backgroundColor: "#2d8f2c",
             "&:hover": {
               backgroundColor: "#256b23",
             },
+            textTransform: "none",
           }}
+          startIcon={<FontAwesomeIcon icon={faPlus} />}
         >
           Agregar Categoría
         </Button>
@@ -193,12 +208,13 @@ const Categories = (props) => {
           columns={dataGrid.columns}
           initialState={{
             pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
+              paginationModel: { page: 0, pageSize: 10 },
             },
           }}
-          pageSizeOptions={[5, 10]}
+          pageSizeOptions={[10,20]}
         />
       </Container>
+
       <ConfirmDeleteModal
         open={deleteModal.open}
         onClose={handleCloseDeleteModal}
@@ -206,10 +222,17 @@ const Categories = (props) => {
         item="Categoria"
         itemName={deleteModal.itemName}
       />
+
+      <CategoryModal
+        open={modalOpen.open}
+        onClose={handleCloseModal}
+        isEdit={modalOpen.isEdit}
+        categoryData={modalOpen.categoryData}
+        onSave={handleSave}
+      />
+      <ToastContainer />
     </>
   );
 };
-
-Categories.propTypes = {};
 
 export default Categories;

@@ -22,10 +22,10 @@ const ConfirmDeleteModal = ({ open, onClose, onConfirm, item, itemName }) => {
           Eliminar {item}
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          ¿Está seguro de que desea eliminar {itemName}?
+          ¿Está seguro de que desea eliminar {item} - {itemName}?
         </Typography>
         <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
-          <Button onClick={onClose} sx={{ mr: 2 }}>
+          <Button variant="outlined" onClick={onClose} sx={{ mr: 2 }}>
             Cancelar
           </Button>
           <Button variant="contained" color="error" onClick={onConfirm}>
@@ -41,6 +41,7 @@ ConfirmDeleteModal.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   onConfirm: PropTypes.func.isRequired,
+  item: PropTypes.string.isRequired,
   itemName: PropTypes.string.isRequired,
 };
 

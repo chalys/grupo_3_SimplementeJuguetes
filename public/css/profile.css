@@ -35,7 +35,7 @@ body {
 }
 
 button.btn.btn-change-custom{
-    background-color: var(--azul)
+    background-color: var(--green)
 }
 
 button.btn.btn-change-custom a{

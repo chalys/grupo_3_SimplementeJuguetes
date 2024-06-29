@@ -29,13 +29,27 @@
                         <div class="errorsReg emailEr"><%- locals.errors?.email?.msg %></div>
                         <input type="email" name="email" id="email" placeholder="" value="<%= locals.old?.email %>"> 
                         
+
                         <label for="password">Contraseña</label>
                         <div class="errorsReg passwordEr" ><%- locals.errors?.password?.msg %></div>
-                        <input type="password" name="password" id="password" placeholder="" > 
-                        
+                        <input type="password" class="password-input" name="password" id="password" placeholder="" > 
+                            
+                        <!---
+                        <label for="password">Contraseña</label>
+                        <div class="errorsReg passwordEr" ><%- locals.errors?.password?.msg %></div>
+                         <div class="search-container">
+                            <input type="password" class="password-input" name="password" id="password" placeholder="" > 
+                            <button type="submit" class="search-button">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        -->
+
                         <label for="confgPass">Confirmar contraseña</label>
                         <div class="errorsReg confirmpasswordEr"><%- locals.errors?.confirmpassword?.msg %></div>
                         <input type="password" name="confirmpassword" class="margenEspRegis" placeholder="" > 
+                        
+                        
                         
                         <!--menu de insercion de foto y nombre-->
                         <div class="perfilReg">

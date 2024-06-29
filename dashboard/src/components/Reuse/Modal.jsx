@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 export const Modal = ({active = false, onClose}) => {
   return (
     
-    <div class={`modal fade ${active ? "show" : null}`} style={{display: active ? "block" : null}} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class={`modal fade ${active ? "show" : null}`} style={{display: active ? "block" : null}} id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">

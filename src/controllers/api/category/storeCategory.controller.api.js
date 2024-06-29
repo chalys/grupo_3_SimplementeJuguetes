@@ -1,10 +1,10 @@
 const db = require("../../../dataBase/models");
 module.exports = (req, res) => {
-  const { name } = req.body;
+  const { name, description } = req.body;
   db.category
     .create({
       name: name.trim(),
-      description:description.trim()
+      description: description.trim()
     })
     .then(() => {
       res.status(201).json({
