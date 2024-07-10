@@ -8,8 +8,6 @@
 
 .bg-container-title-custom {
     background-color: var(--orange) !important;
-    border-top-left-radius: 5px; 
-    border-top-right-radius: 5px;
 }
 
 .color-title-custom {

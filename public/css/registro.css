@@ -1,7 +1,7 @@
 @keyframes error{
-    0%{    background: var(--gris);;}
+    0%{    background: var(--lightgray);;}
     50%{background:rgb(255, 145, 145)}
-    100%{    background: var(--gris);;}
+    100%{    background: var(--lightgray);;}
 }
 
 .regiter-h2{
@@ -48,7 +48,7 @@ div.errorsReg div p{
     border-radius: 0px !important;
     animation: error 3s infinite ease-in-out;
     color: var(--red);
-    background: var(--gris);
+    background: var(--lightgray);
     width: 20%;
     margin: 0;
 }
@@ -65,7 +65,7 @@ div.errorsReg div{
     display: flex !important;
     width: 100% !important;
     height: 17px;
-    color: var(--blanco);
+    color: var(--white);
     align-items: flex-start !important;
 }
 div.errorsReg:hover div{
@@ -131,7 +131,7 @@ main.mainRegistro-1 .form div.botonesReg{
 
 button.botonSiguienteRegis{
     font-size: 1.2rem;
-    background-color: var(--azul);
+    background-color: var(--blue);
     height: 20px;
     width: 200px;
     border-radius: 5px;
@@ -227,7 +227,7 @@ main.mainRegistro div form{
     width: 240px;
     padding: 3px 15px 0px;
     border-radius: 10px 10px 10px 10px;
-    background-color: var(--blanco);
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -245,7 +245,7 @@ main.mainRegistro div form input{
     height: 24px;
     margin-bottom: 7%;
     width: 85%;
-    background-color: var(--gris);
+    background-color: var(--lightgray);
     border: 1px solid black;
     margin-left: auto; 
     margin-right: auto; 
@@ -261,15 +261,15 @@ main.mainRegistro .perfilReg{
 }
 main.mainRegistro .perfilReg i{
     display: flex;
-    color: var(--grisObs);
+    color: var(--gray);
     font-size: 60px;
     align-items: center;
     justify-content: center;
     align-content: center;
 }
 main.mainRegistro .perfilReg div.fotodePerfil{
-    border: solid 1vh var(--blanco);
-    background-color: var(--gris);
+    border: solid 1vh var(--white);
+    background-color: var(--lightgray);
     align-items: center;
     justify-content: center;
     width: 100px;
@@ -283,7 +283,7 @@ main.mainRegistro .perfilReg div{
     border-radius: 10px;
     width: 240px;
     padding: 10px 10px;
-    background-color: var(--blanco);
+    background-color: var(--white);
 }
 main.mainRegistro .perfilReg div label{}
 main.mainRegistro .perfilReg div input{
@@ -296,7 +296,7 @@ main.mainRegistro div form{}
 main.mainRegistro div form button{
     height: 40px;
     border: solid 1px;
-    background-color: var(--azul);
+    background-color: var(--blue);
     font-size: 17px;
     display: block; /* Añadido */
     margin-left: auto; /* Añadido */
@@ -304,7 +304,7 @@ main.mainRegistro div form button{
 }
 main.mainRegistro div form button a{
     text-decoration: none;
-    color: var(--blanco);
+    color: var(--white);
 }
 
 /*redireccion al login*/
@@ -313,7 +313,7 @@ main.mainRegistro div h2{
     
     text-align: center;
     font-size: calc(1.325rem + .9vw);
-    background-color: var(--blanco);
+    background-color: var(--white);
     border-radius: 0px 0px 10px 10px;
     margin: 0;
     margin-top: 40px;
@@ -329,7 +329,7 @@ main.mainRegistro div h2 a{
     justify-content: space-around;
     height: 65px;
     width: 240px;
-    background: var(--blanco);
+    background: var(--white);
     display: flex;
     border: solid 1px;
     border-radius: 45px;
@@ -475,7 +475,7 @@ main.mainRegistro .perfilReg{
     padding-top: 0px;
 }
     main.mainRegistro .perfilReg div.fotodePerfil{
-    border: solid 6px var(--blanco);
+    border: solid 6px var(--white);
     width: 150px;
     height: 150px;
     }
@@ -525,7 +525,7 @@ main.mainRegistro div form button a{
     margin-top: 50px;
     height: 65px;
     width: 240px;
-    background: var(--blanco);
+    background: var(--white);
     display: flex;
     border: solid 1px;
     border-radius: 45px;

@@ -1,5 +1,37 @@
+
+import React, { useEffect, useState } from "react";
 import React from 'react';
 import foto from '../../assets/images/jordan-walke.png';
+
+
+const userLogin = async () => {
+	try {
+	  const endpoint =
+		"http://localhost:3030/api/query?q=SELECT * FROM users WHERE ";
+	  const {
+		ok,
+		data: [user],
+	  } = await fetch(endpoint, {
+		headers: {
+		  "Content-Type": "application/json",
+		},
+	  }).then((res) => res.json());
+
+	  ok && setLastUser(user);
+
+	  setTimeout(() => {
+		setLoading({
+		  ...loading,
+		  lastUser: false,
+		});
+	  }, 2000);
+	} catch (error) {
+	  setErrors({
+		...errors,
+		lastUser: error.message,
+	  });
+	}
+  };
 
 function TopBar(){
     return(

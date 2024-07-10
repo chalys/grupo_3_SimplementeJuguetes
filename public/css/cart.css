@@ -8,18 +8,19 @@
   color: var(--white);
 }
 
-.mn-title-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0px;
-  font-size: 1.6rem;
+
+
+.title-page {
+  font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+  font-size: 2.5rem; /* Tamaño de fuente grande */
+  color: #333; /* Color de texto oscuro */
+  letter-spacing: 0.05rem; /* Espaciado entre letras */
+  padding: 0.5rem; /* Relleno para espacio alrededor del texto */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+
 }
 
-.mn-title-list-item {
-  list-style: none;
-  display: none;
-}
+
 
 .item-cart {
   display: block;
@@ -30,16 +31,18 @@
   text-decoration: none;
 }
 
-.mn-title-arrow{
- margin: 0px 8px;
+.mn-title-arrow {
+  margin: 0px 8px;
 }
+
 .mn-box {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .mn-box-shipping {
-  border: 1px dashed var(--grisObs);
+  border: 1px dashed var(--gray);
 }
 
 .text-missing-amount {
@@ -56,7 +59,7 @@
 
 .mn-box-coupon,
 .mn-box-totals {
-  border: 1px solid var(--grisObs);
+  border: 1px solid var(--gray);
 }
 
 .mn-box-custom {
@@ -74,7 +77,7 @@
 
 .container-subtotals,
 .container-shipping {
-  border-bottom: 1px solid var(--grisObs);
+  border-bottom: 1px solid var(--gray);
 }
 
 .mn-box-totals-form-item-adress {
@@ -86,31 +89,37 @@
 .lbl-free {
   color: var(--green);
 }
+
 .lbl-city {
-  color: var(--grisObs);
+  color: var(--gray);
 }
+
 .lbl-address {
   color: var(--orange);
 }
 
-.lbl-totals-price {
+.card-text-orange {
   color: var(--orange);
+  font-weight: bold;
 }
+
 .input-coupon {
   margin-bottom: 20px;
 }
-.btn-custom {
-  width: 100%;
-  background-color: var(--green) !important;
-  color: var(--white) !important;
-}
 
 /* Section Product*/
-.mn-box-product {
+.mn-box-product {}
+
+.vt-desktop {
+  display: none;
 }
 
-.vt-desktop {display: none;}
-.vt-mobile-tableta {display: flex;align-items: center;position: relative;border-bottom: 1px solid var(--grisObs);}
+.vt-mobile-tableta {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid var(--gray);
+}
 
 .lbl-titles-column {
   display: none;
@@ -120,6 +129,7 @@
   margin: 0px;
   width: 20%;
 }
+
 .product-img {
   width: 100%;
   flex-direction: column;
@@ -137,6 +147,7 @@
   top: 10px;
   right: 10px;
 }
+
 .product-price {
   display: flex;
   justify-content: space-between;
@@ -146,6 +157,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .product-subtotal {
   display: flex;
   justify-content: space-between;
@@ -154,14 +166,36 @@
 .lbl-product-price {
   color: var(--orange);
 }
+
 .product-price,
 .product-amount {
-  border-bottom: 1px solid var(--grisObs);
+  border-bottom: 1px solid var(--gray);
 }
 
 .mn-box-title-column {
   display: none;
 }
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.btn-clear {
+  transition: background-color 200ms, color 200ms;
+}
+
+.btn-clear:hover {
+  background-color: rgb(240, 184, 184);
+  color: white;
+}
+
 
 /*Tablet*/
 @media (min-width: 426px) {
@@ -173,6 +207,7 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
   .lbl-product {
     display: none;
   }
@@ -180,25 +215,30 @@
   .product-close {
     display: contents;
   }
+
   .product-price {
     display: flex;
     flex-direction: column;
     border-bottom: 0px;
   }
+
   .product-amount {
     display: flex;
     flex-direction: column;
     border-bottom: 0px;
   }
+
   .product-subtotal {
     display: flex;
     flex-direction: column;
   }
+
   .mn-box-coupon-form {
     display: flex;
     width: 370px;
     gap: 10px;
   }
+
   .mn-box-coupon {
     border: 0px;
 
@@ -216,18 +256,19 @@
   .ft-row-line {
     border-bottom: 1px solid var(--white);
   }
+
   .mn-box-product {
     display: flex;
     flex-direction: column;
   }
 
   .vt-desktop {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--grisObs);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gray);
   }
-  .vt-mobile-tableta {
-  }
+
+  .vt-mobile-tableta {}
 
   .mn-box-title-column {
     display: block;
@@ -243,6 +284,7 @@
     display: flex;
     gap: 20px;
   }
+
   .mn-box-fre-products-coupon {
     width: 75%;
   }

@@ -1,6 +1,6 @@
 const { Op } = require("sequelize");
 const db = require("../../../dataBase/models");
-const { getOrderPending,getTotalOrder  } = require("../../utils");
+const { getOrderPending, getTotalOrder  } = require("../../utils");
 //const getTotalOrder = require("../../utils/getTotalOrder");
 
 module.exports = async (req, res) => {

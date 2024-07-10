@@ -53,7 +53,7 @@ main.mainRegistro-1 .form {
     gap: 8px;
     border-radius: 7px;
     padding: 4%;
-    background: var(--blanco);
+    background: var(--white);
     flex-direction: column;
 }
 
@@ -64,7 +64,7 @@ main.mainRegistro-1 .form label {
 main.mainRegistro-1 .form input {
     height: 20px;
     border: none;
-    background: var(--gris);
+    background: var(--lightgray);
 }
 
 main.mainRegistro-1 .form div.calleReg {
@@ -95,20 +95,20 @@ main.mainRegistro-1 .form .queCallesRegis {
 main.mainRegistro-1 .form div button {}
 
 main.mainRegistro-1 .form div button.botonVolverRegis {
-    background: var(--gris);
+    background: var(--lightgray);
     border: solid 1px;
     font-size: 13px;
 }
 
 main.mainRegistro-1 .form div button.botonOmitirRegis {
-    background: var(--gris);
+    background: var(--lightgray);
     border: solid 1px black;
     font-size: 13px;
-    color: var(--azul);
+    color: var(--blue);
 }
 
 main.mainRegistro-1 .form div button.botonContinuarRegis {
-    background: var(--azul);
+    background: var(--blue);
     border: solid 1px;
     font-size: 13px;
 }
@@ -143,7 +143,7 @@ main.mainRegistro-1 .form div.calleReg .callebloReg4 {}
     width: 100%;
     height: 20px;
     border: none;
-    background: var(--gris);
+    background: var(--lightgray);
 }
 
 .mainRegistro-1 .form div.blocReg2 {

@@ -73,7 +73,7 @@
 .search-form_button {
     padding: 8px 12px;
     background-color: var(--redblack); 
-    color: var(--blanco); 
+    color: var(--white); 
     border: none;
     border-radius: 4px;
     border-top-right-radius: 5px;
@@ -86,7 +86,7 @@
 /* Cambiar color y tamaño al pasar el ratón */
 .search-form_button:hover {
     background-color: rgb(161, 3, 3); /* Color de fondo al pasar el ratón */
-    color: var(--blanco); 
+    color: var(--white); 
     transform: scale(1.1); /* Aumenta el tamaño a 110% */
 }
 
@@ -114,7 +114,7 @@
 }
 
 .header div.iconosHeader a i {
-   color: var(--blanco);
+   color: var(--white);
    margin: 15px;
 }
 
@@ -145,7 +145,7 @@
 }
 
 .header figure.barrasHeader i {
-    color: var(--blanco);
+    color: var(--white);
 }
     
 /*/////////TABLET//////////*/
@@ -172,7 +172,7 @@
     }
 
     .header h1 p.tituloBlanco {
-        color: var(--blanco);
+        color: var(--white);
     }
 
     .header div.selectoresHeader {
@@ -214,7 +214,7 @@
 
 .header div.iconosHeader .welcome {
     font-weight: bold;
-    color: var(--blanco); /* Color destacado para el mensaje */
+    color: var(--white); /* Color destacado para el mensaje */
     font-size: 12px;
     background-color: var(--redblack);
     margin-bottom: 1px; /* Espacio entre el mensaje y los botones */
@@ -223,7 +223,7 @@
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Añade una transición suave */
     /*
      font-weight: bold;
-    color: var(--blanco); 
+    color: var(--white); 
     font-size: 12px;
     background-color: var(--green);
     margin-bottom: 1px; 
@@ -236,7 +236,7 @@
 /* Cambiar color y tamaño al pasar el ratón */
 .header div.iconosHeader .welcome:hover {
     background-color: var(--green);
-    color: var(--blanco); 
+    color: var(--white); 
     transform: scale(1.4);
 }
 
@@ -266,7 +266,7 @@
 
 /* Estilos para los iconos */
 .header div.iconosHeader a i {
-    color: var(--blanco);
+    color: var(--white);
 }
 
     .header div.ofertasYOutlet {}
@@ -334,7 +334,7 @@
 
     .header div.selectoresHeader a {
         font-size: 1.4vw;
-        color: var(--blanco);
+        color: var(--white);
         background: rgba(0, 0, 0, 0);
         text-decoration: none;
         margin-left: 1px;
@@ -376,7 +376,7 @@
 
 .header div.iconosHeader .welcome {
     font-weight: bold;
-    color: var(--blanco); /* Color destacado para el mensaje */
+    color: var(--white); /* Color destacado para el mensaje */
     font-size: 12px;
     background-color: var(--redblack);
     margin-bottom: 1px; /* Espacio entre el mensaje y los botones */
@@ -385,7 +385,7 @@
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Añade una transición suave */
     /*
      font-weight: bold;
-    color: var(--blanco); 
+    color: var(--white); 
     font-size: 12px;
     background-color: var(--green);
     margin-bottom: 1px; 
@@ -398,7 +398,7 @@
 /* Cambiar color y tamaño al pasar el ratón */
 .header div.iconosHeader .welcome:hover {
     background-color: var(--green);
-    color: var(--blanco); 
+    color: var(--white); 
     transform: scale(1.4);
 }
 
@@ -428,7 +428,7 @@
 
 /* Estilos para los iconos */
 .header div.iconosHeader a i {
-    color: var(--blanco);
+    color: var(--white);
 }
 
     
@@ -476,7 +476,7 @@ border-radius: 5px;
     }
 
     .header div.ofertasYOutlet h3.outletHeader a {
-        color: var(--blanco);
+        color: var(--white);
         font-size: 12px;
         text-decoration: none;
     }
@@ -484,7 +484,7 @@ border-radius: 5px;
     .header div.ofertasYOutlet h3.ofertasHeader a {
         text-decoration: none;
         font-size: 12px;
-        color: var(--blanco);
+        color: var(--white);
     }
 
     .header div.ofertasYOutlet h3.ofertasHeader a i {

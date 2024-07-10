@@ -34,8 +34,8 @@ module.exports = {
         onUpdate:"CASCADE"
       },
       quantity: {
-        //type: Sequelize.INTEGER,
-        type: Sequelize.DECIMAL(10,2)
+        type: Sequelize.INTEGER,
+        //type: Sequelize.DECIMAL(10,2)
       },
       createdAt: {
         allowNull: false,

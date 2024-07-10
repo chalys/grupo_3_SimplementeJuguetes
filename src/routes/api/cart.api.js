@@ -8,6 +8,7 @@ const {
   canceledOrder,
   completedOrder,
   listOrderCompleted,
+  clearProductsCart
 } = require("../../controllers/api/cart");
 
 /* /api/cart */
@@ -19,12 +20,14 @@ router.patch("/remove/:id", removeProductToOrder);
 
 router.patch("/more/:id", moreQuantity);
 
-router.patch("/less/:id", lessQuantity)
+router.patch("/less/:id", lessQuantity);
 
-router.patch("/canceled", canceledOrder)
+router.patch("/clear", clearProductsCart);
 
-router.patch("/completed", completedOrder)
+router.patch("/canceled", canceledOrder);
 
-router.get("/listOrderCompleted", listOrderCompleted)
+router.patch("/completed", completedOrder);
+
+router.get("/listOrderCompleted", listOrderCompleted);
 
 module.exports = router;

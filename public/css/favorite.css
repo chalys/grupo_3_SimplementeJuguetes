@@ -1,6 +1,6 @@
 :root {
   --white: #ffffff;
-  --grisObs: #999999;
+  --gray: #999999;
   --primary-color: #4CAF50;
   --secondary-color: #f5f5f5;
   --padding-lg: 50px;
@@ -51,7 +51,7 @@ body {
   color: var(--primary-color);
   font-weight: bold;
   padding: var(--padding-sm) 0;
-  border-bottom: 1px solid var(--grisObs);
+  border-bottom: 1px solid var(--gray);
 }
 
 .product-item {
@@ -71,7 +71,7 @@ body {
 .product-close {
   margin-right: var(--gap-md);
   cursor: pointer;
-  color: var(--grisObs);
+  color: var(--gray);
 }
 
 .product-fig {
