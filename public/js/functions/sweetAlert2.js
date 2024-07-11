@@ -1,4 +1,3 @@
-  
   // Función para crear alertas con SweetAlert2
   const createAlert = ({type, title, timer}) => {
     Swal.fire({

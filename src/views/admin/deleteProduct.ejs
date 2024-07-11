@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 <%- include("../partials/head", {title: 'Editar registro de juguete' }) %>
 
     <body>
-        <!-- <%- include("./partials/dashbar") %> -->
             <div class="card p-5">
                 <div class="card-title">
                     <strong class="me-auto">Eliminar producto</strong>
@@ -18,6 +17,56 @@
                 </form>
             </div>
     </body>
+</html> -->
 
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head", {title: 'Editar registro de juguete' }) %>
+
+<body>
+    <div class="card p-5">
+        <div class="card-title">
+            <strong class="me-auto">Eliminar producto</strong>
+        </div>
+        <div class="card-body">
+            Estas seguro de eliminar el producto: <%= name %>
+        </div>
+
+        <form id="delete-form" action="/admin/eliminar-producto/<%= id %>?_method=DELETE" method="post">
+            <button type="submit" class="btn btn-danger btn-danger-custom">Eliminar</button>
+            <a href="/admin/lista-productos" class="btn btn-dark btn-dark-custom">Cancelar</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const createAlert = ({ type, title, timer }) => {
+            Swal.fire({
+                position: "top-end",
+                icon: type,
+                title,
+                showConfirmButton: false,
+                timer
+            });
+        }
+
+        document.getElementById('delete-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitar que el formulario se envíe inmediatamente
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit(); // Enviar el formulario si el usuario confirma
+                }
+            })
+        });
+    </script>
+</body>
 </html>
-
