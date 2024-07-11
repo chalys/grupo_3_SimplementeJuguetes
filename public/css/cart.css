@@ -8,20 +8,6 @@
   color: var(--white);
 }
 
-
-
-.title-page {
-  font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
-  font-size: 2.5rem; /* Tamaño de fuente grande */
-  color: #333; /* Color de texto oscuro */
-  letter-spacing: 0.05rem; /* Espaciado entre letras */
-  padding: 0.5rem; /* Relleno para espacio alrededor del texto */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-
-}
-
-
-
 .item-cart {
   display: block;
 }

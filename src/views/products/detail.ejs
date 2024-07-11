@@ -55,28 +55,14 @@
                                         <%= specificProduct.minAge %> años
                                     </span></p>
                             </div>
-                            <!-- Amount -->
-                            <div class="cr-amount">
-                                <p class="lbl-amount" for="">CANTIDAD</p>
-                                <div class="lbl-amount-up-down">
-                                    <button onclick="decrementar()">-</button>
-                                    <input type="number" id="numero" value="0" size="3" readonly>
-                                    <button onclick="incrementar()">+</button>
-                                    <script>
-                                        function incrementar() {
-                                            document.getElementById('numero').stepUp();
-                                        }
 
-                                        function decrementar() {
-                                            document.getElementById('numero').stepDown();
-                                        }
-                                    </script>
-                                </div>
-                            </div>
                             <!-- Button -->
-                            <div class="cr-button">
-                                <button type="submit" class="btn custom-btn-white">AGREGAR AL CARRITO</button>
-                                <button type="submit" class="btn btn-custom-green">COMPRAR AHORA</button>
+                            <div class="cr-button mt-5 gap-3">
+                                <a href="/productos/lista-productos" class="btn w-100 custom-btn-blue">Seguir
+                                    mirando</a>
+                                <button type="button" class="btn custom-btn-green" onclick="addProductCart('<%= specificProduct.id %>')">Agregar al Carrito</button>
+
+                                <!-- <button type="button" class="btn custom-btn-blue">Seguir Mirando</button> -->
                             </div>
                         </div>
                     </div>
@@ -228,6 +214,7 @@
                     </div>
                 </section>
             </main>
+            <script src="/js/functions/addProductToCart.js"></script>
             <!-- Footer -->
             <%- include("./partials/footer") %>
                 <!-- /Footer -->

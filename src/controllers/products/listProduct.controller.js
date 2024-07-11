@@ -8,13 +8,29 @@
 //     })
 // }
 
-const db = require("../../dataBase/models")
+const db = require("../../dataBase/models");
+
 module.exports = (req, res) => {
-  db.product.findAll({
+  const page = parseInt(req.query.page) || 1; // Página por defecto es la primera
+  const pageSize = parseInt(req.query.pageSize) || 8; // Cantidad de productos por página
+
+  db.product.findAndCountAll({
     where: {
       available: true,
     },
-  }).then((products) => {
-    res.render("products/list", { products });
+    limit: pageSize,
+    offset: (page - 1) * pageSize,
+  }).then((result) => {
+    const products = result.rows;
+    const itemCount = result.count;
+    const pageCount = Math.ceil(itemCount / pageSize);
+
+    res.render("products/list", {
+      products,
+      pageCount,
+      itemCount,
+      currentPage: page,
+      pageSize
+    });
   });
 };

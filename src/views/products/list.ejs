@@ -1,114 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include("../partials/head", {title: 'Lista de jueguetes' }) %>
-<style>
-    .card-with-shadow {
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
 
-.img-wrapper {
-    overflow: hidden;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.img-wrapper img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.img-wrapper img:hover {
-    transform: scale(1.05);
-}
-
-
-
-.btn-register-custom {
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-
-.btn-register-custom:hover {
-    background-color: #0056b3;
-}
-</style>
     <body>
         <!-- Header -->
         <%- include("../partials/header") %>
             <!-- /Header -->
             <main>
                 <div class="container">
-                    <div class="row my-4">
-                        <h2 class="text-center">LISTADO DE PRODUCTOS</h2>
-                    </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="dataTables_wrapper form-inline dt-bootstrap">
-                                <div class="row mb-4">
-                                    <div class="col-sm-6 ">
-                                        <div class="d-flex align-items-center">
-                                            <label for="datatable_length">Mostrar </label>
-                                            <select name="datatable_length" aria-controls="datatable"
-                                                class="form-control input-sm custom-select-sm">
-                                                <option value="10">10</option>
-                                                <option value="25">25</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                            </select>
-                                            <label for="datatable_length" class="ml-2"> registros</label>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-12">
+                            <h1 class="mt-4 title-page">Listado de Productos</h1>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-12 d-flex justify-content-end">
+                            <div class="d-flex align-items-center  gap-3">
+                                <span>Mostrar </span>
+                                <select class="form-control form-select-md" onchange="changePageSize(this.value)">
+                                    <option value="8" <% if (pageSize===8) { %> selected <% } %>>8
+                                    </option>
+                                    <option value="16" <% if (pageSize===16) { %> selected <% } %>>16
+                                    </option>
+                                    <option value="24" <% if (pageSize===24) { %> selected <% } %>>24
+                                    </option>
+                                    <option value="48" <% if (pageSize===48) { %> selected <% } %>>48
+                                    </option>
+                                    <option value="100" <% if (pageSize===100) { %> selected <% } %>>100
+                                    </option>
+                                </select>
+                                <span> registros</span>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row  mb-4">
-                        <div class="col-sm-12 d-flex flex-wrap gap-2">
-                            <% products.forEach(p=> { %>
-                                <div class="card card-with-shadow">
-                                    <div class="img-wrapper">
-                                        <img src="/images/products/<%= p.firstImg %>" class="card-img"
-                                            alt="img-principal">
-                                    </div>
-                                    <div class="card-body card-body-custom">
-                                        <h5 class="card-title-custom ">
-                                            <%= p.name %>
-                                        </h5>
-                                        <div class="d-flex flex-row justify-content-between align-items-center">
-                                            <p class="card-text card-text-custom">$<%= p.price %>
-                                            </p>
-                                            <a href="/productos/detalle-producto/<%= p.id %>"
-                                                class="btn btn-register-custom">VER MÁS</a>
-                                            <button class="btn btn-success" type="button"
-                                                onclick="addProductCart('<%= p.id %>')">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <% }) %>
-                        </div>
-                    </div> -->
-                 
-                    <div class="row mb-4 justify-content-center">
-                        <% products.forEach(p => { %>
-                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+
+                    <div class="row mb-4 ">
+                        <% products.forEach(p=> { %>
+                            <div class="col-sm-12 col-md-6 col-lg-3 col-sm-6 mb-5 d-flex align-items-stretch">
                                 <div class="card card-with-shadow h-100">
                                     <div class="img-wrapper">
-                                        <img src="/images/products/<%= p.firstImg %>" class="card-img-top" alt="img-principal">
+                                        <img src="/images/products/<%= p.firstImg %>" class="card-img-top"
+                                            alt="img-principal">
                                     </div>
                                     <div class="card-body d-flex flex-column">
                                         <h5 class="card-title text-center">
                                             <%= p.name %>
                                         </h5>
-                                        <p class="card-text text-center">$<%= p.price %></p>
+                                        <p class="card-text">
+                                            <%= p.description.substring(0, 80) + (p.description.length> 30 ? '...' : '')
+                                                %>
+                                        </p>
+                                        <p class="card-text-black text-center">$<%= p.price %>
+                                        </p>
                                         <div class="mt-auto">
-                                            <div class="d-flex justify-content-around">
-                                                <a href="/productos/detalle-producto/<%= p.id %>" class="btn btn-primary">VER MÁS</a>
-                                                <button class="btn btn-success" type="button" onclick="addProductCart('<%= p.id %>')">
+                                            <div class="d-flex justify-content-around gap-3">
+                                                <a href="/productos/detalle-producto/<%= p.id %>"
+                                                    class="btn custom-btn-blue">VER MÁS</a>
+                                                <button class="btn custom-btn-cart-green" type="button"
+                                                    onclick="addProductCart('<%= p.id %>')">
                                                     <i class="fa-solid fa-cart-shopping"></i>
                                                 </button>
                                             </div>
@@ -116,29 +65,39 @@
                                     </div>
                                 </div>
                             </div>
-                        <% }) %>
+                            <% }) %>
                     </div>
-                    
+
                     <div class="row mb-4">
                         <div class="col-sm-6">
-                            <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Mostrando
-                                1 a <%= products.length %> de <%= products.length %> registros
+                            <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">
+                                Mostrando <%= Math.min((currentPage - 1) * pageSize + 1, itemCount) %> a <%=
+                                        Math.min(currentPage * pageSize, itemCount) %> de <%= itemCount %> registros
                             </div>
                         </div>
                         <div class="col-sm-6 d-flex justify-content-end">
                             <nav aria-label="...">
                                 <ul class="pagination">
-                                    <li class="page-item disabled">
-                                        <span class="page-link">Anterior</span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active" aria-current="page">
-                                        <span class="page-link">2</span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Siguiente</a>
-                                    </li>
+                                    <% if (currentPage> 1) { %>
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page=<%= currentPage - 1 %>">Anterior</a>
+                                        </li>
+                                        <% } %>
+
+                                            <% for (let i=1; i <=pageCount; i++) { %>
+                                                <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                                                    <a class="page-link" href="?page=<%= i %>">
+                                                        <%= i %>
+                                                    </a>
+                                                </li>
+                                                <% } %>
+
+                                                    <% if (currentPage < pageCount) { %>
+                                                        <li class="page-item">
+                                                            <a class="page-link"
+                                                                href="?page=<%= currentPage + 1 %>">Siguiente</a>
+                                                        </li>
+                                                        <% } %>
                                 </ul>
                             </nav>
                         </div>
@@ -146,7 +105,14 @@
                 </div>
             </main>
             <script src="/js/functions/addProductToCart.js"></script>
-            <!-- <script src="../../../public/js/functions/addProductToCart.js"></script> -->
+            <script>
+                function changePageSize(newPageSize) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    urlParams.set('pageSize', newPageSize);
+                    urlParams.set('page', 1); // Reset to the first page
+                    window.location.search = urlParams.toString();
+                }
+            </script>
             <!-- Footer -->
             <%- include("./partials/footer") %>
                 <!-- /Footer -->
@@ -154,7 +120,7 @@
                 <%- include("../partials/scripts") %>
                     <!-- /scripts -->
 
-                   
+
     </body>
 
 </html>

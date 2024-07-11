@@ -11,7 +11,7 @@
 
 .main-photo {
   width: 100%;
-  box-shadow: -20px 20px 5px rgba(138, 138, 138, 0.5);
+  box-shadow: 5px 5px 5px rgba(138, 138, 138, 0.5);
 }
 
 
@@ -61,28 +61,14 @@
   color: var(--gray);
 }
 
-.cr-amount {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.lbl-amount {
-}
 
 
-.lbl-amount-up-down {
 
-}
 
-.lbl-amount-up-down button{
-   width: 30px;
-}
 
-.lbl-amount-up-down input{
-  width: 50px;
-  text-align: center;
-}
+
+
+
 
 .cr-button {
   display: flex;
@@ -216,64 +202,6 @@ td.esquina4 {
   max-width: 80%;
   }
 
-  .main-photo {
-  }
-
-  .container-left-down {
-  }
-
-  .container-right {
-  }
-
-  .cr-description {
-  }
-  .cr-article {
-  }
-
-  .cr-price {
-  }
-  .cr-dues {
-  }
-  .cr-payment {
-  }
-  .cr-details {
-  }
-  .logo-cards {
-  }
-  .custom-cards {
-  }
-
-  .container-right-down {
-  }
-  .cr-title-characteristics {
-  }
-  .cr-description-characteristics {
-  }
-  .cr-text-red {
-  }
-  .cr-text-gris {
-  }
-
-  .cr-amount {
-  }
-
-  .lbl-amount {
-  }
-
-
-  .lbl-amount-up-down {
-
-  }
-  
-  .lbl-amount-up-down button{
-     width: 30px;
-  }
-  
-  .lbl-amount-up-down input{
-    width: 50px;
-    text-align: center;
-  }
-
   .cr-button {
   flex-direction: row;
   }
@@ -398,59 +326,7 @@ td.esquina4 {
   border-left: 1px solid var(--green);
   }
 
-  .cr-description {
-  }
-  .cr-article {
-  }
-
-  .cr-price {
-  }
-  .cr-dues {
-  }
-  .cr-payment {
-  }
-  .cr-details {
-  }
-  .logo-cards {
-  }
-  .custom-cards {
-  }
-
-  .container-right-down {
-  }
-  .cr-title-characteristics {
-  }
-  .cr-description-characteristics {
-  }
-  .cr-text-red {
-  }
-  .cr-text-gris {
-  }
-
-  .cr-amount {
-  }
-
-  .lbl-amount {
-  }
-
-  .lbl-amount-up-down {
-
-  }
-  
-  .lbl-amount-up-down button{
-     width: 30px;
-  }
-  
-  .lbl-amount-up-down input{
-    width: 50px;
-    text-align: center;
-  }
-  
-  .cr-button {
-  }
-
-
-
+ 
 /* Productos Relacionados*/
 .related-products {
 }

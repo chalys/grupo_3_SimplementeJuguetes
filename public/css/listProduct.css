@@ -2,29 +2,39 @@
     max-width: 100px;
 }
 
-.list_produt {
-    background: var(--blue);
-    text-align: center;
-    width: 100%;
-    padding: 10px;
-    color: var(--white);
-}
+.card-with-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+ }
+ 
+ .img-wrapper {
+     overflow: hidden;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+ }
+ 
+ .img-wrapper img {
+     width: 100%;
+     height: auto;
+     transition: transform 0.3s ease;
+ }
+ 
+ .img-wrapper img:hover {
+     transform: scale(1.05);
+ }
+ 
+ .btn-register-custom {
+     background-color: #007bff;
+     color: white;
+     transition: background-color 0.3s ease;
+ }
+ 
+ .btn-register-custom:hover {
+     background-color: #0056b3;
+ }
+ 
+ .card-body-background {
+     background-color: var(--orange);
+ }
 
-.tabla-lista-productos {
-    /* flex-wrap: wrap; */
-    margin-left: 100px;
-}
 
-.lista-productos-vista {
-    display: flex;
-    overflow-y: auto !important;
-    overflow-x: auto !important;
-    width: 100vw;
-    overflow: hidden;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.lista-productos-vista td {
-    overflow: hidden;
-}
