@@ -1,225 +1,265 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include("../partials/head", {title: 'Detalle de juguete' }) %>
+
     <body>
         <!-- Header -->
         <%- include("../partials/header") %>
             <!-- /Header -->
-            <main class="main-detail">
-                <!--PRODUCTO PRINCIPAL-->
-                <section class="main-product">
-                    <div class="container-left">
-                        <figure class="container-left-up">
-                            <img class="main-photo" src="/images/products/<%= specificProduct.firstImg %>"
-                                alt="images del producto">
-                        </figure>
-                        <div class="container-left-down">
-                            <% specificProduct.secondaryImage.forEach((img)=> { %>
-                                <img class="secondary-photo" src="/images/products/<%= img.file %>"
-                                    alt="image-secondary">
-                                <% }) %>
+            <main>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="mt-4 title-page">Detalle del Producto</h1>
                         </div>
                     </div>
-                    <div class="container-right">
-                        <div class="container-right-up">
-                            <h1 class="cr-description">
-                                <%= specificProduct.name %>
-                            </h1>
-                            <p class="cr-article cr-details">Número de Articulo: <%= specificProduct.id %>
-                            </p>
-                            <h2 class="cr-price cr-details">$<%= specificProduct.price %>
-                            </h2>
-                            <p class="cr-payment cr-details">Metodos de pago</p>
-                            <figure class="logo-cards">
-                                <i class="fa-brands fa-cc-mastercard custom-cards"></i>
-                                <i class="fa-brands fa-cc-paypal custom-cards"></i>
-                                <i class=" fa-brands fa-cc-visa custom-cards"></i>
+                    <!--PRODUCTO PRINCIPAL-->
+                    <section class="main-product">
+                        <div class="container-left">
+                            <figure class="container-left-up">
+                                <img id="mainPhoto" class="main-photo"
+                                    src="/images/products/<%= specificProduct.firstImg %>" alt="images del producto">
                             </figure>
-                        </div>
-                        <div class="container-right-down">
-                            <!-- Characteristics -->
-                            <div class="cr-title-characteristics">
-                                <h2>Caracteristicas</h2>
-                            </div>
-                            <div class="cr-description-characteristics">
-                                <p class="cr-text-red">Marca:<span class="cr-text-gris">
-                                        <%= specificProduct.mark %>
-                                    </span></p>
-                                <p class="cr-text-red">SKU:<span class="cr-text-gris">
-                                        <%= specificProduct.sku %>
-                                    </span></p>
-                                <p class="cr-text-red">Disponibilidad:<span class="cr-text-gris">
-                                        <%= specificProduct.available? "En stock" : "Sin stock" %>
-                                    </span></p>
-                                <p class="cr-text-red">Edad recomendada:<span class="cr-text-gris">
-                                        <%= specificProduct.minAge %> años
-                                    </span></p>
-                            </div>
-
-                            <!-- Button -->
-                            <div class="cr-button mt-5 gap-3">
-                                <a href="/productos/lista-productos" class="btn w-100 custom-btn-blue">Seguir
-                                    mirando</a>
-                                <button type="button" class="btn custom-btn-green" onclick="addProductCart('<%= specificProduct.id %>')">Agregar al Carrito</button>
-
-                                <!-- <button type="button" class="btn custom-btn-blue">Seguir Mirando</button> -->
+                            <div class="container-left-down">
+                                <% specificProduct.secondaryImage.forEach((img, index)=> { %>
+                                    <img class="secondary-photo" src="/images/products/<%= img.file %>"
+                                        alt="image-secondary"
+                                        onmouseover="changeMainImage('/images/products/<%= img.file %>')">
+                                    <% }) %>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <!--PRODUCTOS RELACIONADOS-->
-                <section class="related-products">
-                    <div class="container-related-products">
-                        <div class="rp-title-products">
-                            <h2>Productos Relacionados</h2>
-                        </div>
-                        <section class="rp-products">
-                            <% for( let i=0; i < allProducts.length; i++ ) { %>
-                                <article class="rp-product">
-                                    <a class="rp-product-link"
-                                        href="/productos/detalle-producto/<%= allProducts[i].id %>">
-                                        <figure class="figureDetDin">
-                                            <img class="rp-product-img"
-                                                src="/images/products/<%= allProducts[i].firstImg %>"
-                                                alt="Producto <%= allProducts[i].id %>">
-                                        </figure>
-                                    </a>
-                                    <h3 class="rp-product-title">
-                                        <%= allProducts[i].name %>
-                                    </h3>
-                                    <p class="rp-product-price">$<%= allProducts[i].price %>
-                                    </p>
-                                </article>
-                                <% } %>
-                        </section>
-                    </div>
-                </section>
-                <!--CARACTERISTICAS DEL PRODUCTO-->
-                <section class="all-features">
-                    <div class="container-all-features">
-                        <div class="af-title">
-                            <h2>Caracteriscas del Producto</h2>
-                        </div>
-                        <section class="all-table">
-                            <table class="toy-information">
-                                <tr>
-                                    <td class="esquina1">Fabricante</td>
-                                    <td class="esquina2">
-                                        <%= specificProduct.manufacturer %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Linea</td>
-                                    <td>
-                                        <%= specificProduct.line %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Coleccion</td>
-                                    <td>
-                                        <%= specificProduct.collection %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Personaje</td>
-                                    <td>
-                                        <%= specificProduct.character %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="esquina3">Version del personaje</td>
-                                    <td class="esquina4">
-                                        <%= specificProduct.characterVersion %>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table class="more-information">
-                                <tr>
-                                    <td class="esquina1">Edad minima recomendada</td>
-                                    <td class="esquina2">
-                                        <%= specificProduct.minAge %> años
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Altura</td>
-                                    <td>
-                                        <%= specificProduct.height %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Profundidad</td>
-                                    <td>
-                                        <%= specificProduct.depth %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Ancho</td>
-                                    <td>
-                                        <%= specificProduct.width %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Materiales</td>
-                                    <td>
-                                        <%= specificProduct.materials %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Es articulada</td>
-                                    <td>
-                                        <%= specificProduct.articulated? "Si" :"No" %>
-                                    </td>
-                                </tr>
+                        <div class="container-right">
+                            <div class="container-right-up">
+                                <h2 class="cr-description">
+                                    <%= specificProduct.name %>
+                                </h2>
+                                <p class="cr-article cr-details">Número de Articulo: <%= specificProduct.id %>
+                                </p>
+                                <h2 class="cr-price cr-details">$<%= specificProduct.price %>
+                                </h2>
+                                <p class="cr-payment cr-details">Metodos de pago</p>
+                                <figure class="logo-cards">
+                                    <i class="fa-brands fa-cc-mastercard custom-cards"></i>
+                                    <i class="fa-brands fa-cc-paypal custom-cards"></i>
+                                    <i class=" fa-brands fa-cc-visa custom-cards"></i>
+                                </figure>
+                            </div>
+                            <div class="container-right-down">
+                                <!-- Characteristics -->
+                                <div class="cr-title-characteristics">
+                                    <h3>Caracteristicas</h3>
+                                </div>
+                                <div class="cr-description-characteristics">
+                                    <p class="cr-text-red">Marca:<span class="cr-text-gris">
+                                            <%= specificProduct.mark %>
+                                        </span></p>
+                                    <p class="cr-text-red">SKU:<span class="cr-text-gris">
+                                            <%= specificProduct.sku %>
+                                        </span></p>
+                                    <p class="cr-text-red">Disponibilidad:<span class="cr-text-gris">
+                                            <%= specificProduct.available? "En stock" : "Sin stock" %>
+                                        </span></p>
+                                    <p class="cr-text-red">Edad recomendada:<span class="cr-text-gris">
+                                            <%= specificProduct.minAge %> años
+                                        </span></p>
+                                </div>
 
-                                <tr>
-                                    <td>Es coleccionable</td>
-                                    <td>
-                                        <%= specificProduct.collectable? "Si" :"No" %>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Incluye accesorios</td>
-                                    <td>
-                                        <%= specificProduct.accessories? "Si" :"No" %>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Es bobbleHead</td>
-                                    <td>
-                                        <%= specificProduct.bobbleHead? "Si" :"No" %>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="esquina3">Escala</td>
-                                    <td class="esquina4">
-                                        <%= specificProduct.scale %>
-                                    </td>
-                                </tr>
-                            </table>
-                        </section>
-                    </div>
-                </section>
-                <section class="description">
-                    <div class="container-description">
-                        <div class="rp-title-description">
-                            <h2>Descripcion</h2>
+                                <!-- Button -->
+                                <div class="cr-button mt-5 gap-3">
+                                    <a href="/productos/lista-productos" class="btn w-100 custom-btn-blue">Seguir
+                                        mirando</a>
+                                    <button type="button" class="btn custom-btn-green"
+                                        onclick="addProductCart('<%= specificProduct.id %>')">Agregar al
+                                        Carrito</button>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <p class="paragraph">
-                                <%= specificProduct.description %>
-                            </p>
+                    </section>
+                    <!--PRODUCTOS RELACIONADOS-->
+                    <section class="related-products">
+                        <div class="container-related-products">
+                            <div class="rp-title-products">
+                                <h3>Productos Relacionados</h3>
+                            </div>
+                            <section class="rp-products">
+                                <div id="related-products-carousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <% for (let i = 0; i < allProducts.length; i++) { %>
+                                            <div class="carousel-item <% if (i === 0) { %>active<% } %>">
+                                                <div class="d-flex justify-content-around gap-1">
+                                                    <% for (let j = i; j < i + 8 && j < allProducts.length; j++) { %>
+                                                        <article class="rp-product">
+                                                            <a class="rp-product-link"
+                                                                href="/productos/detalle-producto/<%= allProducts[j].id %>">
+                                                                <figure class="figureDetDin">
+                                                                    <img class="rp-product-img"
+                                                                        src="/images/products/<%= allProducts[j].firstImg %>"
+                                                                        alt="Producto <%= allProducts[j].id %>">
+                                                                </figure>
+                                                            </a>
+                                                            <div class="row d-flex justify-content-center">
+                                                                <div class="col-12"> <!-- Asegúrate de que cada elemento esté dentro de una columna -->
+                                                                    <p class="rp-product-title text-center my-0">
+                                                                        <%= allProducts[j].name %>
+                                                                    </p>
+                                                                    <p class="rp-product-price text-center">$ <%= allProducts[j].price %></p>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </article>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#related-products-carousel"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#related-products-carousel"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </section>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                    <!--CARACTERISTICAS DEL PRODUCTO-->
+                    <section class="all-features">
+                        <div class="container-all-features">
+                            <div class="af-title">
+                                <h3>Caracteriscas del Producto</h3>
+                            </div>
+                            <section class="all-table">
+                                <table class="toy-information">
+                                    <tr>
+                                        <td class="esquina1">Fabricante</td>
+                                        <td class="esquina2">
+                                            <%= specificProduct.manufacturer %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Linea</td>
+                                        <td>
+                                            <%= specificProduct.line %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coleccion</td>
+                                        <td>
+                                            <%= specificProduct.collection %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Personaje</td>
+                                        <td>
+                                            <%= specificProduct.character %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="esquina3">Version del personaje</td>
+                                        <td class="esquina4">
+                                            <%= specificProduct.characterVersion %>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="more-information">
+                                    <tr>
+                                        <td class="esquina1">Edad minima recomendada</td>
+                                        <td class="esquina2">
+                                            <%= specificProduct.minAge %> años
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Altura</td>
+                                        <td>
+                                            <%= specificProduct.height %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Profundidad</td>
+                                        <td>
+                                            <%= specificProduct.depth %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ancho</td>
+                                        <td>
+                                            <%= specificProduct.width %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Materiales</td>
+                                        <td>
+                                            <%= specificProduct.materials %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Es articulada</td>
+                                        <td>
+                                            <%= specificProduct.articulated? "Si" :"No" %>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Es coleccionable</td>
+                                        <td>
+                                            <%= specificProduct.collectable? "Si" :"No" %>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Incluye accesorios</td>
+                                        <td>
+                                            <%= specificProduct.accessories? "Si" :"No" %>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Es bobbleHead</td>
+                                        <td>
+                                            <%= specificProduct.bobbleHead? "Si" :"No" %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="esquina3">Escala</td>
+                                        <td class="esquina4">
+                                            <%= specificProduct.scale %>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </section>
+                        </div>
+                    </section>
+                    <section class="description">
+                        <div class="container-description">
+                            <div class="rp-title-description">
+                                <h3>Descripción</h3>
+                            </div>
+                            <div>
+                                <p class="paragraph">
+                                    <%= specificProduct.description %>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </main>
             <script src="/js/functions/addProductToCart.js"></script>
+            <script>
+                function changeMainImage(newSrc) {
+                    document.getElementById('mainPhoto').src = newSrc;
+                }
+            </script>
+
             <!-- Footer -->
             <%- include("./partials/footer") %>
                 <!-- /Footer -->
-            <!-- scripts -->
-            <%- include("../partials/scripts") %>
-            <!-- /scripts -->
+                <!-- scripts -->
+                <%- include("../partials/scripts") %>
+                    <!-- /scripts -->
     </body>
+
 </html>

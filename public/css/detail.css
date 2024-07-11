@@ -82,7 +82,7 @@
 .related-products {
 }
 .container-related-products {
-  padding: 30px;
+  padding: 0 30px;
 }
 .rp-title-products {
   border-bottom: 1px solid var(--green);
@@ -108,10 +108,12 @@
   scroll-snap-align: center;
 }
 .rp-product-title {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  color: var(--blue);
+  font-weight: bold;
 }
 .rp-product-price {
-  color: var(--green);
+  color: var(--black);
 }
 
 /* Caracteristicas del producto*/
@@ -227,9 +229,7 @@ td.esquina4 {
 .rp-product-img {
 
 }
-.rp-product-title {
 
-}
 .rp-product-price {
 
 }
@@ -319,7 +319,7 @@ td.esquina4 {
   .secondary-photo{
     margin-top: 30px;
     width: 20%;
-    border: 1px black solid;
+    border: 1px var(--green) solid;
   }
   .container-right {
   width: 50%;
@@ -345,14 +345,11 @@ td.esquina4 {
 
 height: 100%;
 }
+/*
 .rp-product-title {
-
 object-fit: contain;
-
-/* height: 10px; */
-
 width: 3px;
-}
+}*/
 .rp-product-price {
 
 }

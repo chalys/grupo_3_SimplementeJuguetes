@@ -57,11 +57,6 @@ figure.figureDetDin{
   width: 150px;
 }
 
-/*.card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}*/
-
 .card-title {
   color: var(--blue)!important;
   font-weight: bold;
