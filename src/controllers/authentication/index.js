@@ -3,6 +3,7 @@ module.exports = {
     registro1: require("./nuevoUsuario.controller"),
     registro2: require("./registro2.controller"),
     login : require("./login.controller"),
+    listUser:require("./listUser.controller"),
     edit:require("./editUser.controller"),
     update:require("./updateUser.controller"),
     loginProcess:require("./loginProcess.controller"),

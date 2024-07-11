@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include("../partials/head", {title: 'Lista de jueguetes' }) %>
-
     <body>
         <%- include("../partials/dashbar") %>
             <main>
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h1 class="mt-4 title-page">Listado de Productos</h1>
+                            <h1 class="mt-4 title-page">Listado de Usuarios</h1>
                         </div>
                     </div>
                     <!-- boton volver -->
@@ -19,9 +18,9 @@
                         <div class="col-12 d-flex justify-content-between">
 
                             <div>
-                                <a href="/admin/crear-producto" class="btn custom-btn-add-green"><i
+                                <a href="/autenticacion/crear-usuario" class="btn custom-btn-add-green"><i
                                         class="fa-solid fa-plus"></i> Agregar
-                                    Producto</a>
+                                    Usuario</a>
                             </div>
                             <div>
                                 <form action="/buscar" method="GET" class="d-flex">
@@ -54,59 +53,56 @@
                             <table class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th class="text-center custom-table-red ">ID</th>
-                                        <th class="text-center custom-table-red">IMAGEN<img src="" alt=""></th>
-                                        <th class="text-center custom-table-red">PRODUCTO</th>
-                                        <th class="text-center custom-table-red">PRECIO</th>
-                                        <th class="text-center custom-table-red">STOCK</th>
-                                        <th class="text-center custom-table-red">DESCRIPCIÓN</th>
-                                        <th class="text-center custom-table-red">ACCIONES</th>
+                                        <th class="text-center custom-table-red ">Id</th>
+                                        <th class="text-center custom-table-red">Imagen<img src="" alt=""></th>
+                                        <th class="text-center custom-table-red">Usuario</th>
+                                        <th class="text-center custom-table-red">Nombre completo</th>
+                                        <th class="text-center custom-table-red">Correo electrónico</th>
+                                        <th class="text-center custom-table-red">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th class="text-center custom-table-red">ID</th>
-                                        <th class="text-center custom-table-red">IMAGEN<img src="" alt=""></th>
-                                        <th class="text-center custom-table-red">PRODUCTO</th>
-                                        <th class="text-center custom-table-red">PRECIO</th>
-                                        <th class="text-center custom-table-red">STOCK</th>
-                                        <th class="text-center custom-table-red">DESCRIPCIÓN</th>
-                                        <th class="text-center custom-table-red">ACCIONES</th>
+                                        <th class="text-center custom-table-red ">Id</th>
+                                        <th class="text-center custom-table-red">Imagen<img src="" alt=""></th>
+                                        <th class="text-center custom-table-red">Usuario</th>
+                                        <th class="text-center custom-table-red">Nombre completo</th>
+                                        <th class="text-center custom-table-red">Correo electrónico</th>
+                                        <th class="text-center custom-table-red">Acciones</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <% products.forEach(p=> { %>
+                                    <% users.forEach(u=> { %>
                                         <tr>
-                                            <td class="text-center align-middle">
-                                                <%=p.id%>
-                                            </td>
-                                            <td class="text-center align-middle">
-
-                                                <img src="/images/products/<%= p.firstImg !== "" ? p.firstImg : 'default-image.jpg' %>"
-                                                    alt="" class="no_img">
-                                            </td>
-                                            <td class="text-center align-middle">
-                                                <%=p.name%>
-                                            </td>
-                                            <td class="text-center align-middle">$
-                                                <%=p.price%>
-                                            </td>
 
                                             <td class="text-center align-middle">
-                                                <%=p.stock%>
+                                                <%=u.id%>
                                             </td>
-                                            <td>
-                                                <%=p.description%>
+
+                                            
+                                            <td class="text-center align-middle">
+                                                <img src="/images/authentication/<%= u.userPicture !== "" ? u.userPicture : 'default-image.jpg' %>"
+                                                     alt="" class="no_img rounded-circle custom-img-size">
+                                            </td>
+                                            <td class="text-center align-middle">
+                                                <%=u.userName%>
+                                            </td>
+                                            <td class="text-center align-middle">
+                                                <%=u.name%>
+                                            </td>
+
+                                            <td class="text-center align-middle">
+                                                <%=u.email%>
                                             </td>
                                             <td class="text-center align-middle">
                                                 <div class="d-flex">
-                                                    <a href="/productos/detalle-producto/<%= p.id %>" class="btn"
+                                                    <a href="/perfil/<%= u.id %>" class="btn"
                                                         target="_blank"><i
                                                             class="fa-solid fa-eye custom-icon-green"></i></a>
-                                                    <a href="/admin/editar-producto/<%= p.id %>" class="btn"><i
+                                                    <a href="/autenticacion/editar-usuario/<%= u.id %>" class="btn"><i
                                                             class="fa-regular fa-pen-to-square custom-icon-blue"></i></a>
 
-                                                    <a href="/admin/eliminar-producto?id=<%= p.id %>&name=<%= p.name %>"
+                                                    <a href="/autenticacion/eliminar-usuario?id=<%= u.id %>&name=<%= u.userName %>"
                                                         class="btn" data-toggle="modal" data-target="#exampleModal"><i
                                                             class="fa-solid fa-trash-can custom-icon-red"></i></a>
                                                 </div>

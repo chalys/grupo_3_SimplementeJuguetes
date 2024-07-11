@@ -42,6 +42,7 @@ app.set("views", [
   path.join(__dirname, "/views/other"),
   path.join(__dirname, "/views/products"),
   path.join(__dirname, "/views/users"),
+  path.join(__dirname, "/views/categories"),
 ]); // Define la ubicación de la carpeta de las Vistas
 
 // ************ WRITE YOUR CODE FROM HERE ************
@@ -53,6 +54,7 @@ const authRouter = require("./routes/authentication.routes"); // Rutas autentica
 const prodRouter = require("./routes/products.routes"); // Rutas products
 const cartRouter = require("./routes/cart.routes");
 const userRouter = require("./routes/users.routes");
+const ctgRouter = require("./routes/categories.routes");
 const { check } = require("express-validator");
 
 const apiOtherRoutes = require("./routes/api/other.api");
@@ -77,6 +79,7 @@ app.use("/carrito-compra", cartRouter);
 app.use("/productos", prodRouter);
 app.use("/admin", adminRouter);
 app.use("/", userRouter); //revisar
+app.use("/categorias", ctgRouter);
 
 // Los que interactúan con otro programador van en ingles
 app.use("/api", apiOtherRoutes);

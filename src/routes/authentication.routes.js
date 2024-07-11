@@ -14,6 +14,7 @@ const {
   loginProcess,
   errorAuth,
   logout,
+  listUser,
 } = require("../controllers/authentication");
 
 const { updateUserValidation } = require("../middlewares/validations");
@@ -21,10 +22,15 @@ const { userValidation } = require("../middlewares/validations");
 const { uploadUserPicture } = require("../middlewares/uploadUserPicture");
 
 
+// /autenticacion
+
+
+//*** LIST ALL USER ***/
+router.get("/lista-usuarios", listUser);
+
 //*** CREATE ONE USER ***/
 //router.get("/crear-usuario/", add);
 
-// /autenticacion
 router.get("/registro", registro);
 router.post("/registro",uploadUserPicture.fields([{ name: "userPicture", maxCount: 1 }]),userValidation , registro1);
 router.get("/registro-completado", registro2);   
