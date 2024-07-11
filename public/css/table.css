@@ -1,0 +1,38 @@
+.custom-table-green {
+    background-color: var(--red) !important;
+    border-color: var(--red)!important;
+    color: var(--white)!important;    
+}
+
+.custom-btn-add-green{
+    background-color: var(--green) !important;
+    color: var(--white)!important;
+}
+
+.custom-icon-green {
+    color: var(--green) !important;    
+}
+
+.custom-icon-red {
+    color: var(--red) !important;    
+}
+
+.custom-icon-blue {
+    color: var(--blue) !important;    
+}
+
+.custom-btn-add-green:hover{
+    background-color: var(--lightgreen) !important;    
+}
+
+.custom-icon-green:hover {
+    color: var(--lightgreen) !important;    
+}
+
+.custom-icon-red:hover {
+    color: var(--lightred) !important;    
+}
+
+.custom-icon-blue:hover {
+    color: var(--lightblue) !important;    
+}

@@ -41,16 +41,37 @@ module.exports = async (req, res) => {
     const itemCount = result.count;
     const pageCount = Math.ceil(itemCount / pageSize);
 
+
+    if (req.session.userLogin?.role == 2) {
+      res.render("admin/listProduct", {
+        products,
+        keywords,      
+        pageCount,
+        itemCount,
+        currentPage: page,
+        pageSize
+      });   
+  } else {
     res.render("products/list", {
       products,
-      keywords,
-      toThousand,
+      keywords,      
       pageCount,
       itemCount,
       currentPage: page,
       pageSize
-    });
+    });  }
+
+
   } catch (error) {   
     res.status(500).send("Error al recuperar productos");
   }
 };
+// res.render("products/list", {
+//   products,
+//   keywords,
+//   toThousand,
+//   pageCount,
+//   itemCount,
+//   currentPage: page,
+//   pageSize
+// });

@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+//import React, { useEffect, useState } from "react";
 import React from 'react';
 import foto from '../../assets/images/jordan-walke.png';
 
