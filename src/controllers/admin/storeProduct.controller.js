@@ -79,7 +79,7 @@ module.exports = (req, res) => {
         }
 
         db.secondaryimage.bulkCreate(newImages).then(() => {
-          return res.redirect("/admin/lista-productos");
+          return res.redirect("/admin/lista-productos?success=true");
         });
       });
   } else {
