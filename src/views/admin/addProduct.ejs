@@ -451,12 +451,10 @@
                     document.getElementById('cancel-button').addEventListener('click', function () {
                         window.location.href = '/admin/lista-productos';  // Reemplaza '/dashboard' con la URL de tu dashboard
                     });
-
                     const urlParams = new URLSearchParams(window.location.search);
                     if (urlParams.has('success')) {
                         toastr.success('¡Producto registrado con éxito!');
                     }
                 </script>
         </body>
-
 </html>
