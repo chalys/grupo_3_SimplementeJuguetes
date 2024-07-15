@@ -29,7 +29,7 @@ const inputBobbleHeadNo = document.querySelector("#bobblehead_no");
 const inputDescription = document.querySelector("[name='description']");
 const inputImagePrincipal = document.querySelector("[name='firstImg']");
 const inputImageSecondary = document.querySelector("[name='secondImg']");
-const exRegAlfanumeric = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s]*$/;
+const exRegAlfanumeric = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s.,]*$/;
 
 /* EVENTOS DE FORMULARIO */
 /* focus */
@@ -60,7 +60,11 @@ window.addEventListener("load", () => {
         statusInvalid(errName, `El nombre es requerido`, this);
         break;
       case !exRegLettersOnly.test(value):
-        statusInvalid(errName, "El nombre solo debe contener letras y espacios", this);
+        statusInvalid(
+          errName,
+          "El nombre solo debe contener letras y espacios",
+          this
+        );
         break;
       case value.length < 5 || value.length > 100:
         statusInvalid(
@@ -72,7 +76,7 @@ window.addEventListener("load", () => {
       default:
         statusValid(errName, this);
         break;
-      }
+    }
   });
   inputName.addEventListener("focus", function () {
     errName.innerHTML = null;
@@ -81,38 +85,40 @@ window.addEventListener("load", () => {
   });
   /*end validation input name */
 
-  
-//ERROR
-const errManufacturer = document.querySelector(".error-manufacturer");
-  
-inputManufacturer.addEventListener("blur", function () {
-  const value = this.value.trim(); // quita espacios
-  switch (true) {
-    case !value.length:
-      statusInvalid(errManufacturer, `El fabricante es requerido`, this);
-      break;
-    case !exRegAlfanumeric.test(value):
-      statusInvalid(errManufacturer, "El fabricante debe ser alfanumérico", this);
-      break;
-    case value.length < 5 || value.length > 100:
-      statusInvalid(
-        errManufacturer,
-        "El fabricante debe tener un mínimo de 5 caracteres y un máximo de 100",
-        this
-      );
-      break;
-    default:
-      statusValid(errManufacturer, this);
-      break;
-  }
-});
-  
-inputManufacturer.addEventListener("focus", function () {
-  errManufacturer.innerHTML = null;
-  this.classList.remove("is-valid");
-  this.classList.remove("is-invalid");
-});
-  
+  //ERROR
+  const errManufacturer = document.querySelector(".error-manufacturer");
+
+  inputManufacturer.addEventListener("blur", function () {
+    const value = this.value.trim(); // quita espacios
+    switch (true) {
+      case !value.length:
+        statusInvalid(errManufacturer, `El fabricante es requerido`, this);
+        break;
+      case !exRegAlfanumeric.test(value):
+        statusInvalid(
+          errManufacturer,
+          "El fabricante debe ser alfanumérico",
+          this
+        );
+        break;
+      case value.length < 5 || value.length > 100:
+        statusInvalid(
+          errManufacturer,
+          "El fabricante debe tener un mínimo de 5 caracteres y un máximo de 100",
+          this
+        );
+        break;
+      default:
+        statusValid(errManufacturer, this);
+        break;
+    }
+  });
+
+  inputManufacturer.addEventListener("focus", function () {
+    errManufacturer.innerHTML = null;
+    this.classList.remove("is-valid");
+    this.classList.remove("is-invalid");
+  });
 
   /* validation input name*/
   const errMark = document.querySelector(".error-mark");
@@ -123,7 +129,11 @@ inputManufacturer.addEventListener("focus", function () {
         statusInvalid(errMark, `La marca es requerida`, this);
         break;
       case !exRegLettersOnly.test(value):
-        statusInvalid(errMark, "La marca solo debe contener letras y espacios", this);
+        statusInvalid(
+          errMark,
+          "La marca solo debe contener letras y espacios",
+          this
+        );
         break;
       case value.length < 5 || value.length > 50:
         statusInvalid(
@@ -135,7 +145,7 @@ inputManufacturer.addEventListener("focus", function () {
       default:
         statusValid(errMark, this);
         break;
-      }
+    }
   });
   inputMark.addEventListener("focus", function () {
     errMark.innerHTML = null;
@@ -341,8 +351,6 @@ inputManufacturer.addEventListener("focus", function () {
   });
   /* end validation input secondary image*/
 
-  
-
   /* FORMULARIO */
 
   const formCreate = document.querySelector("#form-update-product");
@@ -353,7 +361,8 @@ inputManufacturer.addEventListener("focus", function () {
     const isManufacturer = inputManufacturer.value?.trim();
     const isPrice = inputPrice.value?.trim();
     const isSku = inputSku.value?.trim();
-    const isCategory = inputCategory.options[inputCategory.selectedIndex].value?.trim();
+    const isCategory =
+      inputCategory.options[inputCategory.selectedIndex].value?.trim();
     const isStock = inputStock.value?.trim();
     const isImagePrincipal = inputImagePrincipal.files.length;
     const isImageSecondary = inputImageSecondary.files.length;
@@ -368,7 +377,7 @@ inputManufacturer.addEventListener("focus", function () {
         case !isCategory:
         case !isStock:
         case !isImagePrincipal:
-        //case !isImageSecondary:
+          //case !isImageSecondary:
           existError = true;
           errFormGeneral.innerHTML = "Todos los campos son requeridos";
           errFormGeneral.classList.add("alert", "alert-danger");

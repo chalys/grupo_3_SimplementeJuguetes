@@ -1,4 +1,3 @@
-const path = require("path");
 const { validationResult } = require("express-validator");
 const db = require("../../dataBase/models");
 
@@ -14,7 +13,10 @@ module.exports = (req, res) => {
           : "Este juguete no cuenta con una descripcion",
       })
       .then(() => {
-        return res.redirect("/categorias/lista-categorias");
+        //return res.redirect("/categorias/lista-categorias");
+        return res.redirect("/categorias/crear-categoria?success=true");
+      }).catch((error) => {
+        return res.status(500).send("Hubo un error al registrar la categoría");
       });
   } else {
     const old = req.body;

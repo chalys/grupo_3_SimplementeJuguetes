@@ -12,7 +12,7 @@ const inputPhoneNumber = document.querySelector("[name='phoneNumber']");
 const inputIndications = document.querySelector("[name='indications']");
 
 //Validar name
-const exRegAlfanumeric = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s]*$/;
+const exRegAlfanumeric = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s.,]*$/;
 
 // Validador formato de imagen
 const exRegFiles = /\.(png|jpg|jpeg|webp|gif)$/i;
@@ -408,14 +408,14 @@ const errProvince = document.querySelector(".error-province");
   });
   /* end validation input indications*/
   /* FORMULARIO */
-  const formCreate = document.querySelector("#form-create-product");
+  const formCreate = document.querySelector("#form-create-user");
   const errFormGeneral = document.querySelector(".err-form-general");
   const fieldsRequired = document.querySelectorAll(".field-required");
   
   formCreate.addEventListener("submit", function (event) {
     const isName = inputName.value?.trim();
     event.preventDefault();
-    if (this.id === "form-create-product") {
+    if (this.id === "form-create-user") {
       switch (true) {
         case !isName:
           existError = true;
