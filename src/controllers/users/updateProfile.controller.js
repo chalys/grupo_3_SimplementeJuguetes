@@ -20,8 +20,8 @@ module.exports = (req, res) => {
   db.user.update(
       {
         name: name?.trim(),
-        province: province.trim(),
-        locality: city.trim(),
+        province: province?.trim(),
+        locality: city?.trim(),
         postal: postal.trim(),
         street: street.trim(),
         streetNumber: streetNumber.trim(),
@@ -37,7 +37,8 @@ module.exports = (req, res) => {
       }
     )
     .then(() => {
-      res.redirect("/usuario/perfil");
+//      res.redirect("/usuario/perfil");
+        res.redirect("/usuario/perfil?success=true");
     })
     .catch((error) => {
       res.status(500).send("Error al actualizar el perfil del usuario.");

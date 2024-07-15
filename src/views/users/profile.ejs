@@ -27,8 +27,8 @@
     height: 180px;">
                                     <h6>Sube una foto diferente...</h6>
                                     <!-- Avatar-->
-                                    <input class="form-control form-control-sm" id="selectPicUser" type="file" name="userPicture"
-                                        accept="image/*">
+                                    <input class="form-control form-control-sm" id="selectPicUser" type="file"
+                                        name="userPicture" accept="image/*">
                                     <p class="text-danger error-userPicture">
                                         <%= locals.errors?.userPicture?.msg %>
                                     </p>
@@ -78,17 +78,25 @@
                                     <!-- Provincia -->
                                     <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="province">Provincia</label>
-                                        <select class="form-select form-control-sm" name="province" id="province" data-stored-value="<%= user.province %>">
+                                        <select class="form-select form-control-sm" name="province" id="province"
+                                            data-stored-value="<%= user.province %>">
                                             <option value="" selected hidden>Seleccionar provincia</option>
                                         </select>
+                                        <p class="text-danger error-province">
+                                            <%-locals.errors?.province?.msg%>
+                                        </p>
                                     </div>
                                     <!-- /Provincia -->
-                                     <!-- Localidad -->
+                                    <!-- Localidad -->
                                     <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="city">Localidad</label>
-                                        <select class="form-select form-control-sm" name="city" id="city" data-stored-value="<%= user.locality %>">
+                                        <select class="form-select form-control-sm" name="city" id="city"
+                                            data-stored-value="<%= user.locality %>">
                                             <option value="" selected hidden>Seleccionar localidad</option>
                                         </select>
+                                        <p class="text-danger error-locality">
+                                            <%-locals.errors?.locality?.msg%>
+                                        </p>
                                     </div>
                                     <!-- /Localidad -->
                                     <!-- Codigo Postal -->
@@ -196,8 +204,7 @@
                                     <!-- /indications -->
                                     <p class="text-danger col-12 text-center err-form-general"></p>
                                     <!-- Botones -->
-                                    <div
-                                        class="col-12 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
+                                    <div class="col-12 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
                                         <button class="btn custom-btn-green" type="submit">Actualizar</button>
                                         <button class="btn custom-btn-red" type="reset"
                                             id="cancel-button">Cancelar</button>
@@ -221,12 +228,17 @@
             <%- include("../partials/scripts") %>
                 <!-- /Script Bootstrap -->
                 <script src="/js/imageSelector.js"></script>
+                <script src="/js/functions/validationUser.js"></script>
                 <script src="/js/functions/profile.js"></script>
-                <!-- <script src="/js/functions/validationUser.js"></script> -->
                 <script>
                     document.getElementById('cancel-button').addEventListener('click', function () {
                         window.location.href = '/';  // Reemplaza '/dashboard' con la URL de tu dashboard
                     });
+
+                    const urlParams = new URLSearchParams(window.location.search);
+                    if (urlParams.has('success')) {
+                        toastr.success('¡Perfil actualizado con éxito!');
+                    }
                 </script>
     </body>
 

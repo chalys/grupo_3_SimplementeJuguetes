@@ -54,24 +54,24 @@
                             <table class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th class="text-center custom-table-red ">ID</th>
-                                        <th class="text-center custom-table-red">IMAGEN<img src="" alt=""></th>
-                                        <th class="text-center custom-table-red">PRODUCTO</th>
-                                        <th class="text-center custom-table-red">PRECIO</th>
-                                        <th class="text-center custom-table-red">STOCK</th>
-                                        <th class="text-center custom-table-red">DESCRIPCIÓN</th>
-                                        <th class="text-center custom-table-red">ACCIONES</th>
+                                        <th class="text-center custom-table-red">Id</th>
+                                        <th class="text-center custom-table-red">Imagen<img src="" alt=""></th>
+                                        <th class="text-center custom-table-red">Producto</th>
+                                        <th class="text-center custom-table-red">Precio</th>
+                                        <th class="text-center custom-table-red">Stock</th>
+                                        <th class="text-center custom-table-red">Descripción</th>
+                                        <th class="text-center custom-table-red">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th class="text-center custom-table-red">ID</th>
-                                        <th class="text-center custom-table-red">IMAGEN<img src="" alt=""></th>
-                                        <th class="text-center custom-table-red">PRODUCTO</th>
-                                        <th class="text-center custom-table-red">PRECIO</th>
-                                        <th class="text-center custom-table-red">STOCK</th>
-                                        <th class="text-center custom-table-red">DESCRIPCIÓN</th>
-                                        <th class="text-center custom-table-red">ACCIONES</th>
+                                        <th class="text-center custom-table-red">Id</th>
+                                        <th class="text-center custom-table-red">Imagen<img src="" alt=""></th>
+                                        <th class="text-center custom-table-red">Producto</th>
+                                        <th class="text-center custom-table-red">Precio</th>
+                                        <th class="text-center custom-table-red">Stock</th>
+                                        <th class="text-center custom-table-red">Descripción</th>
+                                        <th class="text-center custom-table-red">Acciones</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -105,10 +105,10 @@
                                                             class="fa-solid fa-eye custom-icon-green"></i></a>
                                                     <a href="/admin/editar-producto/<%= p.id %>" class="btn"><i
                                                             class="fa-regular fa-pen-to-square custom-icon-blue"></i></a>
-
-                                                    <a href="/admin/eliminar-producto?id=<%= p.id %>&name=<%= p.name %>"
-                                                        class="btn" data-toggle="modal" data-target="#exampleModal"><i
-                                                            class="fa-solid fa-trash-can custom-icon-red"></i></a>
+                                                    <a href="#" class="btn" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal">
+                                                        <i class="fa-solid fa-trash-can custom-icon-red"></i>
+                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -150,6 +150,45 @@
                                                         <% } %>
                                 </ul>
                             </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">¿Estas seguro de eliminar tu cuenta?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <form action="/usuario/eliminar?_method=DELETE" method="post" class="modal-footer">
+                                <button type="button" class="btn btn-dark btn-dark-custom"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-danger btn-danger-custom">Confirmar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar este producto?
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <!-- <div class="modal-body">
+                                          
+                            </div> -->
+                            <form action="/admin/eliminar-producto/<%= products.id %>?_method=DELETE" method="post"
+                                class="modal-footer">
+                                <button type="button" class="btn btn-dark btn-dark-custom"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-danger btn-danger-custom">Confirmar</button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -26,15 +26,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       province: {
-        type: Sequelize.INTEGER,
-        references:{
-          model:{
-            tableName:"provinces"
-          },
-          key: "id"
-        },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE"
+        type: Sequelize.STRING
       },
       locality: {
         type: Sequelize.STRING

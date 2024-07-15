@@ -1,6 +1,7 @@
 const inputUserPicture = document.querySelector("[name='userPicture']");
 const inputName = document.querySelector("[name='name']");
-// const inputLocality = document.querySelector("[name='locality']");
+const inputProvince = document.querySelector("[name='province']");
+const inputLocality = document.querySelector("[name='city']");
 const inputPostal = document.querySelector("[name='postal']");
 const inputStreet = document.querySelector("[name='street']");
 const inputStreetNumber = document.querySelector("[name='streetNumber']");
@@ -114,35 +115,44 @@ window.addEventListener("load", () => {
   });
   /*end validation input name */
 
-  /* validation input locality*/
-  // const errLocality = document.querySelector(".error-locality");
-  // inputLocality.addEventListener("blur", function () {
-  //   const value = this.value.trim();
-  //   switch (true) {
-  //     // case !value.length:
-  //     //   statusInvalid(errLocality, `La localidad es requerida`, this);
-  //     //   break;
-  //     // case !exRegAlfanumeric.test(value):
-  //     //   statusInvalid(errLocality, "La localidad debe ser alfanumérico", this);
-  //     //   break;
-  //     case value.length < 5 || value.length > 50:
-  //       statusInvalid(
-  //         errLocality,
-  //         "La localidad debe tener un mínimo de 5 caracteres",
-  //         this
-  //       );
-  //       break;
-  //     default:
-  //       statusValid(errLocality, this);
-  //       break;
-  //   }
-  // });
-  // /* end validation input locality*/
-  // inputLocality.addEventListener("focus", function () {
-  //   errLocality.innerHTML = null;
-  //   this.classList.remove("is-valid");
-  //   this.classList.remove("is-invalid");
-  // });
+/* validation input province */
+const errProvince = document.querySelector(".error-province");
+  inputProvince.addEventListener("blur", function () {
+    const value = this.value.trim();
+    switch (true) {
+      case value === "": 
+        statusInvalid(errProvince, `La provincia es requerida`, this);
+        break;
+      default:
+        statusValid(errProvince, this);
+        break;
+    }
+  });
+  
+  inputProvince.addEventListener("focus", function () {
+    statusEmpty(errProvince, this);
+  });
+  /* end validation input province */
+
+  /* validation input locality */
+  const errLocality = document.querySelector(".error-locality");
+  inputLocality.addEventListener("blur", function () {
+    const value = this.value.trim();
+    switch (true) {
+      case value === "": 
+        statusInvalid(errLocality, `La ciudad es requerida`, this);
+        break;
+      default:
+        statusValid(errLocality, this);
+        break;
+    }
+  });
+  
+  inputLocality.addEventListener("focus", function () {
+    statusEmpty(errLocality, this);
+  });
+  /* end validation input locality*/
+  
   /* validation input postal*/
   const errPostal = document.querySelector(".error-postal");
   inputPostal.addEventListener("blur", function () {

@@ -1,7 +1,6 @@
 const { check, body } = require("express-validator");
 const { loadData } = require("../../dataBase");
 const path = require("path");
-const provinces = loadData("province");
 
 const exRegArgentinaPostalCode = /^[A-Z]?\d{4}[A-Z]{0,3}$/;
 const exRegArgentinaNumberPhone = /^\+54\d{10}$/;
