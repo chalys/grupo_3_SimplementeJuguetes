@@ -1,7 +1,8 @@
-const checkSession = require("./checkSession");
+//const checkSession = require("./checkSession");
 
 module.exports = {
     ...require("./products.validation"),//// productsValidationStore y productsValidationUpdate
+    ...require("./users.validation"), //// usersValidationStore y userUpdateValidation
     userValidation: require("./user.validation"),
     updateUserValidation: require("./updateUser.validations"),
     saveSession: require("./saveSession"),

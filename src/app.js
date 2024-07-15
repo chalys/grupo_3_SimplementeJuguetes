@@ -78,7 +78,7 @@ app.use("/autenticacion", authRouter);
 app.use("/carrito-compra", cartRouter);
 app.use("/productos", prodRouter);
 app.use("/admin", adminRouter);
-app.use("/", userRouter); //revisar
+app.use("/usuario", userRouter); //revisar
 app.use("/categorias", ctgRouter);
 
 // Los que interactúan con otro programador van en ingles

@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     floor: DataTypes.INTEGER,
     betweenSt1: DataTypes.STRING,
     betweenSt2: DataTypes.STRING,
-    phoneNumber: DataTypes.INTEGER,
+    phoneNumber: DataTypes.STRING,
     indications: DataTypes.STRING,
     userPicture: DataTypes.STRING,
     role: DataTypes.INTEGER

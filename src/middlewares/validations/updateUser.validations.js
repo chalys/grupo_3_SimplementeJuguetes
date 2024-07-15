@@ -2,6 +2,9 @@ const { check, body } = require("express-validator");
 const { loadData } = require("../../dataBase");
 const path = require("path");
 const provinces = loadData("province");
+
+const exRegArgentinaPostalCode = /^[A-Z]?\d{4}[A-Z]{0,3}$/;
+const exRegArgentinaNumberPhone = /^\+54\d{10}$/;
 /*
 const fieldUserName = check("userName")
   .notEmpty()
@@ -25,18 +28,18 @@ const fieldName = check("name")
   .isLength({ min: 5, max: 80 })
   .withMessage("La longitud del nombre y apellido es incorrecta");
 
-  const fieldUserPicture = body("userPicture").custom((value, { req }) => {
-    const image = req.file;
-    const extValid = ['.jpg', '.jpeg', '.png', '.gif','.webp'];
-  
-    if (image) {
-      const ext = path.extname(image.originalname).toLowerCase(); // Obtener la extensión del archivo en minúsculas
-      if (!extValid.includes(ext)) {
-        throw new Error("El tipo de imagen es incorrecto");
-      }
+const fieldUserPicture = body("userPicture").custom((value, { req }) => {
+  const image = req.file;
+  const extValid = [".jpg", ".jpeg", ".png", ".gif", ".webp"];
+
+  if (image) {
+    const ext = path.extname(image.originalname).toLowerCase(); // Obtener la extensión del archivo en minúsculas
+    if (!extValid.includes(ext)) {
+      throw new Error("El tipo de imagen es incorrecto");
     }
-    return true;
-  });
+  }
+  return true;
+});
 
 /*
   const fieldUserPicture = body("userPicture")
@@ -92,7 +95,7 @@ const fieldLocality = check("locality")
 
 const fieldPostal = check("postal")
   .optional({ checkFalsy: true })
-  .isPostalCode("ES")
+  .matches(exRegArgentinaPostalCode)
   .withMessage("El código postal no es válido");
 
 const fieldStreet = check("street")
@@ -143,9 +146,9 @@ const fieldBetweenSt2 = check("betweenSt2")
   .isLength({ min: 5, max: 100 })
   .withMessage("La longitud de la dirección es incorrecta");
 
-const fieldPhoneNumber = check("phoneNumber")
+  const fieldPhoneNumber = check("phoneNumber")
   .optional({ checkFalsy: true })
-  .isMobilePhone()
+  .matches(exRegArgentinaNumberPhone)
   .withMessage("El número de teléfono no es válido");
 
 const fieldIndications = check("indications")

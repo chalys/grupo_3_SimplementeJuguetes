@@ -15,7 +15,7 @@ const storageProducts = multer.diskStorage({
 
 const storageUser = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./public/images/authentication");
+    cb(null, "./public/images/users");
   },
   filename: function (req, file, cb) {
     const formatFilename =

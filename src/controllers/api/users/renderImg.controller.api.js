@@ -5,7 +5,7 @@ module.exports = (req, res) =>{
     try {
         
         res.sendFile(
-            path.join(__dirname,'../../../../public/images/authentication/' + image)
+            path.join(__dirname,'../../../../public/images/users/' + image)
         );
     }
     catch (error) {

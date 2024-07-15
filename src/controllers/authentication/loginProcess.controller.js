@@ -54,14 +54,9 @@ db.user.findOne({where:{userName,}}).then((userFind)=>{
    role
    }
    if(recuerdame){ //remenber es una variable creada para representar un valor boleano.
-      res.cookie("userLogin", req.session.userLogin, {maxAge: 360 })
+      res.cookie("userLogin", req.session.userLogin, {maxAge: 6000 * 30 })
    }
    res.redirect("/")
 
-})
-
-
-
-
-
+}).catch((err) => res.send(err.message));
 };

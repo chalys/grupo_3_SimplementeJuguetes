@@ -1,163 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head", {title: 'Pefil de usuario' }) %>
-    <!-- <body class="bodyRegistro-1"> -->
+<%- include("../partials/head", {title: 'Editar registro de usuario' }) %>
 
     <body>
         <!-- header -->
         <%- include("../partials/header") %>
             <!-- /header -->
-
             <!-- main -->
-            <main class="profile-container">
-                <!-- title -->
-                <div class="row mb-4">
-                    <h1 class="title-profile">Perfil</h1>
-                </div>
-                <!-- /title -->
-                <!-- form -->
-                <div class="row">
-                    <div class="col-12">
-
-                        <form action="/autenticacion/editar-usuario/<%=user.id%>?_method=PUT" method="post"
-                            enctype="multipart/form-data" id="form-update-product">
-                            <div class="row justify-content-center">
-                                <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
-                                    <h5>INFORMACIÓN DE CUENTA:</h5>
+            <main>
+                <div class="container">
+                    <!-- title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="mt-4 title-page">Perfil de Usuario</h1>
+                        </div>
+                    </div>
+                    <!-- /title -->
+                    <!-- form -->
+                    <form action="/usuario/perfil?_method=PUT" method="post" enctype="multipart/form-data">
+                        <div class="row my-4">
+                            <div class="col-sm-4 my-4">
+                                <div class="text-center">
+                                    <img src="/images/users/<%= user.userPicture %>"
+                                        class="rounded-circle img-thumbnail" alt="imagen-usuario" id="userPictureReg"
+                                        style="width: 180px; 
+    height: 180px;">
+                                    <h6>Sube una foto diferente...</h6>
+                                    <!-- Avatar-->
+                                    <input class="form-control form-control-sm" id="selectPicUser" type="file" name="userPicture"
+                                        accept="image/*">
+                                    <p class="text-danger error-userPicture">
+                                        <%= locals.errors?.userPicture?.msg %>
+                                    </p>
                                 </div>
-                                <!-- Name -->
-                                <div class="col-12 col-md-5 col-lg-5 mb-3">
-                                    <label class="form-label" for="userName">Nombre de usuario <span
-                                        class="field-required text-danger"></span></label>
-                                    <input class="form-control" type="text" id="userName" name="userName"
-                                        placeholder="Introduce nombre y apellido" value="<%= user.userName %>" disabled>
-                                </div>
-                                <!-- /Name -->
-                                <!-- Email  -->
-                                <div class="col-12 col-md-5 col-lg-5 mb-3">
-                                    <label class="form-label" for="email">Correo electrónico</label>
-                                    <input class="form-control" type="text" id="email" name="email"
-                                        placeholder="Introduce tu correo electrónico" value="<%= user.email %>"
-                                        disabled>
-                                </div>
-                                <!-- /Email -->
-                                <div class="bg-subtitle-custom col-12 col-md-10 mb-3">
-
-                                    <h5>INFORMACIÓN PERSONAL:</h5>
-                                </div>
-                                <!-- Nombre y Apellido -->
-                                <div class="col-12 col-md-5 col-lg-6 mb-3">
-                                    <label class="form-label" for="name">Nombre y apellido <span
-                                            class="required-custom">*</span></label>
+                            </div>
+                            <div class="col-sm-8 my-4">
+                                <div class="row justify-content-center">
+                                    <div class=" col-12 mb-2">
+                                        <h5 class="line-subtitle-custom">Información de cuenta:</h5>
+                                    </div>
+                                    <!-- Name -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label" for="userName">
+                                            <h6>Nombre de usuario</h6>
+                                        </label>
+                                        <input class="form-control" type="text" id="userName" name="userName"
+                                            placeholder="Introduce nombre y apellido" value="<%= user.userName %>"
+                                            disabled>
+                                    </div>
+                                    <!-- /Name -->
+                                    <!-- Email  -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label" for="email">
+                                            <h6>Correo electrónico</h6>
+                                        </label>
+                                        <input class="form-control" type="text" id="email" name="email"
+                                            placeholder="Introduce tu correo electrónico" value="<%= user.email %>"
+                                            disabled>
+                                    </div>
+                                    <!-- /Email -->
+                                    <div class="col-12 mb-2">
+                                        <h5 class="line-subtitle-custom">Información personal:</h5>
+                                    </div>
+                                    <!-- Nombre y Apellido -->
+                                    <div class="col-12 col-md-12 mb-3">
+                                        <label class="form-label" for="name">
+                                            <h6>Nombre y apellido</h6><span class="field-required text-danger"></span>
+                                        </label>
                                         <input class="form-control" type="text" id="name" name="name"
-                                        placeholder="Introduce tu nombre" value="<%= user.name %>"
-                                        disabled>
-                                </div>
-                                <!-- /Nombre y Apellido -->
-                                <!-- Avatar-->
-                                <div class="col-12 col-md-5 col-lg-4 mb-3 text-center">
-                                    <label for="profileImage" class="form-label">Imagen de perfil</label>
-                                    <img id="profileImage" src="https://thumbs.dreamstime.com/b/default-profile-picture-avatar-photo-placeholder-vector-illustration-default-profile-picture-avatar-photo-placeholder-vector-189495158.jpg" alt="Imagen de perfil" class="img-thumbnail" style="width: 90px; height: 90px; object-fit: cover;">
-                                </div>
-                                <!-- /Avatar-->
-
-                                <!-- Provincia -->
-                                <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="name">Provincia <span
-                                        class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="province" name="province"
-                                    placeholder="Provincia" value="<%= user.province %>"
-                                    disabled>
-                                </div>
-                                <!-- /Provincia -->
-                                <!-- Localidad -->
-                                <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="name">Localidad <span
-                                        class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="locality" name="locality"
-                                    placeholder="Introduce tu localidad" value="<%= user.locality %>"
-                                    disabled>
-                                </div>
-                                <!-- /Localidad -->
-                                <!-- Codigo Postal -->
-                                <div class="col-12 col-md-5 col-lg-2 mb-3">
-                                    <label class="form-label" for="postal">Postal <span
-                                        class="required-custom">*</span></label>
-                                    <input class="form-control" type="text" id="postal" name="postal"
-                                    placeholder="Introduce tu numero de postal" value="<%= user.postal %>"
-                                    disabled>
-                                </div>
-                                <!-- /Codigo Postal -->
-                                <!-- Street -->
-                                <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="street">Dirección</label>
-                                    <input class="form-control" type="text" id="street" name="street"
-                                    placeholder="Dirección" value="<%= user.street %>"
-                                    disabled>
-                                </div>
-                                <!-- /Street -->
-                                <!-- streetNumber -->
-                                <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="streetNumber">Numeración</label>
-                                    <input class="form-control" type="text" id="streetNumber" name="streetNumber"
-                                    placeholder="Numeración" value="<%= user.streetNumber %>"
-                                    disabled>
-                                </div>
-                                <!-- /streetNumber -->
-                                <!-- floor -->
-                                <div class="col-12 col-md-5 col-lg-2 mb-3">
-                                    <label class="form-label" for="floor">Piso</label>
-                                    <input class="form-control" type="text" id="floor" name="floor"
-                                    placeholder="Piso" value="<%= user.floor %>"
-                                    disabled>
-                                </div>
-                                <!-- /floor -->
-                                <!-- Between 1 -->
-
-                                <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="betweenSt1">Calle 1</label>
-                                    <input class="form-control" type="text" id="betweenSt1" name="betweenSt1"
-                                    placeholder="Calle 1" value="<%= user.betweenSt1 %>"
-                                    disabled>
-                                </div>
-                                <!-- /Between 1 -->
-                                <!-- Between 2 -->
-                                <div class="col-12 col-md-5 col-lg-4 mb-3">
-                                    <label class="form-label" for="betweenSt2">Calle 2</label>
-                                    <input class="form-control" type="text" id="betweenSt2" name="betweenSt2"
-                                    placeholder="Calle 2" value="<%= user.betweenSt2 %>"
-                                    disabled>
-                                </div>
-                                <!-- /Between 2 -->
-                                <!-- phoneNumber -->
-                                <div class="col-12 col-md-5 col-lg-2 mb-3">
-                                    <label class="form-label" for="phoneNumber">Teléfono de contacto</label>
-                                    <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
-                                    placeholder="Teléfono de contacto" value="<%= user.phoneNumber %>"
-                                    disabled>
-                                </div>
-                                <!-- /phoneNumber -->
-                                <!-- indications -->
-                                <div class="col-12 col-md-5 col-lg-10 mb-3">
-                                    <label class="form-label" for="indications">Indicaciones adicionales</label>
-                                    <input class="form-control" type="text" id="indications" name="indications"
-                                    placeholder="Indicaciones" value="<%= user.indications %>"
-                                    disabled>
-                                </div>
-                                <!-- /indications -->
-                                <p class="text-danger col-12 text-center err-form-general"></p>
-                                <!-- Botones -->
-                                <div
-                                    class="col-12 col-md-10 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
-                                    <button class="btn btn-change-custom"><a href="/autenticacion/editar-usuario/<%= user.id %>">MODIFICAR</a></button>
-                                    <button class="btn btn-logout-custom"><a class="change-button" href="/autenticacion/cerrar-session" class="change-password-button">CERRAR SESION</a></button>
+                                            placeholder="Introduce el nombre y apellido"
+                                            value="<%= locals.old?.name || locals.old?.name === '' ? locals.old?.name : user.name %>">
+                                        <p class="text-danger error-name">
+                                            <%-locals.errors?.name?.msg%>
+                                        </p>
+                                    </div>
+                                    <!-- /Nombre y Apellido -->
+                                    <!-- Provincia -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="province">Provincia</label>
+                                        <select class="form-select form-control-sm" name="province" id="province" data-stored-value="<%= user.province %>">
+                                            <option value="" selected hidden>Seleccionar provincia</option>
+                                        </select>
+                                    </div>
+                                    <!-- /Provincia -->
+                                     <!-- Localidad -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="city">Localidad</label>
+                                        <select class="form-select form-control-sm" name="city" id="city" data-stored-value="<%= user.locality %>">
+                                            <option value="" selected hidden>Seleccionar localidad</option>
+                                        </select>
+                                    </div>
+                                    <!-- /Localidad -->
+                                    <!-- Codigo Postal -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="postal">
+                                            <h6>Código postal</h6>
+                                        </label>
+                                        <input class="form-control" type="text" id="postal" name="postal"
+                                            placeholder="Introduce el código postal"
+                                            value="<%= locals.old?.postal || locals.old?.postal === '' ? locals.old.postal : user.postal %>">
+                                        <p class="text-danger error-postal">
+                                            <%= locals.errors?.postal?.msg %>
+                                        </p>
+                                    </div>
+                                    <!-- /Codigo Postal -->
+                                    <!-- Street -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="street">
+                                            <h6>Dirección</h6>
+                                        </label>
+                                        <input class="form-control" type="text" id="street" name="street"
+                                            placeholder="Introduce la dirección"
+                                            value="<%= locals.old?.street || locals.old?.street === ''? locals.old.street : user.street %>">
+                                        <p class="text-danger error-street">
+                                            <%= locals.errors?.street?.msg %>
+                                        </p>
+                                    </div>
+                                    <!-- /Street -->
+                                    <!-- streetNumber -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="streetNumber">
+                                            <h6>Numeración</h6>
+                                        </label>
+                                        <input class="form-control" type="number" id="streetNumber" name="streetNumber"
+                                            placeholder="Introduce la numeración"
+                                            value="<%= locals.old?.streetNumber || locals.old?.streetNumber === '' ? locals.old.streetNumber : user.streetNumber %>">
+                                        <p class="text-danger error-streetNumber">
+                                            <%= locals.errors?.streetNumber?.msg %>
+                                        </p>
+                                    </div>
+                                    <!-- /streetNumber -->
+                                    <!-- floor -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="floor">
+                                            <h6>Piso</h6>
+                                        </label>
+                                        <input class="form-control" type="number" id="floor" name="floor"
+                                            placeholder="Introduce el número de piso"
+                                            value="<%= locals.old?.floor || locals.old?.floor === '' ? locals.old.floor : user.floor %>">
+                                        <p class="text-danger error-floor">
+                                            <%= locals.errors?.floor?.msg %>
+                                        </p>
+                                    </div>
+                                    <!-- /floor -->
+                                    <!-- Between 1 -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="betweenSt1">
+                                            <h6>Calle 1</h6>
+                                        </label>
+                                        <input class="form-control" type="text" id="betweenSt1" name="betweenSt1"
+                                            placeholder="Introduce el nombre de calle"
+                                            value="<%= locals.old?.betweenSt1 || locals.old?.betweenSt1 === '' ? locals.old.betweenSt1 : user.betweenSt1 %>">
+                                        <p class="text-danger error-betweenSt1">
+                                            <%= locals.errors?.betweenSt1?.msg %>
+                                        </p>
+                                    </div>
+                                    <!-- /Between 1 -->
+                                    <!-- Between 2 -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="betweenSt2">
+                                            <h6>Calle 2</h6>
+                                        </label>
+                                        <input class="form-control" type="text" id="betweenSt2" name="betweenSt2"
+                                            placeholder="Introduce el nombre de calle"
+                                            value="<%= locals.old?.betweenSt2 || locals.old?.betweenSt2 === '' ? locals.old.betweenSt2 : user.betweenSt2 %>">
+                                        <p class="text-danger error-betweenSt2">
+                                            <%= locals.errors?.betweenSt2?.msg %>
+                                        </p>
+                                    </div>
+                                    <!-- /Between 2 -->
+                                    <!-- phoneNumber -->
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="phoneNumber">
+                                            <h6>Teléfono</h6>
+                                        </label>
+                                        <input class="form-control" type="text" id="phoneNumber" name="phoneNumber"
+                                            placeholder="Introduce el teléfono de contacto"
+                                            value="<%= locals.old?.phoneNumber || locals.old?.phoneNumber === '' ? locals.old.phoneNumber : user.phoneNumber %>">
+                                        <p class="text-danger error-phoneNumber">
+                                            <%= locals.errors?.phoneNumber?.msg %>
+                                        </p>
+                                    </div>
+                                    <!-- /phoneNumber -->
+                                    <!-- indications -->
+                                    <div class="col-12 col-md-12 mb-3">
+                                        <label class="form-label" for="indications">
+                                            <h6>Datos adicionales</h6>
+                                        </label>
+                                        <textarea class="form-control" id="indications" name="indications"
+                                            rows="3"><%= locals.old?.indications || locals.old?.indications === '' ? locals.old.indications : user.indications %></textarea>
+                                        <p class="text-danger error-indications">
+                                            <%= locals.errors?.indications?.msg %>
+                                        </p>
+                                    </div>
+                                    <!-- /indications -->
+                                    <p class="text-danger col-12 text-center err-form-general"></p>
+                                    <!-- Botones -->
+                                    <div
+                                        class="col-12 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
+                                        <button class="btn custom-btn-green" type="submit">Actualizar</button>
+                                        <button class="btn custom-btn-red" type="reset"
+                                            id="cancel-button">Cancelar</button>
+                                    </div>
                                 </div>
                                 <!-- /Botones -->
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
+                    <!-- /form -->
                 </div>
-                <!-- /form -->
             </main>
             <!-- /main -->
             <!-- footer -->
@@ -169,6 +220,14 @@
             <!-- Script Bootstrap -->
             <%- include("../partials/scripts") %>
                 <!-- /Script Bootstrap -->
+                <script src="/js/imageSelector.js"></script>
+                <script src="/js/functions/profile.js"></script>
+                <!-- <script src="/js/functions/validationUser.js"></script> -->
+                <script>
+                    document.getElementById('cancel-button').addEventListener('click', function () {
+                        window.location.href = '/';  // Reemplaza '/dashboard' con la URL de tu dashboard
+                    });
+                </script>
     </body>
 
 </html>

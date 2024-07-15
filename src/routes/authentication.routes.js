@@ -9,21 +9,19 @@ const {
   registro1,
   registro2,
   login,
-  edit,
-  update,
   loginProcess,
   errorAuth,
   logout,
   listUser,
+  updateUser,
+  editUser,
 } = require("../controllers/authentication");
 
 const { updateUserValidation } = require("../middlewares/validations");
 const { userValidation } = require("../middlewares/validations");
 const { uploadUserPicture } = require("../middlewares/uploadUserPicture");
 
-
 // /autenticacion
-
 
 //*** LIST ALL USER ***/
 router.get("/lista-usuarios", listUser);
@@ -32,15 +30,22 @@ router.get("/lista-usuarios", listUser);
 //router.get("/crear-usuario/", add);
 
 router.get("/registro", registro);
-router.post("/registro",uploadUserPicture.fields([{ name: "userPicture", maxCount: 1 }]),userValidation , registro1);
-router.get("/registro-completado", registro2);   
+router.post(
+  "/registro",
+  uploadUserPicture.fields([{ name: "userPicture", maxCount: 1 }]),
+  userValidation,
+  registro1
+);
+router.get("/registro-completado", registro2);
 router.get("/login", login);
 router.post("/login", loginProcess);
 router.post("/error", errorAuth);
 
 //*** EDIT ONE USER ***/
-router.get("/editar-usuario/:id", edit);
-router.put("/editar-usuario/:id", uploadAuthentication.single("userPicture"),updateUserValidation, update);
+router.get("/editar-usuario/:id", updateUser);
+router.put("/editar-usuario/:id", editUser);
+//router.put("/editar-usuario/:id", updateUserValidation, editUser);
+//router.put("/editar-usuario/:id", uploadAuthentication.single("userPicture"),updateUserValidation, editUser);
 
 router.get("/cerrar-session", logout);
 
