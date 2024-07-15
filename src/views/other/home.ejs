@@ -1,117 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head", {title: 'Inicio'}) %>
-<body class="bodyRegistro">
-    <!--   HEADER    -->
-    <%- include("../partials/header") %>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-        <!--     MAIN    -->
-        <main class="mainHome">
+<%- include("../partials/head", {title: 'Inicio' }) %>
 
-            <!--BANNER"tenemos lo mejor para tus hijos"-->
-            <img src="/images/home/banner1.jpg" alt="">
-            <div class="titulosHome">
-                <h2>JUGUETES PARA TODAS LAS EDADES</h2>
-            </div>
-
-            <div class="diverHome">
-                <img src="/images/home/art1.png" alt="">
-                <img src="/images/home/art2.jpg" alt="">
-                <img src="/images/home/art3.jpg" alt="">
-                <img src="/images/home/art4.jfif" alt="">
-                <p>DIVERSIÓN ASEGURADA</p>
-            </div>
-
-            <!--//////////////// ICONOS //////////////////-->
-            <div class="titulosHome">
-                <!--PAGOS-->
-                <div class="pagosHome">
-                    <i class="fa-solid fa-credit-card"></i>
-                    <p>3,6 y 12 PAGOS SIN INTERES SELECCIONANDO MERCADO PAGO Con tarjertas de bancos adheridos</p>
+    <body class="bodyRegistro">
+        <!--   HEADER    -->
+        <%- include("../partials/header") %>
+            <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
+            <!--     MAIN    -->
+            <main class="mainHome">
+                <!--BANNER"tenemos lo mejor para tus hijos"-->
+                <img src="/images/home/banner1.jpg" alt="">
+                <div class="titulosHome">
+                    <h2>JUGUETES PARA TODAS LAS EDADES</h2>
                 </div>
-                <!--ENVIOS-->
-                <div class="enviosHome">
-                    <i class="fa-solid fa-truck"></i>
-                    <p>ENVÍOS GRATIS DESDE $19990</p>
+                <div class="diverHome">
+                    <img src="/images/home/art1.png" alt="">
+                    <img src="/images/home/art2.jpg" alt="">
+                    <img src="/images/home/art3.jpg" alt="">
+                    <img src="/images/home/art4.jfif" alt="">
+                    <p>DIVERSIÓN ASEGURADA</p>
                 </div>
-                <!--DESCUENTO-->
-                <div class="descuentoHome">
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <p>15% DE DESCUENTO EFECTIVO O TRANSFERENCIA BANCARIA</p>
+                <!--//////////////// ICONOS //////////////////-->
+                <div class="titulosHome">
+                    <!--PAGOS-->
+                    <div class="pagosHome">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <p>3,6 y 12 PAGOS SIN INTERES SELECCIONANDO MERCADO PAGO Con tarjertas de bancos adheridos</p>
+                    </div>
+                    <!--ENVIOS-->
+                    <div class="enviosHome">
+                        <i class="fa-solid fa-truck"></i>
+                        <p>ENVÍOS GRATIS DESDE $19990</p>
+                    </div>
+                    <!--DESCUENTO-->
+                    <div class="descuentoHome">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <p>15% DE DESCUENTO EFECTIVO O TRANSFERENCIA BANCARIA</p>
+                    </div>
                 </div>
-            </div>
-
-            <!--///////////////// NOVEDADES //////////////////-->
-
-            <!--banner-->
-            <img src="/images/home/banner2.jpg" alt="">
-            <!--articulos-->
-            <div class="articulosHome">
-                <h2 class="subtitle-custom">NOVEDADES SIMPLEMENTE JUGUETES</h2>
-                <!-- funciona -->
-                <div class="container mt-5">
-                    <div id="multi-item-carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <% for (let i=0; i < products.length; i +=4) { %>
-                                <div class="carousel-item <%= i === 0 ? 'active' : '' %> col-12">
-                                    <div class="row">
-                                        <% for (let j=i; j < i + 4 && j < products.length; j++) { %>
-                                            <div class="col-sm-3">
-                                                <div class="card card-with-shadow">
-                                                    <div class="img-wrapper">
-                                                        <img src="/images/products/<%= products[j].firstImg %>" class="card-img" alt="img-principal">
-                                                    </div>
-                                                    <div class="card-body card-body-custom">
-                                                        <h5 class="card-title card-title-custom">
-                                                            <%= products[j].name %>
-                                                        </h5>
-                                                        <div class="d-flex flex-row justify-content-between align-items-center">
-                                                            <p class="card-text card-text-custom">
-                                                                $ <%= products[j].price %>
-                                                            </p>
-                                                            <a href="/productos/detalle-producto/<%= products[j].id %>" class="btn btn-register-custom">VER MÁS</a>
+                <!--///////////////// NOVEDADES //////////////////-->
+                <!--banner-->
+                <img src="/images/home/banner2.jpg" alt="">
+                <!--articulos-->
+                <div class="articulosHome">
+                    <h2 class="subtitle-custom">NOVEDADES SIMPLEMENTE JUGUETES</h2>
+                    <!-- funciona -->
+                    <div class="container mt-5">
+                        <div id="multi-item-carousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <% for (let i=0; i < 8; i +=4) { %>
+                                    <div class="carousel-item <%= i === 0 ? 'active' : '' %> col-12">
+                                        <div class="row">
+                                            <% for (let j=i; j < i + 4 && j < products.length; j++) { %>
+                                                <div class="col-sm-3">
+                                                    <div class="card card-with-shadow">
+                                                        <div class="img-wrapper">
+                                                            <img src="/images/products/<%= products[j].firstImg %>"
+                                                                class="card-img-top" alt="<%= products[j].name %>">
+                                                        </div>
+                                                        <div class="card-body d-flex flex-column">
+                                                            <h5 class="card-title text-center">
+                                                                <%= products[j].name %>
+                                                            </h5>
+                                                            <div class="mt-auto">
+                                                                <p class="card-text-black text-center">
+                                                                    $ <%= products[j].price %>
+                                                                </p>
+                                                                <div class="d-flex justify-content-around gap-3">
+                                                                    <a href="/productos/detalle-producto/<%= products[j].id %>"
+                                                                        class="btn custom-btn-blue">Ver más</a>
+                                                                    <button class="btn custom-btn-cart-green"
+                                                                        type="button"
+                                                                        onclick="addProductCart('<%= products[j].id %>')">
+                                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        <% } %>
+                                                <% } %>
+                                        </div>
                                     </div>
-                                </div>
-                            <% } %>
+                                    <% } %>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#multi-item-carousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#multi-item-carousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#multi-item-carousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#multi-item-carousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
-            </div>
-            <!--articulos-->
-            <!--/////////////// SEDE CENTRAL /////////////-->
-            <div class="titulosHome">
-                <h2 >SIMPLEMENTE JUGUETES SEDE CENTRAL</h2>
-            </div>
-            <div class="mapa-home">
-                <figure>
-                    <img src="./images/home/img-home.webp" alt="">
-                </figure>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.3772398304027!2d-58.87058882348951!3d-34.44257064900695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9c5138f3399f%3A0x4be6aa785d569b08!2sJugueter%C3%ADa%20Cebra%20Pilar!5e0!3m2!1ses!2sar!4v1712473125800!5m2!1ses!2sar" 
-                width="800" height="650" style="border: 1px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+                <!--articulos-->
+                <!--/////////////// SEDE CENTRAL /////////////-->
+                <div class="titulosHome">
+                    <h2>SIMPLEMENTE JUGUETES SEDE CENTRAL</h2>
+                </div>
+                <div class="mapa-home">
+                    <figure>
+                        <img src="./images/home/img-home.webp" alt="">
+                    </figure>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.3772398304027!2d-58.87058882348951!3d-34.44257064900695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9c5138f3399f%3A0x4be6aa785d569b08!2sJugueter%C3%ADa%20Cebra%20Pilar!5e0!3m2!1ses!2sar!4v1712473125800!5m2!1ses!2sar"
+                        width="800" height="650" style="border: 1px solid black;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
 
-        </main>
-        <footer class="sub-footer">
-            <!-- Footer -->
-            <%- include("../partials/footer") %>
-        </footer>
-        <!-- scripts -->
-        <%- include("../partials/scripts") %>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-</body>
+            </main>
+            <script src="/js/functions/addProductToCart.js"></script>
+            <footer class="sub-footer">
+                <!-- Footer -->
+                <%- include("../partials/footer") %>
+            </footer>
+            <!-- scripts -->
+            <%- include("../partials/scripts") %>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    </body>
 
 </html>
