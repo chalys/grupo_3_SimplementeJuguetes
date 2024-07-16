@@ -2,22 +2,14 @@ const db = require("../../dataBase/models");
 
 module.exports = (req, res) => {
   const { id } = req.params;
-
-  db.secondaryimage
+  db.category
     .destroy({
       where: {
-        productId: +id,
+        id,
       },
     })
     .then(() => {
-      db.product .destroy({
-        where: {
-          id,
-        },
-      });
-    })
-    .then(() => {
-      res.redirect("/admin/lista-productos");
+      res.redirect("/categorias/lista-categorias?success=true");
     })
     .catch((error) => {
       return res.status(500).send("Hubo un error al eliminar la categoría");
