@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head", {title: 'Registro de juguete' }) %>
+    <%- include("../partials/dashbar") %>
+
+        <body>
+            <!-- main -->
+            <main>
+                <div class="container">
+                    <!-- title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="mt-4 title-page">Editar Categoria</h1>
+                        </div>
+                    </div>
+                    <form action="/categorias/editar-categoria/<%= category.id %>?_method=PUT" method="post" id="form-create-category">                        
+                        <div class="row my-4 ">
+                            <div class="col-sm-12 my-4">
+                                <div class="row justify-content-center">
+                                    <div class=" col-12 col-md-10 mb-2">
+                                        <h5 class="line-subtitle-custom">Información básica:</h5>
+                                    </div>
+                                    <!-- Name -->
+                                    <div class="col-12 col-md-10  mb-3">
+                                        <label class="form-label" for="name">Nombre <span
+                                                class="field-required text-danger"></span></label>
+                                        <input class="form-control" type="text" id="name" name="name"
+                                            placeholder="Introduce el nombre del juguete"
+                                            value="<%= locals.old?.name || locals.old?.name === "" ? locals.old?.name : category.name %>">
+                                        <p class="text-danger error-name">
+                                            <%-locals.errors?.name?.msg%>
+                                        </p>
+                                    </div>
+                                    <!-- /Name -->
+                                    <!-- Description -->
+                                    <div class="col-12 col-md-10 mb-3">
+                                        <label class="form-label" for="description">Descripción <span
+                                                class="field-required text-danger"></span></label>
+                                        <textarea class="form-control" id="description" name="description" rows="3"
+                                            placeholder="Escribe una descripción detallada del categoria"><%= locals.old?.description || locals.old?.description === "" ? locals.old?.description : category.description %></textarea>
+                                        <p class="text-danger error-description">
+                                            <%=locals.errors?.description?.msg%>
+                                        </p>
+                                    </div>
+                                    <!-- /Description -->
+                                    <p class="text-danger col-12 col-md-10 mb-3 text-center err-form-general"></p>
+                                    <!-- Button-->
+                                    <div
+                                        class="col-12 col-md-10 mb-3 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
+                                        <button class="btn custom-btn-green" type="submit">Actualizar</button>
+                                        <button class="btn custom-btn-red" type="reset"
+                                            id="cancel-button">Cancelar</button>
+                                    </div>
+                                    <!-- /Button-->
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
+            <!-- /main -->
+            <!-- scripts -->
+            <%- include("../partials/scripts") %>
+                <!-- /scripts -->
+                <script src="/js/functions/validationCategory.js"></script>
+                <script>
+                    document.getElementById('cancel-button').addEventListener('click', function () {
+                        window.location.href = '/categorias/lista-categorias';  // Reemplaza '/dashboard' con la URL de tu dashboard
+                    });
+                    const urlParams = new URLSearchParams(window.location.search);
+                    if (urlParams.has('success')) {
+                        toastr.success('¡Categoría actualizada con éxito!');
+                    }
+                </script>
+        </body>
+</html>

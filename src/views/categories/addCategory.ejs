@@ -6,7 +6,7 @@
         <body>
             <!-- main -->
             <main>
-                <div class="container">                    
+                <div class="container">
                     <!-- title -->
                     <div class="row">
                         <div class="col-12">
@@ -31,7 +31,7 @@
                                             <%-locals.errors?.name?.msg%>
                                         </p>
                                     </div>
-                                    <!-- /Name -->                                    
+                                    <!-- /Name -->
                                     <!-- Description -->
                                     <div class="col-12 col-md-10 mb-3">
                                         <label class="form-label" for="description">Descripción <span
@@ -43,10 +43,10 @@
                                         </p>
                                     </div>
                                     <!-- /Description -->
-                                    <p class="text-danger col-12 text-center err-form-general"></p>
+                                    <p class="text-danger col-12 col-md-10 mb-3 text-center err-form-general"></p>
                                     <!-- Button-->
                                     <div
-                                        class="col-12 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
+                                        class="col-12 col-md-10 mb-3 d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-end gap-3 mb-3">
                                         <button class="btn custom-btn-green" type="submit">Registrar</button>
                                         <button class="btn custom-btn-red" type="reset"
                                             id="cancel-button">Cancelar</button>
@@ -61,17 +61,16 @@
             </main>
             <!-- /main -->
             <!-- scripts -->
-            <script src="/js/imageSelectorProduct.js"></script>
             <%- include("../partials/scripts") %>
                 <!-- /scripts -->
-                <script src="/js/functions/validationProduct.js"></script>
+                <script src="/js/functions/validationCategory.js"></script>
                 <script>
                     document.getElementById('cancel-button').addEventListener('click', function () {
-                        window.location.href = '/admin/lista-productos';  // Reemplaza '/dashboard' con la URL de tu dashboard
+                        window.location.href = '/categorias/lista-categorias';  // Reemplaza '/dashboard' con la URL de tu dashboard
                     });
                     const urlParams = new URLSearchParams(window.location.search);
                     if (urlParams.has('success')) {
-                        toastr.success('¡Producto registrado con éxito!');
+                        toastr.success('¡Categoría registrada con éxito!');
                     }
                 </script>
         </body>
