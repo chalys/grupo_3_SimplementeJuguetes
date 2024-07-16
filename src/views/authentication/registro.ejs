@@ -79,49 +79,58 @@
 
             <main class="mainRegistro-1" id="">
                 <nav>
-                    <!--Formulario opcional-->
                     <div class="form">
-                        <label for="nombreCompleto" class="elCienReg">Nombre y apellido<div class="errorsReg nameEr"><%- locals.errors?.name?.msg %></div></label>
+                        <label for="nombreCompleto" class="elCienReg">Nombre y apellido
+                            <div class="errorsReg nameEr"><%- locals.errors?.name?.msg %></div>
+                        </label>
                         <input type="text" class="elCienReg" placeholder="nombreEjemplo" name="name" value="<%= locals.old?.name %>">
                     
                         <div class="blocReg1">
-                            <label for="provincia" class="blocReg1-1">Provincia<div class="errorsReg provinceErr"><%- locals.errors?.province?.msg %></div></label>
-                            <select class="blocReg1-2" name="province" value="<%= locals.old?.province %>">
+                            <label for="provincia" class="blocReg1-1">Provincia
+                                <div class="errorsReg provinceErr"><%- locals.errors?.province?.msg %></div>
+                            </label>
+                            <select class="blocReg1-2" name="province">
                                 <option value="" selected hidden>provinciaEjemplo</option>
-                                <option value="BA">Buenos Aires</option>
-                                <option value="CA">Catamarca</option>
-                                <option value="CH">Chaco</option>
-                                <option value="CT">Chubut</option>
-                                <option value="CB">Córdoba</option>
-                                <option value="CR">Corrientes</option>
-                                <option value="ALLÍ">Entre Ríos</option>
-                                <option value="FO">Formosa</option>
-                                <option value="TU">Jujuy</option>
-                                <option value="ELEPÉ">La Pampa</option>
-                                <option value="LR">La Rioja</option>
-                                <option value="MZ">Mendoza</option>
-                                <option value="MI">Misiones</option>
-                                <option value="NQ">Neuquén</option>
-                                <option value="RN">Río Negro</option>
-                                <option value="SA">Salta</option>
-                                <option value="SJ">San Juan</option>
-                                <option value="SL">San Luis</option>
-                                <option value="SC">Santa Cruz</option>
-                                <option value="SF">Santa Fe</option>
-                                <option value="SE">Santiago del Estero</option>
-                                <option value="TF">Tierra del Fuego</option>
-                                <option value="TU">Tucumán</option>
+                                <option value="BA" <%= locals.old?.province === 'BA' ? 'selected' : '' %>>Buenos Aires</option>
+                                <option value="CA" <%= locals.old?.province === 'CA' ? 'selected' : '' %>>Catamarca</option>
+                                <option value="CH" <%= locals.old?.province === 'CH' ? 'selected' : '' %>>Chaco</option>
+                                <option value="CT" <%= locals.old?.province === 'CT' ? 'selected' : '' %>>Chubut</option>
+                                <option value="CB" <%= locals.old?.province === 'CB' ? 'selected' : '' %>>Córdoba</option>
+                                <option value="CR" <%= locals.old?.province === 'CR' ? 'selected' : '' %>>Corrientes</option>
+                                <option value="ER" <%= locals.old?.province === 'ER' ? 'selected' : '' %>>Entre Ríos</option>
+                                <option value="FO" <%= locals.old?.province === 'FO' ? 'selected' : '' %>>Formosa</option>
+                                <option value="JU" <%= locals.old?.province === 'JU' ? 'selected' : '' %>>Jujuy</option>
+                                <option value="LP" <%= locals.old?.province === 'LP' ? 'selected' : '' %>>La Pampa</option>
+                                <option value="LR" <%= locals.old?.province === 'LR' ? 'selected' : '' %>>La Rioja</option>
+                                <option value="MZ" <%= locals.old?.province === 'MZ' ? 'selected' : '' %>>Mendoza</option>
+                                <option value="MI" <%= locals.old?.province === 'MI' ? 'selected' : '' %>>Misiones</option>
+                                <option value="NQ" <%= locals.old?.province === 'NQ' ? 'selected' : '' %>>Neuquén</option>
+                                <option value="RN" <%= locals.old?.province === 'RN' ? 'selected' : '' %>>Río Negro</option>
+                                <option value="SA" <%= locals.old?.province === 'SA' ? 'selected' : '' %>>Salta</option>
+                                <option value="SJ" <%= locals.old?.province === 'SJ' ? 'selected' : '' %>>San Juan</option>
+                                <option value="SL" <%= locals.old?.province === 'SL' ? 'selected' : '' %>>San Luis</option>
+                                <option value="SC" <%= locals.old?.province === 'SC' ? 'selected' : '' %>>Santa Cruz</option>
+                                <option value="SF" <%= locals.old?.province === 'SF' ? 'selected' : '' %>>Santa Fe</option>
+                                <option value="SE" <%= locals.old?.province === 'SE' ? 'selected' : '' %>>Santiago del Estero</option>
+                                <option value="TF" <%= locals.old?.province === 'TF' ? 'selected' : '' %>>Tierra del Fuego</option>
+                                <option value="TU" <%= locals.old?.province === 'TU' ? 'selected' : '' %>>Tucumán</option>
                             </select>
                             
-                            <label for="calle" class="blocReg1-3">Calle<div class="errorsReg streetEr"><%- locals.errors?.street?.msg %></div></label>
+                            <label for="calle" class="blocReg1-3">Calle
+                                <div class="errorsReg streetEr"><%- locals.errors?.street?.msg %></div>
+                            </label>
                             <input type="text" class="blocReg1-4" placeholder="calleEjemplo" name="street" value="<%= locals.old?.street %>">
                             
                         </div>
                         <div class="blocReg2">
-                            <label for="localidad" class="blocReg2-1">Localidad<div class="errorsReg localityEr"><%- locals.errors?.locality?.msg %></div></label>
+                            <label for="localidad" class="blocReg2-1">Localidad
+                                <div class="errorsReg localityEr"><%- locals.errors?.locality?.msg %></div>
+                            </label>
                             <input type="text" class="blocReg2-2" placeholder="localidadEjemplo" name="locality" value="<%= locals.old?.locality %>">
                             
-                            <label for="numero" class="blocReg2-3">Número<div class="errorsReg streetNumberEr"><%- locals.errors?.streetNumber?.msg %></div></label>
+                            <label for="numero" class="blocReg2-3">Número
+                                <div class="errorsReg streetNumberEr"><%- locals.errors?.streetNumber?.msg %></div>
+                            </label>
                             <input type="number" placeholder="S/N" class="blocReg2-4" name="streetNumber" value="<%= locals.old?.streetNumber %>">
                             
                         </div>
@@ -133,14 +142,20 @@
                             <input type="text" class="callebloReg4" placeholder="calleEjemplo2" name="betweenSt2" value="<%= locals.old?.betweenSt2 %>">
                         </div>
                         <div class="blocReg3">
-                            <label for="codigoPos" class="blocReg3-1">Código postal<div class="errorsReg postalEr"><%- locals.errors?.postal?.msg %></div></label>
+                            <label for="codigoPos" class="blocReg3-1">Código postal
+                                <div class="errorsReg postalEr"><%- locals.errors?.postal?.msg %></div>
+                            </label>
                             <input type="number" class="blocReg3-2" placeholder="0000" name="postal" value="<%= locals.old?.postal %>">
                             
-                            <label for="piso" class="blocReg3-3">Piso (opcional)<div class="errorsReg floorEr"><%- locals.errors?.floor?.msg %></div></label>
-                            <input type="number"  class="blocReg3-4" placeholder="pisoEjemplo" name="floor" value="<%= locals.old?.floor %>">
+                            <label for="piso" class="blocReg3-3">Piso (opcional)
+                                <div class="errorsReg floorEr"><%- locals.errors?.floor?.msg %></div>
+                            </label>
+                            <input type="number" class="blocReg3-4" placeholder="pisoEjemplo" name="floor" value="<%= locals.old?.floor %>">
                             
-                            <label for="telContac" class="blocReg3-5">Telefono de contacto<div class="errorsReg phoneNumberEr"><%- locals.errors?.phoneNumber?.msg %></div></label>
-                            <input type="number"  class="blocReg3-6" placeholder="telCont." name="phoneNumber" value="<%= locals.old?.phoneNumber %>">
+                            <label for="telContac" class="blocReg3-5">Teléfono de contacto
+                                <div class="errorsReg phoneNumberEr"><%- locals.errors?.phoneNumber?.msg %></div>
+                            </label>
+                            <input type="number" class="blocReg3-6" placeholder="telCont." name="phoneNumber" value="<%= locals.old?.phoneNumber %>">
                             
                         </div>
                         <div class="blocReg4">
@@ -149,7 +164,7 @@
                         </div>
                     
                         <div class="botonesReg">
-                           <button class="botonVolverRegis toggle2" type="button">
+                            <button class="botonVolverRegis toggle2" type="button">
                                 <p><a href="">Volver</a></p>
                             </button>
                             <button class="botonOmitirRegis" type="submit">
@@ -158,15 +173,12 @@
                             <button class="botonContinuarRegis" type="submit">
                                 <p>Continuar</p>
                             </button>
-                           
                         </div>
-
-                        
                     </div>
                     </form>
                 </nav>
-
             </main>
+            
 
         </main>
         <footer class="sub-footer">
