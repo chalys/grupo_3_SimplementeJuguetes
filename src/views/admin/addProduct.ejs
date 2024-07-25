@@ -151,7 +151,7 @@
 
                                             <% category.forEach(c=> { %>
                                                 <option <%=+locals.old?.categoryId===c.id ? "selected" : null %> value="
-                                                    <%= c.id %>"><%= c.name %>
+                                                    <%=c.id%>"><%= c.name %>
                                                 </option>
                                                 <% }) %>
                                         </select>

@@ -1,6 +1,7 @@
 // ************ Require's ************
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 const { uploadAuthentication } = require("../middlewares/uploadFiles");
 
 // ************ Controller Require ************
@@ -15,6 +16,8 @@ const {
   listUser,
   updateUser,
   editUser,
+  registerUser,
+  loginAndRegisterGoogle,
 } = require("../controllers/authentication");
 
 const { updateUserValidation } = require("../middlewares/validations");
@@ -41,6 +44,8 @@ router.get("/login", login);
 router.post("/login", loginProcess);
 router.post("/error", errorAuth);
 
+router.get("/registrar-usuario", registerUser);
+
 //*** EDIT ONE USER ***/
 router.get("/editar-usuario/:id", updateUser);
 router.put("/editar-usuario/:id", editUser);
@@ -48,5 +53,23 @@ router.put("/editar-usuario/:id", editUser);
 //router.put("/editar-usuario/:id", uploadAuthentication.single("userPicture"),updateUserValidation, editUser);
 
 router.get("/cerrar-session", logout);
+
+
+passport.serializeUser((user, done) => done(null, user));
+passport.deserializeUser((user, done) => done(null, user));
+
+// LOGIN GOOGLE
+//router.get("/iniciar/google", passport.authenticate("google"));
+
+// router.get(
+//   "/google/callback",
+//   passport.authenticate("google", {
+//     failureRedirect: "/0/iniciar",
+//   }),
+//   loginAndRegisterGoogle
+// );
+
+router.get("/login/google", passport.authenticate("google"));
+router.get("/google/callback", passport.authenticate("google", {failureRedirect: "/0/login"}), loginAndRegisterGoogle);
 
 module.exports = router;

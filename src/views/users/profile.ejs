@@ -21,7 +21,8 @@
                         <div class="row my-4">
                             <div class="col-sm-4 my-4">
                                 <div class="text-center">
-                                    <img src="/images/users/<%= user.userPicture %>"
+                                    <!-- <img src="/images/users/<%= user.userPicture %>" -->
+                                     <img src="<%= /http/.test(user.userPicture)? user.userPicture : `/images/users/${user.userPicture}` %>"
                                         class="rounded-circle img-thumbnail" alt="imagen-usuario" id="userPictureReg"
                                         style="width: 180px; 
     height: 180px;">

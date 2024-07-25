@@ -342,7 +342,7 @@ window.addEventListener("load", () => {
         //case !isImageSecondary:
         case !isDescription:
           existError = true;
-          errFormGeneral.innerHTML = "Todos los campos son requeridos";
+          errFormGeneral.innerHTML = "Los campos con * son requeridos";
           errFormGeneral.classList.add("alert", "alert-danger");
           fieldsRequired.forEach((field) => (field.innerHTML = "*"));
           break;
@@ -356,7 +356,7 @@ window.addEventListener("load", () => {
         case !isStock:
         case !isDescription:
           existError = true;
-          errFormGeneral.innerHTML = "Todos los campos son requeridos";
+          errFormGeneral.innerHTML = "Los campos con * son requeridos";
           errFormGeneral.classList.add("alert", "alert-danger");
           fieldsRequired.forEach((field) => (field.innerHTML = "*"));
           break;

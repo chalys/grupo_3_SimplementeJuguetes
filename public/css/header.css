@@ -102,7 +102,7 @@
 .header div.iconosHeader a {
     color: white;
     text-decoration: none;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
     padding-right: 10px;
     padding-left: 0px;
     border-radius: 10px;
@@ -255,7 +255,7 @@
     border-radius: 10px;
     display: flex;
     align-items: center;
-    gap: 5px; /* Espacio entre el icono y el texto */
+    gap: 5px; /* Espacio entre el  y el texto */
 }
 
 /* Efecto hover en enlaces */
@@ -417,7 +417,7 @@
     border-radius: 10px;
     display: flex;
     align-items: center;
-    gap: 5px; /* Espacio entre el icono y el texto */
+    gap: 5px; /* Espacio entre el  y el texto */
 }
 
 /* Efecto hover en enlaces */

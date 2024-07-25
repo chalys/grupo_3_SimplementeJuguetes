@@ -4,11 +4,11 @@ module.exports = {
     registro2: require("./registro2.controller"),
     login : require("./login.controller"),
     listUser:require("./listUser.controller"),
-    updateUser:require("./updateUser.controller"),
-    //edit:require("./editUser.controller"),
+    registerUser:require("./registerUser.controller"),
     editUser:require("./editUser.controller"),
-    //update:require("./updateUser.controller"),
+    updateUser:require("./updateUser.controller"),
     loginProcess:require("./loginProcess.controller"),
     errorAuth:require("./errorAuth.controller"),
-    logout: require("./logout.controller")
+    logout: require("./logout.controller"),
+    loginAndRegisterGoogle: require("./loginOrRegisterGoogle.controller"),
 }

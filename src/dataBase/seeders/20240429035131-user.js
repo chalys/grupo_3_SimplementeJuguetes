@@ -18,7 +18,7 @@ const usersmap = usersJSON.map((u) => {
     betweenSt2: u.betweenSt2,
     phoneNumber: u.phoneNumber,
     indications: u.indications,
-    userPicture: u.userPicture,
+    userPicture: u.userPicture || "default-img.png",
     role: role.id,
   };
 });

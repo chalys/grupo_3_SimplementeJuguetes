@@ -197,7 +197,7 @@ const Products = () => {
         <Button
           variant="contained"
           color="primary"
-          onClick={handleAddClick}
+          onClick={handleNewClick}
           sx={{
             mb: 2,
             backgroundColor: "#2d8f2c",

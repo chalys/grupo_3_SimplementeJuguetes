@@ -9,20 +9,26 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      socialId: {        
+        type: Sequelize.STRING
+      },
+      provider: {        
+        type: Sequelize.STRING
+      },
       userName: {
-        allowNull: false,
+        //allowNull: false,
         type: Sequelize.STRING,
-        unique: true
+        //unique: true
       },
       name: {
         type: Sequelize.STRING
       },
       email: {
-        allowNull: false,
+        //allowNull: false,
         type: Sequelize.STRING
       },
       password: {
-        allowNull: false,
+        //allowNull: false,
         type: Sequelize.STRING
       },
       province: {
@@ -56,7 +62,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       userPicture: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: "default-img.png"
       },
       role: {
         type: Sequelize.INTEGER,
