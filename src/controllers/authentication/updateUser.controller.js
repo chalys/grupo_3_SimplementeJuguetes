@@ -15,7 +15,7 @@ const db = require("../../dataBase/models");
 module.exports = (req, res) => {
   const { id } = req.params;
   const userPromise = db.user.findByPk(id);
-  Promise.all([userPromise]).then(([ user]) => {
-    res.render("authentication/editUser", { user});
+  Promise.all([userPromise]).then(([user]) => {
+    res.render("authentication/editUser", { user });
   });
 };

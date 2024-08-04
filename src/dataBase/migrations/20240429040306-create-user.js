@@ -65,7 +65,7 @@ module.exports = {
         type: Sequelize.STRING,
         defaultValue: "default-img.png"
       },
-      role: {
+      roleId: {
         type: Sequelize.INTEGER,
         references:{
           model:{

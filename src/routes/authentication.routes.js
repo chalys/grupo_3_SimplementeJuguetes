@@ -18,6 +18,7 @@ const {
   editUser,
   registerUser,
   loginAndRegisterGoogle,
+  loginAndRegisterFacebook,
 } = require("../controllers/authentication");
 
 const { updateUserValidation } = require("../middlewares/validations");
@@ -59,17 +60,11 @@ passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((user, done) => done(null, user));
 
 // LOGIN GOOGLE
-//router.get("/iniciar/google", passport.authenticate("google"));
-
-// router.get(
-//   "/google/callback",
-//   passport.authenticate("google", {
-//     failureRedirect: "/0/iniciar",
-//   }),
-//   loginAndRegisterGoogle
-// );
-
 router.get("/login/google", passport.authenticate("google"));
 router.get("/google/callback", passport.authenticate("google", {failureRedirect: "/0/login"}), loginAndRegisterGoogle);
+
+// LOGIN FACEBOOK
+router.get("/login/facebook", passport.authenticate("facebook", { scope: ['email'] }));
+router.get('/facebook/callback',  passport.authenticate('facebook', { failureRedirect: '/0/login'}), loginAndRegisterFacebook);
 
 module.exports = router;

@@ -19,7 +19,7 @@ const usersmap = usersJSON.map((u) => {
     phoneNumber: u.phoneNumber,
     indications: u.indications,
     userPicture: u.userPicture || "default-img.png",
-    role: role.id,
+    roleId: role.id,
   };
 });
 

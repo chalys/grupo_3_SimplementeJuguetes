@@ -8,6 +8,7 @@ const logger = require("morgan");
 const cors = require("cors")
 const passport = require("passport")
 const { configServiceLogInGoogle } = require("./service/google.service");
+const { configServiceLogInFacebook } = require("./service/facebook.service");
 
 //const partials = require("express-partials");
 const methodOverride = require("method-override"); // Pasar poder usar los métodos PUT y DELETE
@@ -21,6 +22,7 @@ const userId = require("./middlewares/validations/userId");
 // ************ express() - (don't touch) ************
 const app = express();
 configServiceLogInGoogle();
+configServiceLogInFacebook();
 
 // ************ Middlewares - (don't touch) ************
 //app.use(express.static("public"));

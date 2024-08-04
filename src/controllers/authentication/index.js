@@ -10,5 +10,6 @@ module.exports = {
     loginProcess:require("./loginProcess.controller"),
     errorAuth:require("./errorAuth.controller"),
     logout: require("./logout.controller"),
-    loginAndRegisterGoogle: require("./loginOrRegisterGoogle.controller"),
+    loginAndRegisterGoogle: require("./loginAndRegisterGoogle.controller"),
+    loginAndRegisterFacebook: require("./loginAndRegisterFacebook.controller")
 }

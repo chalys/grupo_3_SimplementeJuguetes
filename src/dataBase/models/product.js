@@ -1,16 +1,10 @@
 "use strict";
-const sequelizePaginate = require("sequelize-paginate")
+const sequelizePaginate = require("sequelize-paginate");
 const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   class product extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
       product.hasMany(models.secondaryimage, {
         foreignKey: "productId",
         as: "secondaryImage",
@@ -18,14 +12,14 @@ module.exports = (sequelize, DataTypes) => {
 
       product.belongsTo(models.category, {
         foreignKey: "categoryId",
-        as: "Category" //"category"
-      })
-      product.belongsToMany(models.order,{
-        through:"orderproducts",
-        foreignKey:"productId",
+        as: "Category", //"category"
+      });
+      product.belongsToMany(models.order, {
+        through: "orderproducts",
+        foreignKey: "productId",
         otherKey: "orderId",
-        as:"orders"
-      })
+        as: "orders",
+      });
     }
   }
   product.init(
@@ -36,8 +30,8 @@ module.exports = (sequelize, DataTypes) => {
       sku: DataTypes.INTEGER,
       available: DataTypes.BOOLEAN,
       collection: DataTypes.STRING,
-      stock:DataTypes.INTEGER,
-      categoryId:DataTypes.INTEGER,
+      stock: DataTypes.INTEGER,
+      categoryId: DataTypes.INTEGER,
       price: DataTypes.DECIMAL,
       line: DataTypes.STRING,
       character: DataTypes.STRING,
@@ -63,6 +57,6 @@ module.exports = (sequelize, DataTypes) => {
       paranoid: true,
     }
   );
-  sequelizePaginate.paginate(product)
+  sequelizePaginate.paginate(product);
   return product;
 };

@@ -42,7 +42,7 @@ module.exports = async (req, res) => {
     const pageCount = Math.ceil(itemCount / pageSize);
 
 
-    if (req.session.userLogin?.role == 2) {
+    if (req.session.userLogin?.roleId == 2) {
       res.render("admin/listProduct", {
         products,
         keywords,      
